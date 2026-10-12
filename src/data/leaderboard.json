@@ -1,0 +1,3087 @@
+{
+ "meta": {
+  "title": "公开评测 LLM 榜单",
+  "dataCutoff": "2026-10-12",
+  "aaSource": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
+  "aaRetrieved": "2026-10-12",
+  "notes": [
+   "模型名单：AA 智能指数 v4.3.2 前 20 名，按模型去重（同一模型的不同推理档位只算一次），排除已下线模型。",
+   "补全值之间的误差按相互独立处理；同一模型的多个补全值实际可能同向偏差，所以区间可能偏窄。",
+   "厂商往往不报自己表现差的评测，补全值可能系统性偏高；“补全值下调一个误差”一栏给出这种情况下的名次。",
+   "不同厂商使用的 harness、推理档位和试验次数不同，同一列里的分数只做到“同一评测、同一指标”可比，具体配置见每个格子的出处。"
+  ],
+  "generatedAt": "2026-10-12",
+  "imputation": {
+   "method": "在扣除随机基线后的 logit 尺度上按列标准化，用带岭正则的交替最小二乘做低秩矩阵补全；秩与正则强度由 5 折 × 4 次重复的交叉验证选出；补全误差 = bootstrap（200 次）方差 + 该评测集交叉验证误差。",
+   "rank": 1,
+   "lambda": 0.3,
+   "cvRmse": 7.22,
+   "cvMae": 4.91,
+   "imputedCells": 6,
+   "totalCells": 160
+  }
+ },
+ "categories": [
+  {
+   "id": "coding",
+   "name": "编程",
+   "weight": 0.25,
+   "description": "长程软件工程、终端操作与可合并的代码交付"
+  },
+  {
+   "id": "agents",
+   "name": "智能体",
+   "weight": 0.25,
+   "description": "电脑操作、跨应用工具调用与业务流程自动化"
+  },
+  {
+   "id": "reasoning",
+   "name": "推理",
+   "weight": 0.15,
+   "description": "前沿学科难题，分不用工具与用工具两种"
+  },
+  {
+   "id": "science",
+   "name": "科研",
+   "weight": 0.15,
+   "description": "科研编程、科学计算与物理研究级问题"
+  },
+  {
+   "id": "knowledge",
+   "name": "知识工作",
+   "weight": 0.2,
+   "description": "专业交付物质量、长文档理解与 PDF 资料问答"
+  }
+ ],
+ "benchmarks": [
+  {
+   "id": "terminal-bench-4",
+   "name": "Terminal-Bench 4.0",
+   "category": "coding",
+   "weight": 1,
+   "tier": 1,
+   "metric": "任务成功率（pass@1，全部测试通过才算成功）",
+   "preferredSetting": "厂商自选 agent harness，最高推理档，单次作答多次试验取平均",
+   "chance": 0,
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "description": "66 道真实终端任务（运维、数据库迁移、ML、科学计算等），每题一个容器、最长 8 小时，隐藏测试判分。",
+   "selectionReason": "Anthropic 与 OpenAI 共 5 个发布的头条表都用；Artificial Analysis 对 20 个模型都有独立复测；头部 60–71 分，未饱和。",
+   "coverage": 1,
+   "cvRmse": 11.93,
+   "topScore": 63.64
+  },
+  {
+   "id": "hle-no-tools",
+   "name": "HLE（不用工具）",
+   "category": "reasoning",
+   "weight": 1,
+   "tier": 1,
+   "metric": "准确率",
+   "preferredSetting": "完整 2,500 题，不用工具，最高推理档；纯文本子集视为可比但非首选",
+   "chance": 0,
+   "url": "https://lastexam.ai/",
+   "description": "Humanity's Last Exam：数学、人文、自然科学的前沿专家级难题，由 CAIS 与 Scale AI 发布。",
+   "selectionReason": "Anthropic 4 个发布的 system card 使用，Artificial Analysis 对 20 个模型都有独立复测（纯文本子集）；头部 64 分。",
+   "coverage": 1,
+   "cvRmse": 3.68,
+   "topScore": 61.35
+  },
+  {
+   "id": "terminal-bench-science",
+   "name": "Terminal-Bench-Science 0.1",
+   "category": "science",
+   "weight": 1,
+   "tier": 1,
+   "metric": "任务成功率（pass@1）",
+   "preferredSetting": "最高推理档，多次试验平均",
+   "chance": 0,
+   "url": "",
+   "description": "70 道科研终端任务，覆盖 5 个学科领域，在容器里完成数据分析与科学计算并由测试判分。",
+   "selectionReason": "6 个 OpenAI / Anthropic 发布使用，其中 4 个列入头条表；Artificial Analysis 对 13 个模型有独立复测；头部 65 分。",
+   "coverage": 0.7,
+   "cvRmse": 14.33,
+   "topScore": 63.33
+  },
+  {
+   "id": "scicode",
+   "name": "SciCode",
+   "category": "science",
+   "weight": 1,
+   "tier": 2,
+   "metric": "子问题准确率（pass@1，含背景信息）",
+   "preferredSetting": "官方 288 个子问题测试集，带科学家标注的背景信息",
+   "chance": 0,
+   "url": "",
+   "description": "把物理、化学、生物等领域的科研计算拆成子问题，要求写出能通过测试的代码。",
+   "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部 67 分，未饱和。",
+   "coverage": 1,
+   "cvRmse": 3.32,
+   "topScore": 66.9
+  },
+  {
+   "id": "critpt",
+   "name": "CritPt",
+   "category": "science",
+   "weight": 1,
+   "tier": 2,
+   "metric": "挑战题准确率（官方判分服务器）",
+   "preferredSetting": "70 道测试集挑战题，pass@1，官方判分服务器",
+   "chance": 0,
+   "url": "",
+   "description": "研究级物理问题，答案由官方服务器自动判分，测的是能否完成真正的前沿物理推导。",
+   "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部只有 32 分，区分度很高。Anthropic 内部修正版（CritPT-Corrected）口径不同，只作参考。",
+   "coverage": 1,
+   "cvRmse": 4.24,
+   "topScore": 31.71
+  },
+  {
+   "id": "gdpval-aa",
+   "name": "GDPval-AA v2.1",
+   "category": "knowledge",
+   "weight": 1,
+   "tier": 1,
+   "metric": "归一化得分 = clamp((Elo − 500) / 2000) × 100",
+   "preferredSetting": "Artificial Analysis 运行（Stirrup harness），最高推理档",
+   "chance": 0,
+   "url": "",
+   "description": "220 道真实职业交付物任务（报告、表格、方案等），由评审模型两两盲评，拟合成 Elo。",
+   "selectionReason": "Anthropic 与 OpenAI 共 5 个发布列入头条表；Elo 按 Artificial Analysis 公布的公式换算成百分制。",
+   "coverage": 1,
+   "cvRmse": 5.57,
+   "topScore": 68.31
+  },
+  {
+   "id": "gdp-pdf",
+   "name": "GDP.pdf",
+   "category": "knowledge",
+   "weight": 1,
+   "tier": 2,
+   "metric": "全部通过率（all-pass，Artificial Analysis 口径）",
+   "preferredSetting": "Artificial Analysis 运行，100 题 × 5 次",
+   "chance": 0,
+   "url": "",
+   "description": "基于多页专业 PDF 的问答，每题有多条评分标准，全部满足才算通过。",
+   "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部只有 31 分。Anthropic system card 的自评口径不同，只作参考。",
+   "coverage": 1,
+   "cvRmse": 5.66,
+   "topScore": 31
+  },
+  {
+   "id": "aa-lcr",
+   "name": "AA-LCR v1.1",
+   "category": "knowledge",
+   "weight": 1,
+   "tier": 2,
+   "metric": "准确率（pass@1，3 次平均）",
+   "preferredSetting": "Artificial Analysis 运行，100 题，每题约 10 万 token 输入",
+   "chance": 0,
+   "url": "",
+   "description": "长文档推理：在约 10 万 token 的多份文档里查找、比对并推出答案。",
+   "selectionReason": "长上下文方向唯一未饱和、且 20 个模型都有分数的评测（MRCR 已到 96–100）；头部 89 分，接近饱和线，后续需要复查。",
+   "coverage": 1,
+   "cvRmse": 3.14,
+   "topScore": 88.67
+  }
+ ],
+ "models": [
+  {
+   "id": "claude-opus-5-5",
+   "name": "Claude Opus 5.5",
+   "vendor": "Anthropic",
+   "releaseDate": "2026-09-22",
+   "openWeights": false,
+   "aaRank": 1,
+   "aaIndex": 57.62,
+   "aaVariant": "Claude Opus 5.5 (Max, Default Fallback)",
+   "aaSlug": "claude-opus-5-5",
+   "rank": 1,
+   "score": 58.57444444444445,
+   "scoreLow": 58.57444444444445,
+   "scoreHigh": 58.57444444444445,
+   "rankLow": 1,
+   "rankHigh": 1,
+   "observedOnlyScore": 58.57444444444445,
+   "pessimisticRank": 1,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 59.6,
+    "reasoning": 61.35,
+    "science": 52.553333333333335,
+    "knowledge": 59.72666666666667
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 59.6,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 59.6,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Claude Opus 5.5 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 61.35,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 61.35,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Claude Opus 5.5 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 59.05,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 59.05,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：Claude Opus 5.5 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 66.9,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 66.9,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Claude Opus 5.5 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 31.71,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 31.71,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Claude Opus 5.5 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 68.31,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 68.31,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Claude Opus 5.5 (Max, Default Fallback)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
+      "quote": "Elo 1866",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 26.2,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 26.2,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Claude Opus 5.5 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 84.67,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 84.67,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Claude Opus 5.5 (Max, Default Fallback)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "claude-sonnet-5-5",
+   "name": "Claude Sonnet 5.5",
+   "vendor": "Anthropic",
+   "releaseDate": "2026-09-28",
+   "openWeights": false,
+   "aaRank": 2,
+   "aaIndex": 56,
+   "aaVariant": "Claude Sonnet 5.5 (Max, Default Fallback)",
+   "aaSlug": "claude-sonnet-5-5",
+   "rank": 2,
+   "score": 57.51022222222222,
+   "scoreLow": 57.51022222222222,
+   "scoreHigh": 57.51022222222222,
+   "rankLow": 2,
+   "rankHigh": 2,
+   "observedOnlyScore": 57.51022222222222,
+   "pessimisticRank": 2,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 63.64,
+    "reasoning": 54.96,
+    "science": 48.586666666666666,
+    "knowledge": 58.45333333333334
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 63.64,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 63.64,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Claude Sonnet 5.5 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 54.96,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 54.96,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Claude Sonnet 5.5 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 53.33,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 53.33,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：Claude Sonnet 5.5 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 61,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 61,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Claude Sonnet 5.5 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 31.43,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 31.43,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Claude Sonnet 5.5 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 66.89,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 66.89,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Claude Sonnet 5.5 (Max, Default Fallback)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+      "quote": "Elo 1838",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 25.8,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 25.8,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Claude Sonnet 5.5 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 82.67,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 82.67,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Claude Sonnet 5.5 (Max, Default Fallback)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "claude-fable-5-1",
+   "name": "Claude Fable 5.1",
+   "vendor": "Anthropic",
+   "releaseDate": "2026-09-01",
+   "openWeights": false,
+   "aaRank": 3,
+   "aaIndex": 53.35,
+   "aaVariant": "Claude Fable 5.1 (Max, Default Fallback)",
+   "aaSlug": "claude-fable-5-1",
+   "rank": 5,
+   "score": 53.737555555555545,
+   "scoreLow": 53.737555555555545,
+   "scoreHigh": 53.737555555555545,
+   "rankLow": 5,
+   "rankHigh": 6,
+   "observedOnlyScore": 53.737555555555545,
+   "pessimisticRank": 5,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 52.02,
+    "reasoning": 59.13,
+    "science": 45.373333333333335,
+    "knowledge": 58.11333333333334
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 52.02,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 52.02,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Claude Fable 5.1 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 59.13,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 59.13,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Claude Fable 5.1 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 43.33,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 43.33,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：Claude Fable 5.1 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 63.08,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 63.08,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Claude Fable 5.1 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 29.71,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 29.71,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Claude Fable 5.1 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 62.81,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 62.81,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Claude Fable 5.1 (Max, Default Fallback)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+      "quote": "Elo 1756",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 26.2,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 26.2,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Claude Fable 5.1 (Max, Default Fallback)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 85.33,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 85.33,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Claude Fable 5.1 (Max, Default Fallback)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "gpt-6-astra",
+   "name": "GPT-6 Astra",
+   "vendor": "OpenAI",
+   "releaseDate": "2026-09-03",
+   "openWeights": false,
+   "aaRank": 4,
+   "aaIndex": 52.67,
+   "aaVariant": "GPT-6 Astra (Max)",
+   "aaSlug": "gpt-6-astra",
+   "rank": 3,
+   "score": 55.43355555555554,
+   "scoreLow": 55.43355555555554,
+   "scoreHigh": 55.43355555555554,
+   "rankLow": 3,
+   "rankHigh": 3,
+   "observedOnlyScore": 55.43355555555554,
+   "pessimisticRank": 3,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 59.09,
+    "reasoning": 54.68,
+    "science": 50.50666666666667,
+    "knowledge": 55.123333333333335
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 59.09,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 59.09,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：GPT-6 Astra (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 54.68,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 54.68,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：GPT-6 Astra (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 63.33,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 63.33,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：GPT-6 Astra (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 56.48,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 56.48,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：GPT-6 Astra (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 31.71,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 31.71,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：GPT-6 Astra (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 53.7,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 53.7,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：GPT-6 Astra (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra",
+      "quote": "Elo 1574",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 31,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 31,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：GPT-6 Astra (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 80.67,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 80.67,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：GPT-6 Astra (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "gemini-4-argon",
+   "name": "Gemini 4 Argon",
+   "vendor": "Google",
+   "releaseDate": "2026-09-30",
+   "openWeights": false,
+   "aaRank": 5,
+   "aaIndex": 52.56,
+   "aaVariant": "Gemini 4 Argon (High)",
+   "aaSlug": "gemini-4-argon",
+   "rank": 6,
+   "score": 52.990678845220984,
+   "scoreLow": 50.75595837056485,
+   "scoreHigh": 55.17442816777513,
+   "rankLow": 4,
+   "rankHigh": 6,
+   "observedOnlyScore": 53.98452380952381,
+   "pessimisticRank": 6,
+   "coverage": 0.875,
+   "categoryScores": {
+    "coding": 57.07,
+    "reasoning": 57.09,
+    "science": 42.67561644832718,
+    "knowledge": 52.553333333333335
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 57.07,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 57.07,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Gemini 4 Argon (High)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-4-argon",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 57.09,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 57.09,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Gemini 4 Argon (High)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-4-argon",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 39.08,
+     "imputed": true,
+     "sd": 19.36,
+     "alternates": []
+    },
+    "scicode": {
+     "value": 61.81,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 61.81,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Gemini 4 Argon (High)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-4-argon",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 27.14,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 27.14,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Gemini 4 Argon (High)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-4-argon",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 56.19,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 56.19,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Gemini 4 Argon (High)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-4-argon",
+      "quote": "Elo 1624",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 21.8,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 21.8,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Gemini 4 Argon (High)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-4-argon",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 79.67,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 79.67,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Gemini 4 Argon (High)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-4-argon",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "gpt-6-1-sol",
+   "name": "GPT-6.1 Sol",
+   "vendor": "OpenAI",
+   "releaseDate": "2026-09-29",
+   "openWeights": false,
+   "aaRank": 6,
+   "aaIndex": 51.83,
+   "aaVariant": "GPT-6.1 Sol (Max)",
+   "aaSlug": "gpt-6-1-sol",
+   "rank": 4,
+   "score": 53.855999999999995,
+   "scoreLow": 53.855999999999995,
+   "scoreHigh": 53.855999999999995,
+   "rankLow": 4,
+   "rankHigh": 5,
+   "observedOnlyScore": 53.855999999999995,
+   "pessimisticRank": 4,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 56.06,
+    "reasoning": 52.92,
+    "science": 47.99333333333334,
+    "knowledge": 56.199999999999996
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 56.06,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 56.06,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：GPT-6.1 Sol (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-1-sol",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 52.92,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 52.92,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：GPT-6.1 Sol (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-1-sol",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 58.1,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 58.1,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：GPT-6.1 Sol (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-1-sol",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 54.17,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 54.17,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：GPT-6.1 Sol (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-1-sol",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 31.71,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 31.71,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：GPT-6.1 Sol (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-1-sol",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 54.6,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 54.6,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：GPT-6.1 Sol (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-1-sol",
+      "quote": "Elo 1592",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 31,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 31,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：GPT-6.1 Sol (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-1-sol",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 83,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 83,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：GPT-6.1 Sol (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-6-1-sol",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "muse-spark-1-3",
+   "name": "Muse Spark 1.3",
+   "vendor": "Meta",
+   "releaseDate": "2026-09-02",
+   "openWeights": false,
+   "aaRank": 7,
+   "aaIndex": 48.09,
+   "aaVariant": "Muse Spark 1.3 (Max)",
+   "aaSlug": "muse-spark-1-3",
+   "rank": 8,
+   "score": 42.14844444444444,
+   "scoreLow": 42.14844444444444,
+   "scoreHigh": 42.14844444444444,
+   "rankLow": 8,
+   "rankHigh": 8,
+   "observedOnlyScore": 42.14844444444444,
+   "pessimisticRank": 8,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 33.33,
+    "reasoning": 48.7,
+    "science": 31.536666666666665,
+    "knowledge": 56.21666666666667
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 33.33,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 33.33,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Muse Spark 1.3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/muse-spark-1-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 48.7,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 48.7,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Muse Spark 1.3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/muse-spark-1-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 10.95,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 10.95,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：Muse Spark 1.3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/muse-spark-1-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 58.8,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 58.8,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Muse Spark 1.3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/muse-spark-1-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 24.86,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 24.86,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Muse Spark 1.3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/muse-spark-1-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 59.05,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 59.05,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Muse Spark 1.3 (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/muse-spark-1-3",
+      "quote": "Elo 1681",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 26.6,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 26.6,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Muse Spark 1.3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/muse-spark-1-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 83,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 83,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Muse Spark 1.3 (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/muse-spark-1-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "grok-4-7",
+   "name": "Grok 4.7",
+   "vendor": "SpaceXAI",
+   "releaseDate": "2026-09-21",
+   "openWeights": false,
+   "aaRank": 8,
+   "aaIndex": 46.45,
+   "aaVariant": "Grok 4.7 (Xhigh)",
+   "aaSlug": "grok-4-7",
+   "rank": 16,
+   "score": 36.976808733402365,
+   "scoreLow": 36.20399999999999,
+   "scoreHigh": 38.861776469887445,
+   "rankLow": 14,
+   "rankHigh": 17,
+   "observedOnlyScore": 38.78999999999999,
+   "pessimisticRank": 16,
+   "coverage": 0.875,
+   "categoryScores": {
+    "coding": 25.76,
+    "reasoning": 43.14,
+    "science": 28.904043667011848,
+    "knowledge": 52.43000000000001
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 25.76,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 25.76,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Grok 4.7 (Xhigh)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/grok-4-7",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 43.14,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 43.14,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Grok 4.7 (Xhigh)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/grok-4-7",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 11.59,
+     "imputed": true,
+     "sd": 17.14,
+     "alternates": []
+    },
+    "scicode": {
+     "value": 57.41,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 57.41,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Grok 4.7 (Xhigh)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/grok-4-7",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 17.71,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 17.71,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Grok 4.7 (Xhigh)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/grok-4-7",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 60.62,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 60.62,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Grok 4.7 (Xhigh)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/grok-4-7",
+      "quote": "Elo 1712",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 20,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 20,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Grok 4.7 (Xhigh)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/grok-4-7",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 76.67,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 76.67,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Grok 4.7 (Xhigh)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/grok-4-7",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "mimo-v2-6-pro",
+   "name": "MiMo-V2.6-Pro",
+   "vendor": "Xiaomi",
+   "releaseDate": "2026-09-21",
+   "openWeights": true,
+   "aaRank": 9,
+   "aaIndex": 46.32,
+   "aaVariant": "MiMo-V2.6-Pro",
+   "aaSlug": "mimo-v2-6-pro",
+   "rank": 7,
+   "score": 42.34355555555555,
+   "scoreLow": 42.34355555555555,
+   "scoreHigh": 42.34355555555555,
+   "rankLow": 7,
+   "rankHigh": 7,
+   "observedOnlyScore": 42.34355555555555,
+   "pessimisticRank": 7,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 34.85,
+    "reasoning": 49.35,
+    "science": 31.05333333333333,
+    "knowledge": 54.923333333333325
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 34.85,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 34.85,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：MiMo-V2.6-Pro",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 49.35,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 49.35,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：MiMo-V2.6-Pro",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 5.71,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 5.71,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：MiMo-V2.6-Pro",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 60.88,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 60.88,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：MiMo-V2.6-Pro",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 26.57,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 26.57,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：MiMo-V2.6-Pro",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 59.24,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 59.24,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：MiMo-V2.6-Pro",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
+      "quote": "Elo 1685",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 19.2,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 19.2,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：MiMo-V2.6-Pro",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 86.33,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 86.33,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：MiMo-V2.6-Pro",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "qwen3-8-max",
+   "name": "Qwen3.8 Max",
+   "vendor": "Alibaba",
+   "releaseDate": "2026-09-02",
+   "openWeights": false,
+   "aaRank": 10,
+   "aaIndex": 45.42,
+   "aaVariant": "Qwen3.8 Max (0902)",
+   "aaSlug": "qwen3-8-max",
+   "rank": 10,
+   "score": 41.38399999999999,
+   "scoreLow": 41.38399999999999,
+   "scoreHigh": 41.38399999999999,
+   "rankLow": 10,
+   "rankHigh": 10,
+   "observedOnlyScore": 41.38399999999999,
+   "pessimisticRank": 10,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 38.89,
+    "reasoning": 43.1,
+    "science": 27.23,
+    "knowledge": 53.830000000000005
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 38.89,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 38.89,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Qwen3.8 Max (0902)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-max",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 43.1,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 43.1,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Qwen3.8 Max (0902)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-max",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 11.9,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 11.9,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：Qwen3.8 Max (0902)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-max",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 52.08,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 52.08,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Qwen3.8 Max (0902)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-max",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 17.71,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 17.71,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Qwen3.8 Max (0902)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-max",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 58.36,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 58.36,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Qwen3.8 Max (0902)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-max",
+      "quote": "Elo 1667",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 22.8,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 22.8,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Qwen3.8 Max (0902)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-max",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 80.33,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 80.33,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Qwen3.8 Max (0902)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-max",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "glm-5-3",
+   "name": "GLM-5.3",
+   "vendor": "Z AI",
+   "releaseDate": "2026-08-18",
+   "openWeights": true,
+   "aaRank": 11,
+   "aaIndex": 44.78,
+   "aaVariant": "GLM-5.3 (Max)",
+   "aaSlug": "glm-5-3",
+   "rank": 9,
+   "score": 41.463333333333324,
+   "scoreLow": 41.463333333333324,
+   "scoreHigh": 41.463333333333324,
+   "rankLow": 9,
+   "rankHigh": 9,
+   "observedOnlyScore": 41.463333333333324,
+   "pessimisticRank": 9,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 41.92,
+    "reasoning": 42.26,
+    "science": 29.23,
+    "knowledge": 49.47
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 41.92,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 41.92,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：GLM-5.3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 42.26,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 42.26,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：GLM-5.3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 9.52,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 9.52,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：GLM-5.3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 59.03,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 59.03,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：GLM-5.3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 19.14,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 19.14,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：GLM-5.3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 57.54,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 57.54,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：GLM-5.3 (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3",
+      "quote": "Elo 1651",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 11.2,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 11.2,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：GLM-5.3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 79.67,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 79.67,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：GLM-5.3 (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "step-5-preview",
+   "name": "Step 5 Preview",
+   "vendor": "StepFun",
+   "releaseDate": "2026-09-18",
+   "openWeights": false,
+   "aaRank": 12,
+   "aaIndex": 43.73,
+   "aaVariant": "Step 5 Preview",
+   "aaSlug": "step-5",
+   "rank": 13,
+   "score": 39.86844444444444,
+   "scoreLow": 39.86844444444444,
+   "scoreHigh": 39.86844444444444,
+   "rankLow": 13,
+   "rankHigh": 13,
+   "observedOnlyScore": 39.86844444444444,
+   "pessimisticRank": 13,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 33.33,
+    "reasoning": 46.48,
+    "science": 27.383333333333336,
+    "knowledge": 52.446666666666665
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 33.33,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 33.33,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Step 5 Preview",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/step-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 46.48,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 46.48,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Step 5 Preview",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/step-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 2.38,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 2.38,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：Step 5 Preview",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/step-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 58.91,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 58.91,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Step 5 Preview",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/step-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 20.86,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 20.86,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Step 5 Preview",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/step-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 54.21,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 54.21,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Step 5 Preview",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/step-5",
+      "quote": "Elo 1584",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 14.8,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 14.8,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Step 5 Preview",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/step-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 88.33,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 88.33,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Step 5 Preview",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/step-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "kimi-k3",
+   "name": "Kimi K3",
+   "vendor": "Kimi",
+   "releaseDate": "2026-07-16",
+   "openWeights": true,
+   "aaRank": 13,
+   "aaIndex": 43.59,
+   "aaVariant": "Kimi K3 (Max)",
+   "aaSlug": "kimi-k3",
+   "rank": 18,
+   "score": 34.605303219845304,
+   "scoreLow": 33.54822222222222,
+   "scoreHigh": 36.819381937123694,
+   "rankLow": 16,
+   "rankHigh": 19,
+   "observedOnlyScore": 35.94452380952381,
+   "pessimisticRank": 18,
+   "coverage": 0.875,
+   "categoryScores": {
+    "coding": 12.63,
+    "reasoning": 46.9,
+    "science": 32.92540498811541,
+    "knowledge": 54.11333333333334
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 12.63,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 12.63,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Kimi K3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/kimi-k3",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 46.9,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 46.9,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Kimi K3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/kimi-k3",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 15.86,
+     "imputed": true,
+     "sd": 20.45,
+     "alternates": []
+    },
+    "scicode": {
+     "value": 59.49,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 59.49,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Kimi K3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/kimi-k3",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 23.43,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 23.43,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Kimi K3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/kimi-k3",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 51.67,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 51.67,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Kimi K3 (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/kimi-k3",
+      "quote": "Elo 1533",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 22,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 22,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Kimi K3 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/kimi-k3",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 88.67,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 88.67,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Kimi K3 (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/kimi-k3",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "claude-haiku-5-5",
+   "name": "Claude Haiku 5.5",
+   "vendor": "Anthropic",
+   "releaseDate": "2026-10-07",
+   "openWeights": false,
+   "aaRank": 14,
+   "aaIndex": 43.4,
+   "aaVariant": "Claude Haiku 5.5 (Max)",
+   "aaSlug": "claude-haiku-5-5",
+   "rank": 12,
+   "score": 40.24355555555555,
+   "scoreLow": 40.24355555555555,
+   "scoreHigh": 40.24355555555555,
+   "rankLow": 12,
+   "rankHigh": 12,
+   "observedOnlyScore": 40.24355555555555,
+   "pessimisticRank": 12,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 32.83,
+    "reasoning": 44.39,
+    "science": 31.279999999999998,
+    "knowledge": 53.123333333333335
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 32.83,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 32.83,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Claude Haiku 5.5 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-haiku-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 44.39,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 44.39,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Claude Haiku 5.5 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-haiku-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 20,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 20,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：Claude Haiku 5.5 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-haiku-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 54.98,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 54.98,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Claude Haiku 5.5 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-haiku-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 18.86,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 18.86,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Claude Haiku 5.5 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-haiku-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 55.9,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 55.9,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Claude Haiku 5.5 (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-haiku-5-5",
+      "quote": "Elo 1618",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 20.8,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 20.8,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Claude Haiku 5.5 (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-haiku-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 82.67,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 82.67,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Claude Haiku 5.5 (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/claude-haiku-5-5",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "gpt-5-6-terra",
+   "name": "GPT-5.6 Terra",
+   "vendor": "OpenAI",
+   "releaseDate": "2026-07-09",
+   "openWeights": false,
+   "aaRank": 15,
+   "aaIndex": 42.08,
+   "aaVariant": "GPT-5.6 Terra (Max)",
+   "aaSlug": "gpt-5-6-terra",
+   "rank": 11,
+   "score": 40.69,
+   "scoreLow": 40.69,
+   "scoreHigh": 40.69,
+   "rankLow": 11,
+   "rankHigh": 11,
+   "observedOnlyScore": 40.69,
+   "pessimisticRank": 11,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 35.35,
+    "reasoning": 42.91,
+    "science": 32.93,
+    "knowledge": 51.52
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 35.35,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 35.35,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：GPT-5.6 Terra (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 42.91,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 42.91,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：GPT-5.6 Terra (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 13.81,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 13.81,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：GPT-5.6 Terra (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 54.98,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 54.98,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：GPT-5.6 Terra (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 30,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 30,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：GPT-5.6 Terra (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 47.56,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 47.56,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：GPT-5.6 Terra (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra",
+      "quote": "Elo 1451",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 24,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 24,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：GPT-5.6 Terra (Max)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 83,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 83,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：GPT-5.6 Terra (Max)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "glm-5-3-flash",
+   "name": "GLM-5.3-Flash",
+   "vendor": "Z AI",
+   "releaseDate": "2026-08-26",
+   "openWeights": true,
+   "aaRank": 16,
+   "aaIndex": 41.81,
+   "aaVariant": "GLM-5.3-Flash",
+   "aaSlug": "glm-5-3-flash",
+   "rank": 15,
+   "score": 37.26599999999999,
+   "scoreLow": 37.26599999999999,
+   "scoreHigh": 37.26599999999999,
+   "rankLow": 14,
+   "rankHigh": 16,
+   "observedOnlyScore": 37.26599999999999,
+   "pessimisticRank": 14,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 32.83,
+    "reasoning": 39.85,
+    "science": 23.936666666666667,
+    "knowledge": 50.870000000000005
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 32.83,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 32.83,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：GLM-5.3-Flash",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 39.85,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 39.85,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：GLM-5.3-Flash",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 4.76,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 4.76,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：GLM-5.3-Flash",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 51.62,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 51.62,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：GLM-5.3-Flash",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 15.43,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 15.43,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：GLM-5.3-Flash",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 57.21,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 57.21,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：GLM-5.3-Flash",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "quote": "Elo 1644",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 15.4,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 15.4,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：GLM-5.3-Flash",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 80,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 80,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：GLM-5.3-Flash",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "ling-3-1-flash",
+   "name": "Ling 3.1 Flash",
+   "vendor": "InclusionAI",
+   "releaseDate": "2026-10-01",
+   "openWeights": false,
+   "aaRank": 17,
+   "aaIndex": 41.09,
+   "aaVariant": "Ling 3.1 Flash",
+   "aaSlug": "ling-3-1-flash",
+   "rank": 14,
+   "score": 37.45777993306754,
+   "scoreLow": 37.03488888888889,
+   "scoreHigh": 39.313625816967296,
+   "rankLow": 14,
+   "rankHigh": 16,
+   "observedOnlyScore": 39.68023809523809,
+   "pessimisticRank": 15,
+   "coverage": 0.875,
+   "categoryScores": {
+    "coding": 33.33,
+    "reasoning": 39.43,
+    "science": 26.13112188755996,
+    "knowledge": 49.63333333333333
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 33.33,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 33.33,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Ling 3.1 Flash",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/ling-3-1-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 39.43,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 39.43,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Ling 3.1 Flash",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/ling-3-1-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 6.34,
+     "imputed": true,
+     "sd": 16.49,
+     "alternates": []
+    },
+    "scicode": {
+     "value": 54.05,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 54.05,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Ling 3.1 Flash",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/ling-3-1-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 18,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 18,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Ling 3.1 Flash",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/ling-3-1-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 55.9,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 55.9,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Ling 3.1 Flash",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/ling-3-1-flash",
+      "quote": "Elo 1618",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 10,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 10,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Ling 3.1 Flash",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/ling-3-1-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 83,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 83,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Ling 3.1 Flash",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/ling-3-1-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "gemini-3-8-flash",
+   "name": "Gemini 3.8 Flash",
+   "vendor": "Google",
+   "releaseDate": "2026-09-02",
+   "openWeights": false,
+   "aaRank": 18,
+   "aaIndex": 40.93,
+   "aaVariant": "Gemini 3.8 Flash (High)",
+   "aaSlug": "gemini-3-8-flash",
+   "rank": 17,
+   "score": 35.04422222222222,
+   "scoreLow": 35.04422222222222,
+   "scoreHigh": 35.04422222222222,
+   "rankLow": 17,
+   "rankHigh": 19,
+   "observedOnlyScore": 35.04422222222222,
+   "pessimisticRank": 17,
+   "coverage": 1,
+   "categoryScores": {
+    "coding": 19.7,
+    "reasoning": 47.82,
+    "science": 28.296666666666663,
+    "knowledge": 49.70333333333334
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 19.7,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 19.7,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Gemini 3.8 Flash (High)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 47.82,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 47.82,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Gemini 3.8 Flash (High)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 10,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 10,
+      "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：Gemini 3.8 Flash (High)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）"
+     },
+     "alternates": []
+    },
+    "scicode": {
+     "value": 56.6,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 56.6,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Gemini 3.8 Flash (High)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 18.29,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 18.29,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Gemini 3.8 Flash (High)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 46.78,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 46.78,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Gemini 3.8 Flash (High)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
+      "quote": "Elo 1436",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 21,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 21,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Gemini 3.8 Flash (High)",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 81.33,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 81.33,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Gemini 3.8 Flash (High)",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "qwen3-8-2-4t-a95b",
+   "name": "Qwen3.8 2.4T A95B",
+   "vendor": "Alibaba",
+   "releaseDate": "2026-08-12",
+   "openWeights": true,
+   "aaRank": 19,
+   "aaIndex": 39.89,
+   "aaVariant": "Qwen3.8 2.4T A95B",
+   "aaSlug": "qwen3-8-2-4t-a95b",
+   "rank": 20,
+   "score": 30.952194873003602,
+   "scoreLow": 30.53533333333333,
+   "scoreHigh": 32.75903722401464,
+   "rankLow": 20,
+   "rankHigh": 20,
+   "observedOnlyScore": 32.716428571428565,
+   "pessimisticRank": 20,
+   "coverage": 0.875,
+   "categoryScores": {
+    "coding": 11.11,
+    "reasoning": 42.45,
+    "science": 26.767641031684693,
+    "knowledge": 50.27
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 11.11,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 11.11,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Qwen3.8 2.4T A95B",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 42.45,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 42.45,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Qwen3.8 2.4T A95B",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 6.25,
+     "imputed": true,
+     "sd": 16.25,
+     "alternates": []
+    },
+    "scicode": {
+     "value": 54.05,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 54.05,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Qwen3.8 2.4T A95B",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 20,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 20,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Qwen3.8 2.4T A95B",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 55.48,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 55.48,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Qwen3.8 2.4T A95B",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b",
+      "quote": "Elo 1610",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 15,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 15,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Qwen3.8 2.4T A95B",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 80.33,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 80.33,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Qwen3.8 2.4T A95B",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "qwen3-8-flash-next",
+   "name": "Qwen3.8-Flash-Next",
+   "vendor": "Alibaba",
+   "releaseDate": "2026-08-26",
+   "openWeights": true,
+   "aaRank": 20,
+   "aaIndex": 39.82,
+   "aaVariant": "Qwen3.8-Flash-Next",
+   "aaSlug": "qwen3-8-flash-next",
+   "rank": 19,
+   "score": 33.88493742376347,
+   "scoreLow": 33.62733333333333,
+   "scoreHigh": 35.75186966048766,
+   "rankLow": 17,
+   "rankHigh": 19,
+   "observedOnlyScore": 36.02928571428571,
+   "pessimisticRank": 19,
+   "coverage": 0.875,
+   "categoryScores": {
+    "coding": 25.25,
+    "reasoning": 38.04,
+    "science": 21.861353785484003,
+    "knowledge": 50.580000000000005
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 25.25,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 25.25,
+      "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：Qwen3.8-Flash-Next",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-flash-next",
+      "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）"
+     },
+     "alternates": []
+    },
+    "hle-no-tools": {
+     "value": 38.04,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 38.04,
+      "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：Qwen3.8-Flash-Next",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-flash-next",
+      "note": "2026-10-12 抓取的模型页数据（字段 hle）"
+     },
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 3.86,
+     "imputed": true,
+     "sd": 17.99,
+     "alternates": []
+    },
+    "scicode": {
+     "value": 50.58,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 50.58,
+      "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：Qwen3.8-Flash-Next",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-flash-next",
+      "note": "2026-10-12 抓取的模型页数据（字段 scicode）"
+     },
+     "alternates": []
+    },
+    "critpt": {
+     "value": 11.14,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 11.14,
+      "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：Qwen3.8-Flash-Next",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-flash-next",
+      "note": "2026-10-12 抓取的模型页数据（字段 critpt）"
+     },
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 56.47,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 56.47,
+      "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：Qwen3.8-Flash-Next",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-flash-next",
+      "quote": "Elo 1629",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）"
+     },
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 15.6,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 15.6,
+      "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：Qwen3.8-Flash-Next",
+      "sourceType": "third_party",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-flash-next",
+      "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 79.67,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 79.67,
+      "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：Qwen3.8-Flash-Next",
+      "sourceType": "benchmark_author",
+      "sourceName": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-flash-next",
+      "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
+     },
+     "alternates": []
+    }
+   }
+  }
+ ],
+ "references": [
+  {
+   "url": "https://lastexam.ai/",
+   "title": "HLE（不用工具） 主页",
+   "kind": "benchmark"
+  },
+  {
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "title": "Terminal-Bench 4.0 主页",
+   "kind": "benchmark"
+  },
+  {
+   "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+   "title": "Artificial Analysis 评测方法说明（HLE 子集、GDPval 归一化公式等）",
+   "kind": "docs"
+  },
+  {
+   "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
+   "title": "Artificial Analysis Intelligence Index v4.3.2（模型名单来源）",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://artificialanalysis.ai/leaderboards/models",
+   "title": "Artificial Analysis 模型榜（2026-10-12 快照）",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/claude-haiku-5-5",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/gemini-4-argon",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/glm-5-3",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/gpt-5-6-terra",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/gpt-6-1-sol",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/gpt-6-astra",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/grok-4-7",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/kimi-k3",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/ling-3-1-flash",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/muse-spark-1-3",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/qwen3-8-flash-next",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/qwen3-8-max",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  },
+  {
+   "url": "https://artificialanalysis.ai/models/step-5",
+   "title": "Artificial Analysis",
+   "kind": "other"
+  }
+ ]
+}

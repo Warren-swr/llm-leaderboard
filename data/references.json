@@ -1,0 +1,7 @@
+{
+  "references": [
+    { "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index", "title": "Artificial Analysis Intelligence Index v4.3.2（模型名单来源）", "kind": "leaderboard" },
+    { "url": "https://artificialanalysis.ai/leaderboards/models", "title": "Artificial Analysis 模型榜（2026-10-12 快照）", "kind": "leaderboard" },
+    { "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking", "title": "Artificial Analysis 评测方法说明（HLE 子集、GDPval 归一化公式等）", "kind": "docs" }
+  ]
+}

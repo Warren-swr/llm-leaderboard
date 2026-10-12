@@ -1,0 +1,529 @@
+{
+ "source": "https://artificialanalysis.ai/leaderboards/models",
+ "indexPage": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
+ "indexVersion": "v4.3.2",
+ "retrieved": "2026-10-12",
+ "method": "按 intelligenceIndex 降序；排除 deprecated；同一模型不同推理档位合并，取最高档位",
+ "top20": [
+  {
+   "rank": 1,
+   "model": "Claude Opus 5.5",
+   "creator": "Anthropic",
+   "bestVariant": "Claude Opus 5.5 (Max, Default Fallback)",
+   "slug": "claude-opus-5-5",
+   "aaIndex": 57.62,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Claude Opus 5.5 (Max, Default Fallback)",
+     "slug": "claude-opus-5-5",
+     "aaIndex": 57.62
+    },
+    {
+     "name": "Claude Opus 5.5 (Xhigh, Default Fallback)",
+     "slug": "claude-opus-5-5-xhigh",
+     "aaIndex": 55.99
+    },
+    {
+     "name": "Claude Opus 5.5 (High, Default Fallback)",
+     "slug": "claude-opus-5-5-high",
+     "aaIndex": 53.58
+    },
+    {
+     "name": "Claude Opus 5.5 (Medium, Default Fallback)",
+     "slug": "claude-opus-5-5-medium",
+     "aaIndex": 51.24
+    },
+    {
+     "name": "Claude Opus 5.5 (Low, Default Fallback)",
+     "slug": "claude-opus-5-5-low",
+     "aaIndex": 42.31
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "model": "Claude Sonnet 5.5",
+   "creator": "Anthropic",
+   "bestVariant": "Claude Sonnet 5.5 (Max, Default Fallback)",
+   "slug": "claude-sonnet-5-5",
+   "aaIndex": 56.0,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Claude Sonnet 5.5 (Max, Default Fallback)",
+     "slug": "claude-sonnet-5-5",
+     "aaIndex": 56.0
+    },
+    {
+     "name": "Claude Sonnet 5.5 (Xhigh, Default Fallback)",
+     "slug": "claude-sonnet-5-5-xhigh",
+     "aaIndex": 51.9
+    },
+    {
+     "name": "Claude Sonnet 5.5 (High, Default Fallback)",
+     "slug": "claude-sonnet-5-5-high",
+     "aaIndex": 46.75
+    },
+    {
+     "name": "Claude Sonnet 5.5 (Medium, Default Fallback)",
+     "slug": "claude-sonnet-5-5-medium",
+     "aaIndex": 40.84
+    },
+    {
+     "name": "Claude Sonnet 5.5 (Low, Default Fallback)",
+     "slug": "claude-sonnet-5-5-low",
+     "aaIndex": 35.87
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "model": "Claude Fable 5.1",
+   "creator": "Anthropic",
+   "bestVariant": "Claude Fable 5.1 (Max, Default Fallback)",
+   "slug": "claude-fable-5-1",
+   "aaIndex": 53.35,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Claude Fable 5.1 (Max, Default Fallback)",
+     "slug": "claude-fable-5-1",
+     "aaIndex": 53.35
+    },
+    {
+     "name": "Claude Fable 5.1 (Xhigh, Default Fallback)",
+     "slug": "claude-fable-5-1-xhigh",
+     "aaIndex": 53.2
+    },
+    {
+     "name": "Claude Fable 5.1 (High, Default Fallback)",
+     "slug": "claude-fable-5-1-high",
+     "aaIndex": 51.15
+    },
+    {
+     "name": "Claude Fable 5.1 (Medium, Default Fallback)",
+     "slug": "claude-fable-5-1-medium",
+     "aaIndex": 48.92
+    },
+    {
+     "name": "Claude Fable 5.1 (Low, Default Fallback)",
+     "slug": "claude-fable-5-1-low",
+     "aaIndex": 46.82
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "model": "GPT-6 Astra",
+   "creator": "OpenAI",
+   "bestVariant": "GPT-6 Astra (Max)",
+   "slug": "gpt-6-astra",
+   "aaIndex": 52.67,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "GPT-6 Astra (Max)",
+     "slug": "gpt-6-astra",
+     "aaIndex": 52.67
+    },
+    {
+     "name": "GPT-6 Astra (Xhigh)",
+     "slug": "gpt-6-astra-xhigh",
+     "aaIndex": 52.39
+    },
+    {
+     "name": "GPT-6 Astra (High)",
+     "slug": "gpt-6-astra-high",
+     "aaIndex": 50.92
+    },
+    {
+     "name": "GPT-6 Astra (Medium)",
+     "slug": "gpt-6-astra-medium",
+     "aaIndex": 49.57
+    },
+    {
+     "name": "GPT-6 Astra (Low)",
+     "slug": "gpt-6-astra-low",
+     "aaIndex": 45.78
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "model": "Gemini 4 Argon",
+   "creator": "Google",
+   "bestVariant": "Gemini 4 Argon (High)",
+   "slug": "gemini-4-argon",
+   "aaIndex": 52.56,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Gemini 4 Argon (High)",
+     "slug": "gemini-4-argon",
+     "aaIndex": 52.56
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "model": "GPT-6.1 Sol",
+   "creator": "OpenAI",
+   "bestVariant": "GPT-6.1 Sol (Max)",
+   "slug": "gpt-6-1-sol",
+   "aaIndex": 51.83,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "GPT-6.1 Sol (Max)",
+     "slug": "gpt-6-1-sol",
+     "aaIndex": 51.83
+    },
+    {
+     "name": "GPT-6.1 Sol (Xhigh)",
+     "slug": "gpt-6-1-sol-xhigh",
+     "aaIndex": 51.04
+    },
+    {
+     "name": "GPT-6.1 Sol (High)",
+     "slug": "gpt-6-1-sol-high",
+     "aaIndex": 50.24
+    },
+    {
+     "name": "GPT-6.1 Sol (Medium)",
+     "slug": "gpt-6-1-sol-medium",
+     "aaIndex": 47.78
+    },
+    {
+     "name": "GPT-6.1 Sol (Low)",
+     "slug": "gpt-6-1-sol-low",
+     "aaIndex": 42.08
+    }
+   ]
+  },
+  {
+   "rank": 7,
+   "model": "Muse Spark 1.3",
+   "creator": "Meta",
+   "bestVariant": "Muse Spark 1.3 (Max)",
+   "slug": "muse-spark-1-3",
+   "aaIndex": 48.09,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Muse Spark 1.3 (Max)",
+     "slug": "muse-spark-1-3",
+     "aaIndex": 48.09
+    },
+    {
+     "name": "Muse Spark 1.3 (Xhigh)",
+     "slug": "muse-spark-1-3-xhigh",
+     "aaIndex": 45.07
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "model": "Grok 4.7",
+   "creator": "SpaceXAI",
+   "bestVariant": "Grok 4.7 (Xhigh)",
+   "slug": "grok-4-7",
+   "aaIndex": 46.45,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Grok 4.7 (Xhigh)",
+     "slug": "grok-4-7",
+     "aaIndex": 46.45
+    },
+    {
+     "name": "Grok 4.7 (High)",
+     "slug": "grok-4-7-high",
+     "aaIndex": 46.33
+    },
+    {
+     "name": "Grok 4.7 (Low)",
+     "slug": "grok-4-7-low",
+     "aaIndex": 42.22
+    }
+   ]
+  },
+  {
+   "rank": 9,
+   "model": "MiMo-V2.6-Pro",
+   "creator": "Xiaomi",
+   "bestVariant": "MiMo-V2.6-Pro",
+   "slug": "mimo-v2-6-pro",
+   "aaIndex": 46.32,
+   "isOpenWeights": true,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "MiMo-V2.6-Pro",
+     "slug": "mimo-v2-6-pro",
+     "aaIndex": 46.32
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "model": "Qwen3.8 Max",
+   "creator": "Alibaba",
+   "bestVariant": "Qwen3.8 Max (0902)",
+   "slug": "qwen3-8-max",
+   "aaIndex": 45.42,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Qwen3.8 Max (0902)",
+     "slug": "qwen3-8-max",
+     "aaIndex": 45.42
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "model": "GLM-5.3",
+   "creator": "Z AI",
+   "bestVariant": "GLM-5.3 (Max)",
+   "slug": "glm-5-3",
+   "aaIndex": 44.78,
+   "isOpenWeights": true,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "GLM-5.3 (Max)",
+     "slug": "glm-5-3",
+     "aaIndex": 44.78
+    },
+    {
+     "name": "GLM-5.3 (Low)",
+     "slug": "glm-5-3-low",
+     "aaIndex": 34.3
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "model": "Step 5 Preview",
+   "creator": "StepFun",
+   "bestVariant": "Step 5 Preview",
+   "slug": "step-5",
+   "aaIndex": 43.73,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Step 5 Preview",
+     "slug": "step-5",
+     "aaIndex": 43.73
+    }
+   ]
+  },
+  {
+   "rank": 13,
+   "model": "Kimi K3",
+   "creator": "Kimi",
+   "bestVariant": "Kimi K3 (Max)",
+   "slug": "kimi-k3",
+   "aaIndex": 43.59,
+   "isOpenWeights": true,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Kimi K3 (Max)",
+     "slug": "kimi-k3",
+     "aaIndex": 43.59
+    },
+    {
+     "name": "Kimi K3 (Low)",
+     "slug": "kimi-k3-low",
+     "aaIndex": 30.07
+    }
+   ]
+  },
+  {
+   "rank": 14,
+   "model": "Claude Haiku 5.5",
+   "creator": "Anthropic",
+   "bestVariant": "Claude Haiku 5.5 (Max)",
+   "slug": "claude-haiku-5-5",
+   "aaIndex": 43.4,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Claude Haiku 5.5 (Max)",
+     "slug": "claude-haiku-5-5",
+     "aaIndex": 43.4
+    },
+    {
+     "name": "Claude Haiku 5.5 (Xhigh)",
+     "slug": "claude-haiku-5-5-xhigh",
+     "aaIndex": 41.25
+    },
+    {
+     "name": "Claude Haiku 5.5 (High)",
+     "slug": "claude-haiku-5-5-high",
+     "aaIndex": 37.82
+    },
+    {
+     "name": "Claude Haiku 5.5 (Medium)",
+     "slug": "claude-haiku-5-5-medium",
+     "aaIndex": 34.46
+    },
+    {
+     "name": "Claude Haiku 5.5 (Low)",
+     "slug": "claude-haiku-5-5-low",
+     "aaIndex": 29.45
+    }
+   ]
+  },
+  {
+   "rank": 15,
+   "model": "GPT-5.6 Terra",
+   "creator": "OpenAI",
+   "bestVariant": "GPT-5.6 Terra (Max)",
+   "slug": "gpt-5-6-terra",
+   "aaIndex": 42.08,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "GPT-5.6 Terra (Max)",
+     "slug": "gpt-5-6-terra",
+     "aaIndex": 42.08
+    },
+    {
+     "name": "GPT-5.6 Terra (Xhigh)",
+     "slug": "gpt-5-6-terra-xhigh",
+     "aaIndex": 37.95
+    },
+    {
+     "name": "GPT-5.6 Terra (High)",
+     "slug": "gpt-5-6-terra-high",
+     "aaIndex": 34.24
+    },
+    {
+     "name": "GPT-5.6 Terra (Medium)",
+     "slug": "gpt-5-6-terra-medium",
+     "aaIndex": 30.09
+    },
+    {
+     "name": "GPT-5.6 Terra (Low)",
+     "slug": "gpt-5-6-terra-low",
+     "aaIndex": 27.5
+    },
+    {
+     "name": "GPT-5.6 Terra (Non-reasoning)",
+     "slug": "gpt-5-6-terra-non-reasoning",
+     "aaIndex": 20.78
+    }
+   ]
+  },
+  {
+   "rank": 16,
+   "model": "GLM-5.3-Flash",
+   "creator": "Z AI",
+   "bestVariant": "GLM-5.3-Flash",
+   "slug": "glm-5-3-flash",
+   "aaIndex": 41.81,
+   "isOpenWeights": true,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "GLM-5.3-Flash",
+     "slug": "glm-5-3-flash",
+     "aaIndex": 41.81
+    }
+   ]
+  },
+  {
+   "rank": 17,
+   "model": "Ling 3.1 Flash",
+   "creator": "InclusionAI",
+   "bestVariant": "Ling 3.1 Flash",
+   "slug": "ling-3-1-flash",
+   "aaIndex": 41.09,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Ling 3.1 Flash",
+     "slug": "ling-3-1-flash",
+     "aaIndex": 41.09
+    }
+   ]
+  },
+  {
+   "rank": 18,
+   "model": "Gemini 3.8 Flash",
+   "creator": "Google",
+   "bestVariant": "Gemini 3.8 Flash (High)",
+   "slug": "gemini-3-8-flash",
+   "aaIndex": 40.93,
+   "isOpenWeights": false,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Gemini 3.8 Flash (High)",
+     "slug": "gemini-3-8-flash",
+     "aaIndex": 40.93
+    },
+    {
+     "name": "Gemini 3.8 Flash (Medium)",
+     "slug": "gemini-3-8-flash-medium",
+     "aaIndex": 39.77
+    },
+    {
+     "name": "Gemini 3.8 Flash (Low)",
+     "slug": "gemini-3-8-flash-low",
+     "aaIndex": 33.45
+    }
+   ]
+  },
+  {
+   "rank": 19,
+   "model": "Qwen3.8 2.4T A95B",
+   "creator": "Alibaba",
+   "bestVariant": "Qwen3.8 2.4T A95B",
+   "slug": "qwen3-8-2-4t-a95b",
+   "aaIndex": 39.89,
+   "isOpenWeights": true,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Qwen3.8 2.4T A95B",
+     "slug": "qwen3-8-2-4t-a95b",
+     "aaIndex": 39.89
+    }
+   ]
+  },
+  {
+   "rank": 20,
+   "model": "Qwen3.8-Flash-Next",
+   "creator": "Alibaba",
+   "bestVariant": "Qwen3.8-Flash-Next",
+   "slug": "qwen3-8-flash-next",
+   "aaIndex": 39.82,
+   "isOpenWeights": true,
+   "isReasoning": true,
+   "variants": [
+    {
+     "name": "Qwen3.8-Flash-Next",
+     "slug": "qwen3-8-flash-next",
+     "aaIndex": 39.82
+    }
+   ]
+  }
+ ]
+}

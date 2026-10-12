@@ -1,0 +1,225 @@
+{
+ "source": "data/sources/artificialanalysis/top20-20261012.json",
+ "models": [
+  {
+   "id": "claude-opus-5-5",
+   "name": "Claude Opus 5.5",
+   "vendor": "Anthropic",
+   "releaseDate": "2026-09-22",
+   "openWeights": false,
+   "aaRank": 1,
+   "aaIndex": 57.62,
+   "aaVariant": "Claude Opus 5.5 (Max, Default Fallback)",
+   "aaSlug": "claude-opus-5-5"
+  },
+  {
+   "id": "claude-sonnet-5-5",
+   "name": "Claude Sonnet 5.5",
+   "vendor": "Anthropic",
+   "releaseDate": "2026-09-28",
+   "openWeights": false,
+   "aaRank": 2,
+   "aaIndex": 56.0,
+   "aaVariant": "Claude Sonnet 5.5 (Max, Default Fallback)",
+   "aaSlug": "claude-sonnet-5-5"
+  },
+  {
+   "id": "claude-fable-5-1",
+   "name": "Claude Fable 5.1",
+   "vendor": "Anthropic",
+   "releaseDate": "2026-09-01",
+   "openWeights": false,
+   "aaRank": 3,
+   "aaIndex": 53.35,
+   "aaVariant": "Claude Fable 5.1 (Max, Default Fallback)",
+   "aaSlug": "claude-fable-5-1"
+  },
+  {
+   "id": "gpt-6-astra",
+   "name": "GPT-6 Astra",
+   "vendor": "OpenAI",
+   "releaseDate": "2026-09-03",
+   "openWeights": false,
+   "aaRank": 4,
+   "aaIndex": 52.67,
+   "aaVariant": "GPT-6 Astra (Max)",
+   "aaSlug": "gpt-6-astra"
+  },
+  {
+   "id": "gemini-4-argon",
+   "name": "Gemini 4 Argon",
+   "vendor": "Google",
+   "releaseDate": "2026-09-30",
+   "openWeights": false,
+   "aaRank": 5,
+   "aaIndex": 52.56,
+   "aaVariant": "Gemini 4 Argon (High)",
+   "aaSlug": "gemini-4-argon"
+  },
+  {
+   "id": "gpt-6-1-sol",
+   "name": "GPT-6.1 Sol",
+   "vendor": "OpenAI",
+   "releaseDate": "2026-09-29",
+   "openWeights": false,
+   "aaRank": 6,
+   "aaIndex": 51.83,
+   "aaVariant": "GPT-6.1 Sol (Max)",
+   "aaSlug": "gpt-6-1-sol"
+  },
+  {
+   "id": "muse-spark-1-3",
+   "name": "Muse Spark 1.3",
+   "vendor": "Meta",
+   "releaseDate": "2026-09-02",
+   "openWeights": false,
+   "aaRank": 7,
+   "aaIndex": 48.09,
+   "aaVariant": "Muse Spark 1.3 (Max)",
+   "aaSlug": "muse-spark-1-3"
+  },
+  {
+   "id": "grok-4-7",
+   "name": "Grok 4.7",
+   "vendor": "SpaceXAI",
+   "releaseDate": "2026-09-21",
+   "openWeights": false,
+   "aaRank": 8,
+   "aaIndex": 46.45,
+   "aaVariant": "Grok 4.7 (Xhigh)",
+   "aaSlug": "grok-4-7"
+  },
+  {
+   "id": "mimo-v2-6-pro",
+   "name": "MiMo-V2.6-Pro",
+   "vendor": "Xiaomi",
+   "releaseDate": "2026-09-21",
+   "openWeights": true,
+   "aaRank": 9,
+   "aaIndex": 46.32,
+   "aaVariant": "MiMo-V2.6-Pro",
+   "aaSlug": "mimo-v2-6-pro"
+  },
+  {
+   "id": "qwen3-8-max",
+   "name": "Qwen3.8 Max",
+   "vendor": "Alibaba",
+   "releaseDate": "2026-09-02",
+   "openWeights": false,
+   "aaRank": 10,
+   "aaIndex": 45.42,
+   "aaVariant": "Qwen3.8 Max (0902)",
+   "aaSlug": "qwen3-8-max"
+  },
+  {
+   "id": "glm-5-3",
+   "name": "GLM-5.3",
+   "vendor": "Z AI",
+   "releaseDate": "2026-08-18",
+   "openWeights": true,
+   "aaRank": 11,
+   "aaIndex": 44.78,
+   "aaVariant": "GLM-5.3 (Max)",
+   "aaSlug": "glm-5-3"
+  },
+  {
+   "id": "step-5-preview",
+   "name": "Step 5 Preview",
+   "vendor": "StepFun",
+   "releaseDate": "2026-09-18",
+   "openWeights": false,
+   "aaRank": 12,
+   "aaIndex": 43.73,
+   "aaVariant": "Step 5 Preview",
+   "aaSlug": "step-5"
+  },
+  {
+   "id": "kimi-k3",
+   "name": "Kimi K3",
+   "vendor": "Kimi",
+   "releaseDate": "2026-07-16",
+   "openWeights": true,
+   "aaRank": 13,
+   "aaIndex": 43.59,
+   "aaVariant": "Kimi K3 (Max)",
+   "aaSlug": "kimi-k3"
+  },
+  {
+   "id": "claude-haiku-5-5",
+   "name": "Claude Haiku 5.5",
+   "vendor": "Anthropic",
+   "releaseDate": "2026-10-07",
+   "openWeights": false,
+   "aaRank": 14,
+   "aaIndex": 43.4,
+   "aaVariant": "Claude Haiku 5.5 (Max)",
+   "aaSlug": "claude-haiku-5-5"
+  },
+  {
+   "id": "gpt-5-6-terra",
+   "name": "GPT-5.6 Terra",
+   "vendor": "OpenAI",
+   "releaseDate": "2026-07-09",
+   "openWeights": false,
+   "aaRank": 15,
+   "aaIndex": 42.08,
+   "aaVariant": "GPT-5.6 Terra (Max)",
+   "aaSlug": "gpt-5-6-terra"
+  },
+  {
+   "id": "glm-5-3-flash",
+   "name": "GLM-5.3-Flash",
+   "vendor": "Z AI",
+   "releaseDate": "2026-08-26",
+   "openWeights": true,
+   "aaRank": 16,
+   "aaIndex": 41.81,
+   "aaVariant": "GLM-5.3-Flash",
+   "aaSlug": "glm-5-3-flash"
+  },
+  {
+   "id": "ling-3-1-flash",
+   "name": "Ling 3.1 Flash",
+   "vendor": "InclusionAI",
+   "releaseDate": "2026-10-01",
+   "openWeights": false,
+   "aaRank": 17,
+   "aaIndex": 41.09,
+   "aaVariant": "Ling 3.1 Flash",
+   "aaSlug": "ling-3-1-flash"
+  },
+  {
+   "id": "gemini-3-8-flash",
+   "name": "Gemini 3.8 Flash",
+   "vendor": "Google",
+   "releaseDate": "2026-09-02",
+   "openWeights": false,
+   "aaRank": 18,
+   "aaIndex": 40.93,
+   "aaVariant": "Gemini 3.8 Flash (High)",
+   "aaSlug": "gemini-3-8-flash"
+  },
+  {
+   "id": "qwen3-8-2-4t-a95b",
+   "name": "Qwen3.8 2.4T A95B",
+   "vendor": "Alibaba",
+   "releaseDate": "2026-08-12",
+   "openWeights": true,
+   "aaRank": 19,
+   "aaIndex": 39.89,
+   "aaVariant": "Qwen3.8 2.4T A95B",
+   "aaSlug": "qwen3-8-2-4t-a95b"
+  },
+  {
+   "id": "qwen3-8-flash-next",
+   "name": "Qwen3.8-Flash-Next",
+   "vendor": "Alibaba",
+   "releaseDate": "2026-08-26",
+   "openWeights": true,
+   "aaRank": 20,
+   "aaIndex": 39.82,
+   "aaVariant": "Qwen3.8-Flash-Next",
+   "aaSlug": "qwen3-8-flash-next"
+  }
+ ]
+}

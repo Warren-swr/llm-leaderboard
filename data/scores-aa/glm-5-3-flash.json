@@ -1,0 +1,105 @@
+{
+ "model": "glm-5-3-flash",
+ "records": [
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 32.83,
+   "setting": "Artificial Analysis 独立运行：mini-swe-agent harness，66 题，3 次平均，最多 500 步、无上下文压缩；档位：GLM-5.3-Flash",
+   "sourceType": "third_party",
+   "sourceName": "Artificial Analysis",
+   "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+   "note": "2026-10-12 抓取的模型页数据（字段 terminalBench40）",
+   "comparable": true,
+   "matchesPreferred": false
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "score": 4.76,
+   "setting": "Artificial Analysis 独立运行：70 题，3 次平均，pass@1；档位：GLM-5.3-Flash",
+   "sourceType": "third_party",
+   "sourceName": "Artificial Analysis",
+   "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+   "note": "2026-10-12 抓取的模型页数据（字段 terminalBenchScience）",
+   "comparable": true,
+   "matchesPreferred": false
+  },
+  {
+   "benchmark": "hle-no-tools",
+   "score": 39.85,
+   "setting": "Artificial Analysis 独立运行：纯文本子集 2,158 题，不用工具，pass@1；档位：GLM-5.3-Flash",
+   "sourceType": "third_party",
+   "sourceName": "Artificial Analysis",
+   "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+   "note": "2026-10-12 抓取的模型页数据（字段 hle）",
+   "comparable": true,
+   "matchesPreferred": false
+  },
+  {
+   "benchmark": "scicode",
+   "score": 51.62,
+   "setting": "Artificial Analysis 独立运行：288 个子问题，带背景信息，3 次平均；档位：GLM-5.3-Flash",
+   "sourceType": "third_party",
+   "sourceName": "Artificial Analysis",
+   "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+   "note": "2026-10-12 抓取的模型页数据（字段 scicode）",
+   "comparable": true,
+   "matchesPreferred": true
+  },
+  {
+   "benchmark": "critpt",
+   "score": 15.43,
+   "setting": "Artificial Analysis 独立运行：70 道挑战题，5 次平均，官方判分服务器；档位：GLM-5.3-Flash",
+   "sourceType": "third_party",
+   "sourceName": "Artificial Analysis",
+   "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+   "note": "2026-10-12 抓取的模型页数据（字段 critpt）",
+   "comparable": true,
+   "matchesPreferred": true
+  },
+  {
+   "benchmark": "gdpval-aa",
+   "score": 57.21,
+   "setting": "Artificial Analysis 运行（评测作者）：Stirrup harness，220 题；当前 Elo 按 clamp((Elo−500)/2000) 归一；档位：GLM-5.3-Flash",
+   "sourceType": "benchmark_author",
+   "sourceName": "Artificial Analysis",
+   "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+   "note": "2026-10-12 抓取的模型页数据（字段 gdpvalNormalized）",
+   "comparable": true,
+   "matchesPreferred": true,
+   "quote": "Elo 1644"
+  },
+  {
+   "benchmark": "gdp-pdf",
+   "score": 15.4,
+   "setting": "Artificial Analysis 运行：100 题 × 5 次，all-pass 指标；档位：GLM-5.3-Flash",
+   "sourceType": "third_party",
+   "sourceName": "Artificial Analysis",
+   "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+   "note": "2026-10-12 抓取的模型页数据（字段 gdpPdfAllPass）",
+   "comparable": true,
+   "matchesPreferred": true
+  },
+  {
+   "benchmark": "aa-lcr",
+   "score": 80.0,
+   "setting": "Artificial Analysis 运行（评测作者）：v1.1，100 题 × 3 次；档位：GLM-5.3-Flash",
+   "sourceType": "benchmark_author",
+   "sourceName": "Artificial Analysis",
+   "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+   "note": "2026-10-12 抓取的模型页数据（字段 lcr）",
+   "comparable": true,
+   "matchesPreferred": true
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 60.37,
+   "setting": "Artificial Analysis 的 AutomationBench-AA：657 题、50 轮上限、部分得分，与 Zapier 通过率口径不同；档位：GLM-5.3-Flash",
+   "sourceType": "third_party",
+   "sourceName": "Artificial Analysis",
+   "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+   "note": "2026-10-12 抓取的模型页数据（字段 automationBenchPartialScore）",
+   "comparable": false,
+   "matchesPreferred": false
+  }
+ ]
+}

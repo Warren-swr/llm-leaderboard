@@ -1,0 +1,169 @@
+:root {
+  --lb-surface: #fcfcfb;
+  --lb-panel: #ffffff;
+  --lb-line: #e9e8e4;
+  --lb-ink: #0b0b0b;
+  --lb-ink-2: #52514e;
+  --lb-ink-3: #8a8984;
+  --lb-accent: #2a78d6;
+  --lb-accent-soft: #eef5fe;
+  --lb-track: #f0efec;
+}
+
+[data-mantine-color-scheme='dark'] {
+  --lb-surface: #141413;
+  --lb-panel: #1a1a19;
+  --lb-line: #2c2c2a;
+  --lb-ink: #f0efec;
+  --lb-ink-2: #c3c2b7;
+  --lb-ink-3: #8f8e86;
+  --lb-accent: #3987e5;
+  --lb-accent-soft: #1d2633;
+  --lb-track: #2a2a28;
+}
+
+body {
+  background: var(--lb-surface);
+  color: var(--lb-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.lb-panel {
+  background: var(--lb-panel);
+  border: 1px solid var(--lb-line);
+}
+
+.lb-muted {
+  color: var(--lb-ink-2);
+}
+
+.lb-faint {
+  color: var(--lb-ink-3);
+}
+
+.lb-num {
+  font-variant-numeric: tabular-nums;
+}
+
+.lb-hero-title {
+  letter-spacing: -0.02em;
+}
+
+/* 总分条：真实分数实心，区间为浅色带 */
+.lb-scorebar {
+  position: relative;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--lb-track);
+}
+
+.lb-scorebar__fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 4px;
+  background: var(--lb-accent);
+}
+
+.lb-scorebar__band {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--lb-accent) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--lb-accent) 45%, transparent);
+}
+
+/* 分数矩阵 */
+.lb-matrix {
+  border-collapse: separate;
+  border-spacing: 2px;
+  width: 100%;
+}
+
+.lb-matrix th {
+  font-weight: 550;
+  font-size: 12px;
+  color: var(--lb-ink-2);
+  vertical-align: bottom;
+  padding: 4px;
+}
+
+.lb-matrix td {
+  height: 36px;
+  min-width: 52px;
+  text-align: center;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: outline-color 120ms ease;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.lb-matrix td:hover,
+.lb-matrix td:focus-visible {
+  outline-color: var(--lb-ink);
+}
+
+.lb-matrix td.is-imputed {
+  font-style: italic;
+  opacity: 0.78;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0 5px,
+    color-mix(in srgb, var(--lb-panel) 55%, transparent) 5px 6px
+  ) !important;
+}
+
+.lb-matrix td.is-model {
+  text-align: left;
+  font-style: normal;
+  white-space: nowrap;
+  padding-right: 12px;
+  cursor: pointer;
+  min-width: 170px;
+}
+
+.lb-matrix-wrap {
+  overflow-x: auto;
+}
+
+.lb-rank {
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  width: 28px;
+  display: inline-block;
+  text-align: right;
+}
+
+.lb-row {
+  cursor: pointer;
+}
+
+.lb-table th {
+  white-space: nowrap;
+}
+
+.lb-row:hover {
+  background: var(--lb-accent-soft);
+}
+
+.lb-link {
+  color: var(--lb-accent);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.lb-link:hover {
+  text-decoration: underline;
+}
+
+.lb-quote {
+  border-left: 2px solid var(--lb-line);
+  padding-left: 8px;
+  color: var(--lb-ink-2);
+  font-size: 12px;
+}
