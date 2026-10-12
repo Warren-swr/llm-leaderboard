@@ -2206,7 +2206,7 @@
       "sourceName": "OpenAI GPT-6 Astra 发布页",
       "url": "https://openai.com/index/gpt-6-astra/",
       "quote": "Terminal-Bench 4.0 | 57.9% | 37.3% | 55.8% | 44.5% | 52.6% | 19.1%",
-      "note": "页面注明 Evaluation scores are the maximum at any effort；图表数据显示 high=0.5788、max=0.5667；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+      "note": "页面注明 Evaluation scores are the maximum at any effort；图表数据显示 high=0.5788、max=0.5667；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
      },
      "alternates": [
       {
@@ -2216,7 +2216,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"effort_display\":\"Max\",\"model\":\"GPT-6 Astra\",\"pointOrder\":5,\"score\":0.5666666666666667",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 57.58,
@@ -2225,7 +2225,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"effort_display\":\"Xhigh\",\"model\":\"GPT-6 Astra\",\"pointOrder\":4,\"score\":0.5757575757575758",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 53.94,
@@ -2234,7 +2234,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"effort_display\":\"Medium\",\"model\":\"GPT-6 Astra\",\"pointOrder\":2,\"score\":0.5393939393939394",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 49.7,
@@ -2243,7 +2243,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"effort_display\":\"Low\",\"model\":\"GPT-6 Astra\",\"pointOrder\":1,\"score\":0.49696969696969695",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 58.18,
@@ -2306,7 +2306,7 @@
       "sourceName": "OpenAI GPT-6 Astra 发布页",
       "url": "https://openai.com/index/gpt-6-astra/",
       "quote": "DeepSWE v1.1 | 74.1% | 72.7% | 67.4% | 69.9% | 73.7% | 73.8%",
-      "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+      "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
      },
      "alternates": [
       {
@@ -2316,7 +2316,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"model\":\"GPT-6 Astra\",\"code_mode\":\"true\",\"x_value\":7.5,\"x_label\":\"$$7.50\",\"score\":0.73,\"dataset\":\"api_cost_usd\",\"record_type\":\"series\",\"effort_display\":\"Max\"",
-       "note": "同页 code 模式序列为 0.7300884955752213；后续 Sol/Luna 页与官方榜给出 max=0.7323；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "同页 code 模式序列为 0.7300884955752213；后续 Sol/Luna 页与官方榜给出 max=0.7323；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 73.2,
@@ -2325,7 +2325,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"model\":\"GPT-6 Astra\",\"code_mode\":\"true\",\"x_value\":3.9,\"x_label\":\"$$3.90\",\"score\":0.732,\"dataset\":\"api_cost_usd\",\"record_type\":\"series\",\"effort_display\":\"High\"",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 72.8,
@@ -2334,7 +2334,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"model\":\"GPT-6 Astra\",\"code_mode\":\"true\",\"x_value\":3.1,\"x_label\":\"$$3.10\",\"score\":0.728,\"dataset\":\"api_cost_usd\",\"record_type\":\"series\",\"effort_display\":\"Medium\"",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 67,
@@ -2343,7 +2343,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"model\":\"GPT-6 Astra\",\"code_mode\":\"true\",\"x_value\":1.6,\"x_label\":\"$$1.60\",\"score\":0.67,\"dataset\":\"api_cost_usd\",\"record_type\":\"series\",\"effort_display\":\"Low\"",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 74.12,
@@ -2375,7 +2375,7 @@
       "sourceName": "OpenAI GPT-6 Astra 发布页",
       "url": "https://openai.com/index/gpt-6-astra/",
       "quote": "FrontierCode 1.1 Main (score) | 53.3% 8 | 47.5% | 50.9% | 53.5% | 53.4% | 43.6%",
-      "note": "脚注 8：GPT-6 Astra was run with a developer message similar to a section of its developer message in Codex；是否 mean@5 页面未说明；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+      "note": "脚注 8：GPT-6 Astra was run with a developer message similar to a section of its developer message in Codex；是否 mean@5 页面未说明；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
      },
      "alternates": [
       {
@@ -2385,7 +2385,7 @@
        "sourceName": "OpenAI GPT-6 Sol and Luna 发布页（图表数据）",
        "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
        "quote": "{\"model\":\"GPT-6 Astra\",\"cost_label\":\"$$4.59\",\"score\":0.533,\"cost\":4.59,\"order\":4,\"modelLabel\":\"GPT-6 Astra\",\"effortLabel\":\"max\"}",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 48.8,
@@ -2394,7 +2394,7 @@
        "sourceName": "OpenAI GPT-6 Sol and Luna 发布页（图表数据）",
        "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
        "quote": "{\"model\":\"GPT-6 Astra\",\"cost_label\":\"$$2.43\",\"score\":0.488,\"cost\":2.43,\"order\":1,\"modelLabel\":\"GPT-6 Astra\",\"effortLabel\":\"medium\"}",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 50.9,
@@ -2403,7 +2403,7 @@
        "sourceName": "OpenAI GPT-6 Sol and Luna 发布页（图表数据）",
        "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
        "quote": "{\"model\":\"GPT-6 Astra\",\"cost_label\":\"$$3.01\",\"score\":0.509,\"cost\":3.01,\"order\":2,\"modelLabel\":\"GPT-6 Astra\",\"effortLabel\":\"high\"}",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 50.6,
@@ -2412,7 +2412,7 @@
        "sourceName": "OpenAI GPT-6 Sol and Luna 发布页（图表数据）",
        "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
        "quote": "{\"model\":\"GPT-6 Astra\",\"cost_label\":\"$$3.28\",\"score\":0.506,\"cost\":3.28,\"order\":3,\"modelLabel\":\"GPT-6 Astra\",\"effortLabel\":\"xhigh\"}",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 45.3,
@@ -2421,7 +2421,7 @@
        "sourceName": "OpenAI GPT-6 Sol and Luna 发布页（图表数据）",
        "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
        "quote": "{\"model\":\"GPT-6 Astra\",\"cost_label\":\"$$1.70\",\"score\":0.453,\"cost\":1.7,\"order\":0,\"modelLabel\":\"GPT-6 Astra\",\"effortLabel\":\"low\"}",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 53.3,
@@ -2447,7 +2447,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "FrontierCode 1.1 Extended (score) | 64.5% 8 | 60.6% | 63.6% | 64.9% | 63.6% | 56.3%",
-       "note": "Extended 集，按规则不可比；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "Extended 集，按规则不可比；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       }
      ]
     },
@@ -2486,7 +2486,7 @@
       "sourceName": "OpenAI GPT-6 Astra 发布页",
       "url": "https://openai.com/index/gpt-6-astra/",
       "quote": "OSWorld 2.0 (v2026.08.08, offline set, partial score) | 72.6% | 65.7% | - | - | 70.2%3 | -",
-      "note": "offline 子集，非全量任务集；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+      "note": "offline 子集，非全量任务集；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
      },
      "alternates": [
       {
@@ -2496,7 +2496,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"effort_display\":\"Xhigh\",\"model\":\"GPT-6 Astra\",\"model_display\":\"GPT-6 Astra\",\"pointOrder\":8,\"score\":0.7172340990045012",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 71.6,
@@ -2505,7 +2505,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"effort_display\":\"High\",\"model\":\"GPT-6 Astra\",\"model_display\":\"GPT-6 Astra\",\"pointOrder\":7,\"score\":0.7159908953008942",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 61.44,
@@ -2514,7 +2514,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"effort_display\":\"Low\",\"model\":\"GPT-6 Astra\",\"model_display\":\"GPT-6 Astra\",\"pointOrder\":5,\"score\":0.6144039877172959",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 73.49,
@@ -2523,7 +2523,7 @@
        "sourceName": "OpenAI GPT-6 Sol and Luna 发布页（图表数据）",
        "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
        "quote": "{\"model\":\"GPT-6 Astra\",\"cost_label\":\"$$9.07\",\"score\":0.7349,\"cost\":9.0733,\"order\":4,\"modelLabel\":\"GPT-6 Astra\",\"effortLabel\":\"max\"}",
-       "note": "与 Astra 发布页 72.6% 不一致，可能是重跑；GPT-6.1 Sol 发布页同样给出 max 0.7349；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "与 Astra 发布页 72.6% 不一致，可能是重跑；GPT-6.1 Sol 发布页同样给出 max 0.7349；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       }
      ]
     },
@@ -2538,7 +2538,7 @@
       "sourceName": "OpenAI GPT-6 Astra 发布页",
       "url": "https://openai.com/index/gpt-6-astra/",
       "quote": "AutomationBench | 41.4% | 18.1% | 31.4% | 17.4% | 26.9% | -",
-      "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+      "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
      },
      "alternates": [
       {
@@ -2548,7 +2548,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "{\"effort_display\":\"Xhigh\",\"mode\":\"Cost\",\"model_display\":\"GPT-6 Astra\",\"score\":0.39,\"x_label\":\"$$1.53\"",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 37.1,
@@ -2557,7 +2557,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "{\"effort_display\":\"High\",\"mode\":\"Cost\",\"model_display\":\"GPT-6 Astra\",\"score\":0.371,\"x_label\":\"$$1.46\"",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 34.1,
@@ -2566,7 +2566,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "{\"effort_display\":\"Medium\",\"mode\":\"Cost\",\"model_display\":\"GPT-6 Astra\",\"score\":0.341,\"x_label\":\"$$1.29\"",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 30.3,
@@ -2575,7 +2575,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "{\"effort_display\":\"Low\",\"mode\":\"Cost\",\"model_display\":\"GPT-6 Astra\",\"score\":0.303,\"x_label\":\"$$1.09\"",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 41.4,
@@ -2629,7 +2629,7 @@
       "sourceName": "OpenAI GPT-6 Astra 发布页",
       "url": "https://openai.com/index/gpt-6-astra/",
       "quote": "Agents' Last Exam | 59.3% | 53.6% | - | 48.7% | 55.5% | -",
-      "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+      "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
      },
      "alternates": [
       {
@@ -2639,7 +2639,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"effort_display\":\"Xhigh\",\"model\":\"GPT-6 Astra\",\"model_display\":\"GPT-6 Astra\",\"pointOrder\":3,\"score\":0.5829",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 57.78,
@@ -2648,7 +2648,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"effort_display\":\"High\",\"model\":\"GPT-6 Astra\",\"model_display\":\"GPT-6 Astra\",\"pointOrder\":2,\"score\":0.5778",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 57.62,
@@ -2657,7 +2657,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"effort_display\":\"Medium\",\"model\":\"GPT-6 Astra\",\"model_display\":\"GPT-6 Astra\",\"pointOrder\":1,\"score\":0.5761999999999999",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 53.4,
@@ -2666,7 +2666,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"effort_display\":\"Low\",\"model\":\"GPT-6 Astra\",\"model_display\":\"GPT-6 Astra\",\"pointOrder\":0,\"score\":0.534",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 59.3,
@@ -2731,7 +2731,7 @@
       "sourceName": "OpenAI GPT-6 Astra 发布页",
       "url": "https://openai.com/index/gpt-6-astra/",
       "quote": "Humanity's Last Exam (w/ tools) | 57.2% | - | 65.0% | 63.8% | 63.6% | -",
-      "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+      "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
      },
      "alternates": [
       {
@@ -2755,7 +2755,7 @@
       "sourceName": "OpenAI GPT-6 Astra 发布页",
       "url": "https://openai.com/index/gpt-6-astra/",
       "quote": "Terminal-Bench Science 0.1 | 64.6% | 22.4% | 52.6% | 21.4% | 30.0% | -",
-      "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+      "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
      },
      "alternates": [
       {
@@ -2765,7 +2765,7 @@
        "sourceName": "OpenAI GPT-6.1 Sol 发布页",
        "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
        "quote": "GPT-6 Astra still achieves the highest score among the models tested at 68.1%, and should be used for the most difficult scientific research tasks.",
-       "note": "与 Astra 发布页 64.6% 不一致，可能是重跑；图表数据 max score 0.681；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "与 Astra 发布页 64.6% 不一致，可能是重跑；图表数据 max score 0.681；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 61.14,
@@ -2774,7 +2774,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"code_mode\":\"true\",\"effort_display\":\"High\",\"model\":\"GPT-6 Astra\",\"model_display\":\"GPT-6 Astra\",\"pointOrder\":3,\"score\":0.6114285714285714",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 60.29,
@@ -2783,7 +2783,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"code_mode\":\"true\",\"effort_display\":\"Xhigh\",\"model\":\"GPT-6 Astra\",\"model_display\":\"GPT-6 Astra\",\"pointOrder\":4,\"score\":0.6028571428571429",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 56.86,
@@ -2792,7 +2792,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"code_mode\":\"true\",\"effort_display\":\"Medium\",\"model\":\"GPT-6 Astra\",\"model_display\":\"GPT-6 Astra\",\"pointOrder\":2,\"score\":0.5685714285714286",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 54.29,
@@ -2801,7 +2801,7 @@
        "sourceName": "OpenAI GPT-6 Astra 发布页（图表数据）",
        "url": "https://openai.com/index/gpt-6-astra/",
        "quote": "\"code_mode\":\"true\",\"effort_display\":\"Low\",\"model\":\"GPT-6 Astra\",\"model_display\":\"GPT-6 Astra\",\"pointOrder\":1,\"score\":0.5428571428571428",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 62.86,
@@ -2937,7 +2937,7 @@
       "sourceName": "OpenAI GPT-6.1 Sol 发布页（图表数据）",
       "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
       "quote": "{\"model\":\"GPT-6 Astra\",\"modelLabel\":\"GPT-6 Astra\",\"cost\":2.0758207,\"score\":0.31,\"effortLabel\":\"Max\",\"order\":4}",
-      "note": "页面未明示是严格全通过率；数值量级与 Surge 严格分一致，属推断；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+      "note": "页面未明示是严格全通过率；数值量级与 Surge 严格分一致，属推断；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
      },
      "alternates": [
       {
@@ -2947,7 +2947,7 @@
        "sourceName": "OpenAI GPT-6.1 Sol 发布页（图表数据）",
        "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
        "quote": "{\"model\":\"GPT-6 Astra\",\"modelLabel\":\"GPT-6 Astra\",\"cost\":1.9127230999999998,\"score\":0.322,\"effortLabel\":\"Xhigh\",\"order\":3}",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 31,
@@ -2956,7 +2956,7 @@
        "sourceName": "OpenAI GPT-6.1 Sol 发布页（图表数据）",
        "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
        "quote": "{\"model\":\"GPT-6 Astra\",\"modelLabel\":\"GPT-6 Astra\",\"cost\":1.7948240999999998,\"score\":0.31,\"effortLabel\":\"High\",\"order\":2}",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 30.4,
@@ -2965,7 +2965,7 @@
        "sourceName": "OpenAI GPT-6.1 Sol 发布页（图表数据）",
        "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
        "quote": "{\"model\":\"GPT-6 Astra\",\"modelLabel\":\"GPT-6 Astra\",\"cost\":1.7198086,\"score\":0.304,\"effortLabel\":\"Medium\",\"order\":1}",
-       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+       "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
       },
       {
        "score": 34.2,
@@ -3380,7 +3380,7 @@
       "sourceName": "OpenAI GPT-6.1 Sol 发布页",
       "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
       "quote": "DeepSWE 图表数据：{\"model\":\"GPT-6.1 Sol\",\"score\":0.7522,\"effortLabel\":\"High\"}",
-      "note": "人工复核：原记录引自 OpenAI Developers 的 X 帖；已在保存的官方发布页副本（data/sources/openai/introducing-gpt-6-1-sol.html）图表数据中核到 High 档 0.7522，改为引用官方发布页。OpenAI 以 High 档为头条，Max 档为 71.9"
+      "note": "人工复核：原记录引自 OpenAI Developers 的 X 帖；已在 2026-10-12 保存的官方发布页副本（introducing-gpt-6-1-sol.html，SHA256 见 data/sources/openai/SHA256SUMS）图表数据中核到 High 档 0.7522，改为引用官方发布页。OpenAI 以 High 档为头条，Max 档为 71.9"
      },
      "alternates": [
       {

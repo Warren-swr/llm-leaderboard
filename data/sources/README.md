@@ -1,0 +1,12 @@
+# 原始来源
+
+这里只放管线实际用到的数据摘录和原始页面的 SHA256 校验值。第三方页面的完整副本不随仓库公开。
+
+| 文件 | 内容 |
+|---|---|
+| `artificialanalysis/top20-20261012.json` | 2026-10-12 从 Artificial Analysis 模型榜整理出的前 20 名单（含各推理档位） |
+| `artificialanalysis/aa-model-fields-20261012.json` | 这 20 个模型在 AA 模型页上的评测字段摘录，`pipeline/aa_records.py` 用它生成 `data/scores-aa/` |
+| `artificialanalysis/SHA256SUMS` | 抓取时的 AA 页面快照与摘录文件的校验值 |
+| `openai/SHA256SUMS` | 2026-10-12 保存的 OpenAI 发布页副本的校验值。openai.com 对自动访问返回 403，相关分数按这些副本核对 |
+
+抓取方式：AA 的数据内嵌在页面的 Next.js 数据里（`self.__next_f.push`），按 slug 取出对应模型的字段；名单规则见仓库 README。

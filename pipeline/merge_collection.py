@@ -58,7 +58,7 @@ for item in res['results']:
             # OpenAI 页面对自动访问返回 403；核验者按收集阶段保存的官方页面副本逐条核对
             st['unreachable'] += 1
             rec['verified'] = True
-            notes.append('OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/')
+            notes.append('OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS')
         else:
             st['unreachable'] += 1
             notes.append('核验时无法打开原网页' + ('：' + v['fix'] if v.get('fix') else ''))

@@ -2,6 +2,7 @@
 
 用各家公开报告的评测分数，给 Artificial Analysis 智能指数前 20 的模型排名。厂商官方自报优先，评测集作者榜单次之，独立第三方再次之；缺失的格子用低秩矩阵补全估计，并给出误差区间。所有分数都附原始出处链接。
 
+- 在线页面：<https://warren-swr.github.io/llm-leaderboard/>（推送到 main 后由 GitHub Actions 自动构建发布）。
 - 当前状态：2026-10-12 完成第一版数据与页面。数据截至 2026-10-12。
 - 页面入口：`npm run build` 生成 `dist/`，再用任意静态服务器打开，例如 `python3 -m http.server 18731 -d dist` 后访问 <http://127.0.0.1:18731/>。产物用相对路径构建，可以放到任意子目录；浏览器不允许从 `file://` 加载 ES module，所以不能双击打开。开发时用 `npm run dev`。
 - 技术栈：TypeScript + Vite 7 + React 19 + Mantine 9（组件与图表）。
@@ -43,9 +44,9 @@ npm run build                                                     # 类型检查
 ## 验证范围
 
 - 已做：`npm run check:data` 0 错误（1 条提示：Ling 3.1 Flash 真实覆盖 44%）；`npm run build` 通过；在浏览器中检查了五个标签页、模型详情抽屉、浅色 / 深色模式和权重滑块的实时重算。
-- 核验：厂商与评测作者的记录都经回源核验；OpenAI 官网对自动访问返回 403，相关记录按收集时保存的官方页面副本核对（`data/sources/openai/`，附 SHA256）。另人工抽查 Kimi K3（10 项）与 Grok 4.7（6 项）的原始页面，数字全部一致。
+- 核验：厂商与评测作者的记录都经回源核验；OpenAI 官网对自动访问返回 403，相关记录按收集时保存的官方页面副本核对（副本不公开，SHA256 见 `data/sources/openai/SHA256SUMS`）。另人工抽查 Kimi K3（10 项）与 Grok 4.7（6 项）的原始页面，数字全部一致。
 - 补全模块用合成低秩矩阵测试过：遮掉 30% 后补全误差约 2 分，远低于填列均值的 20 分。
-- 未做：没有复跑任何评测；没有逐条人工复查全部 245 个主分数；没有部署到公开站点。
+- 未做：没有复跑任何评测；没有逐条人工复查全部 245 个主分数。
 
 ## 已知局限
 
@@ -65,10 +66,10 @@ data/
   overrides.json         人工复核的口径修正（带理由）
   scores/                厂商与评测作者记录（已核验）
   scores-aa/             AA 独立复测记录（脚本生成）
-  sources/               AA 页面快照、OpenAI 官方页面副本，均附 SHA256SUMS
+  sources/               AA 数据摘录与原始页面的 SHA256 校验值（第三方页面原件不公开，见 data/sources/README.md）
   research/              两轮 agent 调研的原始输出
 pipeline/                aa_records.py、merge_collection.py、build.ts、impute.ts、check.ts
 src/                     页面（components/）、计分（scoring.ts）、生成数据（data/leaderboard.json）
 ```
 
-调研时下载的全部原始页面、PDF 与图片（1412 个文件，776 MB）已归档到 `runs/llm-leaderboard-20261012/source-downloads.tar.gz`（SHA256 `02d70685…63f8`），逐文件清单见同目录 `source-downloads.SHA256SUMS`。
+调研时下载的原始页面、PDF 与图片（1412 个文件）不随仓库公开；`data/research/` 里的 agent 输出保留了每条记录的网址与原文摘录，可以据此回源复查。

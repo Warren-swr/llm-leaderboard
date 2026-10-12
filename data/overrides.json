@@ -31,7 +31,7 @@
       "model": "gpt-6-1-sol", "benchmark": "deepswe", "urlContains": "x.com/OpenAIDevs",
       "set": { "url": "https://openai.com/index/introducing-gpt-6-1-sol/", "sourceName": "OpenAI GPT-6.1 Sol 发布页", "quote": "DeepSWE 图表数据：{\"model\":\"GPT-6.1 Sol\",\"score\":0.7522,\"effortLabel\":\"High\"}", "verified": true },
       "replaceNote": true,
-      "reason": "原记录引自 OpenAI Developers 的 X 帖；已在保存的官方发布页副本（data/sources/openai/introducing-gpt-6-1-sol.html）图表数据中核到 High 档 0.7522，改为引用官方发布页。OpenAI 以 High 档为头条，Max 档为 71.9"
+      "reason": "原记录引自 OpenAI Developers 的 X 帖；已在 2026-10-12 保存的官方发布页副本（introducing-gpt-6-1-sol.html，SHA256 见 data/sources/openai/SHA256SUMS）图表数据中核到 High 档 0.7522，改为引用官方发布页。OpenAI 以 High 档为头条，Max 档为 71.9"
     },
     {
       "model": "gpt-6-1-sol", "benchmark": "deepswe", "urlContains": "alphacorp.ai",

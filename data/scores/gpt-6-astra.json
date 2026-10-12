@@ -13,7 +13,7 @@
    "matchesPreferred": true,
    "primaryHint": true,
    "verified": true,
-   "note": "页面注明 Evaluation scores are the maximum at any effort；图表数据显示 high=0.5788、max=0.5667；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "页面注明 Evaluation scores are the maximum at any effort；图表数据显示 high=0.5788、max=0.5667；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "terminal-bench-4",
@@ -27,7 +27,7 @@
    "matchesPreferred": true,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "terminal-bench-4",
@@ -41,7 +41,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "terminal-bench-4",
@@ -55,7 +55,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "terminal-bench-4",
@@ -69,7 +69,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "terminal-bench-4",
@@ -148,7 +148,7 @@
    "matchesPreferred": true,
    "primaryHint": true,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "deepswe",
@@ -162,7 +162,7 @@
    "matchesPreferred": true,
    "primaryHint": false,
    "verified": true,
-   "note": "同页 code 模式序列为 0.7300884955752213；后续 Sol/Luna 页与官方榜给出 max=0.7323；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "同页 code 模式序列为 0.7300884955752213；后续 Sol/Luna 页与官方榜给出 max=0.7323；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "deepswe",
@@ -176,7 +176,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "deepswe",
@@ -190,7 +190,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "deepswe",
@@ -204,7 +204,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "deepswe",
@@ -245,7 +245,7 @@
    "matchesPreferred": true,
    "primaryHint": true,
    "verified": true,
-   "note": "脚注 8：GPT-6 Astra was run with a developer message similar to a section of its developer message in Codex；是否 mean@5 页面未说明；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "脚注 8：GPT-6 Astra was run with a developer message similar to a section of its developer message in Codex；是否 mean@5 页面未说明；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "frontiercode",
@@ -259,7 +259,7 @@
    "matchesPreferred": true,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "frontiercode",
@@ -273,7 +273,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "frontiercode",
@@ -287,7 +287,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "frontiercode",
@@ -301,7 +301,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "frontiercode",
@@ -315,7 +315,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "frontiercode",
@@ -356,7 +356,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "Extended 集，按规则不可比；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "Extended 集，按规则不可比；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "frontierswe",
@@ -397,7 +397,7 @@
    "matchesPreferred": false,
    "primaryHint": true,
    "verified": true,
-   "note": "offline 子集，非全量任务集；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "offline 子集，非全量任务集；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "osworld-2",
@@ -411,7 +411,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "osworld-2",
@@ -425,7 +425,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "osworld-2",
@@ -439,7 +439,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "osworld-2",
@@ -453,7 +453,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "与 Astra 发布页 72.6% 不一致，可能是重跑；GPT-6.1 Sol 发布页同样给出 max 0.7349；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "与 Astra 发布页 72.6% 不一致，可能是重跑；GPT-6.1 Sol 发布页同样给出 max 0.7349；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "automationbench",
@@ -467,7 +467,7 @@
    "matchesPreferred": true,
    "primaryHint": true,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "automationbench",
@@ -481,7 +481,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "automationbench",
@@ -495,7 +495,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "automationbench",
@@ -509,7 +509,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "automationbench",
@@ -523,7 +523,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "automationbench",
@@ -577,7 +577,7 @@
    "matchesPreferred": true,
    "primaryHint": true,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "agents-last-exam",
@@ -591,7 +591,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "agents-last-exam",
@@ -605,7 +605,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "agents-last-exam",
@@ -619,7 +619,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "agents-last-exam",
@@ -633,7 +633,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "agents-last-exam",
@@ -674,7 +674,7 @@
    "matchesPreferred": true,
    "primaryHint": true,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "hle-tools",
@@ -729,7 +729,7 @@
    "matchesPreferred": true,
    "primaryHint": true,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "terminal-bench-science",
@@ -743,7 +743,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "terminal-bench-science",
@@ -757,7 +757,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "terminal-bench-science",
@@ -771,7 +771,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "terminal-bench-science",
@@ -785,7 +785,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "terminal-bench-science",
@@ -799,7 +799,7 @@
    "matchesPreferred": true,
    "primaryHint": false,
    "verified": true,
-   "note": "与 Astra 发布页 64.6% 不一致，可能是重跑；图表数据 max score 0.681；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "与 Astra 发布页 64.6% 不一致，可能是重跑；图表数据 max score 0.681；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "terminal-bench-science",
@@ -922,7 +922,7 @@
    "matchesPreferred": true,
    "primaryHint": true,
    "verified": true,
-   "note": "页面未明示是严格全通过率；数值量级与 Surge 严格分一致，属推断；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "页面未明示是严格全通过率；数值量级与 Surge 严格分一致，属推断；OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "gdp-pdf",
@@ -936,7 +936,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "gdp-pdf",
@@ -950,7 +950,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "gdp-pdf",
@@ -964,7 +964,7 @@
    "matchesPreferred": false,
    "primaryHint": false,
    "verified": true,
-   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/"
+   "note": "OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对；副本不随仓库公开，SHA256 见 data/sources/openai/SHA256SUMS"
   },
   {
    "benchmark": "gdp-pdf",

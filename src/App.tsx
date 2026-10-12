@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { ActionIcon, Anchor, Container, Group, Stack, Tabs, Text, Title, Tooltip, useMantineColorScheme } from '@mantine/core'
-import { IconChartBar, IconGridDots, IconListDetails, IconMath, IconMoon, IconSun, IconLink } from '@tabler/icons-react'
+import { IconBrandGithub, IconChartBar, IconGridDots, IconListDetails, IconMath, IconMoon, IconSun, IconLink } from '@tabler/icons-react'
 import { board, defaultWeights, rankWith } from './data'
 import { StatTiles } from './components/StatTiles'
 import { WeightPanel } from './components/WeightPanel'
@@ -45,11 +45,18 @@ export default function App() {
               前 20 名（{board.meta.aaRetrieved} 抓取）。
             </Text>
           </Stack>
-          <Tooltip label={dark ? '切换到浅色' : '切换到深色'}>
-            <ActionIcon variant="default" size="lg" radius="md" aria-label="切换配色" onClick={() => setColorScheme(dark ? 'light' : 'dark')}>
-              {dark ? <IconSun size={18} /> : <IconMoon size={18} />}
-            </ActionIcon>
-          </Tooltip>
+          <Group gap={8} wrap="nowrap">
+            <Tooltip label="GitHub 仓库：数据、管线与全部出处">
+              <ActionIcon component="a" href="https://github.com/Warren-swr/llm-leaderboard" target="_blank" rel="noreferrer" variant="default" size="lg" radius="md" aria-label="GitHub 仓库">
+                <IconBrandGithub size={18} />
+              </ActionIcon>
+            </Tooltip>
+            <Tooltip label={dark ? '切换到浅色' : '切换到深色'}>
+              <ActionIcon variant="default" size="lg" radius="md" aria-label="切换配色" onClick={() => setColorScheme(dark ? 'light' : 'dark')}>
+                {dark ? <IconSun size={18} /> : <IconMoon size={18} />}
+              </ActionIcon>
+            </Tooltip>
+          </Group>
         </Group>
 
         <StatTiles />
