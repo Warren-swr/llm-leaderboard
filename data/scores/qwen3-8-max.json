@@ -1,0 +1,132 @@
+{
+ "model": "qwen3-8-max",
+ "records": [
+  {
+   "benchmark": "deepswe",
+   "score": 69.3,
+   "setting": "DeepSWE 1.1 resolve rate (%)；Qwen 自测；mini-SWE-agent，temp=1.0，top_p=0.95，1M 上下文；effort 未注明",
+   "sourceType": "official",
+   "sourceName": "Qwen 官方 X 发布帖评测表图（Qwen3.8-Max-0902）",
+   "url": "https://pbs.twimg.com/media/HRLPmfLagAA9ATq.jpg?name=orig",
+   "quote": "Agentic coding / DeepSWE 1.1 | Qwen3.8-Max-0902 69.3 | Qwen3.8-Max 56.6 | Claude-Opus-5 73.6; footnote 3: DeepSWE 1.1: Evaluated with the mini-SWE-agent harness, temp=1.0, top_p=0.95, and a 1M context window.",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "Datacurve 官方榜只有未标版本的 qwen3.8-max [xhigh] 57.5，无法确认是 0902，未采用"
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 50.8,
+   "setting": "Automation Bench v1.0.6 (Pass@1, %)；Qwen 自测；纳入 AutomationBench PR #16 后运行；未说明是否为 Zapier 私有留出集",
+   "sourceType": "official",
+   "sourceName": "Qwen 官方 X 发布帖评测表图（Qwen3.8-Max-0902）",
+   "url": "https://pbs.twimg.com/media/HRLPmfLagAA9ATq.jpg?name=orig",
+   "quote": "Agentic SaaS workflow / Automation Bench v1.0.6 (Pass@1) | 50.8 | -- | 50.3 | 46.2 | 45.8; footnote 10: Automation Bench v1.0.6: Our evaluation was run after incorporating PR #16 (https://github.com/zapier/AutomationBench/pull/16).",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "厂商自报；Zapier 官方榜（zapier.com/benchmarks）当前没有 Qwen 条目"
+  },
+  {
+   "benchmark": "toolathlon-verified",
+   "score": 73.3,
+   "setting": "Toolathlon Verified (Pass@1, %)；Qwen 自测；harness/effort 未注明",
+   "sourceType": "official",
+   "sourceName": "Qwen 官方 X 发布帖评测表图（Qwen3.8-Max-0902）",
+   "url": "https://pbs.twimg.com/media/HRLPmfLagAA9ATq.jpg?name=orig",
+   "quote": "Real-world tool use / Toolathlon Verified (Pass@1) | 73.3 | 72.5 | 77.6 | 77.9 | 74.9",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "toolathlon.xyz 官方榜当前无 Qwen 条目"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 26.97,
+   "setting": "Terminal-Bench 4.0 accuracy (%), 330 trials；tbench.ai 官方榜；Claude Code harness，reasoning_effort=max，66 题×5 次（n_trials=330），2026-09-02 提交",
+   "sourceType": "benchmark_author",
+   "sourceName": "Terminal-Bench 4.0 官方榜（tbench.ai）",
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "quote": "\"agent_display\":{\"label\":\"Claude Code\"},\"model_display\":{\"label\":\"Qwen3.8-Max-0902\"},\"reasoning_effort\":\"max\"},\"metrics\":{\"accuracy\":26.97,\"n_trials\":330,...\"successes\":89,...\"display_accuracy\":\"**27.0%** ± 3.8%\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "厂商发布表只给了 TerminalBench 3.0（29.0），属于不同基准，未记录"
+  },
+  {
+   "benchmark": "frontierswe",
+   "score": 17.8,
+   "setting": "FrontierSWE v2 mean@5 (%)；Proximal 官方榜；proximus harness，mean@5（worst@5 8.1%，best@5 26.8%）",
+   "sourceType": "benchmark_author",
+   "sourceName": "FrontierSWE 官方榜（frontierswe.com）",
+   "url": "https://www.frontierswe.com/",
+   "quote": "title=\"Qwen Qwen3.8-Max-0902 + proximus: mean@5 17.8%, worst@5 8.1%, best@5 26.8%\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "同榜另有 Qwen3.8-Max（原版）条目，与 0902 分开"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://x.com/Alibaba_Qwen/status/2094968708288680276",
+   "title": "Qwen 官方 X 帖：Meet Qwen3.8-Max-0902（2026-09-02）",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://pbs.twimg.com/media/HRLPmfLagAA9ATq.jpg?name=orig",
+   "title": "Qwen3.8-Max-0902 官方评测表图",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://www.qwencloud.com/models/qwen3.8-max-0902",
+   "title": "QwenCloud 模型页 qwen3.8-max-0902",
+   "kind": "docs"
+  },
+  {
+   "url": "https://www.alibabacloud.com/en/notice/model_studio_update_notice_for_qwen38max_models_863",
+   "title": "Alibaba Cloud Model Studio 更新公告：qwen3.8-max-0902",
+   "kind": "docs"
+  },
+  {
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "title": "Terminal-Bench 4.0 官方榜",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.frontierswe.com/",
+   "title": "FrontierSWE 官方榜",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://deepswe.datacurve.ai/",
+   "title": "DeepSWE 官方榜（Datacurve）",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://agents-last-exam.org/leaderboard",
+   "title": "Agents' Last Exam 官方榜",
+   "kind": "leaderboard"
+  }
+ ],
+ "notFound": [
+  "frontiercode",
+  "osworld-2",
+  "agents-last-exam",
+  "hle-no-tools",
+  "hle-tools",
+  "terminal-bench-science",
+  "scicode",
+  "critpt",
+  "gdpval-aa",
+  "gdp-pdf",
+  "aa-lcr"
+ ],
+ "collectorNotes": "I found five comparable scores that are explicitly for the 0902 version. Three come from Qwen's own launch table: DeepSWE 1.1 at 69.3, AutomationBench v1.0.6 at 50.8 and Toolathlon Verified at 73.3. Two come from benchmark leaderboards: Terminal-Bench 4.0 at 26.97 on tbench.ai (Claude Code, max effort), and FrontierSWE v2 mean@5 at 17.8.\n\nThe launch material consists of the X post plus two images; one is the benchmark table, the other a poster with no numbers. The QwenCloud model page and the Alibaba Cloud notice give no scores. The vendor table only lists TerminalBench 3.0 at 29.0, which is a different benchmark, so I did not record it. The table has no OSWorld 2, HLE, SciCode, CritPt, GDPval-AA or GDP.pdf rows.\n\nSeveral leaderboard rows could not be tied to the 0902 version, so I excluded them:\n- **DeepSWE leaderboard:** only lists \"qwen3.8-max\" at xhigh effort, pass@1 0.5746. That row carries no version suffix and is probably the original release.\n- **Agents' Last Exam API (`/api/demo/leaderboard`):** has a \"qwen-3-8-max\" row (Claude Code, thinking-xhigh; full split avgScore 0.5249, passRate 0.2697). It also has no version marker, so it cannot be confirmed as 0902.\n- **Vals AI Terminal-Bench 4.0:** its 34.34 is labelled \"Qwen 3.8 Max\", and the model page says \"released August 3, 2026\", so it is the original version.\n\nSeveral sources had nothing for Qwen at all: Toolathlon (toolathlon.xyz), Zapier's leaderboard, Scale's HLE board, Snorkel's OSWorld 2.0 page, the OSWorld v2 site and the FrontierCode site. The MiMo-V2.6 comparison table does not include Qwen either.\n\nOnly Qwen's own footnote says AutomationBench was run after PR #16. The source does not say whether it used Zapier's private held-out set. I did not record any artificialanalysis.ai numbers, as instructed.",
+ "verifierSummary": "All 5 records are confirmed. The numbers, the model name (Qwen3.8-Max-0902, not its sibling Qwen3.8-Max), and the settings all match the sources I opened. Image (pbs.twimg.com/media/HRLPmfLagAA9ATq.jpg): DeepSWE 1.1 69.3 (footnote 3 says mini-SWE-agent, temp=1.0, top_p=0.95, 1M context), Automation Bench v1.0.6 (Pass@1) 50.8 (footnote 10 says the run came after incorporating PR #16), Toolathlon Verified (Pass@1) 73.3. tbench.ai TB 4.0 board: Claude Code harness, reasoning_effort=max, accuracy 26.97, n_trials 330, successes 89. frontierswe.com (page badge reads V2): 'Qwen Qwen3.8-Max-0902 + proximus: mean@5 17.8%, worst@5 8.1%, best@5 26.8%'. Two minor caveats. First, AutomationBench: Qwen ran the benchmark itself from the public GitHub repo, so the score may not come from Zapier's private held-out set. Second, on the TB4 board, Sep 2, 2026 is the display date, while the record was created on 2026-10-06. The same image also shows TerminalBench 3.0 at 29.0, which is a different benchmark and is correctly not recorded."
+}

@@ -1,0 +1,160 @@
+{
+ "model": "qwen3-8-flash-next",
+ "records": [
+  {
+   "benchmark": "deepswe",
+   "score": 58.7,
+   "setting": "DeepSWE 1.1 (resolve rate, %)；Qwen 自测；在 Claude Code 和 mini-SWE-agent 两个 harness 上跑，取较高的一个（本模型在 mini-SWE-agent 上最好）；temp=1.0, top_p=0.95, 256K 上下文；默认 thinking，reasoning_effort 默认 xhigh",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-Flash-Next 官方 Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+   "quote": "Agentic coding DeepSWE 1.1 | 58.7 | 42.2 | 16.5 | 54.4 | -- ; footnote: \"We report the highest score across the two harnesses; notably, Qwen3.8-Flash-Next performs best on mini-SWE-agent.\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "取两个 harness 中的较高值，属于轻度择优；不在 Datacurve 官方榜上"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 51.2,
+   "setting": "Agents' Last Exam Score (partial credit)；Qwen 自测，模型卡表格；harness 与 effort 未注明（默认 thinking，xhigh）",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-Flash-Next 官方 Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+   "quote": "Frontier agentic tasks Agents' Last Exam | Pass@1 24.3 Score 51.2",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "agents-last-exam.org 官方榜 API 里没有这个模型"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 24.3,
+   "setting": "Pass rate (Pass@1, full-credit share)；Qwen 自测，模型卡表格",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-Flash-Next 官方 Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+   "quote": "Frontier agentic tasks Agents' Last Exam | Pass@1 24.3 Score 51.2",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "Pass rate 和本列使用的 Score 不是同一个指标"
+  },
+  {
+   "benchmark": "toolathlon-verified",
+   "score": 73.5,
+   "setting": "Toolathlon Verified (Pass@1)；Qwen 自测，模型卡表格；harness 与 effort 未注明（默认 thinking，xhigh）",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-Flash-Next 官方 Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+   "quote": "Real-world tool use Toolathlon Verified (Pass@1) | 73.5 | 67.1 | 50.6 | 70.3 | --",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "toolathlon.xyz 官方榜上没有这个模型"
+  },
+  {
+   "benchmark": "osworld-2",
+   "score": 52.3,
+   "setting": "OSWorld 2.0 Partial score；Qwen 自测，模型卡视觉语言表；没说明用的是完整题集还是离线子集，也没说明步数预算",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-Flash-Next 官方 Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+   "quote": "Computer use OSWorld 2.0 | Binary 19.4 Partial 52.3 ; footnote: \"the partial score aggregates the partial rewards obtained across all tasks.\"",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "无法确认是完整题集，所以 matchesPreferred 设为 false"
+  },
+  {
+   "benchmark": "osworld-2",
+   "score": 19.4,
+   "setting": "OSWorld 2.0 Binary score (strict pass rate)；Qwen 自测，模型卡视觉语言表",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-Flash-Next 官方 Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+   "quote": "Computer use OSWorld 2.0 | Binary 19.4 Partial 52.3",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "Binary 是严格通过率，和本列使用的 Partial 不是同一个指标"
+  },
+  {
+   "benchmark": "hle-no-tools",
+   "score": 35.9,
+   "setting": "HLE accuracy (judged by GPT-4o)；Qwen 自测，模型卡通用能力区；用 GPT-4o 判分；卡上没写明不用工具，也没写明是完整 2,500 题还是纯文本子集",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-Flash-Next 官方 Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+   "quote": "Multidisciplinary reasoning HLE | 35.9 | 30.8 | 34.7 | 33.8 | 40.0 ; footnote: \"6. HLE: judged by GPT-4o.\"",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "归入不用工具是推断（这一项放在通用推理区，同表对比的 Opus 4.6 写的是 40.0）；题集范围不明"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+   "title": "Qwen/Qwen3.8-Flash-Next 官方 Hugging Face 模型卡（含基准表与脚注）",
+   "kind": "model_card"
+  },
+  {
+   "url": "https://github.com/QwenLM/Qwen3.8-Flash-Next/blob/main/tech_report.pdf",
+   "title": "On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability（技术报告，只有架构和预训练基准，没有后训练 agent 基准）",
+   "kind": "tech_report"
+  },
+  {
+   "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
+   "title": "Qwen3.8-Flash-Next 官方博客（页面在客户端渲染，抓不到正文）",
+   "kind": "blog"
+  },
+  {
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "title": "Agents' Last Exam 官方榜数据（没有 Flash-Next）",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://toolathlon.xyz/",
+   "title": "Toolathlon 官方榜（没有 Flash-Next）",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "title": "Terminal-Bench 4.0 官方榜（没有 Flash-Next）",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://deepswe.datacurve.ai/",
+   "title": "DeepSWE 官方榜（没有 Flash-Next）",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.frontierswe.com/",
+   "title": "FrontierSWE 官方榜（没有 Flash-Next）",
+   "kind": "leaderboard"
+  }
+ ],
+ "notFound": [
+  "terminal-bench-4",
+  "frontiercode",
+  "frontierswe",
+  "automationbench",
+  "hle-tools",
+  "terminal-bench-science",
+  "scicode",
+  "critpt",
+  "gdpval-aa",
+  "gdp-pdf",
+  "aa-lcr"
+ ],
+ "collectorNotes": "Qwen 发布材料里唯一能读到的基准表是官方 Hugging Face 模型卡；GitHub README 只是链接到它。官方博客 qwen.ai/blog?id=qwen3.8-flash-next 在客户端渲染，用它的 /api/v2/article 接口也没取到正文，所以博客里有没有额外数字没能核实。技术报告（28 页）只有架构消融和预训练基准，没有后训练的 agent 基准。\n\n模型卡给出的、和这 16 列有关的数字是：DeepSWE 1.1 58.7、ALE Score 51.2 / Pass@1 24.3、Toolathlon Verified 73.5、OSWorld 2.0 Binary 19.4 / Partial 52.3、HLE 35.9（GPT-4o 判分）。模型卡没有 Terminal-Bench 4.0、FrontierCode、FrontierSWE、AutomationBench、HLE 用工具版、SciCode、CritPt、GDPval、GDP.pdf、AA-LCR。\n\n以下官方榜都没有 Flash-Next：tbench.ai TB4.0、deepswe.datacurve.ai、frontierswe.com、zapier.com/benchmarks、toolathlon.xyz、agents-last-exam.org（API 已核对）、Scale HLE、Snorkel OSWorld 2.0、Vals TB4。榜上出现的 Qwen 条目是 Qwen3.8-Max、Qwen3.8-Max-0902 和 Qwen3.8-27B，都是同系列其他模型，没有混用。\n\n厂商对比方面，GLM-5.3-Flash 的对比图（bench_53.png）和 DeepSeek-V4.1-Flash 的 agentic 对比图里都没有 Qwen3.8-Flash-Next，所以没有 vendor_comparison 记录。DataCamp 等二手文章转述的数字和模型卡一致，没有收录。\n\n需要注意的推断：HLE 35.9 归为不用工具、OSWorld 52.3 的题集范围，都是根据上下文推断，模型卡没有写明。",
+ "verifierSummary": "2026-10-12 下载了官方 Hugging Face 模型卡 README（https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/main/README.md），逐条核对 7 条记录，全部确认。表头确认第一列就是 Qwen3.8-Flash-Next，所以分数不是同系列其他型号的。核到的数值：DeepSWE 1.1 为 58.7，脚注写明两个 harness 取较高分、本模型在 mini-SWE-agent 上最好；Agents' Last Exam 为 Pass@1 24.3、Score 51.2；Toolathlon Verified (Pass@1) 为 73.5；OSWorld 2.0 为 Binary 19.4、Partial 52.3；HLE 为 35.9，脚注写 judged by GPT-4o。可比性标记都符合列规则：Pass rate 和 OSWorld Binary 记 comparable=false；OSWorld 没写完整题集还是离线子集，HLE 没写是否用工具和题集范围，所以这两条记 matchesPreferred=false。HLE 记为不用工具是推断，卡上没有明说。默认 effort 为 xhigh 有据可查，原文是 reasoning_effort=\"xhigh\"  # xhigh by default。"
+}

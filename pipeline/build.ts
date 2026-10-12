@@ -72,6 +72,17 @@ function main() {
       cur.references!.push(...(s.references ?? []))
     }
   }
+  // 人工复核覆盖：每条都必须命中至少一条记录，避免数据更新后静默失效
+  const { overrides } = readJson<{ overrides: { model: string; benchmark: string; urlContains: string; set: Partial<RawRecord>; reason: string; replaceNote?: boolean }[] }>('data/overrides.json')
+  for (const o of overrides) {
+    const hits = (scoreFiles[o.model]?.records ?? []).filter(r => r.benchmark === o.benchmark && r.url.includes(o.urlContains))
+    if (!hits.length) throw new Error(`覆盖规则未命中任何记录：${o.model}/${o.benchmark}/${o.urlContains}`)
+    for (const r of hits) {
+      Object.assign(r, o.set)
+      r.note = [o.replaceNote ? '' : r.note, `人工复核：${o.reason}`].filter(Boolean).join('；')
+    }
+  }
+
   const benchIds = new Set(bf.benchmarks.map(b => b.id))
   for (const s of Object.values(scoreFiles)) {
     for (const r of s.records) if (!benchIds.has(r.benchmark)) throw new Error(`${s.model}: 未知评测集 ${r.benchmark}`)

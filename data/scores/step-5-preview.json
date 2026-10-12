@@ -1,0 +1,265 @@
+{
+ "model": "step-5-preview",
+ "records": [
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 33.3,
+   "setting": "Terminal-Bench v4 success rate (%)；StepFun 官方表，Step 5 Preview (High)；未注明 harness 与试次；同行 GLM-5.3 41.9、Kimi K3 12.6 与 AA 数值一致，推断该行引用自 Artificial Analysis 的运行",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "quote": "{kind:\"row\",label:\"Terminal-Bench v4\",cells:[{text:\"33.3%\"},{text:\"41.9%\"},{text:\"12.6%\"},{text:\"57.9%\",emphasis:\"bold\"}... (columns: Step 5 Preview (High), GLM-5.3 (Max), Kimi K3 (Max), GPT-6 Astra (Max), ...)",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "页面为 JS 渲染，数值取自页面 JS bundle（index-Cp9oF7Fw.js）中的表格数据；新闻稿配图同为 33.3"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 31.82,
+   "setting": "Terminal-Bench 4.0 accuracy, avg@3；Vals AI 独立运行，Mini-SWE-agent harness，avg@3（每轮 pass@1，三轮均值），默认 provider StepFun，temperature 1，top_p 0.95；榜单更新于 2026-10-07",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench 4.0 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "quote": "14 Step 5 Preview Mini-SWE-agent 31.82% $3.11 $1 / $2.7 1h58m",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 67.7,
+   "setting": "DeepSWE v1.1 (%)；StepFun 自测，Step 5 Preview (High)（对手为 Max），SWE-agent harness，temperature=1.0，top_p=0.95",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "quote": "{kind:\"row\",label:\"DeepSWE v1.1\",cells:[{text:\"67.7%\"},... ; \"DeepSWE v1.1 evaluations use the \" + SWE-agent + \" harness with \" temperature=1.0 and top_p=0.95",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "官方 DeepSWE 榜（Datacurve，2026-09-22 更新）统一用 mini-SWE-agent，榜上无 Step 5 Preview；本值为厂商自跑，harness 不同"
+  },
+  {
+   "benchmark": "toolathlon-verified",
+   "score": 74.1,
+   "setting": "Toolathlon-Verified (%)；StepFun 官方表，Step 5 Preview (High)；未注明 harness 与试次",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "quote": "{kind:\"row\",label:\"Toolathlon-Verified\",cells:[{text:\"74.1%\"},{text:\"73.0%\"},{text:\"76.5%\"},{text:\"—\"},{text:\"77.8%\"},{text:\"80.6%\",emphasis:\"bold\"}]}",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "toolathlon.xyz 官方榜未收录该模型"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 29.5,
+   "setting": "Agents' Last Exam (ALE-CLI) — CLI 子集，推断为 Pass rate；StepFun 官方表，Step 5 Preview (High)；仅 ALE 的 CLI 子集，非完整集 Score",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "quote": "{kind:\"row\",label:\"Agents' Last Exam (ALE-CLI)\",cells:[{text:\"29.5%\"},{text:\"28.6%\"},{text:\"27.6%\"},{text:\"33.3%\",emphasis:\"bold\"},{text:\"—\"},{text:\"28.6%\"}]}",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "同表 GPT-6 Astra 为 33.3，与 ALE 官方数据中 Astra linux_only 子集（105 题）max 档 passRate 0.3333 一致，推断 ALE-CLI 为 linux-only 子集的全对率，与完整集 Score 不可比；ALE 官方榜未收录 Step 5 Preview"
+  },
+  {
+   "benchmark": "hle-no-tools",
+   "score": 46.5,
+   "setting": "HLE (%)（表中另有 HLE w/ tools 行，故此行为无工具）；StepFun 官方表，Step 5 Preview (High)；同行 GLM-5.3 42.3、Kimi K3 46.9、GPT-6 Astra 54.7 均与 AA 数值一致，推断为 AA 运行的纯文本子集、无工具",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "quote": "{kind:\"row\",label:\"HLE\",cells:[{text:\"46.5%\"},{text:\"42.3%\"},{text:\"46.9%\"},{text:\"54.7%\"},{text:\"59.1%\",emphasis:\"bold\"},{text:\"54.9%\",emphasis:\"underline\"}]}",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "页面未说明子集；按与 AA 数值吻合推断为纯文本子集"
+  },
+  {
+   "benchmark": "hle-tools",
+   "score": 59.4,
+   "setting": "HLE w/ tools‡ (%)，纯文本子集；StepFun 官方表，Step 5 Preview (High)，在纯文本子集上评测（脚注明示）；工具类型未注明",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "quote": "{kind:\"row\",label:\"HLE w/ tools‡\",cells:[{text:\"59.4%\"},... ; \"For HLE w/ tools‡, Step 5 Preview (High) and GLM-5.3 (Max) were evaluated on the text-only subset, while all other models were evaluated on the full dataset.\"",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "score": 2.86,
+   "setting": "Terminal-Bench Science (version 0.1) score (%)；Vals AI 独立运行，Mini-SWE-agent harness；榜单更新于 2026-10-08",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench Science 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "quote": "30 Step 5 Preview Mini-SWE-agent 2.86% $4.25 $1 / $2.7 2h30m",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "页面数据中 version 为 0.1；tbench.ai 官方 Science 榜未见该模型"
+  },
+  {
+   "benchmark": "scicode",
+   "score": 58.9,
+   "setting": "SciCode (%)；StepFun 官方表，Step 5 Preview (High)；未注明子题/主题口径，数值与 AA 一致，推断为 AA 运行的子题准确率",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "quote": "{kind:\"row\",label:\"SciCode\",cells:[{text:\"58.9%\"},{text:\"59.0%\"},{text:\"59.5%\",emphasis:\"underline\"},{text:\"56.5%\"},{text:\"63.1%\",emphasis:\"bold\"},{text:\"56.4%\"}]}",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true
+  },
+  {
+   "benchmark": "critpt",
+   "score": 20.9,
+   "setting": "CritPt (%)；StepFun 官方表，Step 5 Preview (High)；推断引用 AA 运行结果",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "quote": "{kind:\"row\",label:\"CritPt\",cells:[{text:\"20.9%\"},{text:\"19.1%\"},{text:\"23.4%\"},{text:\"31.7%\",emphasis:\"bold\"},{text:\"29.7%\",emphasis:\"underline\"},{text:\"29.1%\"}]}",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true
+  },
+  {
+   "benchmark": "gdpval-aa",
+   "score": 53.3,
+   "setting": "GDPval-AA v2.1 Elo 1566 → (1566−500)/2000×100 = 53.3；StepFun 引用 Artificial Analysis 截至 2026-09-20 的结果，Step 5 Preview (High)",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "quote": "{kind:\"row\",label:\"GDPval-AA v2.1\",cells:[{text:\"1566\"},{text:\"1645\"},... ; \"GDPval-AA v2.1 scores are based on the latest results from \" Artificial Analysis \", as of Sep. 20, 2026.\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true
+  },
+  {
+   "benchmark": "gdpval-aa",
+   "score": 53.55,
+   "setting": "GDPval-AA v2 Elo 1571 → (1571−500)/2000×100 = 53.55；StepFun 中文发布新闻配图，引用 Artificial Analysis 截至 2026-09-19 的结果（v2）",
+   "sourceType": "official",
+   "sourceName": "StepFun 新闻：阶跃发布旗舰模型 Step 5 Preview",
+   "url": "https://www.stepfun.com/news/step-5-preview",
+   "quote": "配图 GDPval-AA v2: Step 5 Preview (High) 1571；脚注“GDPval-AA v2 采用 Artificial Analysis 截至 2026 年 9 月 19 日公布的最新结果。”",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "配图 step-5-preview-img03.webp 读图所得；v2 版本"
+  },
+  {
+   "benchmark": "gdp-pdf",
+   "score": 14.8,
+   "setting": "GDP.pdf (%)；StepFun 官方表，Step 5 Preview (High)；未注明 all-pass 或 mean-pass，推断为 AA 运行结果",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "quote": "{kind:\"row\",label:\"GDP.pdf\",cells:[{text:\"14.8%\"},{text:\"11.2%\"},{text:\"22.0%\"},{text:\"31.0%\",emphasis:\"bold\"},{text:\"26.2%\",emphasis:\"underline\"},{text:\"21.6%\"}]}",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "口径未明示"
+  },
+  {
+   "benchmark": "aa-lcr",
+   "score": 88.3,
+   "setting": "AA-LCR v1.1 (%)；StepFun 官方表，Step 5 Preview (High)",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "quote": "{kind:\"row\",label:\"AA-LCR v1.1\",cells:[{text:\"88.3%\",emphasis:\"underline\"},{text:\"79.7%\"},{text:\"88.7%\",emphasis:\"bold\"},...]}",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 44,
+   "setting": "AutomationBench (public) (%)；StepFun 官方表，Step 5 Preview (High)；公开集，非 Zapier 私有 held-out 榜单集",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "quote": "{kind:\"row\",label:\"AutomationBench (public)\",cells:[{text:\"44.0%\"},{text:\"48.2%\",emphasis:\"underline\"},{text:\"46.7%\"},{text:\"—\"},{text:\"—\"},{text:\"—\"}]}",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "Zapier 说明“Leaderboard scores run against a held-out private evaluation set; the public 600-task set is for research”，公开集与私有集不可比；同表 AutomationBench-AA 51.0 按要求不记录"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://www.stepfun.com/step-5-preview",
+   "title": "StepFun Step 5 Preview model page (JS bundle index-Cp9oF7Fw.js holds the benchmark table)",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://www.stepfun.com/news/step-5-preview",
+   "title": "阶跃发布旗舰模型 Step 5 Preview：向前一步，智能效率的新一代“帕累托前沿”",
+   "kind": "blog"
+  },
+  {
+   "url": "https://x.com/StepFun_ai/status/2101510462685003786",
+   "title": "StepFun X launch post (images only show AA index vs cost, no benchmark scores)",
+   "kind": "other"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "title": "Vals AI Terminal-Bench 4.0",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "title": "Vals AI Terminal-Bench Science",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/models/stepfun_step-5-preview",
+   "title": "Vals AI Step 5 Preview model page",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "title": "Agents' Last Exam leaderboard data (no Step model)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://deepswe.datacurve.ai/",
+   "title": "DeepSWE leaderboard (no Step model)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://zapier.com/benchmarks",
+   "title": "Zapier AutomationBench leaderboard",
+   "kind": "leaderboard"
+  }
+ ],
+ "notFound": [
+  "frontiercode",
+  "frontierswe",
+  "osworld-2",
+  "automationbench",
+  "agents-last-exam"
+ ],
+ "collectorNotes": "The vendor numbers come from the benchmark table data inside the model page's JS bundle (https://www.stepfun.com/assets/index-Cp9oF7Fw.js), because the page renders client-side. Column order: Step 5 Preview (High), GLM-5.3 (Max), Kimi K3 (Max), GPT-6 Astra (Max), Claude Fable 5.1 (Max), Claude Opus 5 (Max).\n\nSeveral rows are probably cited from Artificial Analysis, but the page only credits AA for GDPval-AA. For TB v4, HLE, SciCode, CritPt, GDP.pdf and AA-LCR, the AA source is inferred because the other models' numbers in those rows match AA's. Those rows are recorded as official vendor numbers.\n\nThe Chinese news article image shows GDPval-AA v2 = 1571 (as of Sep 19). The model page shows v2.1 = 1566 (as of Sep 20). Both are recorded.\n\nNo Step 5 Preview entry appears on these boards: tbench.ai TB4 / Science, DeepSWE (Datacurve, updated 2026-09-22), FrontierSWE, Toolathlon, the ALE API data, the Scale HLE board, OSWorld-v2 or CritPt. The Zapier board only shows the top 10 in its HTML; the rest load client-side, so this model's presence there could not be checked.\n\nThe vendor table does not include FrontierCode, FrontierSWE or OSWorld 2. Other vendors' comparison tables print no Step 5 Preview numbers in the leads (no vendor_comparison).",
+ "verifierSummary": "15 条记录全部核实无误（confirmed）。stepfun.com/step-5-preview 和 /news/step-5-preview 都是前端渲染的单页应用，表格数据不在 HTML 里，而是写在打包的 JS 文件 https://www.stepfun.com/assets/index-Cp9oF7Fw.js 中。从这个文件里找到了完整的对比表（列为 Step 5 Preview (High), GLM-5.3 (Max), Kimi K3 (Max), GPT-6 Astra (Max), Claude Fable 5.1 (Max), Claude Opus 5 (Max)），#0、#2-#6、#8-#10、#12-#14 的数值与原文逐字一致。另外两段原文也已核对：DeepSWE 的 SWE-agent harness 加 temperature=1.0/top_p=0.95 说明，以及 GDPval-AA v2.1 注明 \"as of Sep. 20, 2026\" 的说明。HLE w/ tools‡ 的脚注原文为 \"Step 5 Preview (High) and GLM-5.3 (Max) were evaluated on the text-only subset\"。#11 来自新闻稿 slug step-5-preview（2026-09-20）的配图 step-5-preview-img03 中的 GDPval-AA v2 图表，Step 5 Preview (High) 为 1571；同稿引用块写有\"GDPval-AA v2 采用 Artificial Analysis 截至 2026 年 9 月 19 日公布的最新结果\"。#1 和 #7 的 Vals 榜单行与原文一致：TB4 页注明 Updated 10/7/2026，所有结果为 avg@3；TBS 页注明 Updated 10/8/2026，版本 v0.1。模型页 vals.ai/models/stepfun_step-5-preview 写明 Default Provider: Stepfun, Temperature: 1, Top P: 0.95。仍属推断、未经证实的有三点：HLE(无工具)、SciCode、CritPt、GDP.pdf、TB v4 这几行是否由 AA 跑出，官方页没有注明；无工具 HLE 行没有脚注说明是纯文本子集，matchesPreferred=false 依据的是\"与 AA 数值一致\"的推断；ALE-CLI 用的是 Pass 还是 Score 口径也没有注明，但它只是 CLI 子集，不论哪种口径都应标 comparable=false。"
+}

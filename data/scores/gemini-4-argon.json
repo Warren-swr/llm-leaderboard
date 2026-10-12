@@ -1,0 +1,234 @@
+{
+ "model": "gemini-4-argon",
+ "records": [
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 57.4,
+   "setting": "Terminal-bench 4.0 success rate (pass@1)；Google 自测；Gemini API 最高 thinking 档；PDF 未写明 harness；对小基准取多次试验平均",
+   "sourceType": "official",
+   "sourceName": "Google DeepMind Gemini 4 Argon 模型评测 PDF",
+   "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf",
+   "quote": "Terminal-bench 4.0 | 57.4% | 58.2% | 57.9% | 66.4% (Gemini 4 Argon | GPT-6 Astra | Claude Fable 5.1 | Claude Opus 5.5); \"Terminal-Bench 4.0 results for Gemini 4 Argon are self computed\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "自测，未上 tbench.ai 官方榜（2026-10-12 核对官方榜无 Argon）"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 57.58,
+   "setting": "Terminal-Bench 4.0 accuracy (avg@3 of pass@1 runs)；Vals AI 独立复跑；Mini-SWE-agent harness；三次完整运行取平均；更新于 2026-10-07",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench 4.0 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "quote": "5 Gemini 4 Argon Mini-SWE-agent 57.58% $17.64 $4 / $20 53m35s",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 77.9,
+   "setting": "DeepSWE v1.1 resolve rate (pass@1)；Google 自测；mini-swe-agent harness；最高 thinking 档",
+   "sourceType": "official",
+   "sourceName": "Google DeepMind Gemini 4 Argon 模型评测 PDF",
+   "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf",
+   "quote": "DeepSWE v1.1 | 77.9% | 74.1% | 67.4% | 74.2%; \"DeepSWE v1.1 results for Gemini 4 Argon are self computed, using a mini-swe agent harness.\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "Datacurve 官方榜（2026-10-12 抓取）未收录 Argon；发布博客同样写 77.9%"
+  },
+  {
+   "benchmark": "frontierswe",
+   "score": 55,
+   "setting": "FrontierSWE v2 mean@5；Google 引用 Proximal 官方榜结果；proximus harness",
+   "sourceType": "official",
+   "sourceName": "Google DeepMind Gemini 4 Argon 模型评测 PDF",
+   "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf",
+   "quote": "FrontierSWE v2 | 55.0% | 65.5% | 56.3% | 62.3%; \"FrontierSWE results are reported from Proximal's official public leaderboard.\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true
+  },
+  {
+   "benchmark": "frontierswe",
+   "score": 55,
+   "setting": "FrontierSWE v2 mean@5 (worst@5 44.5, best@5 64.3)；Proximal 官方榜；proximus harness；5 次试验；榜注 Argon 缓存命中率因非生产设置偏低",
+   "sourceType": "benchmark_author",
+   "sourceName": "FrontierSWE 官方榜（Proximal）",
+   "url": "https://www.frontierswe.com/",
+   "quote": "Google Gemini 4 Argon + proximus: mean@5 55.0%, worst@5 44.5%, best@5 64.3%",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true
+  },
+  {
+   "benchmark": "osworld-2",
+   "score": 69.2,
+   "setting": "OSWorld-2.0 Offline subset, Partial score；Google 自测；仅离线子集；3 次运行取最高（每次单次尝试）；Gemini CUA harness，并行批量工具调用，含 compaction；1080p，最多 500 步；08.08 补丁",
+   "sourceType": "official",
+   "sourceName": "Google DeepMind Gemini 4 Argon 模型评测 PDF",
+   "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf",
+   "quote": "OSWorld-2.0 Offline subset Partial score | 69.2% | 72.6% | — | —; \"self computed, maxed over 3 runs with a single attempt per run... We report the partial score from the offline subset\"",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "离线子集而非全集；3 次运行取最大值，偏乐观"
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 51.3,
+   "setting": "AutomationBench Score (private set)；Google 引用 Zapier 官方榜，私有集；最高 thinking 档",
+   "sourceType": "official",
+   "sourceName": "Google DeepMind Gemini 4 Argon 模型评测 PDF",
+   "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf",
+   "quote": "AutomationBench Score | 51.3% | 41.4% | 31.4% | 42.5%; \"AutomationBench results use the private set and are sourced from the official Zapier public leaderboard.\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 51.29,
+   "setting": "AutomationBench Leaderboard 1.0.6 score (strict pass, held-out private set)；Zapier 官方榜 v1.0.6；Gemini 4 Argon (High)；私有留出集",
+   "sourceType": "benchmark_author",
+   "sourceName": "Zapier AutomationBench 官方榜",
+   "url": "https://zapier.com/benchmarks",
+   "quote": "Leaderboard 1.0.6 Rank Model Score Cost / task 1 Gemini 4 Argon (High) 51.29% $1.70*",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 50.08,
+   "setting": "AutomationBench Leaderboard 1.0.6 score (strict pass, held-out private set)；Zapier 官方榜 v1.0.6；Gemini 4 Argon (Medium)；私有留出集",
+   "sourceType": "benchmark_author",
+   "sourceName": "Zapier AutomationBench 官方榜",
+   "url": "https://zapier.com/benchmarks",
+   "quote": "2 Gemini 4 Argon (Medium) 50.08% $1.54*",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "Medium 档，非最高档"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 39.5,
+   "setting": "Agent's Last Exam Pass rate (binary)；Google 自测；默认 ALE-Claw harness；5 小时窗口；开启安全过滤",
+   "sourceType": "official",
+   "sourceName": "Google DeepMind Gemini 4 Argon 模型评测 PDF",
+   "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf",
+   "quote": "Agent's Last Exam Pass rate | 39.5% | 34.2% | — | 38.2%; \"We report the binary pass rate.\"",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "只给 Pass rate，不是偏好的部分分 Score；官方榜 API（2026-10-12）无 Argon 行"
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "score": 57.6,
+   "setting": "Terminal-Bench Science 0.1 success rate；Google 自测；验证器超时放宽到 6 倍；最高 thinking 档",
+   "sourceType": "official",
+   "sourceName": "Google DeepMind Gemini 4 Argon 模型评测 PDF",
+   "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf",
+   "quote": "Terminal-Bench Science 0.1 | 57.6% | 68.1% | 52.6% | 63.3%; \"self computed, with 6x verifier timeout to address timeout issues with verification\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "6 倍验证器超时是非标准设置，可能偏高；其他模型取自官方榜"
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "score": 44.29,
+   "setting": "Terminal-Bench Science accuracy (pass@1, single run, 70 tasks of v0.1.0)；Vals AI 独立复跑；Mini-SWE-agent harness；单次运行；基础设施错误会重试；更新于 2026-10-08",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench Science 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "quote": "5 Gemini 4 Argon Mini-SWE-agent 44.29% $44.90 $4 / $20 1h46m",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true,
+   "note": "Vals 自述与官方 0.1 榜（各厂商原生 agent、3 次平均）不可直接比较"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf",
+   "title": "Gemini 4 Argon Model evaluation: Approach, methodology & results",
+   "kind": "tech_report"
+  },
+  {
+   "url": "https://deepmind.google/models/gemini/",
+   "title": "Google DeepMind Gemini models page (Gemini 4 Argon benchmark table)",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+   "title": "Introducing Gemini 4 Argon (Google blog)",
+   "kind": "blog"
+  },
+  {
+   "url": "https://zapier.com/benchmarks",
+   "title": "Zapier AutomationBench leaderboard 1.0.6",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.frontierswe.com/",
+   "title": "FrontierSWE leaderboard (Proximal)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "title": "Vals AI Terminal-Bench 4.0",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "title": "Vals AI Terminal-Bench Science",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "title": "Agents' Last Exam leaderboard data API (no Argon rows)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://deepswe.datacurve.ai/",
+   "title": "DeepSWE leaderboard (no Argon rows)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "title": "Terminal-Bench 4.0 official leaderboard (no Argon rows)",
+   "kind": "leaderboard"
+  }
+ ],
+ "notFound": [
+  "frontiercode",
+  "toolathlon-verified",
+  "agents-last-exam",
+  "hle-no-tools",
+  "hle-tools",
+  "scicode",
+  "critpt",
+  "gdpval-aa",
+  "gdp-pdf",
+  "aa-lcr"
+ ],
+ "collectorNotes": "Google 官方材料只有一张 19 行对比表，模型页和评测 PDF 第 5 页的数字相同；PDF 里这张表是图片，已渲染成图后核对。表中能对上本任务列的只有 TB 4.0、DeepSWE v1.1、FrontierSWE v2、AutomationBench、ALE、OSWorld-2.0 和 TB-Science 0.1。HLE、SciCode、CritPt、GDPval、GDP.pdf、AA-LCR、Toolathlon、FrontierCode 在 Google 材料里都没有出现。\n\n2026-10-12 逐一核对了作者榜：tbench.ai TB4.0、DeepSWE（Datacurve）、ALE 的 API JSON、Toolathlon、Scale HLE 榜、CritPt、OSWorld 2.0 项目站、Cognition FrontierCode 都没有 Argon。Zapier（High 51.29 / Medium 50.08）和 FrontierSWE（55.0）有 Argon。Harbor 上的 TB-Science 官方榜由前端动态加载，没能取到数据。\n\nALE 只有 Google 自测的二值 Pass rate 39.5，记为不可比，所以 agents-last-exam 也列进了 not_found。OSWorld 是离线子集、3 次运行取最高，记为可比但不符合偏好设置。TB-Science 的官方数字用了 6 倍验证器超时，已在备注说明。\n\n没有找到其他厂商对比表印出 Argon 的数字：Sonnet 5.5 和 GPT-6.1 Sol 都早于 Argon 发布。Artificial Analysis 的数字按要求没有记录。",
+ "verifierSummary": "I checked all 12 records against their sources. Every score is right and every comparability flag follows the column rules. Sources opened: the Gemini 4 Argon evaluation PDF from Google DeepMind (the results table is an embedded image on page 5, which I extracted and viewed; the methodology notes are on pages 2 and 3), the Vals AI Terminal-Bench 4.0 and Terminal-Bench Science pages, frontierswe.com and zapier.com/benchmarks. There are two small wording issues and no score changes. In #3, the \"proximus harness\" detail comes from the FrontierSWE board; the PDF itself does not name a harness. In #2, the PDF's exact wording is \"mini-swe agent harness\". Files downloaded for the check are in source-downloads/dl/argon-pdf/ and source-downloads/dl/web/."
+}

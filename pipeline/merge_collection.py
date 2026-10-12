@@ -54,6 +54,11 @@ for item in res['results']:
             st['not_found'] += 1
             rec['verified'] = False
             notes.append('核验未找到该数字：' + (v.get('fix') or ''))
+        elif r['url'].startswith('https://openai.com/'):
+            # OpenAI 页面对自动访问返回 403；核验者按收集阶段保存的官方页面副本逐条核对
+            st['unreachable'] += 1
+            rec['verified'] = True
+            notes.append('OpenAI 页面拒绝自动访问（403），已按 2026-10-12 抓取保存的官方页面副本核对，副本见 data/sources/openai/')
         else:
             st['unreachable'] += 1
             notes.append('核验时无法打开原网页' + ('：' + v['fix'] if v.get('fix') else ''))

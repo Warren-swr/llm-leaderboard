@@ -1,0 +1,314 @@
+{
+ "model": "qwen3-8-2-4t-a95b",
+ "records": [
+  {
+   "benchmark": "deepswe",
+   "score": 56.6,
+   "setting": "DeepSWE 1.1 resolve rate (%)；厂商自测；Claude Code 与 mini-SWE-agent 两种 harness 取最高（Claude Code 最好），temp=1.0，top_p=0.95，256K 上下文",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-2.4T-A95B Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+   "quote": "DeepSWE 1.1 | 59.0 | 70.0 | 73.0 | 21.6 | 56.6 (last column Qwen3.8-Max); footnote 4: \"We report the highest score among both harnesses; notably, Qwen3.8-Max performs best on Claude Code.\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "两种 harness 取最高，带轻微挑选偏差；列名为 Qwen3.8-Max（即这套权重）"
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 57.46,
+   "setting": "DeepSWE v1.1 pass@1 (pass_rate 0.5746)；Datacurve 官方榜；mini-SWE-agent，xhigh，113 题×4 次运行",
+   "sourceType": "benchmark_author",
+   "sourceName": "DeepSWE 官方榜 (Datacurve) leaderboard-live.json",
+   "url": "https://deepswe.datacurve.ai/artifacts/v1.1/leaderboard-live.json",
+   "quote": "\"model\": \"qwen3-8-max\", \"harness\": \"mini-swe-agent\", \"reasoning_effort\": \"xhigh\", ... \"pass_at_1\": 0.5746102449888641",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true,
+   "note": "榜单页显示为 qwen3.8-max [xhigh] 57%；未标 0902，按原版 Max 处理"
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 51,
+   "setting": "DeepSWE v1.1；Reflection Beam 发布页对比表；Reflection 称其他模型分数取自 Artificial Analysis 和 DataCurve；未注明 Qwen 快照与 effort",
+   "sourceType": "vendor_comparison",
+   "sourceName": "Reflection Beam 发布页对比表",
+   "url": "https://reflection.ai/beam",
+   "quote": "\"DeepSWE v1.1\",\"44.4\",\"NR\",\"NR\",\"44.0\",\"61.0\",\"68.0\",\"51.0\",\"74.2\" (column 'Qwen 3.8 Max')",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "与阿里自报 56.6、DataCurve 当前榜 57.46 都不一致，来源和快照不明"
+  },
+  {
+   "benchmark": "frontierswe",
+   "score": 15.8,
+   "setting": "FrontierSWE V2 mean@5 (%)；Proximal 官方榜；proximus harness，34 题，每题 5 次、20 小时预算",
+   "sourceType": "benchmark_author",
+   "sourceName": "FrontierSWE 官方榜 (Proximal)",
+   "url": "https://www.frontierswe.com/",
+   "quote": "title=\"Qwen3.8-Max: 15.8% mean@5 across scored tasks\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "榜上另有 Qwen3.8-Max-0902 17.8%，那是另一快照，未采用"
+  },
+  {
+   "benchmark": "frontierswe",
+   "score": 73.5,
+   "setting": "FrontierSWE dominance score（按官方脚本由原始分重算）；厂商自测，Claude Code harness",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-2.4T-A95B Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+   "quote": "FrontierSWE | 70.0 | 88.8 | -- | 40.7 | 73.5; footnote 6: \"Dominance scores are recomputed from the raw scores using the official evaluation script.\"",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "是 dominance score，不是 mean@5，不可比"
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 27.3,
+   "setting": "Automation-Bench Pass@1（600 题公开子集）；厂商自测，公开子集",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-2.4T-A95B Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+   "quote": "Automation-Bench (Pass@1) | 27.2 | 29.1 | 29.7 | 14.2 | 27.3; footnote 16: \"Automation-Bench: Evaluated on the 600-task public subset.\"",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "公开子集，不是 Zapier 私有留出集，不可比"
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 39.8,
+   "setting": "AutomationBench public；Reflection Beam 发布页对比表，公开集；来源和快照未注明",
+   "sourceType": "vendor_comparison",
+   "sourceName": "Reflection Beam 发布页对比表",
+   "url": "https://reflection.ai/beam",
+   "quote": "\"AutomationBench public \",\"37.0\",\"NR\",\"NR\",\"26.2\",\"48.2\",\"46.7\",\"39.8\",\"54.8\"",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "公开集，不是私有留出集"
+  },
+  {
+   "benchmark": "toolathlon-verified",
+   "score": 72.5,
+   "setting": "Toolathlon Verified (Pass@1)；厂商自测，未注明 harness",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-2.4T-A95B Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+   "quote": "Toolathlon Verified (Pass@1) | 76.2 | 77.9 | 74.9 | 49.7 | 72.5",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 52.4,
+   "setting": "Agents' Last Exam Score；厂商自测，未注明 harness",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-2.4T-A95B Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+   "quote": "Agents' Last Exam (Pass / Score) | 27.0 / 45.1 | -- / -- | 30.6 / 53.6 | 11.8 / 31.1 | 27.0 / 52.4",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 27,
+   "setting": "Agents' Last Exam Pass rate；厂商自测，同一行的 Pass 值",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-2.4T-A95B Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+   "quote": "Agents' Last Exam (Pass / Score) | ... | 27.0 / 52.4",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "Pass rate（全对比例），不是 Score"
+  },
+  {
+   "benchmark": "hle-no-tools",
+   "score": 43.6,
+   "setting": "HLE accuracy（无工具）；厂商自测；未说明是全集还是纯文本子集",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-2.4T-A95B Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+   "quote": "HLE | 45.7 | 53.3 | 47.2 | 41.4 | 43.6 (General Capabilities section; separate row 'HLE w/ tools')",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "该权重只支持文本，可能是纯文本子集，模型卡未说明"
+  },
+  {
+   "benchmark": "hle-no-tools",
+   "score": 43.6,
+   "setting": "HLE no tools；Reflection Beam 发布页对比表（数值与阿里自报一致）",
+   "sourceType": "vendor_comparison",
+   "sourceName": "Reflection Beam 发布页对比表",
+   "url": "https://reflection.ai/beam",
+   "quote": "\"HLE no tools \",\"36.2\",\"29.7\",\"26.7\",\"40.5\",\"42.3\",\"46.9\",\"43.6\",\"39.1\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true
+  },
+  {
+   "benchmark": "hle-tools",
+   "score": 56.2,
+   "setting": "HLE w/ tools accuracy；厂商自测；未注明工具配置和题目子集",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-2.4T-A95B Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+   "quote": "HLE w/ tools | 57.9 | 64.5 | 58.0 | 53.5 | 56.2",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "未说明是全集还是纯文本子集"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 34.34,
+   "setting": "Terminal-Bench 4.0 accuracy (%)；Vals AI 独立评测；Mini-SWE-agent harness",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench 4.0 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "quote": "13 | Qwen 3.8 Max | Mini-SWE-agent | 34.34% | $10.63 | $2 / $6 | 2h28m",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "Vals 模型页标注为 2026-08-03 发布的开源权重 Qwen 3.8 Max（原版）；tbench.ai 官方榜只有 0902 快照（26.97），未采用"
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "score": 12.86,
+   "setting": "Terminal-Bench Science accuracy (%)；Vals AI 独立评测；Mini-SWE-agent harness",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench Science 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "quote": "11 | Qwen 3.8 Max | Mini-SWE-agent | 12.86% | $16.22 | $2 / $6 | 3h20m",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "页面未标注版本号 0.1；模型为原版 Qwen 3.8 Max"
+  },
+  {
+   "benchmark": "scicode",
+   "score": 52.1,
+   "setting": "SciCode；Reflection Beam 发布页对比表；Reflection 称其他模型分数取自 Artificial Analysis/DataCurve；快照未注明",
+   "sourceType": "vendor_comparison",
+   "sourceName": "Reflection Beam 发布页对比表",
+   "url": "https://reflection.ai/beam",
+   "quote": "\"SciCode\",\"49.7\",\"46.1\",\"44.6\",\"NR\",\"59.0\",\"58.7\",\"52.1\",\"52.0\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "很可能转抄自 Artificial Analysis，可能与已采集的 AA 数据重复；未说明是子问题准确率"
+  },
+  {
+   "benchmark": "critpt",
+   "score": 20,
+   "setting": "CriPT AA；Reflection Beam 发布页对比表，行名标注 AA（即 Artificial Analysis 跑分）；快照未注明",
+   "sourceType": "vendor_comparison",
+   "sourceName": "Reflection Beam 发布页对比表",
+   "url": "https://reflection.ai/beam",
+   "quote": "\"CriPT AA\",\"16.3\",\"5.4\",\"3.1\",\"20.9\",\"19.1\",\"23.4\",\"20.0\",\"14.3\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "实为 AA 的数，可能与已采集的 AA 数据重复"
+  },
+  {
+   "benchmark": "aa-lcr",
+   "score": 80.3,
+   "setting": "AA-LCR；Reflection Beam 发布页对比表；版本（v1.1 与否）与快照未注明",
+   "sourceType": "vendor_comparison",
+   "sourceName": "Reflection Beam 发布页对比表",
+   "url": "https://reflection.ai/beam",
+   "quote": "\"AA-LCR\",\"79.3\",\"77.3\",\"79.3\",\"78.3\",\"79.7\",\"88.7\",\"80.3\",\"84.0\"",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "可能转抄自 AA；未标注 v1.1"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+   "title": "Qwen3.8-2.4T-A95B Hugging Face model card (column 'Qwen3.8-Max')",
+   "kind": "model_card"
+  },
+  {
+   "url": "https://qwen.ai/blog?id=qwen3.8",
+   "title": "Qwen3.8-Max blog (client-rendered; could not be read)",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://deepswe.datacurve.ai/artifacts/v1.1/leaderboard-live.json",
+   "title": "DeepSWE v1.1 leaderboard data (Datacurve)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.frontierswe.com/",
+   "title": "FrontierSWE V2 leaderboard (Proximal)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "title": "Vals AI Terminal-Bench 4.0",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "title": "Vals AI Terminal-Bench Science",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/models/alibaba_qwen3.8-max",
+   "title": "Vals AI Qwen 3.8 Max model page (released Aug 3, 2026, open weights)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://reflection.ai/beam",
+   "title": "Reflection Beam launch page comparison table",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "title": "Terminal-Bench 4.0 leaderboard (only Qwen3.8-Max-0902 listed)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://toolathlon.xyz/docs/leaderboard",
+   "title": "Toolathlon leaderboard (no Qwen3.8 rows)",
+   "kind": "leaderboard"
+  }
+ ],
+ "notFound": [
+  "frontiercode",
+  "osworld-2",
+  "gdpval-aa",
+  "gdp-pdf"
+ ],
+ "collectorNotes": "我抓取了 HF 模型卡原文（raw README），厂商这边能对上 16 列的只有这几项：DeepSWE 1.1 56.6、FrontierSWE 73.5（dominance score，不可比）、ALE Pass/Score 27.0/52.4、Automation-Bench 27.3（600 题公开子集，不可比）、Toolathlon Verified 72.5、HLE w/ tools 56.2、HLE 43.6。厂商没有报 TB 4.0（只报了 TB 2.1）、OSWorld 2、SciCode、CritPt、GDPval、GDP.pdf、FrontierCode。qwen.ai 博客是客户端渲染，curl 和 WebFetch 都拿不到正文，所以没有核对博客里是否有更多行（比如 Max 版的视觉类评测）。\n\n官方榜单：DeepSWE 榜有 qwen3-8-max xhigh 57.46%；FrontierSWE 榜有 Qwen3.8-Max 15.8% mean@5（0902 的 17.8 未采用）；tbench.ai 的 TB 4.0 榜只有 Qwen3.8-Max-0902（26.97，未采用）。Toolathlon 完整榜、Scale HLE 页面、Zapier 可见的前 10 行里都没有 Qwen3.8；ALE 榜是客户端渲染，取不到数据。\n\n第三方：Vals AI 的 TB 4.0 34.34 和 TB-Science 12.86 来自其模型页上标为 2026-08-03 发布、开源权重的 'Qwen 3.8 Max'，按原版处理。\n\n其他厂商对比表：Reflection Beam 发布页（https://reflection.ai/beam，10/8 更新过）有 'Qwen 3.8 Max' 一列，但没注明快照。该页称其他模型分数取自 Artificial Analysis 和 DataCurve，所以其中 SciCode 52.1、CritPt 20.0、AA-LCR 80.3 很可能是转抄的 AA 数，可能与已采集的数据重复。它的 DeepSWE 51.0 与厂商自报和 DataCurve 当前榜单都对不上。\n\n未采纳的线索：第三方网站转述的 OSWorld-Verified 86.1 不属于 OSWorld 2，而且原文出处没有核实。",
+ "verifierSummary": "I checked all 18 records against the live pages: 18 confirmed, 0 corrected, 0 not found, 0 unreachable. The comparability flags all follow the column rules.\n\n- **HF model card (raw README):** All values match the \"Qwen3.8-Max\" column. The card says Qwen3.8-Max is \"the official version based on Qwen3.8-2.4T-A95B\". The records cover DeepSWE 1.1 (56.6), FrontierSWE (73.5), Automation-Bench (27.3), Toolathlon Verified (72.5), Agents' Last Exam (27.0 pass / 52.4 score), HLE (43.6) and HLE w/ tools (56.2).\n  - Footnote 4 confirms the Claude Code / mini-SWE-agent best-of-two harness with temp=1.0, top_p=0.95 and 256K context.\n  - Footnote 16 confirms the Automation-Bench 600-task public subset.\n  - The 73.5 FrontierSWE value is not mean@5. Proximal's official mean@5 for Qwen3.8-Max is 15.8, and footnote 6 says the dominance scores were recomputed. So comparable=false is correct.\n- **DeepSWE leaderboard-live.json:** Confirms qwen3-8-max with mini-swe-agent at xhigh: pass_at_1 0.57461, n_runs 4, 113 tasks. n_attempted is 449, not exactly 113×4=452.\n- **frontierswe.com (FrontierSWE V2, 34 tasks, 5 trials, 20-hour budget):** \"Qwen3.8-Max: 15.8% mean@5\" is confirmed. The board also lists a separate snapshot, \"Qwen3.8-Max-0902: 17.8% mean@5\" (worst@5 8.1%, best@5 26.8%, proximus harness). That entry was not recorded; add it as a separate record.\n- **Vals AI:** Terminal-Bench 4.0 shows 34.34% (Mini-SWE-agent). Vals notes nine provider refusals on Qwen were scored as failures. Terminal-Bench Science shows 12.86% (Mini-SWE-agent), with all 70 tasks from upstream v0.1.0.\n- **reflection.ai/beam:** I confirmed the column order (the 7th value column is \"Qwen 3.8 Max\"). DeepSWE v1.1 is 51.0, AutomationBench public 39.8, HLE no tools 43.6, SciCode 52.1, CriPT AA 20.0 and AA-LCR 80.3. Reflection says other models' scores come from Artificial Analysis and DataCurve. So the SciCode, CritPt, AA-LCR and HLE no-tools values are probably AA-derived and may duplicate data we already have; do not mark them primaryHint.\n\n**primaryHint suggestions:**\n- DeepSWE, HLE no tools, HLE with tools, Toolathlon and Agents' Last Exam Score: use the vendor HF card records (#0, #10, #12, #7, #8).\n- FrontierSWE: use #3.\n- Automation-Bench: no comparable record exists."
+}

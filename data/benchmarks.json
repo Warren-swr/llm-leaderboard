@@ -2,140 +2,261 @@
   "selectedOn": "2026-10-12",
   "evidence": "data/research/discovery-20261012.json",
   "categories": [
-    { "id": "coding", "name": "编程", "weight": 0.25, "description": "长程软件工程、终端操作与可合并的代码交付" },
-    { "id": "agents", "name": "智能体", "weight": 0.25, "description": "电脑操作、跨应用工具调用与业务流程自动化" },
-    { "id": "reasoning", "name": "推理", "weight": 0.15, "description": "前沿学科难题，分不用工具与用工具两种" },
-    { "id": "science", "name": "科研", "weight": 0.15, "description": "科研编程、科学计算与物理研究级问题" },
-    { "id": "knowledge", "name": "知识工作", "weight": 0.2, "description": "专业交付物质量、长文档理解与 PDF 资料问答" }
+    {
+      "id": "coding",
+      "name": "编程",
+      "weight": 0.25,
+      "description": "长程软件工程、终端操作与可合并的代码交付"
+    },
+    {
+      "id": "agents",
+      "name": "智能体",
+      "weight": 0.25,
+      "description": "电脑操作、跨应用工具调用与业务流程自动化"
+    },
+    {
+      "id": "reasoning",
+      "name": "推理",
+      "weight": 0.15,
+      "description": "前沿学科难题，分不用工具与用工具两种"
+    },
+    {
+      "id": "science",
+      "name": "科研",
+      "weight": 0.15,
+      "description": "科研编程、科学计算与物理研究级问题"
+    },
+    {
+      "id": "knowledge",
+      "name": "知识工作",
+      "weight": 0.2,
+      "description": "专业交付物质量、长文档理解与 PDF 资料问答"
+    }
   ],
   "benchmarks": [
     {
-      "id": "terminal-bench-4", "name": "Terminal-Bench 4.0", "category": "coding", "weight": 1, "tier": 1,
+      "id": "terminal-bench-4",
+      "name": "Terminal-Bench 4.0",
+      "category": "coding",
+      "weight": 1,
+      "tier": 1,
       "metric": "任务成功率（pass@1，全部测试通过才算成功）",
       "preferredSetting": "厂商自选 agent harness，最高推理档，单次作答多次试验取平均",
-      "chance": 0, "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+      "chance": 0,
+      "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
       "description": "66 道真实终端任务（运维、数据库迁移、ML、科学计算等），每题一个容器、最长 8 小时，隐藏测试判分。",
-      "selectionReason": "Anthropic 与 OpenAI 共 5 个发布的头条表都用；Artificial Analysis 对 20 个模型都有独立复测；头部 60–71 分，未饱和。"
+      "selectionReason": "Anthropic 与 OpenAI 共 5 个发布的头条表都用；Artificial Analysis 对 20 个模型都有独立复测；头部 60–71 分，未饱和。",
+      "homepage": "https://www.tbench.ai/news/terminal-bench-4-0"
     },
     {
-      "id": "deepswe", "name": "DeepSWE v1.1", "category": "coding", "weight": 1, "tier": 1,
+      "id": "deepswe",
+      "name": "DeepSWE v1.1",
+      "category": "coding",
+      "weight": 1,
+      "tier": 1,
       "metric": "解决率（pass@1）",
       "preferredSetting": "官方榜统一 mini-SWE-agent harness 或厂商自报，最高推理档",
-      "chance": 0, "url": "https://deepswe.datacurve.ai/",
+      "chance": 0,
+      "url": "https://deepswe.datacurve.ai/",
       "description": "113 道长程软件工程任务，单题需要大量代码修改，由 Datacurve 维护。",
-      "selectionReason": "7 个 OpenAI / Anthropic 发布使用、14 个其他模型自报，是 2026 年覆盖最广的编程评测；头部 78 分。"
+      "selectionReason": "7 个 OpenAI / Anthropic 发布使用、14 个其他模型自报，是 2026 年覆盖最广的编程评测；头部 78 分。",
+      "homepage": "https://deepswe.datacurve.ai/"
     },
     {
-      "id": "frontiercode", "name": "FrontierCode v1.1 Main", "category": "coding", "weight": 1, "tier": 1,
+      "id": "frontiercode",
+      "name": "FrontierCode v1.1 Main",
+      "category": "coding",
+      "weight": 1,
+      "tier": 1,
       "metric": "综合得分（功能性阻断项 + 加权 rubric，mean@5）",
       "preferredSetting": "Cognition 统一运行，最高推理档；Claude 用 Claude Code，GPT 用 Codex CLI",
-      "chance": 0, "url": "",
+      "chance": 0,
+      "url": "https://cognition.com/frontiercode",
       "description": "考察代码是否达到可合并质量：功能正确之外还按评审 rubric 打分。Main 为 100 道最难题。",
-      "selectionReason": "6 个 OpenAI / Anthropic 发布使用，其中 5 个列入头条表；头部 54–55 分，区分度高。"
+      "selectionReason": "6 个 OpenAI / Anthropic 发布使用，其中 5 个列入头条表；头部 54–55 分，区分度高。",
+      "homepage": "https://cognition.com/blog/frontier-code"
     },
     {
-      "id": "frontierswe", "name": "FrontierSWE v2", "category": "coding", "weight": 1, "tier": 1,
+      "id": "frontierswe",
+      "name": "FrontierSWE v2",
+      "category": "coding",
+      "weight": 1,
+      "tier": 1,
       "metric": "平均得分（mean@5，Proximal 官方口径）",
       "preferredSetting": "Proximal 统一 harness 运行，最高推理档",
-      "chance": 0, "url": "https://www.frontierswe.com/",
+      "chance": 0,
+      "url": "https://www.frontierswe.com/",
       "description": "34 道超长程系统开发任务，每题预算约 20 小时，由 Proximal 运行并判分。",
-      "selectionReason": "4 个 OpenAI / Anthropic 发布在 system card 中使用，Gemini、Grok 也引用官方榜；头部 65 分。部分厂商报的 dominance score 口径不同，不计入。"
+      "selectionReason": "4 个 OpenAI / Anthropic 发布在 system card 中使用，Gemini、Grok 也引用官方榜；头部 65 分。部分厂商报的 dominance score 口径不同，不计入。",
+      "homepage": "https://www.proximal.ai/blog/frontierswev2/"
     },
     {
-      "id": "osworld-2", "name": "OSWorld 2", "category": "agents", "weight": 1, "tier": 1,
+      "id": "osworld-2",
+      "name": "OSWorld 2",
+      "category": "agents",
+      "weight": 1,
+      "tier": 1,
       "metric": "部分得分（partial score，按任务检查点给分）",
       "preferredSetting": "OSWorld 2.1 / 2.0 完整任务集，1080p、最多 500 步，最高推理档",
-      "chance": 0, "url": "",
+      "chance": 0,
+      "url": "https://osworld-v2.xlang.ai/",
       "description": "在真实桌面虚拟机里完成跨应用的办公与系统任务，按检查点给部分分。",
-      "selectionReason": "8 个 OpenAI / Anthropic 发布全部列入头条表，是电脑操作能力的公共考卷。2.0 与 2.1、完整集与离线子集视为可比但非首选；老版 OSWorld-Verified 已饱和，不计入。"
+      "selectionReason": "8 个 OpenAI / Anthropic 发布全部列入头条表，是电脑操作能力的公共考卷。2.0 与 2.1、完整集与离线子集视为可比但非首选；老版 OSWorld-Verified 已饱和，不计入。",
+      "homepage": "https://osworld-v2.xlang.ai/"
     },
     {
-      "id": "automationbench", "name": "AutomationBench", "category": "agents", "weight": 1, "tier": 1,
+      "id": "automationbench",
+      "name": "AutomationBench",
+      "category": "agents",
+      "weight": 1,
+      "tier": 1,
       "metric": "通过率（Zapier 私有留出集）",
       "preferredSetting": "Zapier 官方运行（release 1.0.6），最高推理档",
-      "chance": 0, "url": "https://zapier.com/benchmarks",
+      "chance": 0,
+      "url": "https://zapier.com/benchmarks",
       "description": "Zapier 出题的业务流程自动化任务，在 CRM、表格、邮件等多个 SaaS 之间完成真实工作流。",
-      "selectionReason": "7 个 OpenAI / Anthropic 发布使用，其中 6 个列入头条表；头部 40–60 分。Artificial Analysis 的部分得分版（AutomationBench-AA）口径不同，只作参考。"
+      "selectionReason": "7 个 OpenAI / Anthropic 发布使用，其中 6 个列入头条表；头部 40–60 分。Artificial Analysis 的部分得分版（AutomationBench-AA）口径不同，只作参考。",
+      "homepage": "https://zapier.com/benchmarks"
     },
     {
-      "id": "toolathlon-verified", "name": "Toolathlon-Verified", "category": "agents", "weight": 1, "tier": 1,
+      "id": "toolathlon-verified",
+      "name": "Toolathlon-Verified",
+      "category": "agents",
+      "weight": 1,
+      "tier": 1,
       "metric": "通过率（pass@1，多次试验平均）",
       "preferredSetting": "官方 Verified 题集（108 题），最高推理档",
-      "chance": 0, "url": "https://toolathlon.xyz/",
+      "chance": 0,
+      "url": "https://toolathlon.xyz/docs/leaderboard",
       "description": "跨 30 多个真实应用与 MCP 工具的长链路任务，考察多工具编排。",
-      "selectionReason": "Anthropic 4 个发布在 system card 中使用，7 个其他模型自报；头部 74–81 分，仍有区分度。"
+      "selectionReason": "Anthropic 4 个发布在 system card 中使用，7 个其他模型自报；头部 74–81 分，仍有区分度。",
+      "homepage": "https://toolathlon.xyz/docs/blog/toolathlon-verified"
     },
     {
-      "id": "agents-last-exam", "name": "Agents' Last Exam", "category": "agents", "weight": 1, "tier": 1,
+      "id": "agents-last-exam",
+      "name": "Agents' Last Exam",
+      "category": "agents",
+      "weight": 1,
+      "tier": 1,
       "metric": "Score（部分得分，OpenAI 发布页口径）",
       "preferredSetting": "官方任务集 V1，最高推理档，带工具",
-      "chance": 0, "url": "https://agents-last-exam.org/leaderboard",
+      "chance": 0,
+      "url": "https://agents-last-exam.org/leaderboard",
       "description": "Berkeley RDI 出题的长程专业工作流任务，结果可核验；官方榜由 Snorkel 运营。",
-      "selectionReason": "OpenAI 3 个发布列入头条表，8 个其他模型自报。官方榜主指标是 Pass rate（全对比例），与 Score 不可比，只作参考。"
+      "selectionReason": "OpenAI 3 个发布列入头条表，8 个其他模型自报。官方榜主指标是 Pass rate（全对比例），与 Score 不可比，只作参考。",
+      "homepage": "https://agents-last-exam.org/"
     },
     {
-      "id": "hle-no-tools", "name": "HLE（不用工具）", "category": "reasoning", "weight": 1, "tier": 1,
+      "id": "hle-no-tools",
+      "name": "HLE（不用工具）",
+      "category": "reasoning",
+      "weight": 1,
+      "tier": 1,
       "metric": "准确率",
       "preferredSetting": "完整 2,500 题，不用工具，最高推理档；纯文本子集视为可比但非首选",
-      "chance": 0, "url": "https://lastexam.ai/",
+      "chance": 0,
+      "url": "https://labs.scale.com/leaderboard/humanitys_last_exam",
       "description": "Humanity's Last Exam：数学、人文、自然科学的前沿专家级难题，由 CAIS 与 Scale AI 发布。",
-      "selectionReason": "Anthropic 4 个发布的 system card 使用，Artificial Analysis 对 20 个模型都有独立复测（纯文本子集）；头部 64 分。"
+      "selectionReason": "Anthropic 4 个发布的 system card 使用，Artificial Analysis 对 20 个模型都有独立复测（纯文本子集）；头部 64 分。",
+      "homepage": "https://lastexam.ai/"
     },
     {
-      "id": "hle-tools", "name": "HLE（用工具）", "category": "reasoning", "weight": 1, "tier": 1,
+      "id": "hle-tools",
+      "name": "HLE（用工具）",
+      "category": "reasoning",
+      "weight": 1,
+      "tier": 1,
       "metric": "准确率",
       "preferredSetting": "完整题集，允许搜索 / 代码执行，屏蔽 HLE 题源网站，最高推理档",
-      "chance": 0, "url": "https://lastexam.ai/",
+      "chance": 0,
+      "url": "https://lastexam.ai/",
       "description": "同一套 HLE 题目，允许模型联网搜索、抓取网页和执行代码。",
-      "selectionReason": "Anthropic 与 OpenAI 共 5 个发布列入头条表；头部 68 分。"
+      "selectionReason": "Anthropic 与 OpenAI 共 5 个发布列入头条表；头部 68 分。",
+      "homepage": "https://lastexam.ai/"
     },
     {
-      "id": "terminal-bench-science", "name": "Terminal-Bench-Science 0.1", "category": "science", "weight": 1, "tier": 1,
+      "id": "terminal-bench-science",
+      "name": "Terminal-Bench-Science 0.1",
+      "category": "science",
+      "weight": 1,
+      "tier": 1,
       "metric": "任务成功率（pass@1）",
       "preferredSetting": "最高推理档，多次试验平均",
-      "chance": 0, "url": "",
+      "chance": 0,
+      "url": "https://www.tbench.ai/leaderboard/terminal-bench-science/0.1",
       "description": "70 道科研终端任务，覆盖 5 个学科领域，在容器里完成数据分析与科学计算并由测试判分。",
-      "selectionReason": "6 个 OpenAI / Anthropic 发布使用，其中 4 个列入头条表；Artificial Analysis 对 13 个模型有独立复测；头部 65 分。"
+      "selectionReason": "6 个 OpenAI / Anthropic 发布使用，其中 4 个列入头条表；Artificial Analysis 对 13 个模型有独立复测；头部 65 分。",
+      "homepage": "https://www.tbench.ai/news/terminal-bench-science-0-1"
     },
     {
-      "id": "scicode", "name": "SciCode", "category": "science", "weight": 1, "tier": 2,
+      "id": "scicode",
+      "name": "SciCode",
+      "category": "science",
+      "weight": 1,
+      "tier": 2,
       "metric": "子问题准确率（pass@1，含背景信息）",
       "preferredSetting": "官方 288 个子问题测试集，带科学家标注的背景信息",
-      "chance": 0, "url": "",
+      "chance": 0,
+      "url": "https://scicode-bench.github.io/leaderboard/",
       "description": "把物理、化学、生物等领域的科研计算拆成子问题，要求写出能通过测试的代码。",
-      "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部 67 分，未饱和。"
+      "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部 67 分，未饱和。",
+      "homepage": "https://scicode-bench.github.io/"
     },
     {
-      "id": "critpt", "name": "CritPt", "category": "science", "weight": 1, "tier": 2,
+      "id": "critpt",
+      "name": "CritPt",
+      "category": "science",
+      "weight": 1,
+      "tier": 2,
       "metric": "挑战题准确率（官方判分服务器）",
       "preferredSetting": "70 道测试集挑战题，pass@1，官方判分服务器",
-      "chance": 0, "url": "",
+      "chance": 0,
+      "url": "https://artificialanalysis.ai/evaluations/critpt",
       "description": "研究级物理问题，答案由官方服务器自动判分，测的是能否完成真正的前沿物理推导。",
-      "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部只有 32 分，区分度很高。Anthropic 内部修正版（CritPT-Corrected）口径不同，只作参考。"
+      "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部只有 32 分，区分度很高。Anthropic 内部修正版（CritPT-Corrected）口径不同，只作参考。",
+      "homepage": "https://critpt.com/"
     },
     {
-      "id": "gdpval-aa", "name": "GDPval-AA v2.1", "category": "knowledge", "weight": 1, "tier": 1,
+      "id": "gdpval-aa",
+      "name": "GDPval-AA v2.1",
+      "category": "knowledge",
+      "weight": 1,
+      "tier": 1,
       "metric": "归一化得分 = clamp((Elo − 500) / 2000) × 100",
       "preferredSetting": "Artificial Analysis 运行（Stirrup harness），最高推理档",
-      "chance": 0, "url": "",
+      "chance": 0,
+      "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
       "description": "220 道真实职业交付物任务（报告、表格、方案等），由评审模型两两盲评，拟合成 Elo。",
-      "selectionReason": "Anthropic 与 OpenAI 共 5 个发布列入头条表；Elo 按 Artificial Analysis 公布的公式换算成百分制。"
+      "selectionReason": "Anthropic 与 OpenAI 共 5 个发布列入头条表；Elo 按 Artificial Analysis 公布的公式换算成百分制。",
+      "homepage": "https://artificialanalysis.ai/evaluations/gdpval-aa"
     },
     {
-      "id": "gdp-pdf", "name": "GDP.pdf", "category": "knowledge", "weight": 1, "tier": 2,
+      "id": "gdp-pdf",
+      "name": "GDP.pdf",
+      "category": "knowledge",
+      "weight": 1,
+      "tier": 2,
       "metric": "全部通过率（all-pass，Artificial Analysis 口径）",
       "preferredSetting": "Artificial Analysis 运行，100 题 × 5 次",
-      "chance": 0, "url": "",
+      "chance": 0,
+      "url": "https://surgehq.ai/benchmarks/gdp-pdf",
       "description": "基于多页专业 PDF 的问答，每题有多条评分标准，全部满足才算通过。",
-      "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部只有 31 分。Anthropic system card 的自评口径不同，只作参考。"
+      "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部只有 31 分。Anthropic system card 的自评口径不同，只作参考。",
+      "homepage": "https://surgehq.ai/benchmarks/gdp-pdf"
     },
     {
-      "id": "aa-lcr", "name": "AA-LCR v1.1", "category": "knowledge", "weight": 1, "tier": 2,
+      "id": "aa-lcr",
+      "name": "AA-LCR v1.1",
+      "category": "knowledge",
+      "weight": 1,
+      "tier": 2,
       "metric": "准确率（pass@1，3 次平均）",
       "preferredSetting": "Artificial Analysis 运行，100 题，每题约 10 万 token 输入",
-      "chance": 0, "url": "",
+      "chance": 0,
+      "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-long-context-reasoning",
       "description": "长文档推理：在约 10 万 token 的多份文档里查找、比对并推出答案。",
-      "selectionReason": "长上下文方向唯一未饱和、且 20 个模型都有分数的评测（MRCR 已到 96–100）；头部 89 分，接近饱和线，后续需要复查。"
+      "selectionReason": "长上下文方向唯一未饱和、且 20 个模型都有分数的评测（MRCR 已到 96–100）；头部 89 分，接近饱和线，后续需要复查。",
+      "homepage": "https://artificialanalysis.ai/evaluations/artificial-analysis-long-context-reasoning"
     }
   ]
 }

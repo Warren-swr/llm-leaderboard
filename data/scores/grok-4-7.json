@@ -1,0 +1,266 @@
+{
+ "model": "grok-4-7",
+ "records": [
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 37.6,
+   "setting": "Terminal-Bench 4.0 task success rate (%)；xhigh；Grok Build 自家 harness；厂商发布页对比表",
+   "sourceType": "official",
+   "sourceName": "SpaceXAI Grok 4.7 发布页",
+   "url": "https://x.ai/news/grok-4-7",
+   "quote": "Multi-hour terminal work Terminal-Bench 4.0 37.6% 20.3% 37.3% 57.9% (columns: Grok 4.7 xHigh / Grok 4.6 High / GPT-5.6 Sol Max / Fable 5.1 Max)",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "模型卡正文写 38.0%（标注 Harbor 评测），与发布页及官方榜 37.58 略有出入"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 38,
+   "setting": "Task success rate (%)；xhigh；Grok Build harness；模型卡称结果取自 Harbor 评测",
+   "sourceType": "official",
+   "sourceName": "Grok 4.7 Model Card",
+   "url": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+   "quote": "Grok 4.7 scores 38.0% at xhigh, evaluated with the Grok Build harness. ... * Results reported are taken from evaluations conducted by Harbor.",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true,
+   "note": "与发布页 37.6% 不一致"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 37.58,
+   "setting": "accuracy (%) over n_trials=330 (66 题 × 5 次)；Grok Build + Grok 4.7，reasoning_effort=xhigh；官方榜 2026-09-21 提交",
+   "sourceType": "benchmark_author",
+   "sourceName": "Terminal-Bench 4.0 官方榜 (tbench.ai)",
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "quote": "\"agent_display\":{\"label\":\"Grok Build\"},\"model_display\":{\"label\":\"Grok 4.7\"},\"reasoning_effort\":\"xhigh\"},\"metrics\":{\"accuracy\":37.58,\"n_trials\":330",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true,
+   "note": "成本显示为 partial: 324/330"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 28.79,
+   "setting": "Accuracy (%), avg@3；Vals AI 独立复跑；mini-SWE-agent；3 次全量运行取均值；effort 未注明；更新于 2026-10-07",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench 4.0",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "quote": "16 Grok 4.7 Mini-SWE-agent 28.79% $18.09 $2 / $6 50m21s",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "通用 harness，明显低于自家 Grok Build 结果"
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 71,
+   "setting": "DeepSWE v1.1 (%)，标注 * high effort；high effort（非 xhigh）；发布页对比表",
+   "sourceType": "official",
+   "sourceName": "SpaceXAI Grok 4.7 发布页",
+   "url": "https://x.ai/news/grok-4-7",
+   "quote": "Software engineering DeepSWE v1.1 71.0%* 65.2% 72.7% 70.0% ... * high effort",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "Datacurve 官方榜当前可见 21/28 个模型，未见 Grok 4.7 行"
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 71,
+   "setting": "Pass@1 (%)；high；mini-SWE-agent；模型卡称结果取自 Datacurve 评测",
+   "sourceType": "official",
+   "sourceName": "Grok 4.7 Model Card",
+   "url": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+   "quote": "Every model runs through the mini-SWE-agent harness. ... Grok 4.7 scores 71.0% at high. ... * Results reported are taken from evaluations conducted by Datacurve.",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true
+  },
+  {
+   "benchmark": "frontiercode",
+   "score": 45.59,
+   "setting": "FrontierCode 1.1 Main Score (new_score 0.4559)；xhigh（该模型最高档）；grok-build harness；Cognition 官方榜数据",
+   "sourceType": "benchmark_author",
+   "sourceName": "Cognition FrontierCode 官方榜 (data.json)",
+   "url": "https://cognition.com/data/frontiercode-leaderboard/data.json",
+   "quote": "\"xhigh\": {... \"main\": {\"correct\": 0.509, \"new_score\": 0.4559, \"tokens\": 99182.0, \"cost\": 8.2891",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "页面 cognition.com/frontiercode 动态加载此 JSON；Score 字段即 new_score（Opus 5.5 medium 0.5464 对应页面 54.6%）"
+  },
+  {
+   "benchmark": "frontiercode",
+   "score": 47.59,
+   "setting": "FrontierCode 1.1 Main Score (new_score 0.4759)；high（该模型最佳档）；grok-build harness",
+   "sourceType": "benchmark_author",
+   "sourceName": "Cognition FrontierCode 官方榜 (data.json)",
+   "url": "https://cognition.com/data/frontiercode-leaderboard/data.json",
+   "quote": "\"Grok 4.7\": {\"high\": {... \"main\": {\"correct\": 0.531, \"new_score\": 0.4759, \"tokens\": 82717.0, \"cost\": 6.6472",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "best reasoning mode 视图下显示约 47.6%"
+  },
+  {
+   "benchmark": "frontiercode",
+   "score": 59.4,
+   "setting": "FrontierCode 1.1 Extended Score (%)；Extended 集；Cognition/Devin 博客图表（对应 high 档 0.5935）",
+   "sourceType": "benchmark_author",
+   "sourceName": "Devin 博客 Grok 4.7 is now available in Devin",
+   "url": "https://devin.ai/blog/grok-4-7",
+   "quote": "FrontierCode 1.1 Extended Score ... 58.2 Kimi K3 59.4 Grok 4.7 60.6 GPT-5.6 Sol",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "Extended 集，不可比"
+  },
+  {
+   "benchmark": "frontierswe",
+   "score": 29,
+   "setting": "Mean@5 score (%)；xhigh；Proximus harness；模型卡称由 Proximal Labs 评测",
+   "sourceType": "official",
+   "sourceName": "Grok 4.7 Model Card",
+   "url": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+   "quote": "Grok 4.7 scores 29.0% at xhigh, evaluated by Proximal Labs; Grok 4.6 scores 25.3% at xhigh. ... Mean@5 score (%)*",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "官方榜当前显示 29.5%"
+  },
+  {
+   "benchmark": "frontierswe",
+   "score": 29.5,
+   "setting": "mean@5 (%)；proximus harness；Proximal 官方榜（170 runs）",
+   "sourceType": "benchmark_author",
+   "sourceName": "FrontierSWE 官方榜 (Proximal)",
+   "url": "https://www.frontierswe.com/",
+   "quote": "xAI Grok 4.7 + proximus: mean@5 29.5%, worst@5 15.9%, best@5 41.1%",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "score": 10,
+   "setting": "Terminal-Bench Science v0.1 accuracy (%), pass@1 single run；Vals AI 独立复跑；mini-SWE-agent；70 题；单次运行；effort 未注明；更新于 2026-10-08",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench Science",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "quote": "14 Grok 4.7 Mini-SWE-agent 10.00% $14.45 $2 / $6 1h29m",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "tbench.ai 的 Science 0.1 榜未收录 Grok 4.7"
+  },
+  {
+   "benchmark": "gdpval-aa",
+   "score": 59.75,
+   "setting": "GDPval-AA Elo 1695（版本未注明）→ (1695−500)/2000×100；xhigh；发布页图表标为 GDPval、Elo；Artificial Analysis 文章确认同一 1695 为 GDPval-AA 结果",
+   "sourceType": "official",
+   "sourceName": "SpaceXAI Grok 4.7 发布页",
+   "url": "https://x.ai/news/grok-4-7",
+   "quote": "{\"key\":\"gdpval\",\"label\":\"GDPval\",\"heading\":\"Professional knowledge work\",\"yAxisTitle\":\"Elo score\",...{\"label\":\"Grok 4.7\",\"effort\":\"xhigh\",\"grok\":true,\"score\":1695}",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "发布页与 AA 文章均未写明 v2 还是 v2.1，故 matchesPreferred=false；AA 文章原句：On GDPval-AA, Grok 4.7 scores 1695 Elo"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://x.ai/news/grok-4-7",
+   "title": "Introducing Grok 4.7 (SpaceXAI launch post, 2026-09-21)",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+   "title": "Grok 4.7 Model Card (2026-09-21)",
+   "kind": "model_card"
+  },
+  {
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "title": "Terminal-Bench 4.0 leaderboard",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "title": "Vals AI Terminal-Bench 4.0",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "title": "Vals AI Terminal-Bench Science",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.frontierswe.com/",
+   "title": "FrontierSWE leaderboard (Proximal)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://cognition.com/frontiercode",
+   "title": "FrontierCode Leaderboard (Cognition)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://cognition.com/data/frontiercode-leaderboard/data.json",
+   "title": "FrontierCode leaderboard data JSON",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://devin.ai/blog/grok-4-7",
+   "title": "Grok 4.7 is now available in Devin",
+   "kind": "blog"
+  },
+  {
+   "url": "https://deepswe.datacurve.ai/",
+   "title": "DeepSWE leaderboard (Datacurve)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7",
+   "title": "Artificial Analysis: Benchmarking Grok 4.7 (used only to identify GDPval variant)",
+   "kind": "blog"
+  },
+  {
+   "url": "https://zapier.com/benchmarks",
+   "title": "Zapier AutomationBench leaderboard",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "title": "Agents' Last Exam leaderboard data",
+   "kind": "leaderboard"
+  }
+ ],
+ "notFound": [
+  "osworld-2",
+  "automationbench",
+  "toolathlon-verified",
+  "agents-last-exam",
+  "hle-no-tools",
+  "hle-tools",
+  "scicode",
+  "critpt",
+  "gdp-pdf",
+  "aa-lcr"
+ ],
+ "collectorNotes": "I recorded 13 entries across 6 benchmarks. Each number was checked against the original source on 2026-10-12.\n\nVendor sources:\n- The launch page covers DeepSWE v1.1, Terminal-Bench 4.0 and GDPval.\n- The model card covers DeepSWE, Terminal-Bench 4.0 and FrontierSWE V2.\n- Neither source has HLE, OSWorld, Toolathlon, Agents' Last Exam (ALE), SciCode, CritPt, GDP.pdf or AA-LCR. The figure \"xAI reports HLE 46.3%\" in third-party search summaries is probably the CursorBench 4.0 score (46.3) mislabeled, so I did not record it.\n\nConflicts between sources:\n- Terminal-Bench 4.0: the launch page says 37.6, the model card body says 38.0, and the official tbench.ai board says 37.58. The launch page is primaryHint.\n- FrontierSWE: the model card says 29.0 and the official Proximal board currently says 29.5.\n\nGDPval: the launch page chart is labeled only \"GDPval\" (Elo 1695, xhigh). The Artificial Analysis article confirms 1695 is a GDPval-AA result but does not say v2 or v2.1. I converted it to 59.75 and set matchesPreferred=false.\n\nFrontierCode: the scores come from the data.json that the Cognition board loads at runtime. The Score field equals new_score; I checked the mapping against Opus 5.5 medium (0.5464, shown as 54.6%) and Grok 4.6 high (0.4801, shown as 48.0%). Grok 4.7 is available at high and xhigh:\n- xhigh is the top effort: 45.59, primaryHint.\n- high is its best effort: 47.59, matchesPreferred=false.\n- The Extended set score (59.4) is recorded with comparable=false.\n\nBoard checks with no Grok 4.7 entry:\n- DeepSWE (21 of 28 models visible, no Grok 4.7 row)\n- Zapier AutomationBench v1.0.6 (126 rows parsed in full, no Grok)\n- ALE API (only Grok 4.5 / 4.3 / 3)\n- Toolathlon\n- Scale HLE\n- OSWorld 2\n- CritPt\n- tbench.ai Terminal-Bench Science 0.1 board\n\nVals AI independently reran Terminal-Bench 4.0 (28.79, mini-SWE-agent, avg@3) and Terminal-Bench Science v0.1 (10.00, mini-SWE-agent, single run) as a third party. The Science entry is the only score in that column.\n\nNo other vendor's comparison table was found that prints Grok 4.7 numbers for these benchmarks. Per the instructions, I did not record any Artificial Analysis-run numbers.",
+ "verifierSummary": "I opened all 13 records' sources myself and confirmed every number, setting and comparability flag; nothing needed correcting. Sources checked: the x.ai/news/grok-4-7 launch page, the model card PDF (media.x.ai 4p7card), the Terminal-Bench 4.0 leaderboard on tbench.ai, the Cognition FrontierCode data.json, the Devin blog post, two Vals AI pages (TB4 and TB-Science) and frontierswe.com.\n\nTwo things to note:\n1. Terminal-Bench 4.0 has two official numbers: 37.6 in the launch-page table and 38.0 in the model card. The official leaderboard shows 37.58, which matches 37.6 after rounding. When choosing primaryHint, prefer the launch page's 37.6 (#0) or the leaderboard's 37.58 (#2).\n2. FrontierCode lists only two effort levels for Grok 4.7: high and xhigh. Max effort is therefore xhigh at 45.59 (#6), so that record matchesPreferred=true. The high-effort score of 47.59 (#7) is actually the higher of the two; it was correctly marked matchesPreferred=false.\n\nGDPval (#12): the launch page labels it only \"GDPval\" with an Elo axis and does not state the version. That is consistent with Artificial Analysis's Elo-based GDPval-AA, which the launch page itself does not name. matchesPreferred=false is reasonable."
+}

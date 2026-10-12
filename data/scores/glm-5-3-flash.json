@@ -1,0 +1,232 @@
+{
+ "model": "glm-5-3-flash",
+ "records": [
+  {
+   "benchmark": "deepswe",
+   "score": 63.4,
+   "setting": "DeepSWE (v1.1) resolve rate；厂商自测；mini-swe-agent，temperature=0.95，top_p=1.0，6h 超时，400K 上下文；默认 max effort",
+   "sourceType": "official",
+   "sourceName": "Z.ai GLM-5.3-Flash 发布博客",
+   "url": "https://z.ai/blog/glm-5.3-flash",
+   "quote": "{name:`DeepSWE (v1.1)`,scores:[63.4,46.2,59.3,58,69.6,65.3]} (first column = GLM-5.3-Flash)",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 63,
+   "setting": "DeepSWE v1.1 Pass@1；Datacurve 官方榜，mini-swe-agent，max effort，113 题，2026-09-22 更新",
+   "sourceType": "benchmark_author",
+   "sourceName": "DeepSWE 官方榜 (Datacurve)",
+   "url": "https://deepswe.datacurve.ai/",
+   "quote": "glm-5.3-flash [ max ] 63 % ± 4 % Avg cost $0.24 Out tok 73k Steps 123",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true,
+   "note": "榜单只显示整数"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 35.76,
+   "setting": "Terminal-Bench 4.0 accuracy；tbench.ai 官方榜，Claude Code 代理，reasoning_effort 标为 none，n_trials=330（66 题×5）",
+   "sourceType": "benchmark_author",
+   "sourceName": "Terminal-Bench 4.0 官方榜 (tbench.ai)",
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "quote": "\"model_display\":{\"url\":\"https://z.ai/blog/glm-5.3-flash\",\"label\":\"GLM-5.3-Flash\"},\"reasoning_effort\":\"none\"},\"metrics\":{\"accuracy\":35.76,\"n_trials\":330",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "厂商发布页只报 Terminal Bench 2.1 (84.3)，属不同基准，未记录"
+  },
+  {
+   "benchmark": "frontierswe",
+   "score": 18.1,
+   "setting": "FrontierSWE mean@5 (mean reward 0.1813)；Proximal 官方榜，proximus harness，34 题×5 次=170 runs",
+   "sourceType": "benchmark_author",
+   "sourceName": "FrontierSWE 官方榜 (Proximal)",
+   "url": "https://www.frontierswe.com/",
+   "quote": "GLM-5.3 Flash: 18.1% mean@5 across scored tasks; GLM-5.3 Flash: mean reward 0.1813 over 170 runs, mean cost $11.03 (frontier)",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "页面未直接标 v2，按 34 题×5=170 runs 判断为 v2"
+  },
+  {
+   "benchmark": "osworld-2",
+   "score": 59.1,
+   "setting": "OSWorld 2.0（厂商表未注明指标；推断为 Partial Score）；厂商自测，默认 max effort；任务集与步数预算未说明",
+   "sourceType": "official",
+   "sourceName": "Z.ai GLM-5.3-Flash 发布博客",
+   "url": "https://z.ai/blog/glm-5.3-flash",
+   "quote": "{name:`OSWorld 2.0`,scores:[59.1,null,54.9,54.8,50.2,47.9]} (columns: GLM-5.3-Flash, GLM-5.2, DeepSeek-V4-Vision-Exp, Opus 4.8, GPT-5.6 Terra, Gemini 3.7 Flash)",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "推断：同表 Opus 4.8 的 54.8 与 OSWorld 2 官方结果 JSON 中 Opus 4.8 max / batched tool / 500 步的 partialScore 54.8 一致（binary 为 20.6），因此判为 partial；全集为推断。GLM-5.3-Flash 未出现在官方榜"
+  },
+  {
+   "benchmark": "toolathlon-verified",
+   "score": 78.4,
+   "setting": "Toolathlon Verified pass@1；厂商通过官方评测服务运行，3 次独立运行取平均 pass@1",
+   "sourceType": "official",
+   "sourceName": "Z.ai GLM-5.3-Flash 发布博客",
+   "url": "https://z.ai/blog/glm-5.3-flash",
+   "quote": "{name:`Toolathlon Verified`,scores:[78.4,59.9,75.9,76.2,74.9,null]}; footnote: We obtain all results via the official evaluation service and report pass@1 averaged over 3 independent runs.",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true
+  },
+  {
+   "benchmark": "toolathlon-verified",
+   "score": 78.4,
+   "setting": "Toolathlon-Verified Pass@1；Toolathlon 官方榜（当前榜为 Verified 版），作者自评 ✓，GLM 5.3 Flash (max)，Default agent，2026-08-30",
+   "sourceType": "benchmark_author",
+   "sourceName": "Toolathlon 官方榜",
+   "url": "https://toolathlon.xyz/",
+   "quote": "GLM 5.3 Flash (max) ✓ Open-Weights Default 2026-08-30 Pass@1 78.4 ± 1.9",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 48.8,
+   "setting": "AutomationBench (v1.0.6)；厂商自测，v1.0.6，并合入 PR #13 的 null 类型修复；未说明是否为私有 held-out 集",
+   "sourceType": "official",
+   "sourceName": "Z.ai GLM-5.3-Flash 发布博客",
+   "url": "https://z.ai/blog/glm-5.3-flash",
+   "quote": "{name:`AutomationBench (v1.0.6)`,scores:[48.8,26.2,38.8,41,37.2,52.3]}",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "厂商自测且改过评测代码（PR #13），可能不是 Zapier 私有 held-out 集；Zapier 官方榜未收录该模型"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 26.3,
+   "setting": "Agents' Last Exam Pass rate（厂商表未标指标，按对照值推断）；厂商自测，Claude Code harness，reasoning effort=max，1M 上下文，64K 最大输出，关闭 Tool Search，由 ALE 官方评分",
+   "sourceType": "official",
+   "sourceName": "Z.ai GLM-5.3-Flash 发布博客",
+   "url": "https://z.ai/blog/glm-5.3-flash",
+   "quote": "{name:`Agents' Last Exam`,scores:[26.3,20.4,27.3,27,28,null]}",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "同表 Opus 4.8=27.0、GLM-5.2=20.4，与 ALE 官方 API 中 claude-opus-4-8 thinking-max passRate 27.0（avgScore 45.1）、glm-5-2 max passRate 20.4（avgScore 41.1）一致，所以这是 Pass rate，不是 Score。ALE 官方榜未收录 GLM-5.3-Flash"
+  },
+  {
+   "benchmark": "hle-tools",
+   "score": 55.3,
+   "setting": "HLE w/ Tools (full set) accuracy；厂商自测，全集，temperature=1.0，top_p=0.95，最长生成 163,840 tokens，300K 上下文并启用上下文管理，裁判为 GPT-5.6-luna (medium)",
+   "sourceType": "official",
+   "sourceName": "Z.ai GLM-5.3-Flash 发布博客",
+   "url": "https://z.ai/blog/glm-5.3-flash",
+   "quote": "{name:`HLE w/ Tools`,scores:[55.3,54.7,55.1,57.9,null,null]}; footnote: HLE w/ tools (full set): ... maximum context length of 300,000 tokens, using a context management strategy. We use GPT-5.6-luna (medium) as the judge model.",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true
+  },
+  {
+   "benchmark": "gdpval-aa",
+   "score": 63.65,
+   "setting": "GDPval-AA v2 Elo 1773 → 归一化 (1773−500)/2000×100；厂商发布页引用的 Artificial Analysis 测评结果（v2），发布时数据",
+   "sourceType": "official",
+   "sourceName": "Z.ai GLM-5.3-Flash 发布博客",
+   "url": "https://z.ai/blog/glm-5.3-flash",
+   "quote": "{name:`GDPval-AA v2`,scores:[1773,1504,1675,1582,1571,1527]}; footnote: GDPval-AA v2: Models are evaluated by Artificial Analysis.",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "v2 而非 v2.1；Elo 1773 为原值"
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "score": 2.86,
+   "setting": "Terminal-Bench Science accuracy（70 题，严格 pass/fail）；Vals AI 独立测评，Mini-SWE-agent，上游 v0.1.0 全部 70 题，2026-10-08 更新",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench Science 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "quote": "32 GLM 5.3 Flash Mini-SWE-agent 2.86% $0.52 $0.075 / $0.25 3h28m",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "Vals 声明其统一 harness 结果与官方 0.1 榜（原生代理、三次平均）不可直接比较；tbench.ai 官方 Science 榜未收录该模型"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://z.ai/blog/glm-5.3-flash",
+   "title": "GLM-5.3-Flash: Frontier Intelligence, Flash Cost (Z.ai blog, 2026-08-26)",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+   "title": "zai-org/GLM-5.3-Flash Hugging Face model card",
+   "kind": "model_card"
+  },
+  {
+   "url": "https://raw.githubusercontent.com/zai-org/GLM-5/refs/heads/main/resources/bench_53.png",
+   "title": "GLM-5.3-Flash LLM Performance Evaluation chart",
+   "kind": "other"
+  },
+  {
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "title": "Terminal-Bench 4.0 leaderboard",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://deepswe.datacurve.ai/",
+   "title": "DeepSWE leaderboard",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.frontierswe.com/",
+   "title": "FrontierSWE leaderboard",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://toolathlon.xyz/",
+   "title": "Toolathlon-Verified leaderboard",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "title": "Agents' Last Exam leaderboard data (used to identify metric)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json",
+   "title": "OSWorld 2.0 official results (used to identify metric)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "title": "Vals AI Terminal-Bench Science",
+   "kind": "leaderboard"
+  }
+ ],
+ "notFound": [
+  "frontiercode",
+  "agents-last-exam",
+  "hle-no-tools",
+  "scicode",
+  "critpt",
+  "gdp-pdf",
+  "aa-lcr"
+ ],
+ "collectorNotes": "The vendor's launch blog (its table is embedded in the page JS) lists more benchmarks than the HF card image. Beyond the image's six, it adds Toolathlon Verified 78.4, OSWorld 2.0 59.1 and NL2Repo 56.3; NL2Repo is outside the 16 columns. The vendor's Terminal Bench 2.1 score (84.3) is a different benchmark and is not recorded. ALE 26.3 matches the official board's pass rate for the comparison models (Opus 4.8 at 27.0, GLM-5.2 at 20.4), so it is marked non-comparable, and agents-last-exam goes in not_found. OSWorld 2.0 59.1 is not labeled partial or binary. It is inferred to be partial because the same table's Opus 4.8 value of 54.8 equals the official partialScore. The model is absent from the Zapier AutomationBench, ALE, OSWorld 2, tbench Science and Scale HLE boards. Vals' Terminal-Bench 4.0 board does not list the Flash variant either; only GLM 5.3 is there. Artificial Analysis numbers were deliberately left out, except the vendor-printed GDPval-AA v2 Elo of 1773. No other vendor's comparison table showing this model was found in the leads.",
+ "verifierSummary": "I opened all 12 records' sources (Z.ai blog JS bundle, deepswe.datacurve.ai, tbench.ai 4.0, frontierswe.com, toolathlon.xyz, vals.ai, plus the agents-last-exam.org API, the official OSWorld 2.0 page and the Zapier board for cross-checks). All 12 numbers appear verbatim for GLM-5.3-Flash, and the comparability flags follow the column rules. Points to tighten: (1) The blog's DeepSWE footnote only says mini-swe-agent, temperature=0.95, top_p=1.0, 6h, 400K; it never says max effort, so \"默认 max effort\" in #0 is an inference. (2) The OSWorld 2.0 metric in #4 can be confirmed as Partial Score: the Opus 4.8 comparison value in the same table is 54.8, and the official osworld-v2.xlang.ai page says \"Claude Opus 4.8 ... completes only 20.6% of tasks at a 54.8% partial score\". (3) The ALE value in #8 can be confirmed as Pass rate: in the ALE API the full-split pass rates are glm-5-2 claude_code max 0.2039, claude-opus-4-8 thinking-max 0.2697 and GPT-5.6-Terra reasoning-max 0.2796, which match the blog's 20.4/27/28. The API has no GLM-5.3-Flash row. (4) The Zapier official board has no GLM-5.3-Flash. Zapier states that leaderboard scores come from a private held-out set and that the 600 public tasks are for research only. The vendor's v1.0.6 run, with the PR #13 fix applied, was most likely on the public set, so matchesPreferred=false in #7 is appropriate. (5) In #2, tbench.ai labels reasoning_effort as none, and it is the only GLM-5.3-Flash entry."
+}

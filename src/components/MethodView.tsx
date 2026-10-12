@@ -21,7 +21,9 @@ const STEPS = [
     body: (
       <List size="sm" spacing={6}>
         <List.Item>每个模型、每个评测集只取一个主分数参与计算。来源优先级：厂商官方自报 → 评测集作者榜单 → 独立第三方机构 → 其他厂商对比表里的数字。</List.Item>
-        <List.Item>同一来源有多个配置（推理档位、是否用工具、pass@1 / pass@k、并行采样）时，优先选与该评测集“首选配置”一致的那个，其次选该模型最高推理档位、单次作答、不加并行采样的结果。</List.Item>
+        <List.Item>只在“可比”的记录里选：同一评测、同一指标。小版本或子集差异（如 HLE 纯文本子集、OSWorld 离线子集）算可比但不是首选；指标定义不同（如 Pass 与 Score、dominance 与 mean@5、all-pass 与 mean pass）的只作参考。</List.Item>
+        <List.Item>同一来源有多个配置（推理档位、harness、试验次数）时，先选与首选版本 / 子集一致的，再选厂商作为头条展示的配置（通常是最高推理档、单次作答、不加并行采样）。不按分数高低挑选。</List.Item>
+        <List.Item>厂商与评测作者的每条记录都由另一个 agent 回源核验；口径有问题的记录经人工复核写入覆盖文件（data/overrides.json），理由显示在对应格子的备注里。</List.Item>
         <List.Item>其他配置或来源的分数保留为参考值，在模型详情里可以看到，但不参与计算。</List.Item>
       </List>
     ),

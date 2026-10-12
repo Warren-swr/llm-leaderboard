@@ -1,0 +1,288 @@
+{
+ "model": "muse-spark-1-3",
+ "records": [
+  {
+   "benchmark": "osworld-2",
+   "score": 66.9,
+   "setting": "OSWorld 2.0 partial score (mean per-task partial score)；max 推理；Meta 内部统一评测框架，108 题全集，版本 08.08；Meta 自测",
+   "sourceType": "official",
+   "sourceName": "Meta Muse Spark 1.3 发布页 benchmark scorecard 图",
+   "url": "https://research.meta.ai/articles/introducing-muse-1-3/benchmarks/benchmark-scorecard-v6.webp",
+   "quote": "OSWorld 2.0 Agentic computer use | Muse Spark 1.3 (max): 66.9 (partial) 32.0 (binary)",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "方法说明 PDF：'OSWorld 2.0 is a long-horizon computer-use benchmark of 108 real-world workflows... The primary metric is the mean per-task partial score... evaluated using version 08.08'"
+  },
+  {
+   "benchmark": "osworld-2",
+   "score": 32,
+   "setting": "OSWorld 2.0 binary (strict completion) rate；max 推理；Meta 内部框架，108 题，版本 08.08",
+   "sourceType": "official",
+   "sourceName": "Meta Muse Spark 1.3 发布页 benchmark scorecard 图",
+   "url": "https://research.meta.ai/articles/introducing-muse-1-3/benchmarks/benchmark-scorecard-v6.webp",
+   "quote": "OSWorld 2.0 | Muse Spark 1.3 (max): 66.9 (partial) 32.0 (binary)",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "严格二元通过率，与 partial 口径不同"
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 75.4,
+   "setting": "DeepSWE v1.1 task pass rate；max 推理；Meta 自跑 mini-swe-agent，113 题；Datacurve 官方榜未收录",
+   "sourceType": "official",
+   "sourceName": "Meta Muse Spark 1.3 发布页 benchmark scorecard 图",
+   "url": "https://research.meta.ai/articles/introducing-muse-1-3/benchmarks/benchmark-scorecard-v6.webp",
+   "quote": "DeepSWE v1.1 Long-horizon agentic coding | Muse Spark 1.3 (max) 75.4 | Muse Spark 1.2 (xhigh) 55.0 | GPT 5.6 Sol (max) 73.0 | Opus 5 (max) 74.0",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "方法说明：'We run Muse Spark 1.3 max with a mini-swe agent and obtained the benchmarks for all other models on the official leaderboard on Datacurve.' deepswe.datacurve.ai 页面只见 muse-spark-1.2/1.1，无 1.3"
+  },
+  {
+   "benchmark": "gdpval-aa",
+   "score": 62.7,
+   "setting": "GDPval-AA v2 Elo 1754 → (1754−500)/2000×100 = 62.7；max 推理；Artificial Analysis Stirrup harness（shell + 浏览）；Meta 发布页引用，是否 AA 本身所跑未明说",
+   "sourceType": "official",
+   "sourceName": "Meta Muse Spark 1.3 发布页 benchmark scorecard 图",
+   "url": "https://research.meta.ai/articles/introducing-muse-1-3/benchmarks/benchmark-scorecard-v6.webp",
+   "quote": "GDPVal-AA v2 Knowledge work | Muse Spark 1.3 (max) 1754 | Muse Spark 1.2 (xhigh) 1615 | GPT 5.6 Sol (max) 1710 | Opus 5 (max) 1824",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "v2 而非 v2.1。方法说明：'Models operate in Artificial Analysis's Stirrup agentic harness... Artificial Analysis publishes results on the linked official leaderboard.'"
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 49.6,
+   "setting": "AutomationBench pass@1（公开 v3 题集，600 workflows）；max 推理；Meta 自报；用公开 v3 题集，不是 Zapier 私有留出集",
+   "sourceType": "official",
+   "sourceName": "Meta Muse Spark 1.3 发布页 benchmark scorecard 图",
+   "url": "https://research.meta.ai/articles/introducing-muse-1-3/benchmarks/benchmark-scorecard-v6.webp",
+   "quote": "AutomationBench E2E business workflows | Muse Spark 1.3 (max) 49.6 | Muse Spark 1.2 (xhigh) 38.2 | GPT 5.6 Sol (max) 46.7 | Opus 5 (max) 50.3",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "方法说明：'We use the public v3 task set; Zapier publishes the official public leaderboard in the benchmark repository.' 本列定义为私有留出集，故判不可比；zapier.com/benchmarks 榜单未收录 Muse"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 14.55,
+   "setting": "Terminal-Bench 4.0 accuracy（330 trials）；Muse Code harness + xhigh 推理；tbench.ai 官方榜，66 题×5 trials",
+   "sourceType": "benchmark_author",
+   "sourceName": "Terminal-Bench 4.0 官方榜 (tbench.ai)",
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "quote": "\"agent_display\":{...\"label\":\"Muse Code\"},\"model_display\":{...\"label\":\"Muse Spark 1.3\"},\"reasoning_effort\":\"xhigh\"},\"metrics\":{\"accuracy\":14.55,\"n_trials\":330",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "榜上只有 xhigh，没有 max 条目；rank 32"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 24.75,
+   "setting": "Terminal-Bench 4.0 accuracy (avg@3)；Muse Spark 1.3 Max；Vals AI 独立跑，mini-SWE-agent，avg@3",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench 4.0 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "quote": "Muse Spark 1.3 Max | Mini-SWE-agent | 24.75% | $6.65 | $1.25 / $4.25 | 52m56s",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true,
+   "note": "通用 harness，非厂商原生 harness"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 10.61,
+   "setting": "Terminal-Bench 4.0 accuracy (avg@3)；Muse Spark 1.3（默认档，Vals 未标 effort）；Vals AI，mini-SWE-agent，avg@3",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench 4.0 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "quote": "Muse Spark 1.3 | Mini-SWE-agent | 10.61% | $7.04 | $1.25 / $4.25 | 1h59m",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "非 max 档"
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "score": 10,
+   "setting": "Terminal-Bench Science 0.1 accuracy；Muse Spark 1.3 Max；Vals AI 独立跑，mini-SWE-agent",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench Science 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "quote": "13 | Muse Spark 1.3 Max | Mini-SWE-agent | 10.00% | $6.09 | $1.25 / $4.25 | 1h24m",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "tbench.ai 官方 TB-Science 0.1 页面未见 Muse 条目"
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "score": 4.29,
+   "setting": "Terminal-Bench Science 0.1 accuracy；Muse Spark 1.3（默认档）；Vals AI，mini-SWE-agent",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench Science 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "quote": "Muse Spark 1.3 | Mini-SWE-agent | 4.29% | $4.41 | $1.25 / $4.25 | 1h08m",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "非 max 档"
+  },
+  {
+   "benchmark": "frontierswe",
+   "score": 25.8,
+   "setting": "FrontierSWE V2 mean@5；proximus harness，34 题，每题 5 trials、20 小时预算；Proximal 官方榜；effort 未标注",
+   "sourceType": "benchmark_author",
+   "sourceName": "FrontierSWE V2 官方榜 (Proximal)",
+   "url": "https://www.frontierswe.com/",
+   "quote": "7 Muse Spark 1.3 proximus 25.8 % ± 14.2 $243.34 17.0h; title=\"Meta Muse Spark 1.3 + proximus: mean@5 25.8%, worst@5 12.6%, best@5 40.9%\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 55.28,
+   "setting": "Agents' Last Exam Score (avgScore, partial credit), full split；Codex harness + reasoning-max；ALE 官方榜 full split，跑了 148/152 题",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents' Last Exam 官方榜数据接口",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "quote": "{\"split\":\"full\",\"harness\":\"codex\",\"model\":\"muse-spark-1-3\",\"harnessVariant\":\"reasoning-max\",\"runs\":148,\"tasks\":148,\"splitTasks\":152,\"passes\":45,\"passRate\":0.29605263157894735,\"avgScore\":0.5527655474845958",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "该接口即 agents-last-exam.org/leaderboard 页面的数据源；同接口 GPT-6 Astra full 为 avgScore 0.5926 / passRate 0.3421，与 OpenAI 的 59.3/34.2 一致，确认 avgScore 即 Score"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 55.76,
+   "setting": "Agents' Last Exam Score (avgScore, partial credit), full split；Codex harness + reasoning-xhigh；ALE 官方榜 full split，148/152 题",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents' Last Exam 官方榜数据接口",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "quote": "{\"split\":\"full\",\"harness\":\"codex\",\"model\":\"muse-spark-1-3\",\"harnessVariant\":\"reasoning-xhigh\",\"runs\":148,\"tasks\":148,\"splitTasks\":152,\"passes\":49,\"passRate\":0.3223684210526316,\"avgScore\":0.5575758972199165",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "xhigh 档略高于 max 档"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 29.61,
+   "setting": "Agents' Last Exam Pass rate (full-credit share), full split；Codex harness + reasoning-max；148/152 题",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents' Last Exam 官方榜数据接口",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "quote": "\"model\":\"muse-spark-1-3\",\"harnessVariant\":\"reasoning-max\",...\"passes\":45,\"passRate\":0.29605263157894735",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "Pass rate 口径，非 Score"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 32.24,
+   "setting": "Agents' Last Exam Pass rate (full-credit share), full split；Codex harness + reasoning-xhigh；148/152 题",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents' Last Exam 官方榜数据接口",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "quote": "\"model\":\"muse-spark-1-3\",\"harnessVariant\":\"reasoning-xhigh\",...\"passes\":49,\"passRate\":0.3223684210526316",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "Pass rate 口径，非 Score"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+   "title": "Introducing Muse Spark 1.3 (Meta AI Research, 2026-09-02)",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://research.meta.ai/articles/introducing-muse-1-3/benchmarks/benchmark-scorecard-v6.webp",
+   "title": "Muse Spark 1.3 benchmark scorecard image",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+   "title": "Muse Spark 1.3 Evaluation Methodology (PDF)",
+   "kind": "tech_report"
+  },
+  {
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "title": "Terminal-Bench 4.0 leaderboard",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "title": "Vals AI Terminal-Bench 4.0",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "title": "Vals AI Terminal-Bench Science",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.frontierswe.com/",
+   "title": "FrontierSWE V2 leaderboard",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://agents-last-exam.org/leaderboard",
+   "title": "Agents' Last Exam leaderboard (data via /api/demo/leaderboard)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://deepswe.datacurve.ai/",
+   "title": "DeepSWE leaderboard (no Muse Spark 1.3 row)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://zapier.com/benchmarks",
+   "title": "Zapier AutomationBench leaderboard (no Muse row)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://toolathlon.xyz/",
+   "title": "Toolathlon leaderboard (only Muse Spark 1.2)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://labs.scale.com/leaderboard/humanitys_last_exam",
+   "title": "Scale HLE leaderboard (only original Muse Spark, 2026-04)",
+   "kind": "leaderboard"
+  }
+ ],
+ "notFound": [
+  "frontiercode",
+  "toolathlon-verified",
+  "hle-no-tools",
+  "hle-tools",
+  "scicode",
+  "critpt",
+  "gdp-pdf",
+  "aa-lcr"
+ ],
+ "collectorNotes": "Meta 发布页正文没有分数表，分数都在 scorecard 图里（已下载查看），各项口径看方法说明 PDF。图中这些项不记录：Terminal-Bench 2.1 的 88.8（版本不同），以及 JobBench、DeepSearchQA、Agentic IF Index、MRCR、SWE-Atlas QnA（不属于 16 列）。AutomationBench 的 49.6 是公开 v3 题集上的成绩，不是 Zapier 私有留出集，所以判为不可比；Zapier 官方榜上没有 Muse。GDPval-AA 用的是 v2 Elo 1754，换算后为 62.7；PDF 说用的是 AA 的 Stirrup harness，但没说这个数是 AA 跑的还是 Meta 自己跑的。各榜单的查找结果：Datacurve DeepSWE 只有 Muse Spark 1.2/1.1；Toolathlon 只有 1.2 (xhigh)；Scale HLE 上的 'Muse Spark'（2026-04-08 收录，40.56）是初代，不是 1.3，没有记录；tbench.ai 的 TB-Science 0.1 榜、CritPt 官网、OSWorld 2.0 官网和 Snorkel 页面都没有 Muse Spark 1.3（Snorkel 页上的 36.5% 是 SnorkelLegal 的分数）。SciCode 官方榜因为工具限制没能打开。dev.meta.ai/models/muse-spark-1-3 返回 404。按要求没有记录 artificialanalysis.ai 的数字。",
+ "verifierSummary": "I checked all 15 records against their own URLs. All 15 are confirmed: each number belongs to Muse Spark 1.3 itself, not a sibling model, and the comparability flags follow the column rules.\n\nMeta's article URL in the image path (research.meta.ai/articles/introducing-muse-1-3/) returns 404. The scorecard image itself opens fine, and the live launch post is https://research.meta.ai/blog/introducing-muse-spark-1-3. The setting details in records #0 to #4 come from Meta's methodology PDF at https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology, not from the image. That PDF confirms: OSWorld 2.0 has 108 tasks, uses partial score as the primary metric and binary as the secondary one, and was run on version 08.08 (Muse Spark 1.2 on 06.24). AutomationBench used the public v3 set of 600 workflows, so comparable=false is correct. DeepSWE v1.1 has 113 tasks and Meta ran 1.3 max with mini-swe-agent. GDPVal-AA v2 ran in Artificial Analysis's Stirrup harness; (1754−500)/2000×100 = 62.7. Some third-party sites print 49.4 for AutomationBench, but the image clearly shows 49.6.\n\nOn tbench.ai the Muse Code / xhigh row reads accuracy 14.55 with n_trials 330. On Vals AI, the Terminal-Bench 4.0 page says results are avg@3. The Terminal-Bench Science page says results are pass@1 from one run per model, so it is not avg@3. FrontierSWE V2 shows 25.8% mean@5 (34 tasks, 5 trials per task, 20-hour budget), with no effort level given. In the Agents' Last Exam JSON API, the full split for max and xhigh matches all four records. passRate is computed against all 152 tasks in the split, not just the 148 that were run (45/152 = 0.296)."
+}

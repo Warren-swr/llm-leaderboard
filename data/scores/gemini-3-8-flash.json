@@ -1,0 +1,302 @@
+{
+ "model": "gemini-3-8-flash",
+ "records": [
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 19.1,
+   "setting": "Terminal-bench 4.0 success rate (%)；Google 模型卡表格；方法说明称取自 TB 官方榜、各模型取最高思考档（官方榜对应 mini-SWE-agent + high）",
+   "sourceType": "official",
+   "sourceName": "Gemini 3.8 Flash 模型卡（Google DeepMind）",
+   "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash",
+   "quote": "Terminal-bench 4.0 General agent capabilities 19.1% 11.2% 51.8% 12.4% 37.3% 23.6%",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "方法说明 PDF：'Terminal-Bench 4.0 results are reported from the official public leaderboard. We use the highest scoring thinking level'"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 19.09,
+   "setting": "Terminal-Bench 4.0 accuracy (n_trials=330)；TB 官方榜；mini-SWE-agent，reasoning_effort=high，66 题×5 次",
+   "sourceType": "benchmark_author",
+   "sourceName": "Terminal-Bench 4.0 官方榜（tbench.ai）",
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "quote": "\"agent_display\":{...\"label\":\"mini-SWE-agent\"},\"model_display\":{...\"label\":\"Gemini 3.8 Flash\"},\"reasoning_effort\":\"high\"},\"metrics\":{\"accuracy\":19.09,\"n_trials\":330,...\"display_accuracy\":\"**19.1%** ± 3.4%\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 19.19,
+   "setting": "Terminal-Bench 4.0 score (avg@3)；Vals AI 独立运行；mini-SWE-agent，三次完整运行取均值；3 题厂商拒答计为失败",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench 4.0 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "quote": "24 Gemini 3.8 Flash Mini-SWE-agent 19.19% $8.77 $1.5 / $7.5 1h48m",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true,
+   "note": "页面原始数据 accuracy 19.192；页面说明 'All results reported are avg@3'"
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 73.7,
+   "setting": "DeepSWE v1.1 resolve rate (%)；Google 自测；mini-swe-agent 框架，high 思考档",
+   "sourceType": "official",
+   "sourceName": "Gemini 3.8 Flash 模型卡（Google DeepMind）",
+   "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash",
+   "quote": "DeepSWE v1.1 Long-horizon software engineering 73.7% 65.3% 74.0% 53.8% 72.7% 69.6%",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "方法说明 PDF：'Results for Gemini 3.8 Flash are self computed, and use a mini-swe agent harness with high thinking.'"
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 74,
+   "setting": "DeepSWE v1.1 Pass@1（取整显示）；Datacurve 官方榜 v1.1；mini-swe-agent，high；榜单更新于 2026-09-22",
+   "sourceType": "benchmark_author",
+   "sourceName": "DeepSWE 官方榜（Datacurve）",
+   "url": "https://deepswe.datacurve.ai/",
+   "quote": "gemini-3.8-flash [ high ] 74 % ± 1 % Avg cost $2.36 Out tok 143k Steps 166",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true,
+   "note": "榜单只显示整数"
+  },
+  {
+   "benchmark": "frontierswe",
+   "score": 19.63,
+   "setting": "FrontierSWE V2 mean reward 0.1963（mean@5，换算为 0-100）；Proximal 官方榜 V2；proximus 框架，34 题×5 次（170 runs）；思考档位未标明",
+   "sourceType": "benchmark_author",
+   "sourceName": "FrontierSWE V2 官方榜（Proximal）",
+   "url": "https://www.frontierswe.com/",
+   "quote": "Gemini 3.8 Flash: mean reward 0.1963 over 170 runs, mean cost $38.75",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "取自榜单 Pareto 图的每模型均值（与表格 mean@5 同口径，如 Opus 5.5 0.6233 对应表格 62.3%）；主表前 10 未列出该模型"
+  },
+  {
+   "benchmark": "osworld-2",
+   "score": 59,
+   "setting": "OSWorld-2.0 Partial score（batch tool enabled）；Google 自测；官方 docker 与评测器，1080p，最多 500 步，启用批量工具调用；3 次运行取最高、每次单次尝试；在 08.08 补丁前完成；思考档位未写明",
+   "sourceType": "official",
+   "sourceName": "Gemini 3.8 Flash 模型卡（Google DeepMind）",
+   "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash",
+   "quote": "OSWorld-2.0 Agentic computer use Partial score batch tool enabled 59.0% 50.6% 75.4% 42.6% 62.6% 50.2%",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "verified": true,
+   "note": "方法说明 PDF：'self computed, maxed over 3 runs with a single attempt per run. We report the partial score.' 3 次取最高、档位不明，故 matchesPreferred=false；OSWorld 2 官方榜无此模型"
+  },
+  {
+   "benchmark": "hle-no-tools",
+   "score": 44.52,
+   "setting": "Humanity's Last Exam accuracy（完整 2,500 题）；Scale Labs 官方 HLE 榜（完整多模态集）；页面未写明工具设置，按标准榜推断为无工具",
+   "sourceType": "benchmark_author",
+   "sourceName": "Scale Labs HLE 榜",
+   "url": "https://labs.scale.com/leaderboard/humanitys_last_exam",
+   "quote": "4 Gemini 3.8 Flash NEW 44.52 ± 1.96 Calib Err: 51",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "选作主值：口径最清楚。厂商自报的 HLE 45.4% 未说明工具和子集"
+  },
+  {
+   "benchmark": "hle-no-tools",
+   "score": 44.95,
+   "setting": "Humanity's Last Exam (Text Only) accuracy；Scale Labs HLE 纯文本子集榜；工具设置未写明（推断无工具）",
+   "sourceType": "benchmark_author",
+   "sourceName": "Scale Labs HLE (Text Only) 榜",
+   "url": "https://labs.scale.com/leaderboard/humanitys_last_exam_text_only",
+   "quote": "5 Gemini 3.8 Flash NEW 44.95 ± 2.10 Calib Err: 51",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true
+  },
+  {
+   "benchmark": "hle-no-tools",
+   "score": 45.4,
+   "setting": "Humanity's Last Exam (HLE) %；Google Cloud 开发者指南表格；工具设置、子集和思考档位都未说明",
+   "sourceType": "official",
+   "sourceName": "Google Cloud Gemini 3.8 Flash 开发者指南",
+   "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-3-8-flash",
+   "quote": "<td>Humanity&#39;s Last Exam (HLE)</td> <td>45.4%</td> <td>45.7%</td>",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "厂商数字但设置不明，未作主值；是否无工具、是否完整集待核"
+  },
+  {
+   "benchmark": "hle-no-tools",
+   "score": 54.9,
+   "setting": "HLE-Verified accuracy（1,811 题验证集）；Google 自测；HLE-Verified 1,811 题（668 原题+1143 修订题，剔除 689 道存疑题）；工具设置未写明",
+   "sourceType": "official",
+   "sourceName": "Gemini 3.8 Flash 模型卡（Google DeepMind）",
+   "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash",
+   "quote": "HLE-Verified Multidisciplinary expert reasoning 54.9% 53.6% 54.4% 31.0% 54.5% 51.1%",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "HLE-Verified 与 HLE 原版不同，不可比"
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "score": 8.57,
+   "setting": "Terminal-Bench Science score（pass@1，单次运行）；Vals AI 独立运行；mini-SWE-agent，单次运行 pass@1；2026-10-08 更新",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench Science 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "quote": "17 Gemini 3.8 Flash Mini-SWE-agent 8.57% $5.64 $1.5 / $7.5 55m11s",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "Vals 自称与官方 0.1 榜（各厂商原生 agent、三次均值）不直接可比；官方 Harbor 榜为客户端渲染，未能读到该模型"
+  },
+  {
+   "benchmark": "gdpval-aa",
+   "score": 46.75,
+   "setting": "GDPval-AA v2.1 Elo 1435 → 归一化 (1435−500)/2000×100；Anthropic Haiku 5.5 System Card 正文引用；由 Artificial Analysis 独立运行；Gemini 3.8 Flash 档位未写明",
+   "sourceType": "vendor_comparison",
+   "sourceName": "Claude Haiku 5.5 System Card（Anthropic）第 131 页",
+   "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+   "quote": "Claude Haiku 5.5 scored an Elo of 1620 at max effort ... It trailed Claude Sonnet 5.5 (1840), and was ahead of GPT-6 Luna (1437) and Gemini 3.8 Flash (1435). ... Evaluations were run independently by Artificial Analysis.",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "版本与首选 v2.1 一致，故选作主值；Haiku 5.5 发布页表格中没有 Gemini 3.8 Flash"
+  },
+  {
+   "benchmark": "gdpval-aa",
+   "score": 52.25,
+   "setting": "GDPVal-AA v2 Elo 1545 → 归一化 (1545−500)/2000×100；Google 模型卡；数字取自 Artificial Analysis 公开榜（v2）",
+   "sourceType": "official",
+   "sourceName": "Gemini 3.8 Flash 模型卡（Google DeepMind）",
+   "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash",
+   "quote": "GDPVal-AA v2 Knowledge work Elo 1545 1482 1824 1584 1710 1528",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "v2 而非 v2.1；方法说明 PDF：'GDPVal-AA v2 results are sourced from the Artificial Analysis public leaderboard.'"
+  },
+  {
+   "benchmark": "gdp-pdf",
+   "score": 35,
+   "setting": "GDP.PDF All pass rate；Google 自测（所有模型均自测）；思考档位未写明",
+   "sourceType": "official",
+   "sourceName": "Gemini 3.8 Flash 模型卡（Google DeepMind）",
+   "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash",
+   "quote": "GDP.PDF Expert PDF document comprehension All pass rate 35.0% 34.0% 37.0% 28.0% 40.0% 29.0%",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "Google Cloud 开发者指南同为 'GDP.pdf 35.0%'；方法说明：'GDP.PDF results for all models are self computed.'"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash",
+   "title": "Gemini 3.8 Flash - Model Card (Google DeepMind)",
+   "kind": "model_card"
+  },
+  {
+   "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-8_flash_model_evaluation.pdf",
+   "title": "Gemini 3.8 Flash Model evaluation: approach, methodology & results (redirect target of deepmind.google/models/evals-methodology/gemini-3-8-flash)",
+   "kind": "tech_report"
+  },
+  {
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+   "title": "Google blog: Gemini 3.8 Flash and 3.8 Flash Cyber",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://deepmind.google/models/gemini/flash/",
+   "title": "Google DeepMind Gemini Flash model page",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-3-8-flash",
+   "title": "Google Cloud developer guide: Gemini 3.8 Flash",
+   "kind": "docs"
+  },
+  {
+   "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+   "title": "Claude Haiku 5.5 System Card (Anthropic)",
+   "kind": "system_card"
+  },
+  {
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "title": "Terminal-Bench 4.0 official leaderboard",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://deepswe.datacurve.ai/",
+   "title": "DeepSWE leaderboard (Datacurve)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.frontierswe.com/",
+   "title": "FrontierSWE V2 leaderboard (Proximal)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://labs.scale.com/leaderboard/humanitys_last_exam",
+   "title": "Scale Labs HLE leaderboard",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://labs.scale.com/leaderboard/humanitys_last_exam_text_only",
+   "title": "Scale Labs HLE (Text Only) leaderboard",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "title": "Vals AI Terminal-Bench 4.0",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "title": "Vals AI Terminal-Bench Science",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://zapier.com/benchmarks",
+   "title": "Zapier AutomationBench leaderboard",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://osworld-v2.xlang.ai/",
+   "title": "OSWorld 2.0 official site / leaderboard",
+   "kind": "leaderboard"
+  }
+ ],
+ "notFound": [
+  "frontiercode",
+  "automationbench",
+  "toolathlon-verified",
+  "agents-last-exam",
+  "hle-tools",
+  "scicode",
+  "critpt",
+  "aa-lcr"
+ ],
+ "collectorNotes": "Google 自己的材料（模型卡、方法说明 PDF、博客表格图、Google Cloud 开发者指南）给出的可用列为 TB4 19.1、DeepSWE v1.1 73.7、GDPVal-AA v2 Elo 1545、GDP.PDF 35.0、OSWorld-2.0 partial 59.0、HLE-Verified 54.9（不可比），开发者指南另列 HLE 45.4%（设置不明）。博客表格图与模型卡内容一致。\n\n线索中的 OpenAI GPT-6 Astra 发布页（openai.com/index/gpt-6-astra/）对 curl 和 WebFetch 都返回 403，archive 和 reader 代理也不可用；它的 system card（deploymentsafety.openai.com/gpt-6-astra）全文不含 Gemini。所以线索里 OpenAI 打印的 TB4 19.1、DeepSWE 73.8、FrontierCode 1.1 Main 43.6 / Extended 56.3 都未能在原页核实，没有记录。FrontierCode 因此列入 not_found：43.6 只见于二手转述，需要能打开 OpenAI 页面后补录。\n\n各榜单核查结果：\n- Zapier AutomationBench 页面只显示前 10 名（'See 116 more' 需前端加载），脚注提到 Gemini 3.8 Flash 有 Medium/High 两个条目，但读不到分数。\n- OSWorld 2 官方 JSON、Agents' Last Exam API、Toolathlon 文档榜、CritPt、SciCode 官方榜都没有此模型。\n- TB-Science 官方 Harbor 榜是客户端渲染，读不到，只记录了 Vals 的独立运行结果。\n\n主值选择有两处例外：GDPval-AA 用 Anthropic 引用的 AA v2.1 Elo 1435，没有用 Google 自报的 v2 1545；HLE 用 Scale 完整集 44.52，没有用 Google 设置不明的 45.4。两处都是因为口径与首选设置一致。博客中的 CWE-Bench 47.2 属于 Flash Cyber 变体，已排除。",
+ "verifierSummary": "I opened all 15 records at their URLs. Every number appears for Gemini 3.8 Flash itself, and all comparability flags follow the column rules, so all 15 are confirmed with no corrections. How I checked: the Google model card's first column is Gemini 3.8 Flash. Its methods PDF (storage.googleapis.com/deepmind-media/gemini/gemini_3-8_flash_model_evaluation.pdf) confirms four settings: the TB4 number comes from the official board at the highest-scoring thinking level; DeepSWE was self-run with mini-swe-agent at high; GDPVal-AA v2 comes from Artificial Analysis's board; OSWorld 2.0 is the partial score, best of 3 runs, batched tool calls, run before the 08.08 patch. Other sources: the tbench.ai data has accuracy 19.09 with n_trials 330 (mini-SWE-agent, high). Vals TB4 is 19.19% (avg@3, three refusals by this model scored as failures). Vals TB-Science is 8.57% (single run pass@1, all 70 tasks of v0.1.0). The DeepSWE v1.1 board shows \"74 % ± 1 %\" (updated September 22, 2026); its underlying data gives pass_at_1 = 0.7383. FrontierSWE V2 lists mean reward 0.1963 over 170 runs; on the main table Google is represented only by Gemini 4 Argon. Scale HLE gives 44.52 for the full set and 44.95 for text-only; the boards announce HLE-Rolling but still use the original HLE. The Google Cloud guide shows 45.4%. Page 131 of the Haiku 5.5 card, in section 8.10.2 'GDPval-AA v2.1', gives Elo 1435, run by Artificial Analysis."
+}

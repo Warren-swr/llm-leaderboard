@@ -66,7 +66,8 @@ export function ScoreMatrix({ models, onOpen }: Props) {
               {benches.map(b => (
                 <th key={b.id} style={{ maxWidth: 92 }}>
                   <Tooltip label={`${b.name}｜${b.metric}｜首选配置：${b.preferredSetting}`}>
-                    <span style={{ display: 'inline-block', lineHeight: 1.25 }}>{b.name}</span>
+                    {/* 在驼峰处插入零宽断点，避免 AutomationBench 这类长词撑宽整列 */}
+                    <span style={{ display: 'inline-block', lineHeight: 1.25 }}>{b.name.replace(/([a-z])([A-Z])/g, '$1​$2')}</span>
                   </Tooltip>
                 </th>
               ))}

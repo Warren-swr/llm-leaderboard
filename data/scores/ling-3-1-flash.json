@@ -1,0 +1,106 @@
+{
+ "model": "ling-3-1-flash",
+ "records": [
+  {
+   "benchmark": "gdpval-aa",
+   "score": 58.65,
+   "setting": "GDPval-AA v2.1 Elo 1673 (normalized: (1673-500)/2000*100 = 58.65)；厂商发布图（AA 口径 GDPval-AA v2.1），未注明推理档位与设置",
+   "sourceType": "official",
+   "sourceName": "Ant Ling (@AntLingAGI) 官方 X 发布帖及配图",
+   "url": "https://pbs.twimg.com/media/HTelU-lbgAQs5K-.jpg?name=orig",
+   "quote": "GDPval-AA v2.1 chart: Ling-3.1-flash 1673; tweet: \"1,673 Elo on GDPVal-AA v2.1\"",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "厂商自报 Elo，AA 站点当前值不同（AA 自身数据已另行采集）；发帖链接 https://x.com/AntLingAGI/status/2105335205741596911"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 40.4,
+   "setting": "Terminal-Bench 4.0 success rate (%)；厂商自测，未注明 harness、推理档位与试验次数",
+   "sourceType": "official",
+   "sourceName": "Ant Ling (@AntLingAGI) 官方 X 发布帖配图",
+   "url": "https://pbs.twimg.com/media/HTelU-lbgAQs5K-.jpg?name=orig",
+   "quote": "Terminal-Bench 4.0: Ling-3.1-flash 40.40",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "tbench.ai 4.0 官方榜（2026-10-12 查看）未收录该模型"
+  },
+  {
+   "benchmark": "frontierswe",
+   "score": 75.16,
+   "setting": "FrontierSWE score 75.16 (metric unspecified; not mean@5)；厂商自测，未注明指标与 harness",
+   "sourceType": "official",
+   "sourceName": "Ant Ling (@AntLingAGI) 官方 X 发布帖及配图",
+   "url": "https://pbs.twimg.com/media/HTelU-lbgAQs5K-.jpg?name=orig",
+   "quote": "FrontierSWE: Ling-3.1-flash 75.16, Kimi K3 73.52, GLM 5.3 74.34, GLM 5.3 flash 58.55; tweet: \"75.16 on FrontierSWE\"",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "同图中 GLM-5.3 为 74.34、Kimi K3 为 73.52，而 frontierswe.com 官方榜 mean@5 分别为 30.2% 和 25.9%，故该数值不是 mean@5（推断为 dominance 类指标）；官方榜未收录 Ling 3.1 Flash"
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 52.5,
+   "setting": "AutomationBench (public) pass rate (%)；厂商自测，公开题集（非 Zapier 私有留出集），未注明设置",
+   "sourceType": "official",
+   "sourceName": "Ant Ling (@AntLingAGI) 官方 X 发布帖配图",
+   "url": "https://pbs.twimg.com/media/HTelU-lbgAQs5K-.jpg?name=orig",
+   "quote": "Automationbench (public): Ling-3.1-flash 52.50",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "公开集而非私有留出集，不可比；zapier.com/benchmarks 官方榜未收录该模型"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://x.com/AntLingAGI/status/2105335205741596911",
+   "title": "Ant Ling: Meet Ling-3.1-flash (launch post, 2026-09-30)",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://pbs.twimg.com/media/HTelU-lbgAQs5K-.jpg?name=orig",
+   "title": "Ling-3.1-flash launch benchmark chart",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://www.frontierswe.com/",
+   "title": "FrontierSWE v2 leaderboard (Proximal)",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.tbench.ai/leaderboard/terminal-bench/4.0",
+   "title": "Terminal-Bench 4.0 leaderboard",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://zapier.com/benchmarks",
+   "title": "Zapier AutomationBench leaderboard",
+   "kind": "leaderboard"
+  }
+ ],
+ "notFound": [
+  "deepswe",
+  "frontiercode",
+  "frontierswe",
+  "osworld-2",
+  "automationbench",
+  "toolathlon-verified",
+  "agents-last-exam",
+  "hle-no-tools",
+  "hle-tools",
+  "terminal-bench-science",
+  "scicode",
+  "critpt",
+  "gdp-pdf",
+  "aa-lcr"
+ ],
+ "collectorNotes": "I found only one piece of vendor launch material: the official @AntLingAGI X post from 2026-09-30 and its 12-panel chart (I downloaded the image and read the values off it). The model is API-only for now. Hugging Face has no inclusionAI/Ling-3.1-flash card (request returned 401), and I found no official blog or tech report.\n\nOf the 16 columns, the chart covers four: GDPval-AA v2.1, Terminal-Bench 4.0, FrontierSWE and AutomationBench (public). The other chart panels are not in our 16 columns: tau3-Banking, SkillsBench, CyberGym, SWE Atlas QnA, Finance Agent v2, HealthBench Professional, DRACO and MultiChallenge.\n\n- **FrontierSWE (not comparable):** the vendor's 75.16 is not mean@5. The same chart gives GLM 5.3 74.34 and Kimi K3 73.52, while Proximal's official board shows 30.2% and 25.9% mean@5 for those models.\n- **AutomationBench (not comparable):** the 52.5 is on the public set, not Zapier's private held-out set.\n\nOn 2026-10-12 I checked these benchmark-author boards and none of them list Ling 3.1 Flash: tbench.ai TB 4.0 (parsed model labels), tbench.ai TB-Science 0.1, deepswe.datacurve.ai, frontierswe.com, zapier.com/benchmarks, toolathlon.xyz, agents-last-exam.org, Scale HLE, and the Vals TB4 and Vals Index boards. A 'ling' hit on frontierswe.com turned out to be Thinking Machines Inkling. No other vendor's comparison table that I saw includes this model.",
+ "verifierSummary": "I downloaded the vendor chart (https://pbs.twimg.com/media/HTelU-lbgAQs5K-.jpg?name=orig, 1969x1228) and read it directly. All four Ling-3.1-flash numbers match the chart, and all four comparability flags follow the column rules, so every record is confirmed. GDPval-AA v2.1 shows 1673, and (1673-500)/2000×100 = 58.65. Terminal-Bench 4.0 shows 40.40. FrontierSWE shows 75.16, and Automationbench (public) shows 52.50. On FrontierSWE, the official board at frontierswe.com uses the proximus harness and lists GLM-5.3 at 30.2% and Kimi K3 at 25.9%. The vendor chart puts the same two models at 74.34 and 73.52, so its metric is not the official mean@5 score, and comparable=false is justified. Ling 3.1 Flash does not appear on the official FrontierSWE board. AutomationBench is marked public, not Zapier's private held-out set, so comparable=false is correct. One limit: I did not open the tweet text itself, only the chart image. The quoted tweet phrases (\"1,673 Elo on GDPVal-AA v2.1\", \"75.16 on FrontierSWE\") are therefore unverified, but the numbers in them match the chart."
+}

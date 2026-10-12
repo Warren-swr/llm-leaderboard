@@ -1,0 +1,48 @@
+{
+  "reviewedOn": "2026-10-12",
+  "description": "人工复核：收集与核验之后，对口径有问题的记录做的修正。管线按 model + benchmark + urlContains 匹配记录，套用 set 中的字段，并把 reason 写进该记录的备注。",
+  "overrides": [
+    {
+      "model": "gpt-5-6-terra", "benchmark": "automationbench", "urlContains": "openai.com/index/gpt-5-6",
+      "set": { "comparable": false },
+      "reason": "7 月发布页的数字来自较早的 AutomationBench 版本；Zapier 当前 v1.0.6 私有集官方榜上 Terra（Max）为 23.59%，同表 Sol 也明显不同，题集不一致"
+    },
+    {
+      "model": "mimo-v2-6-pro", "benchmark": "automationbench", "urlContains": "huggingface.co/XiaomiMiMo",
+      "set": { "comparable": false },
+      "reason": "厂商自测，未说明使用 Zapier 私有留出集；私有集只由 Zapier 运行，本列只收 Zapier 运行的通过率"
+    },
+    {
+      "model": "qwen3-8-max", "benchmark": "automationbench", "urlContains": "pbs.twimg.com",
+      "set": { "comparable": false },
+      "reason": "厂商自测（合入 PR #16 后运行），未说明使用 Zapier 私有留出集；本列只收 Zapier 运行的通过率"
+    },
+    {
+      "model": "glm-5-3-flash", "benchmark": "automationbench", "urlContains": "z.ai/blog",
+      "set": { "comparable": false },
+      "reason": "厂商自测且修改过评测代码（PR #13），未说明使用 Zapier 私有留出集；本列只收 Zapier 运行的通过率"
+    },
+    {
+      "model": "kimi-k3", "benchmark": "aa-lcr", "urlContains": "huggingface.co/moonshotai",
+      "set": { "comparable": false },
+      "reason": "模型卡引用 2026-07-23 的 AA 数据且未注明版本；AA 说明 v1.1 修正了 16 个答案，与 v1.0 不可直接比较，当前 v1.1 分数为 88.67"
+    },
+    {
+      "model": "gpt-6-1-sol", "benchmark": "deepswe", "urlContains": "x.com/OpenAIDevs",
+      "set": { "url": "https://openai.com/index/introducing-gpt-6-1-sol/", "sourceName": "OpenAI GPT-6.1 Sol 发布页", "quote": "DeepSWE 图表数据：{\"model\":\"GPT-6.1 Sol\",\"score\":0.7522,\"effortLabel\":\"High\"}", "verified": true },
+      "replaceNote": true,
+      "reason": "原记录引自 OpenAI Developers 的 X 帖；已在保存的官方发布页副本（data/sources/openai/introducing-gpt-6-1-sol.html）图表数据中核到 High 档 0.7522，改为引用官方发布页。OpenAI 以 High 档为头条，Max 档为 71.9"
+    },
+    {
+      "model": "gpt-6-1-sol", "benchmark": "deepswe", "urlContains": "alphacorp.ai",
+      "set": { "url": "https://openai.com/index/introducing-gpt-6-1-sol/", "sourceName": "OpenAI GPT-6.1 Sol 发布页（图表数据）", "verified": true },
+      "replaceNote": true,
+      "reason": "原记录经 AlphaCorp 转载；各档数值（Low 0.6438 / Medium 0.7301 / Xhigh 0.719 / Max 0.719）已在保存的官方发布页副本图表数据中核对一致，改为引用官方发布页"
+    },
+    {
+      "model": "gemini-3-8-flash", "benchmark": "gdp-pdf", "urlContains": "deepmind.google/models/model-cards",
+      "set": {},
+      "reason": "Google 自行计算（模型卡注明所有模型的 GDP.pdf 均为自测），指标同为 all-pass；按官方优先保留，但比 AA 独立复测（21.0）高 14 分"
+    }
+  ]
+}

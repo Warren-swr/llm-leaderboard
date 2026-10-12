@@ -1,0 +1,173 @@
+{
+ "model": "mimo-v2-6-pro",
+ "records": [
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 34.9,
+   "setting": "Terminal Bench 4.0 (score, %)；小米自测；模型卡与技术报告均未写 harness、effort 和试验次数",
+   "sourceType": "official",
+   "sourceName": "MiMo-V2.6-Pro-RL 官方 HF 模型卡（技术报告 Table 3 与发布博客附录同值）",
+   "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+   "quote": "| Terminal Bench 4.0 | 34.9 | 28.8 | 1.5 | 49.0 | 39.9 | 42.4 |",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "表头为 MiMo-V2.6 Pro / Flash / V2.5 Pro / Opus 5 / GPT-5.6 Sol / Fable 5；第一列是 Pro"
+  },
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 31.31,
+   "setting": "Terminal-Bench 4.0 accuracy, avg@3 (each run pass@1)；Vals AI 独立测评；mini-SWE-agent；跑 3 次取平均；通过小米官方 API；榜单更新于 2026-10-07",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench 4.0 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "quote": "15 MiMo V2.6 Pro Mini-SWE-agent 31.31% $0.50 $0.435 / $0.87 2h42m",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "verified": true,
+   "note": "Vals 模型页 9 月 22 日的更新文字曾写 TB4 为 24.75%（#10/34），当前榜单值为 31.31%"
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 71.9,
+   "setting": "DeepSWE v1.1 (score, %)；小米自测；未写 harness 和试验次数；技术报告只说明基线模型用 max effort",
+   "sourceType": "official",
+   "sourceName": "MiMo-V2.6-Pro-RL 官方 HF 模型卡",
+   "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+   "quote": "| DeepSWE v1.1 | 71.9 | 67.9 | 19.0 | 74.0 | 73.0 | 70.0 |",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "发布博客的 RL 曲线说明写 Pro 在 DeepSWE v1.1 从 58.4 升到 72.57，这是训练过程中的检查点值，不是正式成绩，未单独记录"
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 53.1,
+   "setting": "AutomationBench v1.0.6 (score, %)；小米自测；未说明是否是 Zapier 私有留出集，也未写 harness",
+   "sourceType": "official",
+   "sourceName": "MiMo-V2.6-Pro-RL 官方 HF 模型卡",
+   "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+   "quote": "| AutomationBench v1.0.6 | 53.1 | 52.3 | 16.0 | 50.3 | 45.8 | 46.2 |",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "Zapier 官方榜 zapier.com/benchmarks 上没有 MiMo-V2.6-Pro"
+  },
+  {
+   "benchmark": "toolathlon-verified",
+   "score": 76.9,
+   "setting": "Toolathlon-Verified (score, %)；小米自测；未写 harness 和试验次数",
+   "sourceType": "official",
+   "sourceName": "MiMo-V2.6-Pro-RL 官方 HF 模型卡",
+   "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+   "quote": "| Toolathlon-Verified | 76.9 | 73.6 | 49.1 | 80.6 | 74.9 | 77.9 |",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "toolathlon.xyz 榜单只有 MiMo V2.5，没有 V2.6"
+  },
+  {
+   "benchmark": "gdpval-aa",
+   "score": 58.65,
+   "setting": "GDPval-AA v2.1 Elo 1673 → (1673−500)/2000×100 = 58.65；厂商表格引用 Artificial Analysis 的 GDPval-AA v2.1 Elo（博客附录注明这是 AA 报告的 Elo）",
+   "sourceType": "official",
+   "sourceName": "MiMo-V2.6-Pro-RL 官方 HF 模型卡",
+   "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+   "quote": "| GDPval-AA 2.1 | 1673 | - | 1107 | 1708 | 1588 | 1595 |",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "博客附录原文：'GDPVal 2.1 is an Elo rating reported by Artificial Analysis.'"
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "score": 2.86,
+   "setting": "Terminal-Bench Science (v0.1.0, 70 tasks) pass@1 accuracy；Vals AI 独立测评；mini-SWE-agent；单次运行 pass@1；严格通过/不通过；榜单更新于 2026-10-08",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI Terminal-Bench Science 榜",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "quote": "31 MiMo V2.6 Pro Mini-SWE-agent 2.86% $0.62 $0.435 / $0.87 3h12m",
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "verified": true,
+   "note": "Vals 自己说明：它用通用 harness、单次运行，与官方 0.1 榜（厂商自带 agent、3 次试验）不能直接比较。tbench.ai 官方榜没有 MiMo"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 31.6,
+   "setting": "Agents' Last Exam — 厂商没写指标名，推断为 Pass rate（全对任务占比）；小米自测；未写 harness",
+   "sourceType": "official",
+   "sourceName": "MiMo-V2.6-Pro-RL 官方 HF 模型卡",
+   "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+   "quote": "| Agents’ Last Exam | 31.6 | 27.6 | 13.2 | 31.6 | 30.8 | 25.7 |",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "verified": true,
+   "note": "推断依据：同表基线与 ALE 官方 API 的 passRate 一致，与 avgScore 不一致。Fable 5 为 25.7，官方 passRate 25.7、avgScore 48.7；Opus 5 为 31.6，官方 passRate 32.2；博客附录中 Astra 为 34.2，即 passRate，其 Score 是 59.3。因此这是 Pass rate，不是 Score。ALE 官方榜没有 MiMo V2.6"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+   "title": "MiMo-V2.6-Pro-RL Hugging Face model card",
+   "kind": "model_card"
+  },
+  {
+   "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf",
+   "title": "MiMo-V2.6 Technical Report (Table 3, §5.2)",
+   "kind": "tech_report"
+  },
+  {
+   "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+   "title": "MiMo-V2.6-Pro-MOPD model card (no eval table)",
+   "kind": "model_card"
+  },
+  {
+   "url": "https://mimo.xiaomi.com/mimo-v2-6",
+   "title": "Introducing MiMo-V2.6 series (launch blog; appendix data in /mimo-v2-6/bench.js)",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "title": "Vals AI Terminal-Bench 4.0",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-science",
+   "title": "Vals AI Terminal-Bench Science",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://www.vals.ai/models/xiaomi_mimo-v2.6-pro",
+   "title": "Vals AI MiMo V2.6 Pro model page",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "title": "Agents' Last Exam leaderboard data API (used to identify the metric)",
+   "kind": "leaderboard"
+  }
+ ],
+ "notFound": [
+  "frontiercode",
+  "frontierswe",
+  "osworld-2",
+  "hle-no-tools",
+  "hle-tools",
+  "scicode",
+  "critpt",
+  "gdp-pdf",
+  "aa-lcr",
+  "agents-last-exam"
+ ],
+ "collectorNotes": "Xiaomi's own material has 6 numbers that match our columns. All come from one shared table: the HF model card for MiMo-V2.6-Pro-RL, Table 3 of the tech report, and the appendix of the launch blog (data in bench.js) all show the same values. For each number I recorded only the HF card. The launch blog is dated 2026-09-22.\n\nThe vendor gives DeepSWE v1.1 71.9, AutomationBench v1.0.6 53.1, Toolathlon-Verified 76.9, TB4.0 34.9 and GDPval-AA v2.1 Elo 1673 (converted to 58.65). It also gives Agents' Last Exam 31.6. The table does not name that metric, but the baseline columns match the passRate field in the ALE official data, so it is a Pass rate and is marked comparable=false. The vendor also reports OSWorld-Verified 82.0 and Terminal Bench 2.1 89.9; both are excluded benchmarks and were not recorded. The vendor uses the AA Intelligence Index 46.32 as its headline, which is not one of our columns.\n\nThe tech report only says that baseline models were run at max effort. It does not give MiMo's own harness, effort or number of trials.\n\nBenchmark-author boards: tbench.ai TB4.0 and TB-Science, deepswe.datacurve.ai, frontierswe.com, zapier.com/benchmarks, toolathlon.xyz (only MiMo V2.5), agents-last-exam.org (its API has only mimo-v2-5), the Scale HLE board, and the Snorkel OSWorld 2.0 page and osworld-v2.xlang.ai. MiMo-V2.6-Pro appears on none of them.\n\nThird-party: Vals AI ran TB4.0 (mini-SWE-agent, avg@3) and got 31.31. Its Sep 22 update text had said 24.75. Vals ran TB-Science v0.1.0 (single pass@1) and got 2.86.\n\nTwo searches found no other vendor printing MiMo-V2.6-Pro numbers in its own comparison table. The leads file's printed_by_other_vendors list was also empty.\n\nDo not mix up the family: the HF model card lists MiMo-V2.6-Flash and MiMo-V2.5-Pro in neighbouring columns of the same table. The MOPD checkpoint card (2026-09-27) has no evaluation table.",
+ "verifierSummary": "All 8 records hold up. The official HF model card (README) Section 3 table and Table 3 on p.26 of the technical report (MiMo_V2_6_technical_report.pdf) both list the same MiMo-V2.6 Pro values: DeepSWE v1.1 71.9, AutomationBench v1.0.6 53.1, Toolathlon-Verified 76.9, GDPval-AA 2.1 1673, Agents' Last Exam 31.6, Terminal Bench 4.0 34.9. The tech report only says baselines were run at max effort; it states no harness or trial count for MiMo itself. It calls GDPval-AA v2.1 \"Artificial Analysis's evaluation framework for GDPval\" but does not explicitly say AA produced the Elo. The blog mimo.xiaomi.com/mimo-v2-6 is a client-rendered page, curl got no body text, so I could not verify the claim that the blog appendix says these are AA-reported Elos. The two Vals pages match the claims: TB4 shows 15th place, 31.31%, Mini-SWE-agent, updated 10/7/2026, avg@3 (each run pass@1). TBS shows 31st place, 2.86%, single-run pass@1, all 70 tasks from v0.1.0, strict pass/fail, updated 10/8/2026. Neither page says whether Xiaomi's official API was used, so that detail is unverified. For Agents' Last Exam I pulled the official board API (agents-last-exam.org/api/demo/leaderboard). Xiaomi's baseline values match the official passRate scale, e.g. Claude Fable 5 reasoning-xhigh passRate 25.66% vs 25.7 in Xiaomi's table, while avgScore sits around 48-55%. So reading 31.6 as Pass rate and setting comparable=false is sound. MiMo-V2.6 Pro is not on that board. It is also not on zapier.com/benchmarks, so the AutomationBench number is vendor self-reported only."
+}
