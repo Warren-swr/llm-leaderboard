@@ -1,0 +1,58 @@
+{
+ "model": "glm-5-3-flash",
+ "records": [
+  {
+   "benchmark": "ale-pass",
+   "score": 26.3,
+   "setting": "Agents' Last Exam Pass rate（厂商表未标指标，按对照值推断）；厂商自测，Claude Code harness，reasoning effort=max，1M 上下文，64K 最大输出，关闭 Tool Search，由 ALE 官方评分",
+   "sourceType": "official",
+   "sourceName": "GLM-5.3-Flash 官方模型卡与评测图",
+   "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。同表 Opus 4.8=27.0、GLM-5.2=20.4，与 ALE 官方 API 中 claude-opus-4-8 thinking-max passRate 27.0（avgScore 45.1）、glm-5-2 max passRate 20.4（avgScore 41.1）一致，所以这是 Pass rate，不是 Score。ALE 官方榜未收录 GLM-5.3-Flash 本次已查看模型卡链接的官方 bench_53.png：自家 AutomationBench=48.8、ALE=26.3；ALE 的 Pass 口径仍按系列与对照值判定。"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "score": 7.0,
+   "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"zai/glm-5.3-flash\"].accuracy。"
+  },
+  {
+   "benchmark": "automationbench-public",
+   "score": 48.8,
+   "setting": "AutomationBench v1.0.6；公开实现，加入 PR #13 的 null 类型修复；max 推理档位",
+   "sourceType": "official",
+   "sourceName": "GLM-5.3-Flash 官方模型卡与评测图",
+   "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-18 已查看官方 bench_53.png 自家 AutomationBench 柱为 48.8；模型卡脚注明确 v1.0.6 + PR #13。按公开实现的完全通过率收录，完整 harness 与预算未另报。"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+   "title": "GLM-5.3-Flash 官方模型卡与评测图",
+   "kind": "official"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "title": "Vals AI ProgramBench（Almost Resolved）",
+   "kind": "other"
+  }
+ ],
+ "collectionDate": "2026-10-18",
+ "scope": "仅用于 2026-10-18 新增列；原 16 列记录保持不变。"
+}

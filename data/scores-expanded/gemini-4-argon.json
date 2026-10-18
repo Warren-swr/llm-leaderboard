@@ -1,0 +1,45 @@
+{
+ "model": "gemini-4-argon",
+ "records": [
+  {
+   "benchmark": "ale-pass",
+   "score": 39.5,
+   "setting": "Agent's Last Exam Pass rate (binary)；Google 自测；默认 ALE-Claw harness；5 小时窗口；开启安全过滤",
+   "sourceType": "official",
+   "sourceName": "Google DeepMind Gemini 4 Argon 模型评测 PDF",
+   "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。只给 Pass rate，不是偏好的部分分 Score；官方榜 API（2026-10-12）无 Argon 行"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "score": 41.0,
+   "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 high",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"google/gemini-4-argon\"].accuracy。"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf",
+   "title": "Google DeepMind Gemini 4 Argon 模型评测 PDF",
+   "kind": "official"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "title": "Vals AI ProgramBench（Almost Resolved）",
+   "kind": "other"
+  }
+ ],
+ "collectionDate": "2026-10-18",
+ "scope": "仅用于 2026-10-18 新增列；原 16 列记录保持不变。"
+}

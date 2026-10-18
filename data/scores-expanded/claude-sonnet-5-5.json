@@ -1,0 +1,71 @@
+{
+ "model": "claude-sonnet-5-5",
+ "records": [
+  {
+   "benchmark": "programbench-almost",
+   "score": 49.5,
+   "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"anthropic/claude-sonnet-5-5\"].accuracy。"
+  },
+  {
+   "benchmark": "chartography-tools",
+   "score": 90.2,
+   "setting": "100 题；准确率，专家容许区间；容器 + 图片裁剪工具，adaptive thinking / max；5 次平均，Gemini 3.5 Flash 裁判",
+   "sourceType": "official",
+   "sourceName": "Anthropic 官方 system card（Chartography 带工具）",
+   "url": "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-18 已提取并核对 PDF 正文；Fable 5.1 采用较新 Opus 5.5 卡中的统一裁判复测。 数据定位：PDF 第 125 页及 Chartography 小节。"
+  },
+  {
+   "benchmark": "chartography-tools",
+   "score": 61.6,
+   "setting": "Chartography 不用工具准确率；max 推理",
+   "sourceType": "official",
+   "sourceName": "Anthropic 官方 system card（Chartography 不用工具）",
+   "url": "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
+   "verified": true,
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "带工具和不用工具不混在同一列。"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "score": 79.7,
+   "setting": "ProgramBench 166-task golden subset；平均隐藏测试通过率；mini-swe-agent，取消 6 小时限制；不是 Almost 任务比例",
+   "sourceType": "official",
+   "sourceName": "Anthropic 官方 system card（平均测试通过率）",
+   "url": "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
+   "verified": true,
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-18 已核对 PDF 的 ProgramBench 正文。不同子集且不同指标，只作参考，不以该高分覆盖 Almost 主分数。"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "title": "Vals AI ProgramBench（Almost Resolved）",
+   "kind": "other"
+  },
+  {
+   "url": "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
+   "title": "Anthropic 官方 system card（Chartography 带工具）",
+   "kind": "official"
+  }
+ ],
+ "collectionDate": "2026-10-18",
+ "scope": "仅用于 2026-10-18 新增列；原 16 列记录保持不变。"
+}

@@ -26,7 +26,8 @@ export interface RankedModel extends Model {
     rank: number
     rankLow: number
     rankHigh: number
-    observedOnlyScore: number
+    observedOnlyScore: number | null
+    observedWeight: number
     pessimisticRank: number
   }
 }
@@ -44,6 +45,7 @@ export function rankWith(weights: Record<string, number>): { models: RankedModel
         rankLow: result.rankLow[i],
         rankHigh: result.rankHigh[i],
         observedOnlyScore: result.observedOnlyScore[i],
+        observedWeight: result.observedWeight[i],
         pessimisticRank: result.pessimisticRank[i],
       },
     }))

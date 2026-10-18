@@ -1,0 +1,27 @@
+{
+ "model": "ling-3-1-flash",
+ "records": [
+  {
+   "benchmark": "automationbench-public",
+   "score": 52.5,
+   "setting": "AutomationBench (public) pass rate (%)；厂商自测，公开题集（非 Zapier 私有留出集），未注明设置",
+   "sourceType": "official",
+   "sourceName": "Ant Ling (@AntLingAGI) 官方 X 发布帖配图",
+   "url": "https://pbs.twimg.com/media/HTelU-lbgAQs5K-.jpg?name=orig",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。公开集而非私有留出集，不可比；zapier.com/benchmarks 官方榜未收录该模型 本次已查看官方图片，标题明确 public、Ling 柱标 52.50；未标题集版本与运行设置。"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://pbs.twimg.com/media/HTelU-lbgAQs5K-.jpg?name=orig",
+   "title": "Ant Ling (@AntLingAGI) 官方 X 发布帖配图",
+   "kind": "official"
+  }
+ ],
+ "collectionDate": "2026-10-18",
+ "scope": "仅用于 2026-10-18 新增列；原 16 列记录保持不变。"
+}

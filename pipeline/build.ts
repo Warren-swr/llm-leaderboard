@@ -62,9 +62,9 @@ function main() {
   const allowSparse = process.argv.includes('--allow-sparse')
   const models = readJson<{ models: ModelDef[] }>('data/models.json').models
   const refFile = readJson<RefFile>('data/references.json')
-  // data/scores：厂商与评测作者记录（逐条回源核验）；data/scores-aa：由 AA 快照脚本生成的记录
+  // 原有记录、AA 冻结快照，以及后续扩展列的独立记录，分别维护。
   const scoreFiles: Record<string, ScoreFile> = {}
-  for (const dir of ['data/scores', 'data/scores-aa']) {
+  for (const dir of ['data/scores', 'data/scores-aa', 'data/scores-expanded']) {
     for (const f of readdirSync(join(ROOT, dir)).filter(f => f.endsWith('.json'))) {
       const s = readJson<ScoreFile>(`${dir}/${f}`)
       const cur = (scoreFiles[s.model] ??= { model: s.model, records: [], references: [] })
@@ -140,6 +140,7 @@ function main() {
       rankLow: scoring.rankLow[i],
       rankHigh: scoring.rankHigh[i],
       observedOnlyScore: scoring.observedOnlyScore[i],
+      observedWeight: scoring.observedWeight[i],
       pessimisticRank: scoring.pessimisticRank[i],
       coverage: X[i].filter(v => v != null).length / bf.benchmarks.length,
       categoryScores: scoring.categoryScores[i],

@@ -102,14 +102,19 @@ export function RankingTable({ models, onOpen, custom }: Props) {
                   <Table.Td><ScoreBar m={m} max={max} /></Table.Td>
                   {board.categories.map(c => (
                     <Table.Td key={c.id} ta="right">
-                      <Text size="sm" className="lb-num">{fmt(m.categoryScores[c.id])}</Text>
+                      <Tooltip label={`${board.benchmarks.filter(b => b.category === c.id && !m.cells[b.id].imputed).length} / ${board.benchmarks.filter(b => b.category === c.id).length} 项有公开实分；类别得分含补全估计`}>
+                        <Text size="sm" className="lb-num">{board.benchmarks.filter(b => b.category === c.id).every(b => m.cells[b.id].imputed) ? '≈' : ''}{fmt(m.categoryScores[c.id])}</Text>
+                      </Tooltip>
                     </Table.Td>
                   ))}
                   <Table.Td>
-                    <Tooltip label={`${real} / ${nb} 个评测集有公开分数，其余为补全值`}>
+                    <Tooltip label={`${real} / ${nb} 个评测集有公开分数，覆盖当前总权重的 ${fmt(m.live.observedWeight * 100)}%；其余为补全值`}>
                       <Group justify="center" gap={6} wrap="nowrap">
                         <RingProgress size={30} thickness={3} roundCaps sections={[{ value: m.coverage * 100, color: 'brand' }]} />
-                        <Text size="xs" className="lb-num lb-muted">{real}/{nb}</Text>
+                        <Stack gap={0}>
+                          <Text size="xs" className="lb-num lb-muted">{real}/{nb}</Text>
+                          <Text size="xs" className="lb-num lb-faint">权重 {fmt(m.live.observedWeight * 100, 0)}%</Text>
+                        </Stack>
                       </Group>
                     </Tooltip>
                   </Table.Td>

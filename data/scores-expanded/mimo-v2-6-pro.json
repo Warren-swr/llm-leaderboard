@@ -1,0 +1,71 @@
+{
+ "model": "mimo-v2-6-pro",
+ "records": [
+  {
+   "benchmark": "ale-pass",
+   "score": 31.6,
+   "setting": "Agents' Last Exam — 厂商没写指标名，推断为 Pass rate（全对任务占比）；小米自测；未写 harness",
+   "sourceType": "official",
+   "sourceName": "MiMo-V2.6-Pro-RL 官方 HF 模型卡",
+   "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。推断依据：同表基线与 ALE 官方 API 的 passRate 一致，与 avgScore 不一致。Fable 5 为 25.7，官方 passRate 25.7、avgScore 48.7；Opus 5 为 31.6，官方 passRate 32.2；博客附录中 Astra 为 34.2，即 passRate，其 Score 是 59.3。因此这是 Pass rate，不是 Score。ALE 官方榜没有 MiMo V2.6"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "score": 12.5,
+   "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 未另标",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"xiaomi/mimo-v2.6-pro\"].accuracy。"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "score": 26.5,
+   "setting": "ProgramBench；厂商自测；原文未单列指标定义与完整预算",
+   "sourceType": "official",
+   "sourceName": "MiMo V2.6 Pro RL 官方模型卡",
+   "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+   "verified": true,
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-18 核对原表。对照值提示它可能是 Almost，但 MiMo 原文没有明确指标定义，因此仅参考；主分数采用明确给出 Almost 指标的 Vals 独立复测 12.5。"
+  },
+  {
+   "benchmark": "automationbench-public",
+   "score": 53.1,
+   "setting": "AutomationBench v1.0.6；公开任务集完全通过率；厂商自测，完整 harness 与预算未披露",
+   "sourceType": "official",
+   "sourceName": "MiMo V2.6 Pro RL 官方模型卡",
+   "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-18 重新核对原表 MiMo-V2.6 Pro 列，v1.0.6 行为 53.1。公开 / 私有按 v1.0.6 开源实现及同表对照值判断，不声称是 Zapier 私有榜。"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+   "title": "MiMo-V2.6-Pro-RL 官方 HF 模型卡",
+   "kind": "official"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "title": "Vals AI ProgramBench（Almost Resolved）",
+   "kind": "other"
+  }
+ ],
+ "collectionDate": "2026-10-18",
+ "scope": "仅用于 2026-10-18 新增列；原 16 列记录保持不变。"
+}

@@ -22,8 +22,8 @@ export function BenchmarksView({ weights }: { weights: number[] }) {
                         <Text fw={650}>{b.name}</Text>
                         <Text size="xs" className="lb-muted">{b.metric} · 首选配置：{b.preferredSetting}</Text>
                       </Stack>
-                      <Tooltip label={b.tier === 1 ? 'OpenAI / Anthropic 最新发布页或 model card 中使用' : '影响力大、主流新模型普遍有分数'}>
-                        <Badge variant={b.tier === 1 ? 'filled' : 'light'}>{b.tier === 1 ? '一级来源' : '二级来源'}</Badge>
+                      <Tooltip label={b.addedAt ? `${b.addedAt} 新增；指标范围、覆盖率与采用权重见入选理由` : b.tier === 1 ? 'OpenAI / Anthropic 最新发布页或 model card 中使用' : '影响力大、主流新模型普遍有分数'}>
+                        <Badge variant={b.tier === 1 ? 'filled' : 'light'}>{b.addedAt ? '扩展评测' : b.tier === 1 ? '一级来源' : '二级来源'}</Badge>
                       </Tooltip>
                     </Group>
                     <Text size="sm" lh={1.6}>{b.description}</Text>

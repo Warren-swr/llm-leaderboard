@@ -1,0 +1,185 @@
+{
+ "model": "kimi-k3",
+ "records": [
+  {
+   "benchmark": "ale-pass",
+   "score": 28.3,
+   "setting": "Pass rate（官方榜 primary pass-rate metric）；官方引自 ALE 官方榜（截至 2026-07-23），Kimi Code harness",
+   "sourceType": "official",
+   "sourceName": "Kimi K3 Hugging Face 模型卡",
+   "url": "https://huggingface.co/moonshotai/Kimi-K3",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。"
+  },
+  {
+   "benchmark": "automationbench-public",
+   "score": 30.8,
+   "setting": "AutomationBench（600-task public subset）；Moonshot 自测，600 题公开子集，其余按官方 GitHub 设置",
+   "sourceType": "official",
+   "sourceName": "Kimi K3 Hugging Face 模型卡",
+   "url": "https://huggingface.co/moonshotai/Kimi-K3",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。公开子集而非 Zapier 私有 held-out 集；Zapier 官方榜未收录 Kimi K3"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "score": 17.5,
+   "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 未另标",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"kimi/kimi-k3\"].accuracy。"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "score": 77.8,
+   "setting": "ProgramBench 平均隐藏测试通过率；Kimi Code harness",
+   "sourceType": "official",
+   "sourceName": "Kimi K3 官方模型卡",
+   "url": "https://huggingface.co/moonshotai/Kimi-K3",
+   "verified": true,
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "同表 Vals 对照值对应 Raw Pass Rate；不是达到 95% 阈值的任务比例。仅作参考。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 28.2895,
+   "setting": "passRate × 100；split=full，149/152 题；kimi_code，thinking-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=kimi-k3, split=full, harness=kimi_code, variant=thinking-max。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 26.9737,
+   "setting": "passRate × 100；split=full，149/152 题；claude_code，thinking-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=kimi-k3, split=full, harness=claude_code, variant=thinking-max。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 27.619,
+   "setting": "passRate × 100；split=linux_only，102/105 题；claude_code，thinking-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=kimi-k3, split=linux_only, harness=claude_code, variant=thinking-max。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 27.619,
+   "setting": "passRate × 100；split=linux_only，102/105 题；kimi_code，thinking-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=kimi-k3, split=linux_only, harness=kimi_code, variant=thinking-max。"
+  },
+  {
+   "benchmark": "nl2repo-bench",
+   "score": 58.0,
+   "setting": "NL2Repo-Bench Score；同表 K3 对照列；未说明完整运行设置",
+   "sourceType": "vendor_comparison",
+   "sourceName": "DeepSeek 1017 官方对比表（Kimi K3）",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-18 读取对照列，不作为 Kimi 厂商自报。"
+  },
+  {
+   "benchmark": "chartography-tools",
+   "score": 68.1,
+   "setting": "Chartography 带工具准确率；同表 K3 对照列；未另报裁判或运行预算",
+   "sourceType": "vendor_comparison",
+   "sourceName": "DeepSeek 1017 官方对比表（Kimi K3）",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-18 读取对照列；不用工具的 Surge 成绩不归到本列。"
+  },
+  {
+   "benchmark": "zerobench-tools",
+   "score": 41.0,
+   "setting": "ZeroBench-main Pass@5，Python 工具；max 推理，temperature=1.0，top_p=1.0；官方 ZeroBench 设置，5 次运行",
+   "sourceType": "official",
+   "sourceName": "Kimi K3 官方模型卡",
+   "url": "https://huggingface.co/moonshotai/Kimi-K3",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-18 核对模型卡的 23.0 / 41.0：前者不用工具，后者用 Python。"
+  },
+  {
+   "benchmark": "zerobench-tools",
+   "score": 23.0,
+   "setting": "ZeroBench-main Pass@5，不用工具",
+   "sourceType": "official",
+   "sourceName": "Kimi K3 官方模型卡",
+   "url": "https://huggingface.co/moonshotai/Kimi-K3",
+   "verified": true,
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "同一行不用工具的前一个数，只作参考。"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://huggingface.co/moonshotai/Kimi-K3",
+   "title": "Kimi K3 Hugging Face 模型卡",
+   "kind": "official"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "title": "Vals AI ProgramBench（Almost Resolved）",
+   "kind": "other"
+  },
+  {
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "title": "Agents' Last Exam 作者榜（Pass rate）",
+   "kind": "benchmark"
+  },
+  {
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "title": "DeepSeek 1017 官方对比表（Kimi K3）",
+   "kind": "other"
+  }
+ ],
+ "collectionDate": "2026-10-18",
+ "scope": "仅用于 2026-10-18 新增列；原 16 列记录保持不变。"
+}

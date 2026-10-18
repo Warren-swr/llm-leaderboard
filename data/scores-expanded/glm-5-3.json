@@ -1,0 +1,84 @@
+{
+ "model": "glm-5-3",
+ "records": [
+  {
+   "benchmark": "automationbench-public",
+   "score": 48.2,
+   "setting": "AutomationBench (v1.0.6) score；厂商用公开 GitHub 版 v1.0.6 自测，并合入 PR #13 的 null 类型修复",
+   "sourceType": "official",
+   "sourceName": "Z.ai GLM-5.3 Hugging Face 模型卡",
+   "url": "https://huggingface.co/zai-org/GLM-5.3",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。看起来是公开题集，不是 Zapier 的私有保留题集：Zapier 官方 1.0.6 榜上没有 GLM-5.3，同表的 Kimi K3 在 Zapier 榜上只有 22.68%，而厂商表写 46.7。一份 StepFun 表格的非官方 HF 镜像把这一行标成 “AutomationBench Public”"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 28.5,
+   "setting": "Pass rate (ALE-CLI, 105 题 Linux 子集)；厂商按官方协议自测，Claude Code harness，reasoning effort=max，1M 上下文，64K 输出，105 题，超时 4-8h，由官方 ALE 评分器打分",
+   "sourceType": "official",
+   "sourceName": "Z.ai GLM-5.3 Hugging Face 模型卡",
+   "url": "https://huggingface.co/zai-org/GLM-5.3",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。已核对为 pass rate，不是 Score：ALE 官方 API (agents-last-exam.org/api/demo/leaderboard) 的 linux_only 105 题子集里，同表各模型的 passRate 和厂商数字一致（GLM-5.2 23.8 vs avgScore 44.2；Kimi K3 27.6 vs 52.8；Opus 4.8 max 25.7）。官方榜上没有 GLM-5.3"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "score": 16.5,
+   "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"zai/glm-5.3\"].accuracy。"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "score": 19.0,
+   "setting": "ProgramBench Almost Solved；厂商自测；未另报完整预算",
+   "sourceType": "official",
+   "sourceName": "GLM-5.3 官方模型卡",
+   "url": "https://huggingface.co/zai-org/GLM-5.3",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-18 模型卡该行明确标 Almost Solved；保留 Vals 16.5 作为独立复测。"
+  },
+  {
+   "benchmark": "nl2repo-bench",
+   "score": 58.0,
+   "setting": "NL2Repo-Bench Score（隐藏测试通过率）；temperature=1.0，top_p=1.0，64k 输出，1M 上下文；规则 + LLM 检查拉源码等作弊行为",
+   "sourceType": "official",
+   "sourceName": "GLM-5.3 官方模型卡",
+   "url": "https://huggingface.co/zai-org/GLM-5.3",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-18 已核对原表自家模型列及脚注。未报为整仓完全解决率。"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://huggingface.co/zai-org/GLM-5.3",
+   "title": "Z.ai GLM-5.3 Hugging Face 模型卡",
+   "kind": "official"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "title": "Vals AI ProgramBench（Almost Resolved）",
+   "kind": "other"
+  }
+ ],
+ "collectionDate": "2026-10-18",
+ "scope": "仅用于 2026-10-18 新增列；原 16 列记录保持不变。"
+}

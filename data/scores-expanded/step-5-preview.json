@@ -1,0 +1,40 @@
+{
+ "model": "step-5-preview",
+ "records": [
+  {
+   "benchmark": "ale-pass",
+   "score": 29.5,
+   "setting": "Agents' Last Exam (ALE-CLI) — CLI 子集，推断为 Pass rate；StepFun 官方表，Step 5 Preview (High)；仅 ALE 的 CLI 子集，非完整集 Score",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。同表 GPT-6 Astra 为 33.3，与 ALE 官方数据中 Astra linux_only 子集（105 题）max 档 passRate 0.3333 一致，推断 ALE-CLI 为 linux-only 子集的全对率，与完整集 Score 不可比；ALE 官方榜未收录 Step 5 Preview"
+  },
+  {
+   "benchmark": "automationbench-public",
+   "score": 44,
+   "setting": "AutomationBench (public) (%)；StepFun 官方表，Step 5 Preview (High)；公开集，非 Zapier 私有 held-out 榜单集",
+   "sourceType": "official",
+   "sourceName": "StepFun Step 5 Preview 模型页",
+   "url": "https://www.stepfun.com/step-5-preview",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。Zapier 说明“Leaderboard scores run against a held-out private evaluation set; the public 600-task set is for research”，公开集与私有集不可比；同表 AutomationBench-AA 51.0 按要求不记录"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://www.stepfun.com/step-5-preview",
+   "title": "StepFun Step 5 Preview 模型页",
+   "kind": "official"
+  }
+ ],
+ "collectionDate": "2026-10-18",
+ "scope": "仅用于 2026-10-18 新增列；原 16 列记录保持不变。"
+}

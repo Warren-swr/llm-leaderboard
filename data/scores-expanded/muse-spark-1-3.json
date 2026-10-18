@@ -1,0 +1,125 @@
+{
+ "model": "muse-spark-1-3",
+ "records": [
+  {
+   "benchmark": "automationbench-public",
+   "score": 49.6,
+   "setting": "AutomationBench pass@1（公开 v3 题集，600 workflows）；max 推理；Meta 自报；用公开 v3 题集，不是 Zapier 私有留出集",
+   "sourceType": "official",
+   "sourceName": "Meta Muse Spark 1.3 发布页 benchmark scorecard 图",
+   "url": "https://research.meta.ai/articles/introducing-muse-1-3/benchmarks/benchmark-scorecard-v6.webp",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。方法说明：'We use the public v3 task set; Zapier publishes the official public leaderboard in the benchmark repository.' 原列定义为私有留出集，故判不可比；zapier.com/benchmarks 榜单未收录 Muse 本次亦复核官方 49.6 图片及官方方法说明 PDF 第 2 页：600 workflows、public v3、Pass@1；与 v1.0.6 的版本差异保留，非首选。"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "score": 19.0,
+   "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+   "sourceType": "third_party",
+   "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"meta/muse_spark_1_3_max\"].accuracy。"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "score": 25.0,
+   "setting": "200 题；Almost：至少 95% 隐藏行为测试通过；mini-SWE-agent；Muse Spark 1.3 max",
+   "sourceType": "benchmark_author",
+   "sourceName": "ProgramBench 作者榜（Almost）",
+   "url": "https://programbench.com/extended.html",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-18 核对作者原榜，保留 Vals 的 19.0 作为不同运行的参考值。 数据定位：Muse Spark 1.3 (max) / Almost。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 32.2368,
+   "setting": "passRate × 100；split=full，148/152 题；codex，reasoning-xhigh",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=muse-spark-1-3, split=full, harness=codex, variant=reasoning-xhigh。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 29.6053,
+   "setting": "passRate × 100；split=full，148/152 题；codex，reasoning-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=muse-spark-1-3, split=full, harness=codex, variant=reasoning-max。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 33.3333,
+   "setting": "passRate × 100；split=linux_only，105/105 题；codex，reasoning-xhigh",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=muse-spark-1-3, split=linux_only, harness=codex, variant=reasoning-xhigh。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 29.5238,
+   "setting": "passRate × 100；split=linux_only，105/105 题；codex，reasoning-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=muse-spark-1-3, split=linux_only, harness=codex, variant=reasoning-max。"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://research.meta.ai/articles/introducing-muse-1-3/benchmarks/benchmark-scorecard-v6.webp",
+   "title": "Meta Muse Spark 1.3 发布页 benchmark scorecard 图",
+   "kind": "official"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "title": "Vals AI ProgramBench（Almost Resolved）",
+   "kind": "other"
+  },
+  {
+   "url": "https://programbench.com/extended.html",
+   "title": "ProgramBench 作者榜（Almost）",
+   "kind": "benchmark"
+  },
+  {
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "title": "Agents' Last Exam 作者榜（Pass rate）",
+   "kind": "benchmark"
+  },
+  {
+   "url": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+   "title": "Muse Spark 1.3 官方方法说明：公开 v3 的 600 题 Pass@1（PDF 第 2 页）",
+   "kind": "official"
+  }
+ ],
+ "collectionDate": "2026-10-18",
+ "scope": "仅用于 2026-10-18 新增列；原 16 列记录保持不变。"
+}

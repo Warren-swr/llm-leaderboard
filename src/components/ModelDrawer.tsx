@@ -45,7 +45,7 @@ export function ModelDrawer({ modelId, focusBench, models, onClose }: Props) {
   }, [focusBench, modelId])
 
   const chart = m
-    ? board.categories.map(c => ({ category: c.name, 本模型: Number(fmt(m.categoryScores[c.id])), 榜内最高: Number(fmt(Math.max(...models.map(x => x.categoryScores[c.id])))) }))
+    ? board.categories.map(c => ({ category: c.id === 'vision' ? '视觉工具' : c.name, 本模型: Number(fmt(m.categoryScores[c.id])), 榜内最高: Number(fmt(Math.max(...models.map(x => x.categoryScores[c.id])))) }))
     : []
 
   return (
@@ -70,13 +70,20 @@ export function ModelDrawer({ modelId, focusBench, models, onClose }: Props) {
             </Paper>
           </SimpleGrid>
           <Text size="sm" className="lb-muted">
-            {m.vendor} · 发布于 {m.releaseDate} · {m.openWeights ? '开放权重' : '闭源'} · {Math.round(m.coverage * board.benchmarks.length)}/{board.benchmarks.length} 个评测集有公开分数
+            {m.vendor} · 发布于 {m.releaseDate} · {m.openWeights ? '开放权重' : '闭源'} · {Math.round(m.coverage * board.benchmarks.length)}/{board.benchmarks.length} 项指标有公开分数，覆盖当前总权重的 {fmt(m.live.observedWeight * 100)}%
             {m.live.pessimisticRank !== m.live.rank && `；补全值整体下调一个误差后名次变为 #${m.live.pessimisticRank}`}
           </Text>
-          {m.coverage < 0.5 && <Text size="sm" c="orange">公开分数覆盖不足一半，其余为补全估计，总分与名次仅供参考。</Text>}
+          {m.live.observedWeight < 0.5 && <Text size="sm" c="orange">公开实分覆盖的总权重不足一半，其余为补全估计，总分与名次仅供参考。</Text>}
 
           <Stack gap={6}>
-            <Text fw={600} size="sm">各类别得分</Text>
+            <Text fw={600} size="sm">各类别得分（含补全估计）</Text>
+            <Group gap={6}>
+              {board.categories.map(c => {
+                const benches = board.benchmarks.filter(b => b.category === c.id)
+                const count = benches.filter(b => !m.cells[b.id].imputed).length
+                return <Badge key={c.id} size="xs" variant="light" color={count ? 'gray' : 'orange'}>{c.name} {count}/{benches.length} 实分{count ? '' : ' · 全为估计'}</Badge>
+              })}
+            </Group>
             <BarChart
               h={200}
               data={chart}
@@ -84,6 +91,7 @@ export function ModelDrawer({ modelId, focusBench, models, onClose }: Props) {
               series={[{ name: '本模型', color: 'brand.5' }, { name: '榜内最高', color: 'gray.4' }]}
               withLegend
               legendProps={{ verticalAlign: 'bottom' }}
+              xAxisProps={{ interval: 0, tick: { fontSize: 10 } }}
               yAxisProps={{ domain: [0, 100], ticks: [0, 25, 50, 75, 100] }}
               gridAxis="y"
               barProps={{ radius: [4, 4, 0, 0] }}

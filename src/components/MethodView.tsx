@@ -45,7 +45,7 @@ const STEPS = [
     desc: '类别权重可调',
     body: (
       <List size="sm" spacing={6}>
-        <List.Item>总分 = 各评测集分数（百分制）的加权平均。权重先分到能力类别，再在类别内平均分配。</List.Item>
+        <List.Item>总分 = 各评测集分数（百分制）的加权平均。权重先分到能力类别，再按各评测的类别内权重分配；同一家族的公开 / 私有、Pass / Score 两列共享原家族权重。</List.Item>
         <List.Item>默认权重见“总榜”页的滑块；拖动滑块会在浏览器里实时重算。</List.Item>
       </List>
     ),
@@ -71,19 +71,46 @@ function spearman(a: number[], b: number[]) {
   return 1 - (6 * d2) / (n * (n * n - 1))
 }
 
-export function MethodView({ models }: { models: RankedModel[] }) {
+export function MethodView({ models, weights }: { models: RankedModel[]; weights: number[] }) {
   const [step, setStep] = useState(0)
   const imp = board.meta.imputation
   const obsRank = (() => {
-    const xs = models.map(m => m.live.observedOnlyScore)
-    return Object.fromEntries(models.map((m, i) => [m.id, 1 + xs.filter(y => y > xs[i]).length]))
+    const observed = models.filter(m => m.live.observedOnlyScore != null)
+    return Object.fromEntries(observed.map(m => [m.id, 1 + observed.filter(x => x.live.observedOnlyScore! > m.live.observedOnlyScore!).length]))
   })()
   const aaModels = models.filter((m): m is RankedModel & { aaIndex: number } => m.aaIndex != null)
   const rho = spearman(aaModels.map(m => m.live.score), aaModels.map(m => m.aaIndex))
   const scatter = [{ color: 'brand.5', name: '模型', data: aaModels.map((m, i) => ({ AA: Number(fmt(m.aaIndex)), 本榜: Number(fmt(m.live.score)), idx: i })) }]
+  const expansion = board.meta.expansion
+  const expandedBenches = board.benchmarks.filter(b => expansion?.benchmarkIds.includes(b.id))
+  const deepseek = models.find(m => m.id === 'deepseek-v4-1-flash-1017')
 
   return (
     <Stack gap="lg">
+      {expansion && deepseek && (
+        <Paper className="lb-panel" p="lg">
+          <Text fw={600} mb="xs">{expansion.date} 新增的排名评测</Text>
+          <Text size="sm" className="lb-muted" mb="md">
+            DeepSeek 1017 的公开实分由 {expansion.baselineDeepseekObserved}/{expansion.baselineBenchmarkCount} 增至 {Math.round(deepseek.coverage * board.benchmarks.length)}/{board.benchmarks.length}，目前覆盖总权重的 {fmt(deepseek.live.observedWeight * 100)}%。新增列也为其他模型补查公开分数；定义不清的项目和版本没有直接混入。
+          </Text>
+          <Table.ScrollContainer minWidth={620}>
+            <Table verticalSpacing="xs">
+              <Table.Thead><Table.Tr><Table.Th>新增评测</Table.Th><Table.Th ta="right">DeepSeek 实分</Table.Th><Table.Th ta="right">全榜公开覆盖</Table.Th><Table.Th ta="right">当前权重</Table.Th></Table.Tr></Table.Thead>
+              <Table.Tbody>
+                {expandedBenches.map(b => (
+                  <Table.Tr key={b.id}>
+                    <Table.Td>{b.name}</Table.Td>
+                    <Table.Td ta="right" className="lb-num">{deepseek.cells[b.id].imputed ? '—' : fmt(deepseek.cells[b.id].value)}</Table.Td>
+                    <Table.Td ta="right"><Badge variant="light" color={b.coverage < 0.25 ? 'orange' : 'gray'}>{Math.round(b.coverage * models.length)}/{models.length}</Badge></Table.Td>
+                    <Table.Td ta="right" className="lb-num">{fmt(weights[board.benchmarks.indexOf(b)] * 100)}%</Table.Td>
+                  </Table.Tr>
+                ))}
+              </Table.Tbody>
+            </Table>
+          </Table.ScrollContainer>
+          <Text size="xs" className="lb-muted" mt="md">实分增加仍不等于全面实测。低覆盖列的补全依赖其他评测，科研、知识工作等全为估计的类别已在模型详情中标记。</Text>
+        </Paper>
+      )}
       <Paper className="lb-panel" p="lg">
         <Text fw={600} mb="md">计算流程（点击步骤查看细节）</Text>
         <Stepper active={step} onStepClick={setStep} size="sm" allowNextStepsSelect>
@@ -139,7 +166,7 @@ export function MethodView({ models }: { models: RankedModel[] }) {
 
       <Paper className="lb-panel" p={0} style={{ overflow: 'hidden' }}>
         <Text fw={600} p="lg" pb="xs">名次对照</Text>
-        <Text size="xs" className="lb-muted" px="lg" pb="md">名次在不同口径下变化越小，结论越可靠。</Text>
+        <Text size="xs" className="lb-muted" px="lg" pb="md">同时检查名次变化和实分覆盖的权重。各模型公开实分所在的评测不同，“只用真实分数”一栏只作对照；区间未覆盖所有厂商自报和口径差异。</Text>
         <Table.ScrollContainer minWidth={720}>
           <Table verticalSpacing="xs" horizontalSpacing="lg">
             <Table.Thead>
@@ -147,6 +174,7 @@ export function MethodView({ models }: { models: RankedModel[] }) {
                 <Table.Th>模型</Table.Th>
                 <Table.Th ta="right">本榜</Table.Th>
                 <Table.Th ta="right">90% 名次区间</Table.Th>
+                <Table.Th ta="right">实分权重</Table.Th>
                 <Table.Th ta="right">只用真实分数</Table.Th>
                 <Table.Th ta="right">补全值下调一个误差</Table.Th>
                 <Table.Th ta="right">AA 智能指数</Table.Th>
@@ -158,7 +186,8 @@ export function MethodView({ models }: { models: RankedModel[] }) {
                   <Table.Td><Text size="sm" fw={550}>{m.name}</Text></Table.Td>
                   <Table.Td ta="right" className="lb-num">#{m.live.rank}</Table.Td>
                   <Table.Td ta="right" className="lb-num">{m.live.rankLow}–{m.live.rankHigh}</Table.Td>
-                  <Table.Td ta="right" className="lb-num">#{obsRank[m.id]}（{fmt(m.live.observedOnlyScore)}）</Table.Td>
+                  <Table.Td ta="right" className="lb-num">{fmt(m.live.observedWeight * 100)}%</Table.Td>
+                  <Table.Td ta="right" className="lb-num">{m.live.observedOnlyScore == null ? '—' : `#${obsRank[m.id]}（${fmt(m.live.observedOnlyScore)}）`}</Table.Td>
                   <Table.Td ta="right" className="lb-num">#{m.live.pessimisticRank}</Table.Td>
                   <Table.Td ta="right" className="lb-num">{m.aaRank == null || m.aaIndex == null ? '—' : `#${m.aaRank}（${fmt(m.aaIndex)}）`}</Table.Td>
                 </Table.Tr>

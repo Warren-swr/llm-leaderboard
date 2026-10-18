@@ -9,6 +9,23 @@
     "厂商往往不报自己表现差的评测，补全值可能系统性偏高；“补全值下调一个误差”一栏给出这种情况下的名次。",
     "不同厂商使用的 harness、推理档位和试验次数不同，同一列里的分数只做到“同一评测、同一指标”可比，具体配置见每个格子的出处。",
     "厂商用自家 harness 自测的分数普遍高于独立复测：例如 Terminal-Bench-Science 上 Anthropic 自报比 Vals AI 复测高 9–14 分，HLE 上 Anthropic 自报比 Scale 官方榜高 14–16 分。官方优先的规则因此对自报评测多、harness 调得好的厂商更有利。",
-    "2026-10-18 仅更新 DeepSeek-V4.1-Flash-1017，其他模型分数仍为原始历史快照。新版在现有 16 个评测中仅有 3 个可比的公开分数（19%）；其余为补全估计，总分与名次仅供参考。未把 9 月版本或 V4 Pro 的分数移入新版。"
-  ]
+    "2026-10-18 增加 6 列参与默认排名：ProgramBench Almost@1、NL2Repo、AutomationBench 公开集、ALE 完全通过率、Chartography 带工具、ZeroBench-main 带工具。原 16 列的全部实分与来源保留。",
+    "新增视觉工具推理类别占 10%，原 5 类默认权重按原比例缩放至合计 90%；公开/私有 AutomationBench 和 Pass/Score ALE 各共享原家族权重。ProgramBench Almost 与低覆盖 ZeroBench 使用较低类别内权重。",
+    "DeepSeek 1017 从 3/16 增至 9/22 项公开实分。科研和知识工作仍未有新版实分，补全不是实测；页面同时显示实分覆盖的总权重，不能只按项目数量判断可靠性。",
+    "Apex Bench v1.1 的具体定义与已知 Apex 评测的对应关系未确认，不纳入综合排名；BabyVision 带工具的头部已普遍超过 90%，保留来源结果但不加入默认排名。",
+    "新增来源为 2026-10-18 回源摘录，以及按指标重新分类的 2026-10-12 已核验记录。原模型名单和原有来源日期不改写，不移用旧版 DeepSeek 或名称不同的模型分数。"
+  ],
+  "expansion": {
+    "date": "2026-10-18",
+    "baselineBenchmarkCount": 16,
+    "baselineDeepseekObserved": 3,
+    "benchmarkIds": [
+      "programbench-almost",
+      "nl2repo-bench",
+      "automationbench-public",
+      "ale-pass",
+      "chartography-tools",
+      "zerobench-tools"
+    ]
+  }
 }

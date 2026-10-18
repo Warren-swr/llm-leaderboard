@@ -1,0 +1,285 @@
+{
+  "retrievedAt": "2026-10-18T13:17:10.139152+00:00",
+  "baselineCommit": "56d1d7a874d1d4ab8798f5eff05591bc9a43d502",
+  "evidenceRun": "runs/llm-leaderboard/benchmark-expansion-20261018-131706",
+  "newBenchmarkIds": [
+    "programbench-almost",
+    "nl2repo-bench",
+    "automationbench-public",
+    "ale-pass",
+    "chartography-tools",
+    "zerobench-tools"
+  ],
+  "legacyRecordsReclassified": 14,
+  "recordCounts": {
+    "claude-fable-5-1": 5,
+    "claude-opus-5-5": 6,
+    "gemini-3-8-flash": 1,
+    "grok-4-7": 1,
+    "claude-haiku-5-5": 4,
+    "qwen3-8-flash-next": 2,
+    "glm-5-3": 5,
+    "qwen3-8-max": 6,
+    "deepseek-v4-1-flash-1017": 6,
+    "ling-3-1-flash": 1,
+    "qwen3-8-2-4t-a95b": 5,
+    "gpt-6-1-sol": 1,
+    "muse-spark-1-3": 7,
+    "gemini-4-argon": 2,
+    "gpt-5-6-terra": 5,
+    "kimi-k3": 12,
+    "claude-sonnet-5-5": 4,
+    "glm-5-3-flash": 3,
+    "step-5-preview": 2,
+    "mimo-v2-6-pro": 4,
+    "gpt-6-astra": 5
+  },
+  "sources": [
+    {
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/raw/main/README.md",
+      "file": "snapshots/2592be6c33dd161c.txt",
+      "sha256": "347c9db4e5506acb531cbc3b724407ab88e9af8781679152f0823d7bac16d251",
+      "bytes": 13110
+    },
+    {
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/raw/main/README.md",
+      "file": "snapshots/4d9826b19eaa1d66.txt",
+      "sha256": "bf373f444efcd309534804edd1fadadd1eb0ad64f7b0474c96fdac946614c13e",
+      "bytes": 9770
+    },
+    {
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/README.md",
+      "file": "snapshots/17aa6f2c9876fccb.txt",
+      "sha256": "b72b796e4f4c739eca5d0ad360a7679b39118ca7eb64891f7151a527b292c42a",
+      "bytes": 5231
+    },
+    {
+      "url": "https://huggingface.co/zai-org/GLM-5.3/raw/main/README.md",
+      "file": "snapshots/57aa63cea239fbeb.txt",
+      "sha256": "ed1c0a4563c437a32f8953d637a1db9bd831de1b24bd3062a5ace9e04340b1cf",
+      "bytes": 14209
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/raw/main/README.md",
+      "file": "snapshots/f6c976ba52f5dca2.txt",
+      "sha256": "7690c680c2d6eb284179ef5dd4db63260d248531cae9087b09b2c2200230f331",
+      "bytes": 35755
+    },
+    {
+      "url": "https://huggingface.co/moonshotai/Kimi-K3/raw/main/README.md",
+      "file": "snapshots/72853dff5204899c.txt",
+      "sha256": "57de265b5842dfa465c6e73b368b0e15a89b8793b5450528dad577da202cc6fe",
+      "bytes": 45261
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/main/README.md",
+      "file": "snapshots/67b6f66265a6114e.txt",
+      "sha256": "35ca37ccc366f1ba478dab33841a2c0c18ce53fd62f291ca05341f7728b225b2",
+      "bytes": 65155
+    },
+    {
+      "url": "https://surgehq.ai/benchmarks/chartography",
+      "file": "snapshots/e888e23acf2e5427.txt",
+      "sha256": "cceb3dfc3268413e661b307de0eff650f40aab03e5f7299e699dc62d8f4a8825",
+      "bytes": 187428
+    },
+    {
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "file": "snapshots/cdb1d51fae043110.txt",
+      "sha256": "a136d3c0045c6c38ef6b5ae8fbfad8fc9dd8f76f614624242d3d70ab3f1dd6b6",
+      "bytes": 222166
+    },
+    {
+      "url": "https://programbench.com/",
+      "file": "snapshots/59811cfca57b869e.txt",
+      "sha256": "0eff9a5d625831635c1a23a24312b02a9d82adc0033c3b580dfb70f75ddcd432",
+      "bytes": 401372
+    },
+    {
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "file": "snapshots/0dd3bed5c7dd1c27.txt",
+      "sha256": "9a9347844282208d8fa7f26d63d7da4ddef7fa34c740decc0a23a749420f8f92",
+      "bytes": 464353
+    },
+    {
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "file": "snapshots/eb25ffd107490f6f.txt",
+      "sha256": "1fb5bd3a4a4c272edc92a2976a772d6811a09fedae36ece2f161e05ba59d9a1b",
+      "bytes": 123077
+    },
+    {
+      "url": "https://www.mercor.com/apex/apex-agents-leaderboard/",
+      "file": "snapshots/e87ca50f6bfa7ce9.txt",
+      "sha256": "4754b8fd40323c41ad7b36848e4dfa688fd7b6ee37ad5153475f8a248d5455bc",
+      "bytes": 181850
+    },
+    {
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "file": "snapshots/4e3ca8a95d366330.txt",
+      "sha256": "96d62151cde29bdfc8c466c953a539c1d23f6f2b664447d0139aa69469446d50",
+      "bytes": 285547
+    },
+    {
+      "url": "https://www.mercor.com/blog/introducing-apex-agents-1-1/",
+      "file": "snapshots/168095f9f94b8d16.txt",
+      "sha256": "e9dc6601a36fcc48a84d533e719adccb051d778309554cf627834f808dbc8c34",
+      "bytes": 58228
+    },
+    {
+      "url": "https://programbench.com/extended.html",
+      "file": "snapshots/ae9ebb60a8ea1ac9.txt",
+      "sha256": "62f19226f39cc7929c8f98db0a3971823661c841e04500e01ac24c1e7dd0aecd",
+      "bytes": 368166
+    },
+    {
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/resolve/main/DeepSeek_V41_Tech_Report.pdf",
+      "file": "snapshots/802b1a68e3a6afff.pdf",
+      "sha256": "ba68e2e40408125ae6d2f63a9a241b61c73910691c74ec1a2a7023c851eac08d",
+      "bytes": 1809802
+    },
+    {
+      "url": "https://zerobench.github.io/",
+      "file": "snapshots/7647392b30ebe89a.txt",
+      "sha256": "f53b0463f8d9752950241abed3b4fea72821d62d4b638d09a5df0562dd1550d0",
+      "bytes": 565625
+    },
+    {
+      "url": "https://research.meta.ai/articles/introducing-muse-1-3/benchmarks/benchmark-scorecard-v6.webp",
+      "file": "snapshots/4d6d1a7a587c1ace.png",
+      "sha256": "f3ebe2a54d79082c9b5cfacfade4fda6f809ade61e86218fe74045fd76cce92a",
+      "bytes": 59720
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zapier/AutomationBench/main/README.md",
+      "file": "snapshots/abc9df3cbaebf51a.txt",
+      "sha256": "4c5452dec0abe00ad4dd9e1543709817c563486c1f53088c0adc9fafb609093a",
+      "bytes": 9260
+    },
+    {
+      "url": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "file": "snapshots/d24bd2c6e92e9cea.pdf",
+      "sha256": "9e4269af5fb9685d27b2fa73619fb1a6b278027f52d5438ceafd6994c9f2b486",
+      "bytes": 332355
+    },
+    {
+      "url": "https://raw.githubusercontent.com/multimodal-art-projection/NL2RepoBench/main/readme.md",
+      "file": "snapshots/0a56b18b1d7f93e1.txt",
+      "sha256": "92a5f0c76f10592be79ca4602cbefe1adaa75bf62a63d60681d2ad8a02b4d945",
+      "bytes": 2883
+    },
+    {
+      "url": "https://github.com/surge-ai/chartography",
+      "file": "snapshots/3234a63f0cae2a8c.txt",
+      "sha256": "dcf36550678d3871b0cf6797004d6d0294136775e2d7c2548c0952c20c316977",
+      "bytes": 272888
+    },
+    {
+      "url": "https://pbs.twimg.com/media/HRLPmfLagAA9ATq.jpg?name=orig",
+      "file": "snapshots/b700dbb3eb02233c.png",
+      "sha256": "f07a8a31ed706da310b677d51ecb80dc8ef7302c5c79530e75f10d384c5fc6aa",
+      "bytes": 761162
+    },
+    {
+      "url": "https://x.ai/news/grok-4-7",
+      "file": "snapshots/39b901174b543376.txt",
+      "sha256": "65bf12f5f8ec74310ec8bc89c0494a2399b4ec044ee8c2cc2f4439dc4e2225dd",
+      "bytes": 232569
+    },
+    {
+      "url": "https://agents-last-exam.org/api/demo/leaderboard",
+      "file": "snapshots/35a1b5570f69834d.txt",
+      "sha256": "20e5ddeed34fab2ccdfe4db0a24f55064323763871c52a88bebe9085ce0b4a5b",
+      "bytes": 347074
+    },
+    {
+      "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+      "file": "snapshots/0f949f38c3d5984d.pdf",
+      "sha256": "d5dbaab6996c02ad6ff28b032ce5a9c7582e59af09b5d1bc0975cf0235535da9",
+      "bytes": 13007054
+    },
+    {
+      "url": "https://www.stepfun.com/step-5-preview",
+      "file": "snapshots/211bf0e95bd0931e.txt",
+      "sha256": "2f120933a93bc7c29821d8e744c057ba1177bd74a7673e1b96ded460c4a6913a",
+      "bytes": 2262
+    },
+    {
+      "url": "https://z.ai/blog/glm-5.3-flash",
+      "file": "snapshots/e800ee9ae57a1b53.txt",
+      "sha256": "0048590dc50f5b313f942b1ffa160216df6d019a6551fe5232593b28b28b25f2",
+      "bytes": 604
+    },
+    {
+      "url": "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf",
+      "file": "snapshots/6ed6de1b75c04b1a.pdf",
+      "sha256": "b0d59edc7a60eef32a879c13d713cce60c3fefd7e6b5183afdc8b835af3c8c39",
+      "bytes": 16397488
+    },
+    {
+      "url": "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
+      "file": "snapshots/29e5fea83d0748f5.pdf",
+      "sha256": "89cfd6a6d3aa6148eaf23f4a53006950ee7746009f381237c62920c720725785",
+      "bytes": 13101289
+    },
+    {
+      "url": "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf",
+      "file": "snapshots/7f5a82f9b4177bd5.pdf",
+      "sha256": "7311c9c6bbb16d012f1c12c7418b05949fcf7ae3e30d2c40f22050074b2a7378",
+      "bytes": 17795106
+    },
+    {
+      "url": "https://www.stepfun.com/news/step-5-preview",
+      "file": "snapshots/e68795b0117c47d2.txt",
+      "sha256": "2f120933a93bc7c29821d8e744c057ba1177bd74a7673e1b96ded460c4a6913a",
+      "bytes": 2262
+    },
+    {
+      "url": "https://www.vals.ai/_astro/benchmark_view_programbench.C_J7ZU4X.json",
+      "file": "snapshots/a2859749d122d11a.txt",
+      "sha256": "e9bbb4378c7a058441a21d456baf9316b96c2cf5b58d371a3c7c803f5000bd8c",
+      "bytes": 149497
+    },
+    {
+      "url": "https://pbs.twimg.com/media/HTelU-lbgAQs5K-.jpg?name=orig",
+      "file": "snapshots/35b2f3fb41937d0b.png",
+      "sha256": "5a1a9a80ba943d0aa8c38495689e52c6a90f9cefe32bcf82222ca0a4ea6d6f17",
+      "bytes": 163430
+    },
+    {
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/README.md",
+      "file": "snapshots/5e0e134907e626c1.txt",
+      "sha256": "e6c5d41400e28f5a89418a0d15b09b9c113314a7553d40d7d4a8a72fcdb87d02",
+      "bytes": 8027
+    },
+    {
+      "url": "https://qwen.ai/blog?id=qwen3.8",
+      "file": "snapshots/29578a85932db50f.txt",
+      "sha256": "a3a2004dca87ad2650d3e7b078930940581462241ee0c89c9b58ca1b42417f4e",
+      "bytes": 94344
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zai-org/GLM-5/refs/heads/main/resources/bench_53.png",
+      "file": "snapshots/1d701bff2869dbcb.png",
+      "sha256": "ea9de7784afc1e3ce4d72fac927e683043823307042aa2f4ae616357074b372a",
+      "bytes": 1127922
+    },
+    {
+      "url": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+      "file": "snapshots/9254f7e239bbcb44.txt",
+      "sha256": "315a5d1de2932bf772caf1945aa2c7460a1e040c5df3d8b6bbfb53eddea864fe",
+      "bytes": 584759
+    }
+  ],
+  "exclusions": [
+    {
+      "name": "Apex Bench v1.1",
+      "reason": "模型卡未说明任务、指标和命名对应关系，不与 MathArena Apex 或 Mercor APEX-Agents 合并。",
+      "deepseekScore": 72.1
+    },
+    {
+      "name": "BabyVision 带工具",
+      "reason": "头部成绩普遍超过 90%，按既有饱和规则不加入默认排名。",
+      "deepseekScore": 92.5
+    }
+  ]
+}

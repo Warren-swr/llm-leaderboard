@@ -2,6 +2,7 @@
   "references": [
     { "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index", "title": "Artificial Analysis Intelligence Index v4.3.2（模型名单来源）", "kind": "leaderboard" },
     { "url": "https://artificialanalysis.ai/leaderboards/models", "title": "Artificial Analysis 模型榜（2026-10-12 快照）", "kind": "leaderboard" },
-    { "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking", "title": "Artificial Analysis 评测方法说明（HLE 子集、GDPval 归一化公式等）", "kind": "docs" }
+    { "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking", "title": "Artificial Analysis 评测方法说明（HLE 子集、GDPval 归一化公式等）", "kind": "docs" },
+    { "url": "https://github.com/Warren-swr/llm-leaderboard/blob/main/data/research/benchmark-expansion-20261018.md", "title": "2026-10-18 评测扩展核验：新增指标、覆盖、权重与未纳入项", "kind": "docs" }
   ]
 }

@@ -25,6 +25,7 @@ const ids = new Set<string>()
 for (const m of board.models) {
   if (ids.has(m.id)) errors.push(`重复模型 ${m.id}`)
   ids.add(m.id)
+  if (!(m.observedWeight >= 0 && m.observedWeight <= 1 + 1e-9)) errors.push(`${m.id} 实分权重无效：${m.observedWeight}`)
   for (const b of board.benchmarks) {
     const c = m.cells[b.id]
     if (!c) { errors.push(`${m.id} 缺 ${b.id} 格子`); continue }

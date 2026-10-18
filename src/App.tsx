@@ -83,7 +83,7 @@ export default function App() {
             <BenchmarksView weights={result.benchWeight} />
           </Tabs.Panel>
           <Tabs.Panel value="method">
-            <MethodView models={models} />
+            <MethodView models={models} weights={result.benchWeight} />
           </Tabs.Panel>
           <Tabs.Panel value="refs">
             <ReferencesView />

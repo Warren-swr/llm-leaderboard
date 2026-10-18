@@ -10,49 +10,72 @@
    "厂商往往不报自己表现差的评测，补全值可能系统性偏高；“补全值下调一个误差”一栏给出这种情况下的名次。",
    "不同厂商使用的 harness、推理档位和试验次数不同，同一列里的分数只做到“同一评测、同一指标”可比，具体配置见每个格子的出处。",
    "厂商用自家 harness 自测的分数普遍高于独立复测：例如 Terminal-Bench-Science 上 Anthropic 自报比 Vals AI 复测高 9–14 分，HLE 上 Anthropic 自报比 Scale 官方榜高 14–16 分。官方优先的规则因此对自报评测多、harness 调得好的厂商更有利。",
-   "2026-10-18 仅更新 DeepSeek-V4.1-Flash-1017，其他模型分数仍为原始历史快照。新版在现有 16 个评测中仅有 3 个可比的公开分数（19%）；其余为补全估计，总分与名次仅供参考。未把 9 月版本或 V4 Pro 的分数移入新版。"
+   "2026-10-18 增加 6 列参与默认排名：ProgramBench Almost@1、NL2Repo、AutomationBench 公开集、ALE 完全通过率、Chartography 带工具、ZeroBench-main 带工具。原 16 列的全部实分与来源保留。",
+   "新增视觉工具推理类别占 10%，原 5 类默认权重按原比例缩放至合计 90%；公开/私有 AutomationBench 和 Pass/Score ALE 各共享原家族权重。ProgramBench Almost 与低覆盖 ZeroBench 使用较低类别内权重。",
+   "DeepSeek 1017 从 3/16 增至 9/22 项公开实分。科研和知识工作仍未有新版实分，补全不是实测；页面同时显示实分覆盖的总权重，不能只按项目数量判断可靠性。",
+   "Apex Bench v1.1 的具体定义与已知 Apex 评测的对应关系未确认，不纳入综合排名；BabyVision 带工具的头部已普遍超过 90%，保留来源结果但不加入默认排名。",
+   "新增来源为 2026-10-18 回源摘录，以及按指标重新分类的 2026-10-12 已核验记录。原模型名单和原有来源日期不改写，不移用旧版 DeepSeek 或名称不同的模型分数。"
   ],
+  "expansion": {
+   "date": "2026-10-18",
+   "baselineBenchmarkCount": 16,
+   "baselineDeepseekObserved": 3,
+   "benchmarkIds": [
+    "programbench-almost",
+    "nl2repo-bench",
+    "automationbench-public",
+    "ale-pass",
+    "chartography-tools",
+    "zerobench-tools"
+   ]
+  },
   "generatedAt": "2026-10-18",
   "imputation": {
    "method": "在扣除随机基线后的 logit 尺度上按列标准化，用带岭正则的交替最小二乘做低秩矩阵补全；秩与正则强度由 5 折 × 4 次重复的交叉验证选出；补全误差 = bootstrap（200 次）方差 + 该评测集交叉验证误差。",
    "rank": 1,
-   "lambda": 0.1,
-   "cvRmse": 7.77,
-   "cvMae": 5.22,
-   "imputedCells": 88,
-   "totalCells": 336
+   "lambda": 0.3,
+   "cvRmse": 7.09,
+   "cvMae": 5,
+   "imputedCells": 158,
+   "totalCells": 462
   }
  },
  "categories": [
   {
    "id": "coding",
    "name": "编程",
-   "weight": 0.25,
+   "weight": 0.225,
    "description": "长程软件工程、终端操作与可合并的代码交付"
   },
   {
    "id": "agents",
    "name": "智能体",
-   "weight": 0.25,
+   "weight": 0.225,
    "description": "电脑操作、跨应用工具调用与业务流程自动化"
   },
   {
    "id": "reasoning",
    "name": "推理",
-   "weight": 0.15,
+   "weight": 0.135,
    "description": "前沿学科难题，分不用工具与用工具两种"
   },
   {
    "id": "science",
    "name": "科研",
-   "weight": 0.15,
+   "weight": 0.135,
    "description": "科研编程、科学计算与物理研究级问题"
   },
   {
    "id": "knowledge",
    "name": "知识工作",
-   "weight": 0.2,
+   "weight": 0.18,
    "description": "专业交付物质量、长文档理解与 PDF 资料问答"
+  },
+  {
+   "id": "vision",
+   "name": "视觉工具推理",
+   "weight": 0.1,
+   "description": "读取专业图表和完成复杂视觉推理，允许代码或图片工具；带工具与不用工具分开。"
   }
  ],
  "benchmarks": [
@@ -70,7 +93,7 @@
    "selectionReason": "Anthropic 与 OpenAI 共 5 个发布的头条表都用；Artificial Analysis 对 20 个模型都有独立复测；头部 60–71 分，未饱和。",
    "homepage": "https://www.tbench.ai/news/terminal-bench-4-0",
    "coverage": 1,
-   "cvRmse": 13.19,
+   "cvRmse": 11.87,
    "topScore": 70.6
   },
   {
@@ -87,7 +110,7 @@
    "selectionReason": "7 个 OpenAI / Anthropic 发布使用、14 个其他模型自报，是 2026 年覆盖最广的编程评测；头部 78 分。",
    "homepage": "https://deepswe.datacurve.ai/",
    "coverage": 0.9047619047619048,
-   "cvRmse": 5.51,
+   "cvRmse": 4.82,
    "topScore": 77.9
   },
   {
@@ -104,7 +127,7 @@
    "selectionReason": "6 个 OpenAI / Anthropic 发布使用，其中 5 个列入头条表；头部 54–55 分，区分度高。",
    "homepage": "https://cognition.com/blog/frontier-code",
    "coverage": 0.3333333333333333,
-   "cvRmse": 4.43,
+   "cvRmse": 4.6,
    "topScore": 54.4
   },
   {
@@ -121,7 +144,7 @@
    "selectionReason": "4 个 OpenAI / Anthropic 发布在 system card 中使用，Gemini、Grok 也引用官方榜；头部 65 分。部分厂商报的 dominance score 口径不同，不计入。",
    "homepage": "https://www.proximal.ai/blog/frontierswev2/",
    "coverage": 0.6666666666666666,
-   "cvRmse": 9.99,
+   "cvRmse": 10.51,
    "topScore": 65.5
   },
   {
@@ -138,14 +161,14 @@
    "selectionReason": "8 个 OpenAI / Anthropic 发布全部列入头条表，是电脑操作能力的公共考卷。2.0 与 2.1、完整集与离线子集视为可比但非首选；老版 OSWorld-Verified 已饱和，不计入。",
    "homepage": "https://osworld-v2.xlang.ai/",
    "coverage": 0.6190476190476191,
-   "cvRmse": 6.78,
+   "cvRmse": 5.58,
    "topScore": 81.8
   },
   {
    "id": "automationbench",
-   "name": "AutomationBench",
+   "name": "AutomationBench · 私有集",
    "category": "agents",
-   "weight": 1,
+   "weight": 0.5,
    "tier": 1,
    "metric": "通过率（Zapier 私有留出集）",
    "preferredSetting": "Zapier 官方运行（release 1.0.6），最高推理档",
@@ -155,7 +178,7 @@
    "selectionReason": "7 个 OpenAI / Anthropic 发布使用，其中 6 个列入头条表；头部 40–60 分。Artificial Analysis 的部分得分版（AutomationBench-AA）口径不同，只作参考。",
    "homepage": "https://zapier.com/benchmarks",
    "coverage": 0.3333333333333333,
-   "cvRmse": 10.18,
+   "cvRmse": 11.14,
    "topScore": 51.3
   },
   {
@@ -172,14 +195,14 @@
    "selectionReason": "Anthropic 4 个发布在 system card 中使用，7 个其他模型自报；头部 74–81 分，仍有区分度。",
    "homepage": "https://toolathlon.xyz/docs/blog/toolathlon-verified",
    "coverage": 0.5238095238095238,
-   "cvRmse": 2.23,
+   "cvRmse": 2.12,
    "topScore": 78.4
   },
   {
    "id": "agents-last-exam",
-   "name": "Agents' Last Exam",
+   "name": "Agents' Last Exam · Score",
    "category": "agents",
-   "weight": 1,
+   "weight": 0.5,
    "tier": 1,
    "metric": "Score（部分得分，OpenAI 发布页口径）",
    "preferredSetting": "官方任务集 V1，最高推理档，带工具",
@@ -189,7 +212,7 @@
    "selectionReason": "OpenAI 3 个发布列入头条表，8 个其他模型自报。官方榜主指标是 Pass rate（全对比例），与 Score 不可比，只作参考。",
    "homepage": "https://agents-last-exam.org/",
    "coverage": 0.3333333333333333,
-   "cvRmse": 5.09,
+   "cvRmse": 2.81,
    "topScore": 63.2
   },
   {
@@ -206,7 +229,7 @@
    "selectionReason": "Anthropic 4 个发布的 system card 使用，Artificial Analysis 对 20 个模型都有独立复测（纯文本子集）；头部 64 分。",
    "homepage": "https://lastexam.ai/",
    "coverage": 1,
-   "cvRmse": 3.45,
+   "cvRmse": 4.45,
    "topScore": 64.4
   },
   {
@@ -223,7 +246,7 @@
    "selectionReason": "Anthropic 与 OpenAI 共 5 个发布列入头条表；头部 68 分。",
    "homepage": "https://lastexam.ai/",
    "coverage": 0.47619047619047616,
-   "cvRmse": 3.54,
+   "cvRmse": 4.26,
    "topScore": 67.7
   },
   {
@@ -240,7 +263,7 @@
    "selectionReason": "6 个 OpenAI / Anthropic 发布使用，其中 4 个列入头条表；Artificial Analysis 对 13 个模型有独立复测；头部 65 分。",
    "homepage": "https://www.tbench.ai/news/terminal-bench-science-0-1",
    "coverage": 0.8571428571428571,
-   "cvRmse": 16.82,
+   "cvRmse": 12.43,
    "topScore": 64.6
   },
   {
@@ -257,7 +280,7 @@
    "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部 67 分，未饱和。",
    "homepage": "https://scicode-bench.github.io/",
    "coverage": 0.9523809523809523,
-   "cvRmse": 3.16,
+   "cvRmse": 3.24,
    "topScore": 66.9
   },
   {
@@ -274,7 +297,7 @@
    "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部只有 32 分，区分度很高。Anthropic 内部修正版（CritPT-Corrected）口径不同，只作参考。",
    "homepage": "https://critpt.com/",
    "coverage": 0.9523809523809523,
-   "cvRmse": 4.41,
+   "cvRmse": 4.49,
    "topScore": 31.71
   },
   {
@@ -291,7 +314,7 @@
    "selectionReason": "Anthropic 与 OpenAI 共 5 个发布列入头条表；Elo 按 Artificial Analysis 公布的公式换算成百分制。",
    "homepage": "https://artificialanalysis.ai/evaluations/gdpval-aa",
    "coverage": 0.9523809523809523,
-   "cvRmse": 4.65,
+   "cvRmse": 4.62,
    "topScore": 67.3
   },
   {
@@ -308,7 +331,7 @@
    "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部只有 31 分。Anthropic system card 的自评口径不同，只作参考。",
    "homepage": "https://surgehq.ai/benchmarks/gdp-pdf",
    "coverage": 0.9523809523809523,
-   "cvRmse": 6.82,
+   "cvRmse": 6.7,
    "topScore": 35
   },
   {
@@ -325,8 +348,116 @@
    "selectionReason": "长上下文方向唯一未饱和、且 20 个模型都有分数的评测（MRCR 已到 96–100）；头部 89 分，接近饱和线，后续需要复查。",
    "homepage": "https://artificialanalysis.ai/evaluations/artificial-analysis-long-context-reasoning",
    "coverage": 0.9523809523809523,
-   "cvRmse": 3.32,
+   "cvRmse": 3.4,
    "topScore": 88.67
+  },
+  {
+   "id": "programbench-almost",
+   "name": "ProgramBench · Almost@1",
+   "category": "coding",
+   "weight": 0.5,
+   "metric": "达到至少 95% 隐藏测试通过率的任务比例（Almost@1）",
+   "preferredSetting": "完整 200 题，单智能体，最高推理档；有范围差异的子集记录非首选",
+   "url": "https://programbench.com/",
+   "description": "只给二进制和文档，重建完整程序。该列采用 95% 测试阈值的任务比例，不代表整程序完全实现。",
+   "selectionReason": "补充黑盒程序重建能力；有广泛独立复测。作者将 Almost 作为辅助指标，所以类别内权重为 0.5，不混入 Fully Resolved 或平均测试通过率。",
+   "chance": 0,
+   "tier": 2,
+   "addedAt": "2026-10-18",
+   "homepage": "https://programbench.com/",
+   "coverage": 0.8571428571428571,
+   "cvRmse": 8.58,
+   "topScore": 65
+  },
+  {
+   "id": "nl2repo-bench",
+   "name": "NL2Repo-Bench",
+   "category": "coding",
+   "weight": 1,
+   "metric": "Score（隐藏测试通过率，不是整仓全部通过率）",
+   "preferredSetting": "官方 104 个 Python 库任务，只给自然语言需求和空仓库，禁止获取目标源码",
+   "url": "https://github.com/multimodal-art-projection/NL2RepoBench",
+   "description": "从需求文档生成完整可安装 Python 库，用原项目测试检查功能；测试通过率与完全解决率区分。",
+   "selectionReason": "补充从零生成仓库的能力；多家模型发布给出同一 Score 指标，记录不同 harness 与反作弊约束。",
+   "chance": 0,
+   "tier": 2,
+   "addedAt": "2026-10-18",
+   "homepage": "https://github.com/multimodal-art-projection/NL2RepoBench",
+   "coverage": 0.2857142857142857,
+   "cvRmse": 6.42,
+   "topScore": 68.2
+  },
+  {
+   "id": "automationbench-public",
+   "name": "AutomationBench · 公开集",
+   "category": "agents",
+   "weight": 0.5,
+   "metric": "完全通过率（公开任务集，task_completed_correctly / Pass@1）",
+   "preferredSetting": "公开 600 题（不含 simple），优先 v1.0.6；其他公开版本记录为非首选",
+   "url": "https://github.com/zapier/AutomationBench",
+   "description": "在公开 SaaS 工作流中完成全部状态断言。私有留出集保留在独立列，AA 部分得分也不混入。",
+   "selectionReason": "系列技术报告确认 DeepSeek 使用公开 v1.0.6；同时利用其他模型已核验公开集结果。与私有列各占 0.5，避免同一家族翻倍加权。",
+   "chance": 0,
+   "tier": 2,
+   "addedAt": "2026-10-18",
+   "homepage": "https://github.com/zapier/AutomationBench",
+   "coverage": 0.47619047619047616,
+   "cvRmse": 10.56,
+   "topScore": 60.5
+  },
+  {
+   "id": "ale-pass",
+   "name": "Agents' Last Exam · Pass@1",
+   "category": "agents",
+   "weight": 0.5,
+   "metric": "完全通过率（passRate / Pass@1，不是 avgScore）",
+   "preferredSetting": "完整 V1 任务集、最高推理档；105 题 CLI 子集视为可比但非首选，逐条标明范围",
+   "url": "https://agents-last-exam.org/leaderboard",
+   "description": "只统计一次运行达到全部评分条件的任务比例。完整集、CLI 子集和 harness 保留在配置中，部分得分 Score 另列。",
+   "selectionReason": "新增完全通过率口径，收录厂商与作者发布的 passRate；不再把通过率排除在排名之外。与 Score 列各占 0.5，同一家族总权重不翻倍。",
+   "chance": 0,
+   "tier": 2,
+   "addedAt": "2026-10-18",
+   "homepage": "https://agents-last-exam.org/leaderboard",
+   "coverage": 0.6190476190476191,
+   "cvRmse": 2.33,
+   "topScore": 39.5
+  },
+  {
+   "id": "chartography-tools",
+   "name": "Chartography · 带工具",
+   "category": "vision",
+   "weight": 1,
+   "metric": "准确率（Pass@1，专家容许范围）",
+   "preferredSetting": "100 题，允许代码与图片裁剪，最高推理档；优先公开一致裁判配置",
+   "url": "https://surgehq.ai/benchmarks/chartography",
+   "description": "读取专业图表并进行多步视觉推理。带工具与直接看图能力分开，记录裁判差异。",
+   "selectionReason": "补齐此前未计入的视觉工具能力；DeepSeek 与多家 Claude 有带工具结果。个别头部刚超过 90%，保留饱和提示，不把不用工具分数填进本列。",
+   "chance": 0,
+   "tier": 2,
+   "addedAt": "2026-10-18",
+   "homepage": "https://surgehq.ai/benchmarks/chartography",
+   "coverage": 0.2857142857142857,
+   "cvRmse": 7.75,
+   "topScore": 90.2
+  },
+  {
+   "id": "zerobench-tools",
+   "name": "ZeroBench-main · 带工具",
+   "category": "vision",
+   "weight": 0.5,
+   "metric": "Pass@5（五次至少一次通过；主问题集）",
+   "preferredSetting": "100 道主问题，允许代码 / Python 工具；Pass@5，不混入 pass^5 或不用工具成绩",
+   "url": "https://zerobench.github.io/",
+   "description": "复杂视觉感知、计数和多步推理。评估五次中至少一次答对，不能解读为单次成功率。",
+   "selectionReason": "收录 DeepSeek 明确发布的 Pass@5 和同口径公开记录。当前全榜仅有少数模型有可比带工具成绩，类别内仅用 0.5 权重，并显示覆盖率。",
+   "chance": 0,
+   "tier": 2,
+   "addedAt": "2026-10-18",
+   "homepage": "https://zerobench.github.io/",
+   "coverage": 0.14285714285714285,
+   "cvRmse": 7.35,
+   "topScore": 51
   }
  ],
  "models": [
@@ -341,20 +472,22 @@
    "aaVariant": "Claude Opus 5.5 (Max, Default Fallback)",
    "aaSlug": "claude-opus-5-5",
    "rank": 1,
-   "score": 62.157250000000005,
-   "scoreLow": 62.157250000000005,
-   "scoreHigh": 62.157250000000005,
+   "score": 63.571291522069224,
+   "scoreLow": 62.468203172928625,
+   "scoreHigh": 64.72923063427446,
    "rankLow": 1,
    "rankHigh": 1,
-   "observedOnlyScore": 62.157250000000005,
+   "observedOnlyScore": 63.97704402363118,
+   "observedWeight": 0.897632575757576,
    "pessimisticRank": 1,
-   "coverage": 1,
+   "coverage": 0.8636363636363636,
    "categoryScores": {
-    "coding": 64.325,
-    "agents": 65.7,
+    "coding": 64.8569839939238,
+    "agents": 65.16883359389622,
     "reasoning": 66.05000000000001,
     "science": 52.43666666666667,
-    "knowledge": 59.39000000000001
+    "knowledge": 59.39000000000001,
+    "vision": 76.295825648097
    },
    "cells": {
     "terminal-bench-4": {
@@ -947,6 +1080,93 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 65,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 65,
+      "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+      "sourceType": "third_party",
+      "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"anthropic/claude-opus-5-5\"].accuracy。"
+     },
+     "alternates": [
+      {
+       "score": 91.2,
+       "setting": "ProgramBench 166-task golden subset；平均隐藏测试通过率；mini-swe-agent，取消 6 小时限制；不是 Almost 任务比例",
+       "sourceType": "official",
+       "sourceName": "Anthropic 官方 system card（平均测试通过率）",
+       "url": "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf",
+       "note": "2026-10-18 已核对 PDF 的 ProgramBench 正文。不同子集且不同指标，只作参考，不以该高分覆盖 Almost 主分数。"
+      }
+     ]
+    },
+    "nl2repo-bench": {
+     "value": 66.91,
+     "imputed": true,
+     "sd": 9.86,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 60.79,
+     "imputed": true,
+     "sd": 16.57,
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 38.16,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 38.1579,
+      "setting": "passRate × 100；split=full，150/152 题；claude_code，thinking-max",
+      "sourceType": "benchmark_author",
+      "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+      "url": "https://agents-last-exam.org/api/demo/leaderboard",
+      "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=claude-opus-5-5, split=full, harness=claude_code, variant=thinking-max。"
+     },
+     "alternates": [
+      {
+       "score": 34.2857,
+       "setting": "passRate × 100；split=linux_only，104/105 题；claude_code，thinking-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=claude-opus-5-5, split=linux_only, harness=claude_code, variant=thinking-max。"
+      }
+     ]
+    },
+    "chartography-tools": {
+     "value": 89,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 89,
+      "setting": "100 题；准确率，专家容许区间；容器 + 图片裁剪工具，adaptive thinking / max；5 次平均，Gemini 3.5 Flash 裁判",
+      "sourceType": "official",
+      "sourceName": "Anthropic 官方 system card（Chartography 带工具）",
+      "url": "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf",
+      "note": "2026-10-18 已提取并核对 PDF 正文；Fable 5.1 采用较新 Opus 5.5 卡中的统一裁判复测。 数据定位：PDF 第 200 页及 Chartography 小节。"
+     },
+     "alternates": [
+      {
+       "score": 64.4,
+       "setting": "Chartography 不用工具准确率；max 推理",
+       "sourceType": "official",
+       "sourceName": "Anthropic 官方 system card（Chartography 不用工具）",
+       "url": "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf",
+       "note": "带工具和不用工具不混在同一列。"
+      }
+     ]
+    },
+    "zerobench-tools": {
+     "value": 50.89,
+     "imputed": true,
+     "sd": 8.92,
+     "alternates": []
     }
    }
   },
@@ -961,20 +1181,22 @@
    "aaVariant": "Claude Sonnet 5.5 (Max, Default Fallback)",
    "aaSlug": "claude-sonnet-5-5",
    "rank": 2,
-   "score": 60.42101329177071,
-   "scoreLow": 59.81957572708571,
-   "scoreHigh": 61.04834081595215,
+   "score": 61.55071736796705,
+   "scoreLow": 60.58438668323094,
+   "scoreHigh": 62.58358497150667,
    "rankLow": 2,
-   "rankHigh": 2,
-   "observedOnlyScore": 60.48168888888888,
+   "rankHigh": 3,
+   "observedOnlyScore": 62.95524456949914,
+   "observedWeight": 0.8413825757575761,
    "pessimisticRank": 2,
-   "coverage": 0.9375,
+   "coverage": 0.7727272727272727,
    "categoryScores": {
-    "coding": 62.425000000000004,
-    "agents": 65.52771983374956,
+    "coding": 61.653636976370215,
+    "agents": 64.08103089744489,
     "reasoning": 60.7,
     "science": 50.77666666666667,
-    "knowledge": 58.55666666666667
+    "knowledge": 58.55666666666667,
+    "vision": 76.70867096358639
    },
    "cells": {
     "terminal-bench-4": {
@@ -1290,9 +1512,9 @@
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 59.51,
+     "value": 59.28,
      "imputed": true,
-     "sd": 5.99,
+     "sd": 4.02,
      "alternates": []
     },
     "hle-no-tools": {
@@ -1558,6 +1780,76 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 49.5,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 49.5,
+      "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+      "sourceType": "third_party",
+      "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"anthropic/claude-sonnet-5-5\"].accuracy。"
+     },
+     "alternates": [
+      {
+       "score": 79.7,
+       "setting": "ProgramBench 166-task golden subset；平均隐藏测试通过率；mini-swe-agent，取消 6 小时限制；不是 Almost 任务比例",
+       "sourceType": "official",
+       "sourceName": "Anthropic 官方 system card（平均测试通过率）",
+       "url": "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
+       "note": "2026-10-18 已核对 PDF 的 ProgramBench 正文。不同子集且不同指标，只作参考，不以该高分覆盖 Almost 主分数。"
+      }
+     ]
+    },
+    "nl2repo-bench": {
+     "value": 64.65,
+     "imputed": true,
+     "sd": 8.82,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 56.58,
+     "imputed": true,
+     "sd": 13.85,
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 36.29,
+     "imputed": true,
+     "sd": 3.74,
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 90.2,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 90.2,
+      "setting": "100 题；准确率，专家容许区间；容器 + 图片裁剪工具，adaptive thinking / max；5 次平均，Gemini 3.5 Flash 裁判",
+      "sourceType": "official",
+      "sourceName": "Anthropic 官方 system card（Chartography 带工具）",
+      "url": "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
+      "note": "2026-10-18 已提取并核对 PDF 正文；Fable 5.1 采用较新 Opus 5.5 卡中的统一裁判复测。 数据定位：PDF 第 125 页及 Chartography 小节。"
+     },
+     "alternates": [
+      {
+       "score": 61.6,
+       "setting": "Chartography 不用工具准确率；max 推理",
+       "sourceType": "official",
+       "sourceName": "Anthropic 官方 system card（Chartography 不用工具）",
+       "url": "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
+       "note": "带工具和不用工具不混在同一列。"
+      }
+     ]
+    },
+    "zerobench-tools": {
+     "value": 49.73,
+     "imputed": true,
+     "sd": 8.37,
+     "alternates": []
     }
    }
   },
@@ -1571,21 +1863,23 @@
    "aaIndex": 53.35,
    "aaVariant": "Claude Fable 5.1 (Max, Default Fallback)",
    "aaSlug": "claude-fable-5-1",
-   "rank": 4,
-   "score": 58.18987458767029,
-   "scoreLow": 57.5914827998035,
-   "scoreHigh": 58.7967468493216,
+   "rank": 3,
+   "score": 60.128036664184776,
+   "scoreLow": 59.168452320090616,
+   "scoreHigh": 61.12399153436012,
    "rankLow": 3,
    "rankHigh": 5,
-   "observedOnlyScore": 58.12826666666667,
-   "pessimisticRank": 4,
-   "coverage": 0.9375,
+   "observedOnlyScore": 61.35723759144625,
+   "observedWeight": 0.8413825757575761,
+   "pessimisticRank": 3,
+   "coverage": 0.7727272727272727,
    "categoryScores": {
-    "coding": 57.45,
-    "agents": 62.25349835068115,
+    "coding": 58.31164233563134,
+    "agents": 62.344481462259466,
     "reasoning": 62.95,
     "science": 48.46333333333334,
-    "knowledge": 57.76
+    "knowledge": 57.76,
+    "vision": 75.42808809659338
    },
    "cells": {
     "terminal-bench-4": {
@@ -1906,9 +2200,9 @@
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 59.11,
+     "value": 58.89,
      "imputed": true,
-     "sd": 5.91,
+     "sd": 3.96,
      "alternates": []
     },
     "hle-no-tools": {
@@ -2166,6 +2460,84 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 53.5,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 53.5,
+      "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+      "sourceType": "third_party",
+      "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"anthropic/claude-fable-5-1\"].accuracy。"
+     },
+     "alternates": [
+      {
+       "score": 87.6,
+       "setting": "ProgramBench 166-task golden subset；平均隐藏测试通过率；mini-swe-agent，取消 6 小时限制；不是 Almost 任务比例",
+       "sourceType": "official",
+       "sourceName": "Anthropic 官方 system card（平均测试通过率）",
+       "url": "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf",
+       "note": "2026-10-18 已核对 PDF 的 ProgramBench 正文。不同子集且不同指标，只作参考，不以该高分覆盖 Almost 主分数。"
+      }
+     ]
+    },
+    "nl2repo-bench": {
+     "value": 64.16,
+     "imputed": true,
+     "sd": 8.21,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 55.69,
+     "imputed": true,
+     "sd": 13.52,
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 35.77,
+     "imputed": true,
+     "sd": 3.38,
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 88.4,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 88.4,
+      "setting": "100 题；准确率，专家容许区间；容器 + 图片裁剪工具，adaptive thinking / max；5 次平均，Gemini 3.5 Flash 裁判",
+      "sourceType": "official",
+      "sourceName": "Anthropic 官方 system card（Chartography 带工具）",
+      "url": "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf",
+      "note": "2026-10-18 已提取并核对 PDF 正文；Fable 5.1 采用较新 Opus 5.5 卡中的统一裁判复测。 数据定位：PDF 第 200 页及 Chartography 小节。"
+     },
+     "alternates": [
+      {
+       "score": 86.2,
+       "setting": "Chartography 带工具；旧版 Claude Sonnet 4.6 裁判",
+       "sourceType": "official",
+       "sourceName": "Claude Fable 5.1 原始 system card",
+       "url": "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf",
+       "note": "较新统一裁判复测为 88.4；本记录保留为旧裁判配置参考。"
+      },
+      {
+       "score": 44.8,
+       "setting": "Chartography 不用工具准确率；max 推理",
+       "sourceType": "official",
+       "sourceName": "Anthropic 官方 system card（Chartography 不用工具）",
+       "url": "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf",
+       "note": "带工具和不用工具不混在同一列。"
+      }
+     ]
+    },
+    "zerobench-tools": {
+     "value": 49.48,
+     "imputed": true,
+     "sd": 8.33,
+     "alternates": []
     }
    }
   },
@@ -2179,21 +2551,23 @@
    "aaIndex": 52.67,
    "aaVariant": "GPT-6 Astra (Max)",
    "aaSlug": "gpt-6-astra",
-   "rank": 3,
-   "score": 58.37151597299625,
-   "scoreLow": 58.12533893355847,
-   "scoreHigh": 58.62088706142005,
+   "rank": 4,
+   "score": 59.441139332526376,
+   "scoreLow": 58.07104518113207,
+   "scoreHigh": 60.669900914446735,
    "rankLow": 3,
-   "rankHigh": 5,
-   "observedOnlyScore": 57.14177777777777,
-   "pessimisticRank": 3,
-   "coverage": 0.9375,
+   "rankHigh": 6,
+   "observedOnlyScore": 56.173604510451035,
+   "observedWeight": 0.7747159090909094,
+   "pessimisticRank": 4,
+   "coverage": 0.7727272727272727,
    "categoryScores": {
-    "coding": 62.7,
-    "agents": 62.52939722531836,
+    "coding": 61.614976981130205,
+    "agents": 60.91491660575469,
     "reasoning": 56,
     "science": 50.93,
-    "knowledge": 55.123333333333335
+    "knowledge": 55.123333333333335,
+    "vision": 75.14163275477266
    },
    "cells": {
     "terminal-bench-4": {
@@ -2614,9 +2988,9 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 76.82,
+     "value": 76.76,
      "imputed": true,
-     "sd": 2.4,
+     "sd": 2.26,
      "alternates": []
     },
     "agents-last-exam": {
@@ -3000,6 +3374,83 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 50,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 50,
+      "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+      "sourceType": "third_party",
+      "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"openai/gpt-6-astra\"].accuracy。"
+     },
+     "alternates": []
+    },
+    "nl2repo-bench": {
+     "value": 63.08,
+     "imputed": true,
+     "sd": 8,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 53.69,
+     "imputed": true,
+     "sd": 13.11,
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 34.21,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 34.2105,
+      "setting": "passRate × 100；split=full，151/152 题；codex，reasoning-max",
+      "sourceType": "benchmark_author",
+      "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+      "url": "https://agents-last-exam.org/api/demo/leaderboard",
+      "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=gpt-6-astra, split=full, harness=codex, variant=reasoning-max。"
+     },
+     "alternates": [
+      {
+       "score": 32.2368,
+       "setting": "passRate × 100；split=full，151/152 题；codex，reasoning-xhigh",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=gpt-6-astra, split=full, harness=codex, variant=reasoning-xhigh。"
+      },
+      {
+       "score": 33.3333,
+       "setting": "passRate × 100；split=linux_only，105/105 题；codex，reasoning-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=gpt-6-astra, split=linux_only, harness=codex, variant=reasoning-max。"
+      },
+      {
+       "score": 30.4762,
+       "setting": "passRate × 100；split=linux_only，105/105 题；codex，reasoning-xhigh",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=gpt-6-astra, split=linux_only, harness=codex, variant=reasoning-xhigh。"
+      }
+     ]
+    },
+    "chartography-tools": {
+     "value": 88.24,
+     "imputed": true,
+     "sd": 8.53,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 48.95,
+     "imputed": true,
+     "sd": 8.13,
+     "alternates": []
     }
    }
   },
@@ -3014,20 +3465,22 @@
    "aaVariant": "Gemini 4 Argon (High)",
    "aaSlug": "gemini-4-argon",
    "rank": 5,
-   "score": 57.958645885560685,
-   "scoreLow": 56.90886850752369,
-   "scoreHigh": 58.978055108361225,
+   "score": 59.04846843168468,
+   "scoreLow": 57.51389897153821,
+   "scoreHigh": 60.476815753168744,
    "rankLow": 3,
    "rankHigh": 6,
-   "observedOnlyScore": 56.33209039548023,
+   "observedOnlyScore": 54.8085363247863,
+   "observedWeight": 0.6381818181818184,
    "pessimisticRank": 5,
-   "coverage": 0.75,
+   "coverage": 0.6363636363636364,
    "categoryScores": {
-    "coding": 60.31563393217347,
-    "agents": 63.98312835554242,
-    "reasoning": 60.305257646433645,
+    "coding": 59.20913878052101,
+    "agents": 62.069584873757,
+    "reasoning": 60.38066078138256,
     "science": 48.85,
-    "knowledge": 52.553333333333335
+    "knowledge": 52.553333333333335,
+    "vision": 75.55016403985479
    },
    "cells": {
     "terminal-bench-4": {
@@ -3078,9 +3531,9 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 50.96,
+     "value": 51.1,
      "imputed": true,
-     "sd": 5.45,
+     "sd": 5.02,
      "alternates": []
     },
     "frontierswe": {
@@ -3162,15 +3615,15 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 76.95,
+     "value": 76.94,
      "imputed": true,
-     "sd": 2.4,
+     "sd": 2.32,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 58.48,
+     "value": 58.56,
      "imputed": true,
-     "sd": 5.84,
+     "sd": 3.87,
      "alternates": [
       {
        "score": 39.5,
@@ -3198,9 +3651,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 63.52,
+     "value": 63.67,
      "imputed": true,
-     "sd": 4.14,
+     "sd": 4.92,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -3298,6 +3751,58 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 41,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 41,
+      "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 high",
+      "sourceType": "third_party",
+      "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"google/gemini-4-argon\"].accuracy。"
+     },
+     "alternates": []
+    },
+    "nl2repo-bench": {
+     "value": 63.75,
+     "imputed": true,
+     "sd": 8.07,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 54.92,
+     "imputed": true,
+     "sd": 13.12,
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 39.5,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 39.5,
+      "setting": "Agent's Last Exam Pass rate (binary)；Google 自测；默认 ALE-Claw harness；5 小时窗口；开启安全过滤",
+      "sourceType": "official",
+      "sourceName": "Google DeepMind Gemini 4 Argon 模型评测 PDF",
+      "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。只给 Pass rate，不是偏好的部分分 Score；官方榜 API（2026-10-12）无 Argon 行"
+     },
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 88.69,
+     "imputed": true,
+     "sd": 8.86,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 49.28,
+     "imputed": true,
+     "sd": 8.17,
+     "alternates": []
     }
    }
   },
@@ -3312,20 +3817,22 @@
    "aaVariant": "GPT-6.1 Sol (Max)",
    "aaSlug": "gpt-6-1-sol",
    "rank": 6,
-   "score": 56.80451652515312,
-   "scoreLow": 55.1437306739607,
-   "scoreHigh": 58.45876917348373,
+   "score": 58.311791905637264,
+   "scoreLow": 56.60543178336749,
+   "scoreHigh": 60.00115345960998,
    "rankLow": 4,
-   "rankHigh": 6,
-   "observedOnlyScore": 55.41925925925926,
+   "rankHigh": 7,
+   "observedOnlyScore": 55.427834681042214,
+   "observedWeight": 0.5691477272727276,
    "pessimisticRank": 6,
-   "coverage": 0.6875,
+   "coverage": 0.5454545454545454,
    "categoryScores": {
-    "coding": 58.593005930075165,
-    "agents": 60.41330056030127,
-    "reasoning": 57.792932683726704,
+    "coding": 58.20518428147594,
+    "agents": 59.51249933867354,
+    "reasoning": 57.817367334459604,
     "science": 47.626666666666665,
-    "knowledge": 56.199999999999996
+    "knowledge": 56.199999999999996,
+    "vision": 74.74368500951573
    },
    "cells": {
     "terminal-bench-4": {
@@ -3423,15 +3930,15 @@
      ]
     },
     "frontiercode": {
-     "value": 50.24,
+     "value": 50.29,
      "imputed": true,
-     "sd": 5.2,
+     "sd": 5.03,
      "alternates": []
     },
     "frontierswe": {
-     "value": 50.75,
+     "value": 51.01,
      "imputed": true,
-     "sd": 13.37,
+     "sd": 13.26,
      "alternates": []
     },
     "osworld-2": {
@@ -3564,15 +4071,15 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 76.62,
+     "value": 76.59,
      "imputed": true,
-     "sd": 2.41,
+     "sd": 2.26,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 57.53,
+     "value": 57.52,
      "imputed": true,
-     "sd": 5.78,
+     "sd": 3.75,
      "alternates": []
     },
     "hle-no-tools": {
@@ -3590,9 +4097,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 62.67,
+     "value": 62.71,
      "imputed": true,
-     "sd": 4.14,
+     "sd": 4.74,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -3789,6 +4296,50 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 46,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 46,
+      "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+      "sourceType": "third_party",
+      "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"openai/gpt-6.1-sol\"].accuracy。"
+     },
+     "alternates": []
+    },
+    "nl2repo-bench": {
+     "value": 62.44,
+     "imputed": true,
+     "sd": 7.82,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 52.52,
+     "imputed": true,
+     "sd": 12.74,
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 33.98,
+     "imputed": true,
+     "sd": 3.17,
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 87.8,
+     "imputed": true,
+     "sd": 8.5,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 48.63,
+     "imputed": true,
+     "sd": 8.07,
+     "alternates": []
     }
    }
   },
@@ -3803,20 +4354,22 @@
    "aaVariant": "Muse Spark 1.3 (Max)",
    "aaSlug": "muse-spark-1-3",
    "rank": 10,
-   "score": 49.310964118472086,
-   "scoreLow": 47.915716143395414,
-   "scoreHigh": 50.63512941583301,
+   "score": 51.62908859853889,
+   "scoreLow": 50.163517648328025,
+   "scoreHigh": 53.0062742018203,
    "rankLow": 8,
-   "rankHigh": 13,
-   "observedOnlyScore": 47.04107344632769,
+   "rankHigh": 12,
+   "observedOnlyScore": 45.97291238168329,
+   "observedWeight": 0.6663068181818184,
    "pessimisticRank": 9,
-   "coverage": 0.75,
+   "coverage": 0.6818181818181818,
    "categoryScores": {
-    "coding": 40.97739191743827,
-    "agents": 58.9323413274224,
-    "reasoning": 54.425760937268365,
+    "coding": 42.778207870054764,
+    "agents": 57.17939277475251,
+    "reasoning": 54.41179165073875,
     "science": 31.22,
-    "knowledge": 57.43333333333334
+    "knowledge": 57.43333333333334,
+    "vision": 72.40336580607509
    },
    "cells": {
     "terminal-bench-4": {
@@ -3877,9 +4430,9 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 48.16,
+     "value": 48.14,
      "imputed": true,
-     "sd": 4.94,
+     "sd": 4.98,
      "alternates": []
     },
     "frontierswe": {
@@ -3922,9 +4475,9 @@
      ]
     },
     "automationbench": {
-     "value": 37.9,
+     "value": 37.87,
      "imputed": true,
-     "sd": 10.97,
+     "sd": 11.71,
      "alternates": [
       {
        "score": 49.6,
@@ -3946,9 +4499,9 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 75.65,
+     "value": 75.64,
      "imputed": true,
-     "sd": 2.38,
+     "sd": 2.23,
      "alternates": []
     },
     "agents-last-exam": {
@@ -4009,9 +4562,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 60.15,
+     "value": 60.12,
      "imputed": true,
-     "sd": 3.93,
+     "sd": 4.58,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -4127,6 +4680,100 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 25,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 25,
+      "setting": "200 题；Almost：至少 95% 隐藏行为测试通过；mini-SWE-agent；Muse Spark 1.3 max",
+      "sourceType": "benchmark_author",
+      "sourceName": "ProgramBench 作者榜（Almost）",
+      "url": "https://programbench.com/extended.html",
+      "note": "2026-10-18 核对作者原榜，保留 Vals 的 19.0 作为不同运行的参考值。 数据定位：Muse Spark 1.3 (max) / Almost。"
+     },
+     "alternates": [
+      {
+       "score": 19,
+       "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+       "sourceType": "third_party",
+       "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+       "url": "https://www.vals.ai/benchmarks/programbench",
+       "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"meta/muse_spark_1_3_max\"].accuracy。"
+      }
+     ]
+    },
+    "nl2repo-bench": {
+     "value": 58.89,
+     "imputed": true,
+     "sd": 7.19,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 49.6,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 49.6,
+      "setting": "AutomationBench pass@1（公开 v3 题集，600 workflows）；max 推理；Meta 自报；用公开 v3 题集，不是 Zapier 私有留出集",
+      "sourceType": "official",
+      "sourceName": "Meta Muse Spark 1.3 发布页 benchmark scorecard 图",
+      "url": "https://research.meta.ai/articles/introducing-muse-1-3/benchmarks/benchmark-scorecard-v6.webp",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。方法说明：'We use the public v3 task set; Zapier publishes the official public leaderboard in the benchmark repository.' 原列定义为私有留出集，故判不可比；zapier.com/benchmarks 榜单未收录 Muse 本次亦复核官方 49.6 图片及官方方法说明 PDF 第 2 页：600 workflows、public v3、Pass@1；与 v1.0.6 的版本差异保留，非首选。"
+     },
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 29.61,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 29.6053,
+      "setting": "passRate × 100；split=full，148/152 题；codex，reasoning-max",
+      "sourceType": "benchmark_author",
+      "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+      "url": "https://agents-last-exam.org/api/demo/leaderboard",
+      "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=muse-spark-1-3, split=full, harness=codex, variant=reasoning-max。"
+     },
+     "alternates": [
+      {
+       "score": 32.2368,
+       "setting": "passRate × 100；split=full，148/152 题；codex，reasoning-xhigh",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=muse-spark-1-3, split=full, harness=codex, variant=reasoning-xhigh。"
+      },
+      {
+       "score": 33.3333,
+       "setting": "passRate × 100；split=linux_only，105/105 题；codex，reasoning-xhigh",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=muse-spark-1-3, split=linux_only, harness=codex, variant=reasoning-xhigh。"
+      },
+      {
+       "score": 29.5238,
+       "setting": "passRate × 100；split=linux_only，105/105 题；codex，reasoning-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=muse-spark-1-3, split=linux_only, harness=codex, variant=reasoning-max。"
+      }
+     ]
+    },
+    "chartography-tools": {
+     "value": 85.15,
+     "imputed": true,
+     "sd": 8.69,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 46.92,
+     "imputed": true,
+     "sd": 7.89,
+     "alternates": []
     }
    }
   },
@@ -4140,21 +4787,23 @@
    "aaIndex": 46.45,
    "aaVariant": "Grok 4.7 (Xhigh)",
    "aaSlug": "grok-4-7",
-   "rank": 11,
-   "score": 48.122377288081,
-   "scoreLow": 46.395451325390326,
-   "scoreHigh": 49.80041427033572,
-   "rankLow": 9,
+   "rank": 12,
+   "score": 49.95313807758049,
+   "scoreLow": 48.2865850652273,
+   "scoreHigh": 51.62325168213275,
+   "rankLow": 10,
    "rankHigh": 16,
-   "observedOnlyScore": 43.50944444444445,
-   "pessimisticRank": 12,
-   "coverage": 0.6875,
+   "observedOnlyScore": 42.46707581227436,
+   "observedWeight": 0.5665909090909094,
+   "pessimisticRank": 13,
+   "coverage": 0.5454545454545454,
    "categoryScores": {
-    "coding": 45.7975,
-    "agents": 57.36319875814057,
-    "reasoning": 50.988017323639,
+    "coding": 45.67735709483464,
+    "agents": 55.29718598720024,
+    "reasoning": 51.047230663677794,
     "science": 28.373333333333335,
-    "knowledge": 52.14000000000001
+    "knowledge": 52.14000000000001,
+    "vision": 71.26889744526142
    },
    "cells": {
     "terminal-bench-4": {
@@ -4291,15 +4940,15 @@
      ]
     },
     "osworld-2": {
-     "value": 64.33,
+     "value": 64.7,
      "imputed": true,
-     "sd": 8.09,
+     "sd": 6.98,
      "alternates": []
     },
     "automationbench": {
-     "value": 36.66,
+     "value": 36.75,
      "imputed": true,
-     "sd": 11.3,
+     "sd": 11.93,
      "alternates": [
       {
        "score": 65.56,
@@ -4312,15 +4961,15 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 75.13,
+     "value": 75.21,
      "imputed": true,
-     "sd": 2.4,
+     "sd": 2.24,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 53.32,
+     "value": 53.48,
      "imputed": true,
-     "sd": 5.44,
+     "sd": 3.3,
      "alternates": []
     },
     "hle-no-tools": {
@@ -4338,9 +4987,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 58.84,
+     "value": 58.95,
      "imputed": true,
-     "sd": 3.93,
+     "sd": 4.54,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -4438,6 +5087,50 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 21.5,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 21.5,
+      "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 xhigh",
+      "sourceType": "third_party",
+      "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"grok/grok-4.7\"].accuracy。"
+     },
+     "alternates": []
+    },
+    "nl2repo-bench": {
+     "value": 57.29,
+     "imputed": true,
+     "sd": 7.25,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 43.29,
+     "imputed": true,
+     "sd": 11.58,
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 29.05,
+     "imputed": true,
+     "sd": 2.97,
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 83.82,
+     "imputed": true,
+     "sd": 8.89,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 46.16,
+     "imputed": true,
+     "sd": 7.95,
+     "alternates": []
     }
    }
   },
@@ -4452,20 +5145,22 @@
    "aaVariant": "MiMo-V2.6-Pro",
    "aaSlug": "mimo-v2-6-pro",
    "rank": 8,
-   "score": 50.85796296677966,
-   "scoreLow": 48.635013548872436,
-   "scoreHigh": 53.04286836025326,
-   "rankLow": 7,
-   "rankHigh": 11,
-   "observedOnlyScore": 50.02993197278912,
-   "pessimisticRank": 8,
-   "coverage": 0.625,
+   "score": 52.269720405955574,
+   "scoreLow": 50.42271267177418,
+   "scoreHigh": 54.05495045522273,
+   "rankLow": 8,
+   "rankHigh": 12,
+   "observedOnlyScore": 47.84825913242009,
+   "observedWeight": 0.5972727272727274,
+   "pessimisticRank": 10,
+   "coverage": 0.5909090909090909,
    "categoryScores": {
-    "coding": 48.53994222295661,
-    "agents": 60.03290531195423,
-    "reasoning": 55.02611833145748,
+    "coding": 46.748342921411954,
+    "agents": 58.549732169999686,
+    "reasoning": 54.838937825935645,
     "science": 30.103333333333335,
-    "knowledge": 54.72666666666667
+    "knowledge": 54.72666666666667,
+    "vision": 72.59646903886637
    },
    "cells": {
     "terminal-bench-4": {
@@ -4517,27 +5212,27 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 48.61,
+     "value": 48.3,
      "imputed": true,
-     "sd": 4.99,
+     "sd": 4.97,
      "alternates": []
     },
     "frontierswe": {
-     "value": 38.75,
+     "value": 36.59,
      "imputed": true,
-     "sd": 13.41,
+     "sd": 13.06,
      "alternates": []
     },
     "osworld-2": {
-     "value": 69.44,
+     "value": 68.44,
      "imputed": true,
-     "sd": 8.17,
+     "sd": 6.93,
      "alternates": []
     },
     "automationbench": {
-     "value": 38.43,
+     "value": 38.07,
      "imputed": true,
-     "sd": 10.87,
+     "sd": 11.76,
      "alternates": [
       {
        "score": 53.1,
@@ -4574,9 +5269,9 @@
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 55.36,
+     "value": 54.95,
      "imputed": true,
-     "sd": 5.63,
+     "sd": 3.47,
      "alternates": [
       {
        "score": 31.6,
@@ -4604,9 +5299,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 60.7,
+     "value": 60.33,
      "imputed": true,
-     "sd": 4.01,
+     "sd": 4.62,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -4713,6 +5408,75 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 12.5,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 12.5,
+      "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 未另标",
+      "sourceType": "third_party",
+      "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"xiaomi/mimo-v2.6-pro\"].accuracy。"
+     },
+     "alternates": [
+      {
+       "score": 26.5,
+       "setting": "ProgramBench；厂商自测；原文未单列指标定义与完整预算",
+       "sourceType": "official",
+       "sourceName": "MiMo V2.6 Pro RL 官方模型卡",
+       "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+       "note": "2026-10-18 核对原表。对照值提示它可能是 Almost，但 MiMo 原文没有明确指标定义，因此仅参考；主分数采用明确给出 Almost 指标的 Vals 独立复测 12.5。"
+      }
+     ]
+    },
+    "nl2repo-bench": {
+     "value": 59.17,
+     "imputed": true,
+     "sd": 7.24,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 53.1,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 53.1,
+      "setting": "AutomationBench v1.0.6；公开任务集完全通过率；厂商自测，完整 harness 与预算未披露",
+      "sourceType": "official",
+      "sourceName": "MiMo V2.6 Pro RL 官方模型卡",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "note": "2026-10-18 重新核对原表 MiMo-V2.6 Pro 列，v1.0.6 行为 53.1。公开 / 私有按 v1.0.6 开源实现及同表对照值判断，不声称是 Zapier 私有榜。"
+     },
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 31.6,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 31.6,
+      "setting": "Agents' Last Exam — 厂商没写指标名，推断为 Pass rate（全对任务占比）；小米自测；未写 harness",
+      "sourceType": "official",
+      "sourceName": "MiMo-V2.6-Pro-RL 官方 HF 模型卡",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。推断依据：同表基线与 ALE 官方 API 的 passRate 一致，与 avgScore 不一致。Fable 5 为 25.7，官方 passRate 25.7、avgScore 48.7；Opus 5 为 31.6，官方 passRate 32.2；博客附录中 Astra 为 34.2，即 passRate，其 Score 是 59.3。因此这是 Pass rate，不是 Score。ALE 官方榜没有 MiMo V2.6"
+     },
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 85.37,
+     "imputed": true,
+     "sd": 8.75,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 47.05,
+     "imputed": true,
+     "sd": 7.91,
+     "alternates": []
     }
    }
   },
@@ -4726,21 +5490,23 @@
    "aaIndex": 45.42,
    "aaVariant": "Qwen3.8 Max (0902)",
    "aaSlug": "qwen3-8-max",
-   "rank": 16,
-   "score": 46.25460357746791,
-   "scoreLow": 44.52098573853229,
-   "scoreHigh": 47.92476151716345,
-   "rankLow": 12,
-   "rankHigh": 20,
-   "observedOnlyScore": 44.13870370370371,
-   "pessimisticRank": 16,
-   "coverage": 0.6875,
+   "rank": 13,
+   "score": 49.64501582849057,
+   "scoreLow": 48.05631934542261,
+   "scoreHigh": 51.12379312172039,
+   "rankLow": 11,
+   "rankHigh": 17,
+   "observedOnlyScore": 45.65646504320503,
+   "observedWeight": 0.6509659090909092,
+   "pessimisticRank": 12,
+   "coverage": 0.6363636363636364,
    "categoryScores": {
-    "coding": 40.03776776306627,
-    "agents": 55.37478145705488,
-    "reasoning": 50.33977514958413,
+    "coding": 43.629091992323495,
+    "agents": 55.497772879134814,
+    "reasoning": 50.90893664815589,
     "science": 27.23,
-    "knowledge": 53.830000000000005
+    "knowledge": 53.830000000000005,
+    "vision": 71.03314784911404
    },
    "cells": {
     "terminal-bench-4": {
@@ -4783,9 +5549,9 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 46.08,
+     "value": 46.99,
      "imputed": true,
-     "sd": 5.06,
+     "sd": 5.11,
      "alternates": []
     },
     "frontierswe": {
@@ -4804,15 +5570,15 @@
      "alternates": []
     },
     "osworld-2": {
-     "value": 60.74,
+     "value": 64.03,
      "imputed": true,
-     "sd": 8.37,
+     "sd": 7.06,
      "alternates": []
     },
     "automationbench": {
-     "value": 35.51,
+     "value": 36.52,
      "imputed": true,
-     "sd": 11.61,
+     "sd": 11.98,
      "alternates": [
       {
        "score": 50.8,
@@ -4849,9 +5615,9 @@
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 51.96,
+     "value": 53.23,
      "imputed": true,
-     "sd": 5.42,
+     "sd": 3.32,
      "alternates": []
     },
     "hle-no-tools": {
@@ -4869,9 +5635,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 57.58,
+     "value": 58.72,
      "imputed": true,
-     "sd": 3.96,
+     "sd": 4.58,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -4958,6 +5724,92 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 28,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 28,
+      "setting": "ProgramBench Almost Solved；Claude Code，12 小时，max_tokens=64000，1M 上下文",
+      "sourceType": "official",
+      "sourceName": "Qwen3.8-Max-0902 官方评测表",
+      "url": "https://pbs.twimg.com/media/HRLPmfLagAA9ATq.jpg?name=orig",
+      "note": "2026-10-18 已查看官方图片的 0902 列、Almost Solved 行和脚注 5。"
+     },
+     "alternates": [
+      {
+       "score": 10.5,
+       "setting": "Almost Resolved；mini-SWE-agent；模型仅标 Qwen3.8 Max，未说明 0902 版本",
+       "sourceType": "third_party",
+       "sourceName": "Vals AI ProgramBench（版本未标 0902）",
+       "url": "https://www.vals.ai/benchmarks/programbench",
+       "note": "Qwen 原版与 0902 版同时存在；无法确认这条属于 0902，故仅作参考。"
+      }
+     ]
+    },
+    "nl2repo-bench": {
+     "value": 64.9,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 64.9,
+      "setting": "NL2Repo-Bench Score（隐藏测试通过率）；0902 版；Claude Code；禁网页搜索及指向目标仓库的 pip download/install、git clone",
+      "sourceType": "official",
+      "sourceName": "Qwen3.8-Max-0902 官方评测表",
+      "url": "https://pbs.twimg.com/media/HRLPmfLagAA9ATq.jpg?name=orig",
+      "note": "2026-10-18 已核对原表自家模型列及脚注。未报为整仓完全解决率。"
+     },
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 50.8,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 50.8,
+      "setting": "AutomationBench v1.0.6 Pass@1；公开实现，加入 PR #16 修复；Qwen3.8-Max-0902 自测",
+      "sourceType": "official",
+      "sourceName": "Qwen3.8-Max-0902 官方评测表",
+      "url": "https://pbs.twimg.com/media/HRLPmfLagAA9ATq.jpg?name=orig",
+      "note": "2026-10-18 重新查看官方图片，0902 自家模型列为 50.8，行名明确为 Pass@1，脚注 10 说明加入 PR #16。作为开源公开集记录，不当作 Zapier 私有留出榜。"
+     },
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 28.76,
+     "imputed": true,
+     "sd": 2.96,
+     "alternates": [
+      {
+       "score": 26.9737,
+       "setting": "passRate × 100；split=full，148/152 题；claude_code，thinking-xhigh",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=qwen-3-8-max, split=full, harness=claude_code, variant=thinking-xhigh。 版本核验：作者 API 仅标 qwen-3-8-max，无法确认 0902，故只作参考；不移用旧版结果。"
+      },
+      {
+       "score": 24.7619,
+       "setting": "passRate × 100；split=linux_only，102/105 题；claude_code，thinking-xhigh",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=qwen-3-8-max, split=linux_only, harness=claude_code, variant=thinking-xhigh。 版本核验：作者 API 仅标 qwen-3-8-max，无法确认 0902，故只作参考；不移用旧版结果。"
+      }
+     ]
+    },
+    "chartography-tools": {
+     "value": 83.54,
+     "imputed": true,
+     "sd": 9.04,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 46.01,
+     "imputed": true,
+     "sd": 7.99,
+     "alternates": []
     }
    }
   },
@@ -4971,21 +5823,23 @@
    "aaIndex": 44.78,
    "aaVariant": "GLM-5.3 (Max)",
    "aaSlug": "glm-5-3",
-   "rank": 12,
-   "score": 48.121115574966296,
-   "scoreLow": 46.4703849123138,
-   "scoreHigh": 49.7806111847486,
-   "rankLow": 9,
+   "rank": 11,
+   "score": 50.024521824918885,
+   "scoreLow": 48.58503044009064,
+   "scoreHigh": 51.45597432782478,
+   "rankLow": 10,
    "rankHigh": 16,
-   "observedOnlyScore": 47.44533333333334,
+   "observedOnlyScore": 46.62927397260274,
+   "observedWeight": 0.7465909090909093,
    "pessimisticRank": 11,
-   "coverage": 0.75,
+   "coverage": 0.7272727272727273,
    "categoryScores": {
-    "coding": 46.4734917329303,
-    "agents": 56.65497056693485,
+    "coding": 46.09990306018905,
+    "agents": 55.228756068812,
     "reasoning": 52.379999999999995,
     "science": 27.959999999999997,
-    "knowledge": 51.44
+    "knowledge": 51.44,
+    "vision": 71.20473520893638
    },
    "cells": {
     "terminal-bench-4": {
@@ -5046,9 +5900,9 @@
      ]
     },
     "frontiercode": {
-     "value": 46.97,
+     "value": 47.13,
      "imputed": true,
-     "sd": 5.05,
+     "sd": 5.06,
      "alternates": []
     },
     "frontierswe": {
@@ -5077,15 +5931,15 @@
      ]
     },
     "osworld-2": {
-     "value": 63.93,
+     "value": 64.52,
      "imputed": true,
-     "sd": 8.63,
+     "sd": 6.9,
      "alternates": []
     },
     "automationbench": {
-     "value": 36.53,
+     "value": 36.69,
      "imputed": true,
-     "sd": 11.36,
+     "sd": 11.95,
      "alternates": [
       {
        "score": 48.2,
@@ -5122,9 +5976,9 @@
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 53.16,
+     "value": 53.41,
      "imputed": true,
-     "sd": 5.47,
+     "sd": 3.38,
      "alternates": [
       {
        "score": 28.5,
@@ -5270,6 +6124,83 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 19,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 19,
+      "setting": "ProgramBench Almost Solved；厂商自测；未另报完整预算",
+      "sourceType": "official",
+      "sourceName": "GLM-5.3 官方模型卡",
+      "url": "https://huggingface.co/zai-org/GLM-5.3",
+      "note": "2026-10-18 模型卡该行明确标 Almost Solved；保留 Vals 16.5 作为独立复测。"
+     },
+     "alternates": [
+      {
+       "score": 16.5,
+       "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+       "sourceType": "third_party",
+       "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+       "url": "https://www.vals.ai/benchmarks/programbench",
+       "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"zai/glm-5.3\"].accuracy。"
+      }
+     ]
+    },
+    "nl2repo-bench": {
+     "value": 58,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 58,
+      "setting": "NL2Repo-Bench Score（隐藏测试通过率）；temperature=1.0，top_p=1.0，64k 输出，1M 上下文；规则 + LLM 检查拉源码等作弊行为",
+      "sourceType": "official",
+      "sourceName": "GLM-5.3 官方模型卡",
+      "url": "https://huggingface.co/zai-org/GLM-5.3",
+      "note": "2026-10-18 已核对原表自家模型列及脚注。未报为整仓完全解决率。"
+     },
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 48.2,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 48.2,
+      "setting": "AutomationBench (v1.0.6) score；厂商用公开 GitHub 版 v1.0.6 自测，并合入 PR #13 的 null 类型修复",
+      "sourceType": "official",
+      "sourceName": "Z.ai GLM-5.3 Hugging Face 模型卡",
+      "url": "https://huggingface.co/zai-org/GLM-5.3",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。看起来是公开题集，不是 Zapier 的私有保留题集：Zapier 官方 1.0.6 榜上没有 GLM-5.3，同表的 Kimi K3 在 Zapier 榜上只有 22.68%，而厂商表写 46.7。一份 StepFun 表格的非官方 HF 镜像把这一行标成 “AutomationBench Public”"
+     },
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 28.5,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 28.5,
+      "setting": "Pass rate (ALE-CLI, 105 题 Linux 子集)；厂商按官方协议自测，Claude Code harness，reasoning effort=max，1M 上下文，64K 输出，105 题，超时 4-8h，由官方 ALE 评分器打分",
+      "sourceType": "official",
+      "sourceName": "Z.ai GLM-5.3 Hugging Face 模型卡",
+      "url": "https://huggingface.co/zai-org/GLM-5.3",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。已核对为 pass rate，不是 Score：ALE 官方 API (agents-last-exam.org/api/demo/leaderboard) 的 linux_only 105 题子集里，同表各模型的 passRate 和厂商数字一致（GLM-5.2 23.8 vs avgScore 44.2；Kimi K3 27.6 vs 52.8；Opus 4.8 max 25.7）。官方榜上没有 GLM-5.3"
+     },
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 83.75,
+     "imputed": true,
+     "sd": 9.1,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 46.12,
+     "imputed": true,
+     "sd": 7.98,
+     "alternates": []
     }
    }
   },
@@ -5283,21 +6214,23 @@
    "aaIndex": 43.73,
    "aaVariant": "Step 5 Preview",
    "aaSlug": "step-5",
-   "rank": 13,
-   "score": 47.656668247458086,
-   "scoreLow": 45.480595967817756,
-   "scoreHigh": 49.887287539103866,
+   "rank": 14,
+   "score": 49.643302432054476,
+   "scoreLow": 47.85908606432055,
+   "scoreHigh": 51.42057228195771,
    "rankLow": 10,
-   "rankHigh": 18,
-   "observedOnlyScore": 48.64860606060606,
-   "pessimisticRank": 15,
-   "coverage": 0.6875,
+   "rankHigh": 17,
+   "observedOnlyScore": 47.52167724867725,
+   "observedWeight": 0.6443181818181819,
+   "pessimisticRank": 14,
+   "coverage": 0.5909090909090909,
    "categoryScores": {
-    "coding": 43.81955560099994,
-    "agents": 56.7984507221657,
+    "coding": 44.134707139094026,
+    "agents": 54.928654510422206,
     "reasoning": 52.95,
     "science": 27.55333333333333,
-    "knowledge": 52.133333333333326
+    "knowledge": 52.133333333333326,
+    "vision": 71.02096060913317
    },
    "cells": {
     "terminal-bench-4": {
@@ -5348,27 +6281,27 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 46.89,
+     "value": 46.98,
      "imputed": true,
-     "sd": 5.42,
+     "sd": 5.1,
      "alternates": []
     },
     "frontierswe": {
-     "value": 27.39,
+     "value": 28.01,
      "imputed": true,
-     "sd": 14.26,
+     "sd": 12.93,
      "alternates": []
     },
     "osworld-2": {
-     "value": 63.62,
+     "value": 64,
      "imputed": true,
-     "sd": 8.79,
+     "sd": 7.05,
      "alternates": []
     },
     "automationbench": {
-     "value": 36.43,
+     "value": 36.51,
      "imputed": true,
-     "sd": 11.41,
+     "sd": 11.99,
      "alternates": [
       {
        "score": 44,
@@ -5405,9 +6338,9 @@
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 53.05,
+     "value": 53.22,
      "imputed": true,
-     "sd": 5.64,
+     "sd": 3.45,
      "alternates": [
       {
        "score": 29.5,
@@ -5607,6 +6540,58 @@
        "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
       }
      ]
+    },
+    "programbench-almost": {
+     "value": 19.62,
+     "imputed": true,
+     "sd": 10.66,
+     "alternates": []
+    },
+    "nl2repo-bench": {
+     "value": 56.94,
+     "imputed": true,
+     "sd": 7.23,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 44,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 44,
+      "setting": "AutomationBench (public) (%)；StepFun 官方表，Step 5 Preview (High)；公开集，非 Zapier 私有 held-out 榜单集",
+      "sourceType": "official",
+      "sourceName": "StepFun Step 5 Preview 模型页",
+      "url": "https://www.stepfun.com/step-5-preview",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。Zapier 说明“Leaderboard scores run against a held-out private evaluation set; the public 600-task set is for research”，公开集与私有集不可比；同表 AutomationBench-AA 51.0 按要求不记录"
+     },
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 29.5,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 29.5,
+      "setting": "Agents' Last Exam (ALE-CLI) — CLI 子集，推断为 Pass rate；StepFun 官方表，Step 5 Preview (High)；仅 ALE 的 CLI 子集，非完整集 Score",
+      "sourceType": "official",
+      "sourceName": "StepFun Step 5 Preview 模型页",
+      "url": "https://www.stepfun.com/step-5-preview",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。同表 GPT-6 Astra 为 33.3，与 ALE 官方数据中 Astra linux_only 子集（105 题）max 档 passRate 0.3333 一致，推断 ALE-CLI 为 linux-only 子集的全对率，与完整集 Score 不可比；ALE 官方榜未收录 Step 5 Preview"
+     },
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 83.53,
+     "imputed": true,
+     "sd": 9.09,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 46,
+     "imputed": true,
+     "sd": 8.03,
+     "alternates": []
     }
    }
   },
@@ -5620,21 +6605,23 @@
    "aaIndex": 43.59,
    "aaVariant": "Kimi K3 (Max)",
    "aaSlug": "kimi-k3",
-   "rank": 15,
-   "score": 46.6938560820891,
-   "scoreLow": 45.42243216498548,
-   "scoreHigh": 47.94085516929816,
-   "rankLow": 12,
-   "rankHigh": 18,
-   "observedOnlyScore": 47.4625238095238,
-   "pessimisticRank": 13,
-   "coverage": 0.875,
+   "rank": 18,
+   "score": 47.40955663232333,
+   "scoreLow": 46.74181275780996,
+   "scoreHigh": 48.08668628511249,
+   "rankLow": 16,
+   "rankHigh": 20,
+   "observedOnlyScore": 47.83133435052385,
+   "observedWeight": 0.9309659090909094,
+   "pessimisticRank": 15,
+   "coverage": 0.9090909090909091,
    "categoryScores": {
-    "coding": 39.283850793654345,
-    "agents": 55.61024020136871,
+    "coding": 40.61252290951257,
+    "agents": 51.96343249340587,
     "reasoning": 49.75,
     "science": 27.843333333333334,
-    "knowledge": 56.656666666666666
+    "knowledge": 56.656666666666666,
+    "vision": 59.06666666666666
    },
    "cells": {
     "terminal-bench-4": {
@@ -5702,9 +6689,9 @@
      ]
     },
     "frontiercode": {
-     "value": 46.57,
+     "value": 46.05,
      "imputed": true,
-     "sd": 5.08,
+     "sd": 5.22,
      "alternates": []
     },
     "frontierswe": {
@@ -5747,9 +6734,9 @@
      "alternates": []
     },
     "automationbench": {
-     "value": 36.06,
+     "value": 35.43,
      "imputed": true,
-     "sd": 11.54,
+     "sd": 12.24,
      "alternates": [
       {
        "score": 30.8,
@@ -6046,6 +7033,141 @@
        "note": "未注明是否 v1.1；人工复核：模型卡引用 2026-07-23 的 AA 数据且未注明版本；AA 说明 v1.1 修正了 16 个答案，与 v1.0 不可直接比较，当前 v1.1 分数为 88.67"
       }
      ]
+    },
+    "programbench-almost": {
+     "value": 17.5,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 17.5,
+      "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 未另标",
+      "sourceType": "third_party",
+      "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"kimi/kimi-k3\"].accuracy。"
+     },
+     "alternates": [
+      {
+       "score": 77.8,
+       "setting": "ProgramBench 平均隐藏测试通过率；Kimi Code harness",
+       "sourceType": "official",
+       "sourceName": "Kimi K3 官方模型卡",
+       "url": "https://huggingface.co/moonshotai/Kimi-K3",
+       "note": "同表 Vals 对照值对应 Raw Pass Rate；不是达到 95% 阈值的任务比例。仅作参考。"
+      }
+     ]
+    },
+    "nl2repo-bench": {
+     "value": 58,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 58,
+      "setting": "NL2Repo-Bench Score；同表 K3 对照列；未说明完整运行设置",
+      "sourceType": "vendor_comparison",
+      "sourceName": "DeepSeek 1017 官方对比表（Kimi K3）",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "note": "2026-10-18 读取对照列，不作为 Kimi 厂商自报。"
+     },
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 30.8,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 30.8,
+      "setting": "AutomationBench（600-task public subset）；Moonshot 自测，600 题公开子集，其余按官方 GitHub 设置",
+      "sourceType": "official",
+      "sourceName": "Kimi K3 Hugging Face 模型卡",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。公开子集而非 Zapier 私有 held-out 集；Zapier 官方榜未收录 Kimi K3"
+     },
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 28.3,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 28.3,
+      "setting": "Pass rate（官方榜 primary pass-rate metric）；官方引自 ALE 官方榜（截至 2026-07-23），Kimi Code harness",
+      "sourceType": "official",
+      "sourceName": "Kimi K3 Hugging Face 模型卡",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。"
+     },
+     "alternates": [
+      {
+       "score": 28.2895,
+       "setting": "passRate × 100；split=full，149/152 题；kimi_code，thinking-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=kimi-k3, split=full, harness=kimi_code, variant=thinking-max。"
+      },
+      {
+       "score": 26.9737,
+       "setting": "passRate × 100；split=full，149/152 题；claude_code，thinking-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=kimi-k3, split=full, harness=claude_code, variant=thinking-max。"
+      },
+      {
+       "score": 27.619,
+       "setting": "passRate × 100；split=linux_only，102/105 题；claude_code，thinking-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=kimi-k3, split=linux_only, harness=claude_code, variant=thinking-max。"
+      },
+      {
+       "score": 27.619,
+       "setting": "passRate × 100；split=linux_only，102/105 题；kimi_code，thinking-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=kimi-k3, split=linux_only, harness=kimi_code, variant=thinking-max。"
+      }
+     ]
+    },
+    "chartography-tools": {
+     "value": 68.1,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 68.1,
+      "setting": "Chartography 带工具准确率；同表 K3 对照列；未另报裁判或运行预算",
+      "sourceType": "vendor_comparison",
+      "sourceName": "DeepSeek 1017 官方对比表（Kimi K3）",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "note": "2026-10-18 读取对照列；不用工具的 Surge 成绩不归到本列。"
+     },
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 41,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 41,
+      "setting": "ZeroBench-main Pass@5，Python 工具；max 推理，temperature=1.0，top_p=1.0；官方 ZeroBench 设置，5 次运行",
+      "sourceType": "official",
+      "sourceName": "Kimi K3 官方模型卡",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "note": "2026-10-18 核对模型卡的 23.0 / 41.0：前者不用工具，后者用 Python。"
+     },
+     "alternates": [
+      {
+       "score": 23,
+       "setting": "ZeroBench-main Pass@5，不用工具",
+       "sourceType": "official",
+       "sourceName": "Kimi K3 官方模型卡",
+       "url": "https://huggingface.co/moonshotai/Kimi-K3",
+       "note": "同一行不用工具的前一个数，只作参考。"
+      }
+     ]
     }
    }
   },
@@ -6060,20 +7182,22 @@
    "aaVariant": "Claude Haiku 5.5 (Max)",
    "aaSlug": "claude-haiku-5-5",
    "rank": 9,
-   "score": 50.49619276715965,
-   "scoreLow": 49.16218138531457,
-   "scoreHigh": 51.9219072261186,
-   "rankLow": 7,
+   "score": 52.26912755188815,
+   "scoreLow": 51.193653055867514,
+   "scoreHigh": 53.33853835908292,
+   "rankLow": 8,
    "rankHigh": 10,
-   "observedOnlyScore": 47.61777777777778,
-   "pessimisticRank": 7,
-   "coverage": 0.75,
+   "observedOnlyScore": 50.980364982808766,
+   "observedWeight": 0.7160984848484852,
+   "pessimisticRank": 8,
+   "coverage": 0.6363636363636364,
    "categoryScores": {
-    "coding": 49.7296081085139,
-    "agents": 59.851829626791364,
+    "coding": 49.52084665927073,
+    "agents": 57.920265958456476,
     "reasoning": 51.65,
     "science": 31.48,
-    "knowledge": 53.156666666666666
+    "knowledge": 53.156666666666666,
+    "vision": 73.0412721289953
    },
    "cells": {
     "terminal-bench-4": {
@@ -6142,9 +7266,9 @@
      ]
     },
     "deepswe": {
-     "value": 69.52,
+     "value": 69.73,
      "imputed": true,
-     "sd": 5.74,
+     "sd": 5.07,
      "alternates": []
     },
     "frontiercode": {
@@ -6301,9 +7425,9 @@
      ]
     },
     "automationbench": {
-     "value": 37.39,
+     "value": 37.58,
      "imputed": true,
-     "sd": 10.98,
+     "sd": 11.72,
      "alternates": [
       {
        "score": 35.41,
@@ -6316,15 +7440,15 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 75.44,
+     "value": 75.53,
      "imputed": true,
-     "sd": 2.37,
+     "sd": 2.23,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 54.17,
+     "value": 54.41,
      "imputed": true,
-     "sd": 5.45,
+     "sd": 3.37,
      "alternates": []
     },
     "hle-no-tools": {
@@ -6557,6 +7681,76 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 29.5,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 29.5,
+      "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+      "sourceType": "third_party",
+      "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"anthropic/claude-haiku-5-5\"].accuracy。"
+     },
+     "alternates": [
+      {
+       "score": 82,
+       "setting": "ProgramBench 166-task golden subset；平均隐藏测试通过率；mini-swe-agent，取消 6 小时限制；不是 Almost 任务比例",
+       "sourceType": "official",
+       "sourceName": "Anthropic 官方 system card（平均测试通过率）",
+       "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+       "note": "2026-10-18 已核对 PDF 的 ProgramBench 正文。不同子集且不同指标，只作参考，不以该高分覆盖 Almost 主分数。"
+      }
+     ]
+    },
+    "nl2repo-bench": {
+     "value": 58.48,
+     "imputed": true,
+     "sd": 7.19,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 45.38,
+     "imputed": true,
+     "sd": 11.24,
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 30.14,
+     "imputed": true,
+     "sd": 2.8,
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 86.2,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 86.2,
+      "setting": "100 题；准确率，专家容许区间；容器 + 图片裁剪工具，adaptive thinking / max；5 次平均，Gemini 3.5 Flash 裁判",
+      "sourceType": "official",
+      "sourceName": "Anthropic 官方 system card（Chartography 带工具）",
+      "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+      "note": "2026-10-18 已提取并核对 PDF 正文；Fable 5.1 采用较新 Opus 5.5 卡中的统一裁判复测。 数据定位：PDF 第 124 页及 Chartography 小节。"
+     },
+     "alternates": [
+      {
+       "score": 46.4,
+       "setting": "Chartography 不用工具准确率；max 推理",
+       "sourceType": "official",
+       "sourceName": "Anthropic 官方 system card（Chartography 不用工具）",
+       "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+       "note": "带工具和不用工具不混在同一列。"
+      }
+     ]
+    },
+    "zerobench-tools": {
+     "value": 46.72,
+     "imputed": true,
+     "sd": 7.88,
+     "alternates": []
     }
    }
   },
@@ -6570,21 +7764,23 @@
    "aaIndex": 42.08,
    "aaVariant": "GPT-5.6 Terra (Max)",
    "aaSlug": "gpt-5-6-terra",
-   "rank": 19,
-   "score": 45.27761107233343,
-   "scoreLow": 43.918969118746666,
-   "scoreHigh": 46.67722322844886,
-   "rankLow": 15,
+   "rank": 17,
+   "score": 47.81020996796103,
+   "scoreLow": 46.1619846056013,
+   "scoreHigh": 49.476988957195665,
+   "rankLow": 14,
    "rankHigh": 20,
-   "observedOnlyScore": 43.53666666666666,
-   "pessimisticRank": 17,
-   "coverage": 0.8125,
+   "observedOnlyScore": 42.513510488616014,
+   "observedWeight": 0.6663068181818184,
+   "pessimisticRank": 18,
+   "coverage": 0.6818181818181818,
    "categoryScores": {
-    "coding": 38.92604245143104,
-    "agents": 49.718216206302685,
-    "reasoning": 50.29475383044442,
+    "coding": 39.838983449732105,
+    "agents": 49.03854994450708,
+    "reasoning": 50.325479620154624,
     "science": 31.659999999999997,
-    "knowledge": 54.11666666666667
+    "knowledge": 54.11666666666667,
+    "vision": 70.0372520553634
    },
    "cells": {
     "terminal-bench-4": {
@@ -6775,9 +7971,9 @@
      ]
     },
     "frontierswe": {
-     "value": 23.27,
+     "value": 23.57,
      "imputed": true,
-     "sd": 12.61,
+     "sd": 13.23,
      "alternates": []
     },
     "osworld-2": {
@@ -6938,9 +8134,9 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 74.68,
+     "value": 74.76,
      "imputed": true,
-     "sd": 2.44,
+     "sd": 2.29,
      "alternates": [
       {
        "score": 53.1,
@@ -7064,9 +8260,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 57.68,
+     "value": 57.74,
      "imputed": true,
-     "sd": 4.02,
+     "sd": 4.64,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -7219,6 +8415,83 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 15,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 15,
+      "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+      "sourceType": "third_party",
+      "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"openai/gpt-5.6-terra\"].accuracy。"
+     },
+     "alternates": []
+    },
+    "nl2repo-bench": {
+     "value": 55.61,
+     "imputed": true,
+     "sd": 7.16,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 40.44,
+     "imputed": true,
+     "sd": 12.54,
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 27.96,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 27.9605,
+      "setting": "passRate × 100；split=full，152/152 题；codex，reasoning-max",
+      "sourceType": "benchmark_author",
+      "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+      "url": "https://agents-last-exam.org/api/demo/leaderboard",
+      "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=GPT-5.6-Terra, split=full, harness=codex, variant=reasoning-max。"
+     },
+     "alternates": [
+      {
+       "score": 27.6316,
+       "setting": "passRate × 100；split=full，152/152 题；codex，reasoning-xhigh",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=GPT-5.6-Terra, split=full, harness=codex, variant=reasoning-xhigh。"
+      },
+      {
+       "score": 25.7143,
+       "setting": "passRate × 100；split=linux_only，105/105 题；codex，reasoning-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=GPT-5.6-Terra, split=linux_only, harness=codex, variant=reasoning-max。"
+      },
+      {
+       "score": 26.1905,
+       "setting": "passRate × 100；split=linux_only，105/105 题；codex，reasoning-xhigh",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents' Last Exam 作者榜（Pass rate）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-18 读取作者 API，直接使用 passRate；不采用 avgScore。CLI 105 题与完整 152 题有范围差异，CLI 记录为非首选。 数据定位：rows: model=GPT-5.6-Terra, split=linux_only, harness=codex, variant=reasoning-xhigh。"
+      }
+     ]
+    },
+    "chartography-tools": {
+     "value": 82.36,
+     "imputed": true,
+     "sd": 9.46,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 45.38,
+     "imputed": true,
+     "sd": 8.12,
+     "alternates": []
     }
    }
   },
@@ -7232,21 +8505,23 @@
    "aaIndex": 41.81,
    "aaVariant": "GLM-5.3-Flash",
    "aaSlug": "glm-5-3-flash",
-   "rank": 18,
-   "score": 45.395924813807575,
-   "scoreLow": 43.95872746678785,
-   "scoreHigh": 46.936762649189696,
+   "rank": 19,
+   "score": 47.342866544366835,
+   "scoreLow": 45.86808027651258,
+   "scoreHigh": 48.71988004945385,
    "rankLow": 15,
    "rankHigh": 20,
-   "observedOnlyScore": 45.732410256410255,
-   "pessimisticRank": 18,
-   "coverage": 0.8125,
+   "observedOnlyScore": 44.48996420581654,
+   "observedWeight": 0.7619318181818184,
+   "pessimisticRank": 17,
+   "coverage": 0.7272727272727273,
    "categoryScores": {
-    "coding": 40.711451819910145,
-    "agents": 55.93191410198681,
+    "coding": 40.161984314042684,
+    "agents": 54.54509272218151,
     "reasoning": 47.575,
     "science": 23.30333333333333,
-    "knowledge": 53.01666666666667
+    "knowledge": 53.01666666666667,
+    "vision": 69.22199211216393
    },
    "cells": {
     "terminal-bench-4": {
@@ -7298,9 +8573,9 @@
      ]
     },
     "frontiercode": {
-     "value": 45.59,
+     "value": 45.58,
      "imputed": true,
-     "sd": 5.43,
+     "sd": 5.28,
      "alternates": []
     },
     "frontierswe": {
@@ -7334,9 +8609,9 @@
      "alternates": []
     },
     "automationbench": {
-     "value": 34.95,
+     "value": 34.89,
      "imputed": true,
-     "sd": 12.08,
+     "sd": 12.44,
      "alternates": [
       {
        "score": 48.8,
@@ -7381,9 +8656,9 @@
      ]
     },
     "agents-last-exam": {
-     "value": 51.28,
+     "value": 51.37,
      "imputed": true,
-     "sd": 5.57,
+     "sd": 3.31,
      "alternates": [
       {
        "score": 26.3,
@@ -7528,6 +8803,66 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 7,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 7,
+      "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 max",
+      "sourceType": "third_party",
+      "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"zai/glm-5.3-flash\"].accuracy。"
+     },
+     "alternates": []
+    },
+    "nl2repo-bench": {
+     "value": 54.55,
+     "imputed": true,
+     "sd": 7.24,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 48.8,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 48.8,
+      "setting": "AutomationBench v1.0.6；公开实现，加入 PR #13 的 null 类型修复；max 推理档位",
+      "sourceType": "official",
+      "sourceName": "GLM-5.3-Flash 官方模型卡与评测图",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "note": "2026-10-18 已查看官方 bench_53.png 自家 AutomationBench 柱为 48.8；模型卡脚注明确 v1.0.6 + PR #13。按公开实现的完全通过率收录，完整 harness 与预算未另报。"
+     },
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 26.3,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 26.3,
+      "setting": "Agents' Last Exam Pass rate（厂商表未标指标，按对照值推断）；厂商自测，Claude Code harness，reasoning effort=max，1M 上下文，64K 最大输出，关闭 Tool Search，由 ALE 官方评分",
+      "sourceType": "official",
+      "sourceName": "GLM-5.3-Flash 官方模型卡与评测图",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。同表 Opus 4.8=27.0、GLM-5.2=20.4，与 ALE 官方 API 中 claude-opus-4-8 thinking-max passRate 27.0（avgScore 45.1）、glm-5-2 max passRate 20.4（avgScore 41.1）一致，所以这是 Pass rate，不是 Score。ALE 官方榜未收录 GLM-5.3-Flash 本次已查看模型卡链接的官方 bench_53.png：自家 AutomationBench=48.8、ALE=26.3；ALE 的 Pass 口径仍按系列与对照值判定。"
+     },
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 81.39,
+     "imputed": true,
+     "sd": 9.8,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 44.89,
+     "imputed": true,
+     "sd": 8.22,
+     "alternates": []
     }
    }
   },
@@ -7541,21 +8876,23 @@
    "aaIndex": 41.09,
    "aaVariant": "Ling 3.1 Flash",
    "aaSlug": "ling-3-1-flash",
-   "rank": 17,
-   "score": 45.73904889312152,
-   "scoreLow": 43.35707534709105,
-   "scoreHigh": 48.95737611747341,
+   "rank": 16,
+   "score": 48.596482781794386,
+   "scoreLow": 46.545349326129944,
+   "scoreHigh": 50.95796925986842,
    "rankLow": 11,
    "rankHigh": 20,
-   "observedOnlyScore": 43.873714285714286,
+   "observedOnlyScore": 44.601584905660374,
+   "observedWeight": 0.406534090909091,
    "pessimisticRank": 20,
-   "coverage": 0.4375,
+   "coverage": 0.36363636363636365,
    "categoryScores": {
-    "coding": 43.27753964690912,
-    "agents": 54.98106001277834,
-    "reasoning": 48.22937690764528,
-    "science": 25.53328294701913,
-    "knowledge": 50.550000000000004
+    "coding": 44.16895717766701,
+    "agents": 55.24771182096354,
+    "reasoning": 48.69193965664043,
+    "science": 26.145030982963096,
+    "knowledge": 50.550000000000004,
+    "vision": 70.25741220756028
    },
    "cells": {
     "terminal-bench-4": {
@@ -7583,21 +8920,21 @@
      ]
     },
     "deepswe": {
-     "value": 66.47,
+     "value": 67.42,
      "imputed": true,
-     "sd": 6.61,
+     "sd": 5.68,
      "alternates": []
     },
     "frontiercode": {
-     "value": 45.64,
+     "value": 46.37,
      "imputed": true,
-     "sd": 6.06,
+     "sd": 5.27,
      "alternates": []
     },
     "frontierswe": {
-     "value": 20.6,
+     "value": 24.5,
      "imputed": true,
-     "sd": 15.85,
+     "sd": 14.22,
      "alternates": [
       {
        "score": 75.16,
@@ -7611,15 +8948,15 @@
      ]
     },
     "osworld-2": {
-     "value": 59.13,
+     "value": 61.87,
      "imputed": true,
-     "sd": 10.94,
+     "sd": 8.45,
      "alternates": []
     },
     "automationbench": {
-     "value": 35.01,
+     "value": 35.8,
      "imputed": true,
-     "sd": 12.22,
+     "sd": 12.18,
      "alternates": [
       {
        "score": 52.5,
@@ -7641,15 +8978,15 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 74.43,
+     "value": 74.84,
      "imputed": true,
-     "sd": 2.65,
+     "sd": 2.33,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 51.36,
+     "value": 52.42,
      "imputed": true,
-     "sd": 6,
+     "sd": 3.52,
      "alternates": []
     },
     "hle-no-tools": {
@@ -7667,15 +9004,15 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 57.03,
+     "value": 57.95,
      "imputed": true,
-     "sd": 4.68,
+     "sd": 4.74,
      "alternates": []
     },
     "terminal-bench-science": {
-     "value": 4.55,
+     "value": 6.39,
      "imputed": true,
-     "sd": 19.88,
+     "sd": 15.7,
      "alternates": []
     },
     "scicode": {
@@ -7758,6 +9095,50 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 16.64,
+     "imputed": true,
+     "sd": 12.06,
+     "alternates": []
+    },
+    "nl2repo-bench": {
+     "value": 55.91,
+     "imputed": true,
+     "sd": 7.64,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 52.5,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 52.5,
+      "setting": "AutomationBench (public) pass rate (%)；厂商自测，公开题集（非 Zapier 私有留出集），未注明设置",
+      "sourceType": "official",
+      "sourceName": "Ant Ling (@AntLingAGI) 官方 X 发布帖配图",
+      "url": "https://pbs.twimg.com/media/HTelU-lbgAQs5K-.jpg?name=orig",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。公开集而非私有留出集，不可比；zapier.com/benchmarks 官方榜未收录该模型 本次已查看官方图片，标题明确 public、Ling 柱标 52.50；未标题集版本与运行设置。"
+     },
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 27.84,
+     "imputed": true,
+     "sd": 3.3,
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 82.63,
+     "imputed": true,
+     "sd": 9.91,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 45.52,
+     "imputed": true,
+     "sd": 8.19,
+     "alternates": []
     }
    }
   },
@@ -7771,21 +9152,23 @@
    "aaIndex": 40.93,
    "aaVariant": "Gemini 3.8 Flash (High)",
    "aaSlug": "gemini-3-8-flash",
-   "rank": 14,
-   "score": 47.11631932205816,
-   "scoreLow": 45.5711758148022,
-   "scoreHigh": 48.6690146038319,
+   "rank": 15,
+   "score": 49.069054031543686,
+   "scoreLow": 47.551871937467226,
+   "scoreHigh": 50.671284020741545,
    "rankLow": 11,
    "rankHigh": 18,
-   "observedOnlyScore": 43.7496913580247,
-   "pessimisticRank": 14,
-   "coverage": 0.6875,
+   "observedOnlyScore": 43.20011716461627,
+   "observedWeight": 0.5819318181818184,
+   "pessimisticRank": 16,
+   "coverage": 0.5454545454545454,
    "categoryScores": {
-    "coding": 39.813877653192186,
-    "agents": 55.83242054386163,
-    "reasoning": 51.95385404085363,
+    "coding": 40.47749231339717,
+    "agents": 53.4126706931508,
+    "reasoning": 51.88655324616174,
     "science": 27.820000000000004,
-    "knowledge": 56.19333333333333
+    "knowledge": 56.19333333333333,
+    "vision": 70.6858266683854
    },
    "cells": {
     "terminal-bench-4": {
@@ -7855,9 +9238,9 @@
      ]
     },
     "frontiercode": {
-     "value": 46.83,
+     "value": 46.71,
      "imputed": true,
-     "sd": 5.26,
+     "sd": 5.14,
      "alternates": []
     },
     "frontierswe": {
@@ -7891,9 +9274,9 @@
      "alternates": []
     },
     "automationbench": {
-     "value": 36.36,
+     "value": 36.2,
      "imputed": true,
-     "sd": 11.46,
+     "sd": 12.14,
      "alternates": [
       {
        "score": 59.93,
@@ -7906,15 +9289,15 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 75.01,
+     "value": 74.99,
      "imputed": true,
-     "sd": 2.49,
+     "sd": 2.31,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 52.96,
+     "value": 52.86,
      "imputed": true,
-     "sd": 5.53,
+     "sd": 3.44,
      "alternates": []
     },
     "hle-no-tools": {
@@ -7968,9 +9351,9 @@
      ]
     },
     "hle-tools": {
-     "value": 58.51,
+     "value": 58.37,
      "imputed": true,
-     "sd": 4.1,
+     "sd": 4.73,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -8096,6 +9479,50 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 14,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 14,
+      "setting": "200 题；Almost Resolved：每题至少 95% 隐藏测试通过；mini-SWE-agent / Valkyrie，6 小时、1000 步；推理档位 high",
+      "sourceType": "third_party",
+      "sourceName": "Vals AI ProgramBench（Almost Resolved）",
+      "url": "https://www.vals.ai/benchmarks/programbench",
+      "note": "2026-10-18 读取 Vals 2026-10-12 快照。此处 accuracy 已为百分数；不是整题通过率，也不是平均测试通过率。 数据定位：tasks.almost[\"google/gemini-3.8-flash\"].accuracy。"
+     },
+     "alternates": []
+    },
+    "nl2repo-bench": {
+     "value": 56.49,
+     "imputed": true,
+     "sd": 7.28,
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 41.91,
+     "imputed": true,
+     "sd": 12.22,
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 28.34,
+     "imputed": true,
+     "sd": 2.99,
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 83.13,
+     "imputed": true,
+     "sd": 9.31,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 45.79,
+     "imputed": true,
+     "sd": 8.04,
+     "alternates": []
     }
    }
   },
@@ -8110,20 +9537,22 @@
    "aaVariant": "Qwen3.8 2.4T A95B",
    "aaSlug": "qwen3-8-2-4t-a95b",
    "rank": 20,
-   "score": 45.042664003655304,
-   "scoreLow": 43.31024069402803,
-   "scoreHigh": 46.64393588212781,
-   "rankLow": 15,
+   "score": 46.799771716811925,
+   "scoreLow": 45.3344549514709,
+   "scoreHigh": 48.19434434680979,
+   "rankLow": 16,
    "rankHigh": 20,
-   "observedOnlyScore": 44.75323076923077,
+   "observedOnlyScore": 43.65658830423062,
+   "observedWeight": 0.8080492424242427,
    "pessimisticRank": 19,
-   "coverage": 0.8125,
+   "coverage": 0.8181818181818182,
    "categoryScores": {
-    "coding": 38.05740538147591,
-    "agents": 54.57525063314531,
+    "coding": 38.78076429275937,
+    "agents": 50.391891026146375,
     "reasoning": 49.900000000000006,
     "science": 28.97,
-    "knowledge": 50.27
+    "knowledge": 50.27,
+    "vision": 70.39874270058134
    },
    "cells": {
     "terminal-bench-4": {
@@ -8185,9 +9614,9 @@
      ]
     },
     "frontiercode": {
-     "value": 45.49,
+     "value": 45.4,
      "imputed": true,
-     "sd": 5.43,
+     "sd": 5.35,
      "alternates": []
     },
     "frontierswe": {
@@ -8216,15 +9645,15 @@
      ]
     },
     "osworld-2": {
-     "value": 58.56,
+     "value": 58.38,
      "imputed": true,
-     "sd": 8.85,
+     "sd": 8.09,
      "alternates": []
     },
     "automationbench": {
-     "value": 34.84,
+     "value": 34.68,
      "imputed": true,
-     "sd": 11.96,
+     "sd": 12.54,
      "alternates": [
       {
        "score": 27.3,
@@ -8454,6 +9883,82 @@
        "note": "可能转抄自 AA；未标注 v1.1"
       }
      ]
+    },
+    "programbench-almost": {
+     "value": 10.5,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 10.5,
+      "setting": "ProgramBench Almost Solved；Qwen3.8-Max 原版（2026-08，对应开源 2.4T A95B），非 0902",
+      "sourceType": "vendor_comparison",
+      "sourceName": "GLM-5.3 官方对比表中的 Qwen3.8-Max 原版",
+      "url": "https://huggingface.co/zai-org/GLM-5.3",
+      "note": "原表发布早于 0902；沿用本榜对原版 Qwen3.8-Max / 开源 2.4T A95B 的版本对应。来源是其他厂商对比，非 Qwen 自报。"
+     },
+     "alternates": []
+    },
+    "nl2repo-bench": {
+     "value": 55.9,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 55.9,
+      "setting": "NL2Repo-Bench Score（隐藏测试通过率）；表内自家列名为 Qwen3.8-Max 原版；Claude Code；禁目标仓库访问命令",
+      "sourceType": "official",
+      "sourceName": "Qwen3.8 2.4T A95B 官方模型卡",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "note": "2026-10-18 已核对原表自家模型列及脚注。未报为整仓完全解决率。"
+     },
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 27.3,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 27.3,
+      "setting": "Automation-Bench Pass@1（600 题公开子集）；厂商自测，公开子集",
+      "sourceType": "official",
+      "sourceName": "Qwen3.8-2.4T-A95B Hugging Face 模型卡",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。公开子集，不是 Zapier 私有留出集，不可比"
+     },
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 27,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 27,
+      "setting": "Agents' Last Exam Pass rate；厂商自测，同一行的 Pass 值",
+      "sourceType": "official",
+      "sourceName": "Qwen3.8-2.4T-A95B Hugging Face 模型卡",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。Pass rate（全对比例），不是 Score"
+     },
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 81.1,
+     "imputed": true,
+     "sd": 10.05,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 49,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 49,
+      "setting": "ZeroBench-main Pass@5；code-interpreter 工具，5 次采样；Qwen3.8-Max 原版（2026-08-03），对应本榜开源 2.4T A95B",
+      "sourceType": "vendor_comparison",
+      "sourceName": "ZeroBench 作者收录的 Qwen3.8 原始发布",
+      "url": "https://zerobench.github.io/",
+      "note": "作者页面此项标 reported，来源为 Qwen3.8 原始发布，不是作者独立复测。只对应原版，不移用给 0902。该列全榜覆盖低，使用较低权重。 数据定位：zb-results-data: reported / Qwen3.8-Max / main / pass@5 / tool。"
+     },
+     "alternates": []
     }
    }
   },
@@ -8468,20 +9973,22 @@
    "aaVariant": "Qwen3.8-Flash-Next",
    "aaSlug": "qwen3-8-flash-next",
    "rank": 21,
-   "score": 41.88840601088248,
-   "scoreLow": 40.09104872266343,
-   "scoreHigh": 44.88858233018854,
-   "rankLow": 19,
+   "score": 43.56096820862851,
+   "scoreLow": 41.88429619296576,
+   "scoreHigh": 46.176495335735815,
+   "rankLow": 20,
    "rankHigh": 21,
-   "observedOnlyScore": 46.84199999999999,
+   "observedOnlyScore": 45.95839024390244,
+   "observedWeight": 0.6289772727272728,
    "pessimisticRank": 21,
-   "coverage": 0.6875,
+   "coverage": 0.5909090909090909,
    "categoryScores": {
-    "coding": 34.92850420899042,
-    "agents": 52.42375130784349,
-    "reasoning": 45.15030723214515,
-    "science": 21.07864031234822,
-    "knowledge": 50.580000000000005
+    "coding": 34.826304794621315,
+    "agents": 49.09935388967681,
+    "reasoning": 45.16056145515121,
+    "science": 21.030550323584187,
+    "knowledge": 50.580000000000005,
+    "vision": 66.37494914532134
    },
    "cells": {
     "terminal-bench-4": {
@@ -8514,15 +10021,15 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 43.58,
+     "value": 43.57,
      "imputed": true,
-     "sd": 6.94,
+     "sd": 5.88,
      "alternates": []
     },
     "frontierswe": {
-     "value": 12.19,
+     "value": 12.28,
      "imputed": true,
-     "sd": 15.83,
+     "sd": 13.74,
      "alternates": []
     },
     "osworld-2": {
@@ -8551,9 +10058,9 @@
      ]
     },
     "automationbench": {
-     "value": 32.7,
+     "value": 32.6,
      "imputed": true,
-     "sd": 13.25,
+     "sd": 13.53,
      "alternates": [
       {
        "score": 55.91,
@@ -8630,15 +10137,15 @@
      ]
     },
     "hle-tools": {
-     "value": 54.4,
+     "value": 54.42,
      "imputed": true,
-     "sd": 5.46,
+     "sd": 5.13,
      "alternates": []
     },
     "terminal-bench-science": {
-     "value": 1.52,
+     "value": 1.37,
      "imputed": true,
-     "sd": 20.4,
+     "sd": 17.5,
      "alternates": []
     },
     "scicode": {
@@ -8711,6 +10218,58 @@
       "note": "2026-10-12 抓取的模型页数据（字段 lcr）"
      },
      "alternates": []
+    },
+    "programbench-almost": {
+     "value": 7.28,
+     "imputed": true,
+     "sd": 13.01,
+     "alternates": []
+    },
+    "nl2repo-bench": {
+     "value": 48.1,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 48.1,
+      "setting": "NL2Repo-Bench Score（隐藏测试通过率）；Claude Code；禁目标仓库 pip download/install 与 git clone",
+      "sourceType": "official",
+      "sourceName": "Qwen3.8-Flash-Next 官方模型卡",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "note": "2026-10-18 已核对原表自家模型列及脚注。未报为整仓完全解决率。"
+     },
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 33.09,
+     "imputed": true,
+     "sd": 15.32,
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 24.3,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 24.3,
+      "setting": "Pass rate (Pass@1, full-credit share)；Qwen 自测，模型卡表格",
+      "sourceType": "official",
+      "sourceName": "Qwen3.8-Flash-Next 官方 Hugging Face 模型卡",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。Pass rate 和原列使用的 Score 不是同一个指标"
+     },
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 77.91,
+     "imputed": true,
+     "sd": 11.73,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 43.3,
+     "imputed": true,
+     "sd": 8.89,
+     "alternates": []
     }
    }
   },
@@ -8725,20 +10284,22 @@
    "aaVariant": null,
    "aaSlug": null,
    "rank": 7,
-   "score": 51.68069006614283,
-   "scoreLow": 48.731068689708955,
-   "scoreHigh": 55.09313182503904,
-   "rankLow": 7,
-   "rankHigh": 11,
-   "observedOnlyScore": 53.256249999999994,
-   "pessimisticRank": 10,
-   "coverage": 0.1875,
+   "score": 55.87570679626148,
+   "scoreLow": 53.61759738160031,
+   "scoreHigh": 58.13097758910902,
+   "rankLow": 6,
+   "rankHigh": 7,
+   "observedOnlyScore": 57.426752348508316,
+   "observedWeight": 0.3669318181818182,
+   "pessimisticRank": 7,
+   "coverage": 0.4090909090909091,
    "categoryScores": {
-    "coding": 51.8399487349401,
-    "agents": 59.90644902594437,
-    "reasoning": 51.70348461003728,
-    "science": 33.894301698834305,
-    "knowledge": 54.522113397954875
+    "coding": 54.65933290972225,
+    "agents": 61.634230031200964,
+    "reasoning": 52.464918207135185,
+    "science": 40.021034867038026,
+    "knowledge": 55.50398964559463,
+    "vision": 72.33333333333333
    },
    "cells": {
     "terminal-bench-4": {
@@ -8772,27 +10333,27 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 48.7,
+     "value": 49.97,
      "imputed": true,
-     "sd": 5.4,
+     "sd": 5.08,
      "alternates": []
     },
     "frontierswe": {
-     "value": 39.36,
+     "value": 48.61,
      "imputed": true,
-     "sd": 16.77,
+     "sd": 14.67,
      "alternates": []
     },
     "osworld-2": {
-     "value": 69.71,
+     "value": 73.55,
      "imputed": true,
-     "sd": 10.94,
+     "sd": 7.5,
      "alternates": []
     },
     "automationbench": {
-     "value": 38.53,
+     "value": 40.07,
      "imputed": true,
-     "sd": 11.4,
+     "sd": 11.59,
      "alternates": [
       {
        "score": 60.5,
@@ -8806,15 +10367,15 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 75.9,
+     "value": 76.45,
      "imputed": true,
-     "sd": 2.57,
+     "sd": 2.32,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 55.48,
+     "value": 57.11,
      "imputed": true,
-     "sd": 5.89,
+     "sd": 3.81,
      "alternates": [
       {
        "score": 35.4,
@@ -8853,45 +10414,129 @@
      ]
     },
     "hle-tools": {
-     "value": 60.81,
+     "value": 62.33,
      "imputed": true,
-     "sd": 4.63,
+     "sd": 4.86,
      "alternates": []
     },
     "terminal-bench-science": {
-     "value": 20,
+     "value": 34.03,
      "imputed": true,
-     "sd": 24.33,
+     "sd": 18.54,
      "alternates": []
     },
     "scicode": {
-     "value": 57.99,
+     "value": 59.52,
      "imputed": true,
-     "sd": 4.2,
+     "sd": 3.85,
      "alternates": []
     },
     "critpt": {
-     "value": 23.7,
+     "value": 26.51,
      "imputed": true,
-     "sd": 6.28,
+     "sd": 5.54,
      "alternates": []
     },
     "gdpval-aa": {
-     "value": 59.07,
+     "value": 59.89,
      "imputed": true,
-     "sd": 5.22,
+     "sd": 5,
      "alternates": []
     },
     "gdp-pdf": {
-     "value": 21.72,
+     "value": 23.65,
      "imputed": true,
-     "sd": 7.72,
+     "sd": 7.27,
      "alternates": []
     },
     "aa-lcr": {
-     "value": 82.78,
+     "value": 82.98,
      "imputed": true,
      "sd": 3.51,
+     "alternates": []
+    },
+    "programbench-almost": {
+     "value": 29.1,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 29.1,
+      "setting": "ProgramBench Almost@1：单次运行至少 95% 隐藏测试通过的比例；沿用系列表定义；1017 任务数未另报",
+      "sourceType": "official",
+      "sourceName": "DeepSeek V4.1 Flash 1017 官方模型卡",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "note": "2026-10-18 核对 1017 模型卡；指标上下文参照同页链接的系列技术报告第 32–33 页。1017 未重述完整预算、试验次数与子集范围，不移用旧版分数或未明示的运行参数。 这是按链接报告和重复对照列作出的指标沿用判断；1017 页面未重述所有定义。"
+     },
+     "alternates": []
+    },
+    "nl2repo-bench": {
+     "value": 68.2,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 68.2,
+      "setting": "NL2Repo-Bench Score（隐藏测试通过率）；1017 未另报 harness 与预算",
+      "sourceType": "official",
+      "sourceName": "DeepSeek V4.1 Flash 1017 官方模型卡",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "note": "2026-10-18 核对 1017 模型卡；指标上下文参照同页链接的系列技术报告第 32–33 页。1017 未重述完整预算、试验次数与子集范围，不移用旧版分数或未明示的运行参数。"
+     },
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 60.5,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 60.5,
+      "setting": "AutomationBench v1.0.6 公开题集 Pass@1；系列技术报告明确为 public evaluation set",
+      "sourceType": "official",
+      "sourceName": "DeepSeek V4.1 Flash 1017 官方模型卡",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "note": "2026-10-18 核对 1017 模型卡；指标上下文参照同页链接的系列技术报告第 32–33 页。1017 未重述完整预算、试验次数与子集范围，不移用旧版分数或未明示的运行参数。 这是按链接报告和重复对照列作出的指标沿用判断；1017 页面未重述所有定义。"
+     },
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 35.4,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 35.4,
+      "setting": "Agents' Last Exam Pass@1，ALE-CLI；系列技术报告明确 CLI 与 Pass@1，同表旧版和对照列保持一致",
+      "sourceType": "official",
+      "sourceName": "DeepSeek V4.1 Flash 1017 官方模型卡",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "note": "2026-10-18 核对 1017 模型卡；指标上下文参照同页链接的系列技术报告第 32–33 页。1017 未重述完整预算、试验次数与子集范围，不移用旧版分数或未明示的运行参数。 这是按链接报告和重复对照列作出的指标沿用判断；1017 页面未重述所有定义。"
+     },
+     "alternates": []
+    },
+    "chartography-tools": {
+     "value": 83,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 83,
+      "setting": "Chartography 带工具准确率（Pass@1）；1017 未另报裁判与预算",
+      "sourceType": "official",
+      "sourceName": "DeepSeek V4.1 Flash 1017 官方模型卡",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "note": "2026-10-18 核对 1017 模型卡；指标上下文参照同页链接的系列技术报告第 32–33 页。1017 未重述完整预算、试验次数与子集范围，不移用旧版分数或未明示的运行参数。"
+     },
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 51,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 51,
+      "setting": "ZeroBench-main，带工具，Pass@5；100 道主问题；官方 2026-10-17 更新日志明确 Pass@5",
+      "sourceType": "official",
+      "sourceName": "DeepSeek V4.1 Flash 1017 官方模型卡",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "note": "2026-10-18 核对 1017 模型卡；指标上下文参照同页链接的系列技术报告第 32–33 页。1017 未重述完整预算、试验次数与子集范围，不移用旧版分数或未明示的运行参数。"
+     },
      "alternates": []
     }
    }
@@ -8901,6 +10546,21 @@
   {
    "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-long-context-reasoning",
    "title": "AA-LCR v1.1 主页",
+   "kind": "benchmark"
+  },
+  {
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "title": "Agents' Last Exam 作者榜（Pass rate）",
+   "kind": "benchmark"
+  },
+  {
+   "url": "https://github.com/zapier/AutomationBench",
+   "title": "AutomationBench · 公开集 主页",
+   "kind": "benchmark"
+  },
+  {
+   "url": "https://surgehq.ai/benchmarks/chartography",
+   "title": "Chartography · 带工具 主页",
    "kind": "benchmark"
   },
   {
@@ -8916,6 +10576,21 @@
   {
    "url": "https://lastexam.ai/",
    "title": "HLE（用工具） 主页",
+   "kind": "benchmark"
+  },
+  {
+   "url": "https://github.com/multimodal-art-projection/NL2RepoBench",
+   "title": "NL2Repo-Bench 主页",
+   "kind": "benchmark"
+  },
+  {
+   "url": "https://programbench.com/",
+   "title": "ProgramBench · Almost@1 主页",
+   "kind": "benchmark"
+  },
+  {
+   "url": "https://programbench.com/extended.html",
+   "title": "ProgramBench 作者榜（Almost）",
    "kind": "benchmark"
   },
   {
@@ -8967,6 +10642,11 @@
    "url": "https://www.stepfun.com/news/step-5-preview",
    "title": "阶跃发布旗舰模型 Step 5 Preview：向前一步，智能效率的新一代“帕累托前沿”",
    "kind": "blog"
+  },
+  {
+   "url": "https://github.com/Warren-swr/llm-leaderboard/blob/main/data/research/benchmark-expansion-20261018.md",
+   "title": "2026-10-18 评测扩展核验：新增指标、覆盖、权重与未纳入项",
+   "kind": "docs"
   },
   {
    "url": "https://www.alibabacloud.com/en/notice/model_studio_update_notice_for_qwen38max_models_863",
@@ -9136,11 +10816,6 @@
   {
    "url": "https://snorkel.ai/leaderboard/agents-last-exam/",
    "title": "Agents' Last Exam leaderboard (Snorkel AI)",
-   "kind": "leaderboard"
-  },
-  {
-   "url": "https://agents-last-exam.org/api/demo/leaderboard",
-   "title": "Agents' Last Exam leaderboard data API (no Argon rows)",
    "kind": "leaderboard"
   },
   {
@@ -9329,6 +11004,11 @@
    "kind": "official"
   },
   {
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/resolve/main/DeepSeek_V41_Tech_Report.pdf",
+   "title": "DeepSeek V4.1 Flash 系列技术报告：公开集、CLI 与 Almost 指标定义（只作口径依据）",
+   "kind": "official"
+  },
+  {
    "url": "https://api-docs.deepseek.com/updates/",
    "title": "DeepSeek 官方更新日志（2026-10-17 分数与配置）",
    "kind": "official"
@@ -9456,6 +11136,16 @@
   {
    "url": "https://x.com/StepFun_ai/status/2101510462685003786",
    "title": "StepFun X launch post (images only show AA index vs cost, no benchmark scores)",
+   "kind": "other"
+  },
+  {
+   "url": "https://www.vals.ai/benchmarks/programbench",
+   "title": "Vals AI ProgramBench（Almost Resolved）",
+   "kind": "other"
+  },
+  {
+   "url": "https://zerobench.github.io/",
+   "title": "ZeroBench 作者收录的 Qwen3.8 原始发布",
    "kind": "other"
   },
   {

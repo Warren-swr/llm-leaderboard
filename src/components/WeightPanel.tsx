@@ -1,6 +1,6 @@
 import { Badge, Button, Group, Paper, SimpleGrid, Slider, Stack, Text, Tooltip } from '@mantine/core'
 import { IconAdjustments, IconRestore } from '@tabler/icons-react'
-import { board } from '../data'
+import { board, fmt } from '../data'
 
 interface Props {
   weights: Record<string, number>
@@ -32,7 +32,7 @@ export function WeightPanel({ weights, onChange, onReset, custom }: Props) {
                 <Tooltip label={`${c.description}｜包含：${benches.map(b => b.name).join('、')}`}>
                   <Text size="sm" fw={550} style={{ cursor: 'help' }}>{c.name}</Text>
                 </Tooltip>
-                <Text size="sm" className="lb-num lb-muted">{Math.round((weights[c.id] / total) * 100)}%</Text>
+                <Text size="sm" className="lb-num lb-muted">{fmt((weights[c.id] / total) * 100)}%</Text>
               </Group>
               <Slider
                 value={weights[c.id]}
@@ -42,7 +42,7 @@ export function WeightPanel({ weights, onChange, onReset, custom }: Props) {
                 step={0.01}
                 label={null}
                 size="sm"
-                aria-label={`${c.name} 权重`}
+                thumbLabel={`${c.name} 权重`}
               />
             </Stack>
           )

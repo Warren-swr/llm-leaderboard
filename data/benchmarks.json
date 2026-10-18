@@ -5,32 +5,38 @@
     {
       "id": "coding",
       "name": "编程",
-      "weight": 0.25,
+      "weight": 0.225,
       "description": "长程软件工程、终端操作与可合并的代码交付"
     },
     {
       "id": "agents",
       "name": "智能体",
-      "weight": 0.25,
+      "weight": 0.225,
       "description": "电脑操作、跨应用工具调用与业务流程自动化"
     },
     {
       "id": "reasoning",
       "name": "推理",
-      "weight": 0.15,
+      "weight": 0.135,
       "description": "前沿学科难题，分不用工具与用工具两种"
     },
     {
       "id": "science",
       "name": "科研",
-      "weight": 0.15,
+      "weight": 0.135,
       "description": "科研编程、科学计算与物理研究级问题"
     },
     {
       "id": "knowledge",
       "name": "知识工作",
-      "weight": 0.2,
+      "weight": 0.18,
       "description": "专业交付物质量、长文档理解与 PDF 资料问答"
+    },
+    {
+      "id": "vision",
+      "name": "视觉工具推理",
+      "weight": 0.1,
+      "description": "读取专业图表和完成复杂视觉推理，允许代码或图片工具；带工具与不用工具分开。"
     }
   ],
   "benchmarks": [
@@ -106,9 +112,9 @@
     },
     {
       "id": "automationbench",
-      "name": "AutomationBench",
+      "name": "AutomationBench · 私有集",
       "category": "agents",
-      "weight": 1,
+      "weight": 0.5,
       "tier": 1,
       "metric": "通过率（Zapier 私有留出集）",
       "preferredSetting": "Zapier 官方运行（release 1.0.6），最高推理档",
@@ -134,9 +140,9 @@
     },
     {
       "id": "agents-last-exam",
-      "name": "Agents' Last Exam",
+      "name": "Agents' Last Exam · Score",
       "category": "agents",
-      "weight": 1,
+      "weight": 0.5,
       "tier": 1,
       "metric": "Score（部分得分，OpenAI 发布页口径）",
       "preferredSetting": "官方任务集 V1，最高推理档，带工具",
@@ -257,6 +263,96 @@
       "description": "长文档推理：在约 10 万 token 的多份文档里查找、比对并推出答案。",
       "selectionReason": "长上下文方向唯一未饱和、且 20 个模型都有分数的评测（MRCR 已到 96–100）；头部 89 分，接近饱和线，后续需要复查。",
       "homepage": "https://artificialanalysis.ai/evaluations/artificial-analysis-long-context-reasoning"
+    },
+    {
+      "id": "programbench-almost",
+      "name": "ProgramBench · Almost@1",
+      "category": "coding",
+      "weight": 0.5,
+      "metric": "达到至少 95% 隐藏测试通过率的任务比例（Almost@1）",
+      "preferredSetting": "完整 200 题，单智能体，最高推理档；有范围差异的子集记录非首选",
+      "url": "https://programbench.com/",
+      "description": "只给二进制和文档，重建完整程序。该列采用 95% 测试阈值的任务比例，不代表整程序完全实现。",
+      "selectionReason": "补充黑盒程序重建能力；有广泛独立复测。作者将 Almost 作为辅助指标，所以类别内权重为 0.5，不混入 Fully Resolved 或平均测试通过率。",
+      "chance": 0,
+      "tier": 2,
+      "addedAt": "2026-10-18",
+      "homepage": "https://programbench.com/"
+    },
+    {
+      "id": "nl2repo-bench",
+      "name": "NL2Repo-Bench",
+      "category": "coding",
+      "weight": 1,
+      "metric": "Score（隐藏测试通过率，不是整仓全部通过率）",
+      "preferredSetting": "官方 104 个 Python 库任务，只给自然语言需求和空仓库，禁止获取目标源码",
+      "url": "https://github.com/multimodal-art-projection/NL2RepoBench",
+      "description": "从需求文档生成完整可安装 Python 库，用原项目测试检查功能；测试通过率与完全解决率区分。",
+      "selectionReason": "补充从零生成仓库的能力；多家模型发布给出同一 Score 指标，记录不同 harness 与反作弊约束。",
+      "chance": 0,
+      "tier": 2,
+      "addedAt": "2026-10-18",
+      "homepage": "https://github.com/multimodal-art-projection/NL2RepoBench"
+    },
+    {
+      "id": "automationbench-public",
+      "name": "AutomationBench · 公开集",
+      "category": "agents",
+      "weight": 0.5,
+      "metric": "完全通过率（公开任务集，task_completed_correctly / Pass@1）",
+      "preferredSetting": "公开 600 题（不含 simple），优先 v1.0.6；其他公开版本记录为非首选",
+      "url": "https://github.com/zapier/AutomationBench",
+      "description": "在公开 SaaS 工作流中完成全部状态断言。私有留出集保留在独立列，AA 部分得分也不混入。",
+      "selectionReason": "系列技术报告确认 DeepSeek 使用公开 v1.0.6；同时利用其他模型已核验公开集结果。与私有列各占 0.5，避免同一家族翻倍加权。",
+      "chance": 0,
+      "tier": 2,
+      "addedAt": "2026-10-18",
+      "homepage": "https://github.com/zapier/AutomationBench"
+    },
+    {
+      "id": "ale-pass",
+      "name": "Agents' Last Exam · Pass@1",
+      "category": "agents",
+      "weight": 0.5,
+      "metric": "完全通过率（passRate / Pass@1，不是 avgScore）",
+      "preferredSetting": "完整 V1 任务集、最高推理档；105 题 CLI 子集视为可比但非首选，逐条标明范围",
+      "url": "https://agents-last-exam.org/leaderboard",
+      "description": "只统计一次运行达到全部评分条件的任务比例。完整集、CLI 子集和 harness 保留在配置中，部分得分 Score 另列。",
+      "selectionReason": "新增完全通过率口径，收录厂商与作者发布的 passRate；不再把通过率排除在排名之外。与 Score 列各占 0.5，同一家族总权重不翻倍。",
+      "chance": 0,
+      "tier": 2,
+      "addedAt": "2026-10-18",
+      "homepage": "https://agents-last-exam.org/leaderboard"
+    },
+    {
+      "id": "chartography-tools",
+      "name": "Chartography · 带工具",
+      "category": "vision",
+      "weight": 1,
+      "metric": "准确率（Pass@1，专家容许范围）",
+      "preferredSetting": "100 题，允许代码与图片裁剪，最高推理档；优先公开一致裁判配置",
+      "url": "https://surgehq.ai/benchmarks/chartography",
+      "description": "读取专业图表并进行多步视觉推理。带工具与直接看图能力分开，记录裁判差异。",
+      "selectionReason": "补齐此前未计入的视觉工具能力；DeepSeek 与多家 Claude 有带工具结果。个别头部刚超过 90%，保留饱和提示，不把不用工具分数填进本列。",
+      "chance": 0,
+      "tier": 2,
+      "addedAt": "2026-10-18",
+      "homepage": "https://surgehq.ai/benchmarks/chartography"
+    },
+    {
+      "id": "zerobench-tools",
+      "name": "ZeroBench-main · 带工具",
+      "category": "vision",
+      "weight": 0.5,
+      "metric": "Pass@5（五次至少一次通过；主问题集）",
+      "preferredSetting": "100 道主问题，允许代码 / Python 工具；Pass@5，不混入 pass^5 或不用工具成绩",
+      "url": "https://zerobench.github.io/",
+      "description": "复杂视觉感知、计数和多步推理。评估五次中至少一次答对，不能解读为单次成功率。",
+      "selectionReason": "收录 DeepSeek 明确发布的 Pass@5 和同口径公开记录。当前全榜仅有少数模型有可比带工具成绩，类别内仅用 0.5 权重，并显示覆盖率。",
+      "chance": 0,
+      "tier": 2,
+      "addedAt": "2026-10-18",
+      "homepage": "https://zerobench.github.io/"
     }
   ]
 }

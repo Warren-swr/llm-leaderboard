@@ -1,0 +1,89 @@
+{
+ "model": "qwen3-8-2-4t-a95b",
+ "records": [
+  {
+   "benchmark": "automationbench-public",
+   "score": 27.3,
+   "setting": "Automation-Bench Pass@1（600 题公开子集）；厂商自测，公开子集",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-2.4T-A95B Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。公开子集，不是 Zapier 私有留出集，不可比"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 27,
+   "setting": "Agents' Last Exam Pass rate；厂商自测，同一行的 Pass 值",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8-2.4T-A95B Hugging Face 模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "沿用 2026-10-12 已核验的原始记录，本次重分列；未独立复跑。原记录的“不相同”是指原私有集 / Score 列，不表示本新列。Pass rate（全对比例），不是 Score"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "score": 10.5,
+   "setting": "ProgramBench Almost Solved；Qwen3.8-Max 原版（2026-08，对应开源 2.4T A95B），非 0902",
+   "sourceType": "vendor_comparison",
+   "sourceName": "GLM-5.3 官方对比表中的 Qwen3.8-Max 原版",
+   "url": "https://huggingface.co/zai-org/GLM-5.3",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "原表发布早于 0902；沿用本榜对原版 Qwen3.8-Max / 开源 2.4T A95B 的版本对应。来源是其他厂商对比，非 Qwen 自报。"
+  },
+  {
+   "benchmark": "nl2repo-bench",
+   "score": 55.9,
+   "setting": "NL2Repo-Bench Score（隐藏测试通过率）；表内自家列名为 Qwen3.8-Max 原版；Claude Code；禁目标仓库访问命令",
+   "sourceType": "official",
+   "sourceName": "Qwen3.8 2.4T A95B 官方模型卡",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-18 已核对原表自家模型列及脚注。未报为整仓完全解决率。"
+  },
+  {
+   "benchmark": "zerobench-tools",
+   "score": 49.0,
+   "setting": "ZeroBench-main Pass@5；code-interpreter 工具，5 次采样；Qwen3.8-Max 原版（2026-08-03），对应本榜开源 2.4T A95B",
+   "sourceType": "vendor_comparison",
+   "sourceName": "ZeroBench 作者收录的 Qwen3.8 原始发布",
+   "url": "https://zerobench.github.io/",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "作者页面此项标 reported，来源为 Qwen3.8 原始发布，不是作者独立复测。只对应原版，不移用给 0902。该列全榜覆盖低，使用较低权重。 数据定位：zb-results-data: reported / Qwen3.8-Max / main / pass@5 / tool。"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+   "title": "Qwen3.8-2.4T-A95B Hugging Face 模型卡",
+   "kind": "official"
+  },
+  {
+   "url": "https://huggingface.co/zai-org/GLM-5.3",
+   "title": "GLM-5.3 官方对比表中的 Qwen3.8-Max 原版",
+   "kind": "other"
+  },
+  {
+   "url": "https://zerobench.github.io/",
+   "title": "ZeroBench 作者收录的 Qwen3.8 原始发布",
+   "kind": "other"
+  }
+ ],
+ "collectionDate": "2026-10-18",
+ "scope": "仅用于 2026-10-18 新增列；原 16 列记录保持不变。"
+}

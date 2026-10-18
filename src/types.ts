@@ -42,6 +42,7 @@ export interface Benchmark {
   description: string
   selectionReason: string
   tier: 1 | 2
+  addedAt?: string
   coverage: number
   cvRmse: number | null
   topScore: number
@@ -65,10 +66,12 @@ export interface Model {
   rankLow: number
   rankHigh: number
   /** 只用真实分数时的总分（缺失项按剩余权重重新归一），供对照 */
-  observedOnlyScore: number
+  observedOnlyScore: number | null
   /** 补全值整体下调一个交叉验证误差后的名次（缺失非随机的敏感性分析） */
   pessimisticRank: number
   coverage: number
+  /** 有公开实分的评测所覆盖的总权重 */
+  observedWeight: number
   categoryScores: Record<string, number>
   cells: Record<string, Cell>
 }
@@ -96,6 +99,12 @@ export interface Leaderboard {
       totalCells: number
     }
     notes: string[]
+    expansion?: {
+      date: string
+      baselineBenchmarkCount: number
+      baselineDeepseekObserved: number
+      benchmarkIds: string[]
+    }
   }
   categories: Category[]
   benchmarks: Benchmark[]

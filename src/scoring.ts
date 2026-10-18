@@ -22,7 +22,8 @@ export interface ScoringResult {
   rank: number[]
   rankLow: number[]
   rankHigh: number[]
-  observedOnlyScore: number[]
+  observedOnlyScore: (number | null)[]
+  observedWeight: number[]
   pessimisticRank: number[]
   categoryScores: Record<string, number>[]
 }
@@ -92,10 +93,11 @@ export function computeScores(input: ScoringInput, categoryWeights: Record<strin
   const rankBand = rankDraws.map(band)
 
   // 只用真实分数：缺失项不计，剩余权重重新归一
+  const observedWeight = imputed.map(row => row.reduce((s, missing, j) => s + (missing ? 0 : w[j]), 0))
   const observedOnlyScore = values.map((row, i) => {
-    let s = 0, ws = 0
-    for (let j = 0; j < m; j++) if (!imputed[i][j]) { s += w[j] * row[j]; ws += w[j] }
-    return ws > 0 ? s / ws : 0
+    let s = 0
+    for (let j = 0; j < m; j++) if (!imputed[i][j]) s += w[j] * row[j]
+    return observedWeight[i] > 0 ? s / observedWeight[i] : null
   })
 
   // 悲观情形：厂商往往不报自己不擅长的评测，把所有补全值下调一个交叉验证误差
@@ -122,6 +124,7 @@ export function computeScores(input: ScoringInput, categoryWeights: Record<strin
     rankLow: rankBand.map(b => Math.round(b[0])),
     rankHigh: rankBand.map(b => Math.round(b[1])),
     observedOnlyScore,
+    observedWeight,
     pessimisticRank: ranksOf(pessimistic),
     categoryScores,
   }
