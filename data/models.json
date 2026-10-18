@@ -220,6 +220,18 @@
    "aaIndex": 39.82,
    "aaVariant": "Qwen3.8-Flash-Next",
    "aaSlug": "qwen3-8-flash-next"
+  },
+  {
+   "id": "deepseek-v4-1-flash-1017",
+   "name": "DeepSeek V4.1 Flash 1017",
+   "vendor": "DeepSeek",
+   "releaseDate": "2026-10-17",
+   "openWeights": true,
+   "aaRank": null,
+   "aaIndex": null,
+   "aaVariant": null,
+   "aaSlug": null
   }
- ]
+ ],
+ "supplementSource": "data/sources/deepseek/deepseek-v4-1-flash-1017-20261018.json"
 }

@@ -32,6 +32,11 @@ function ScoreBar({ m, max }: { m: RankedModel; max: number }) {
 }
 
 function AaDelta({ m }: { m: RankedModel }) {
+  if (m.aaRank == null || m.aaIndex == null) return (
+    <Tooltip label={`补充收录的模型版本，不在 ${board.meta.aaRetrieved} 的 AA 名单快照中`}>
+      <Text size="sm" ta="right" className="lb-muted">—</Text>
+    </Tooltip>
+  )
   const d = m.aaRank - m.live.rank
   const Icon = d > 0 ? IconArrowUpRight : d < 0 ? IconArrowDownRight : IconMinus
   return (
@@ -89,6 +94,7 @@ export function RankingTable({ models, onOpen, custom }: Props) {
                           <Text size="xs" className="lb-muted">{m.vendor}</Text>
                           <Text size="xs" className="lb-faint">{m.releaseDate}</Text>
                           {m.openWeights && <Badge size="xs" variant="outline" color="gray">开放权重</Badge>}
+                          {m.aaRank == null && <Badge size="xs" variant="light" color="brand">补充收录</Badge>}
                         </Group>
                       </Stack>
                     </Group>

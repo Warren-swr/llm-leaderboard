@@ -42,7 +42,7 @@ export default function App() {
               <Anchor href={board.meta.aaSource} target="_blank" rel="noreferrer">
                 Artificial Analysis Intelligence Index
               </Anchor>{' '}
-              前 20 名（{board.meta.aaRetrieved} 抓取）。
+              前 20 名（{board.meta.aaRetrieved} 抓取），另按版本补充收录新模型；原有模型分数仍为各自记录的历史快照。
             </Text>
           </Stack>
           <Group gap={8} wrap="nowrap">

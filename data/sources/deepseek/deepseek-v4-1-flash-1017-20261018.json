@@ -1,0 +1,94 @@
+{
+  "model": "deepseek-v4-1-flash-1017",
+  "releaseDate": "2026-10-17",
+  "retrievedAt": "2026-10-18T12:54:06.833209+00:00",
+  "sources": [
+    {
+      "file": "model-card.md",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/README.md",
+      "resolvedUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/README.md",
+      "sha256": "b72b796e4f4c739eca5d0ad360a7679b39118ca7eb64891f7151a527b292c42a",
+      "bytes": 5231
+    },
+    {
+      "file": "release.html",
+      "url": "https://api-docs.deepseek.com/news/news261017/",
+      "resolvedUrl": "https://api-docs.deepseek.com/news/news261017/",
+      "sha256": "8125b7812df5c3bf3caf1dbddd2048381232970ea71dffd2df8b97bffc5f8c59",
+      "bytes": 23915
+    },
+    {
+      "file": "updates.html",
+      "url": "https://api-docs.deepseek.com/updates/",
+      "resolvedUrl": "https://api-docs.deepseek.com/updates/",
+      "sha256": "44aa1245d5d65d5fc54c8f47a9a3d3235e1ab064a8fc64d6a6e57f570ec8c99c",
+      "bytes": 52380
+    }
+  ],
+  "benchmarkRows": [
+    {
+      "benchmark": "HLE w/o tools",
+      "score1017": "42.6 (44.0†)",
+      "previousVersionScore": "36.8 (39.1†)"
+    },
+    {
+      "benchmark": "Terminal-Bench 4.0",
+      "score1017": "42.3",
+      "previousVersionScore": "31.2"
+    },
+    {
+      "benchmark": "DeepSWE v1.1",
+      "score1017": "77.0",
+      "previousVersionScore": "74.2"
+    },
+    {
+      "benchmark": "ProgramBench",
+      "score1017": "29.1",
+      "previousVersionScore": "20.3"
+    },
+    {
+      "benchmark": "NL2Repo-Bench",
+      "score1017": "68.2",
+      "previousVersionScore": "65.4"
+    },
+    {
+      "benchmark": "Automation-Bench v1.0.6",
+      "score1017": "60.5",
+      "previousVersionScore": "54.8"
+    },
+    {
+      "benchmark": "Agents’ Last Exam",
+      "score1017": "35.4",
+      "previousVersionScore": "31.8"
+    },
+    {
+      "benchmark": "Apex Bench v1.1",
+      "score1017": "72.1",
+      "previousVersionScore": "64.6"
+    },
+    {
+      "benchmark": "Chartography (w/tools)",
+      "score1017": "83.0",
+      "previousVersionScore": "78.9"
+    },
+    {
+      "benchmark": "BabyVision (w/tools)",
+      "score1017": "92.5",
+      "previousVersionScore": "89.6"
+    },
+    {
+      "benchmark": "ZeroBench-main (w/tools)",
+      "score1017": "51.0",
+      "previousVersionScore": "49.0"
+    }
+  ],
+  "hleTextOnly": 44.0,
+  "settings": {
+    "terminal-bench-4": "Claude Code",
+    "deepswe": "Mini-SWE-V2",
+    "zerobench-main": "Pass@5"
+  },
+  "aaSnapshotMembership": false,
+  "evidenceRun": "runs/llm-leaderboard/deepseek-1017-update-20261018-125404",
+  "note": "仅保存分数摘录与 SHA256；第三方完整页面副本不公开。旧版对照列仅用于核验，不作为 1017 版分数。"
+}

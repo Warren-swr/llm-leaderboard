@@ -35,6 +35,9 @@ MAP = [
 out_dir = ROOT / 'data/scores-aa'
 out_dir.mkdir(parents=True, exist_ok=True)
 for m in models:
+    # 补充模型不在冻结的 AA 快照中，不能借用其他版本的 AA 分数。
+    if not m.get('aaSlug'):
+        continue
     f = fields.get(m['aaSlug'], {})
     url = f"https://artificialanalysis.ai/models/{m['aaSlug']}"
     records = []

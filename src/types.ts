@@ -53,9 +53,10 @@ export interface Model {
   vendor: string
   releaseDate: string
   openWeights: boolean
-  aaRank: number
-  aaIndex: number
-  aaVariant: string
+  /** 补充收录且不在 AA 快照中的版本为 null */
+  aaRank: number | null
+  aaIndex: number | null
+  aaVariant: string | null
   rank: number
   score: number
   scoreLow: number

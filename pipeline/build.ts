@@ -14,7 +14,7 @@ const readJson = <T>(p: string): T => JSON.parse(readFileSync(join(ROOT, p), 'ut
 
 interface BenchmarkDef extends Omit<Benchmark, 'coverage' | 'cvRmse' | 'topScore'> {}
 interface BenchFile { categories: Category[]; benchmarks: BenchmarkDef[] }
-interface ModelDef { id: string; name: string; vendor: string; releaseDate: string; openWeights: boolean; aaRank: number; aaIndex: number; aaVariant: string }
+interface ModelDef { id: string; name: string; vendor: string; releaseDate: string; openWeights: boolean; aaRank: number | null; aaIndex: number | null; aaVariant: string | null }
 interface RawRecord extends ScoreRecord {
   benchmark: string
   /** 与评测集首选配置一致 */
@@ -192,7 +192,7 @@ function main() {
   console.log(imp.cvGrid.map(g => `${g.rank}/${g.lambda}:${g.rmse.toFixed(2)}`).join('  '))
   const order = outModels.map((m, i) => ({ m, i })).sort((a, b) => a.m.rank - b.m.rank)
   for (const { m } of order) {
-    console.log(`${String(m.rank).padStart(2)} [${m.rankLow}-${m.rankHigh}] ${m.score.toFixed(1)} (${m.scoreLow.toFixed(1)}–${m.scoreHigh.toFixed(1)}) cov ${(m.coverage * 100).toFixed(0)}%  AA#${m.aaRank}  ${m.name}`)
+    console.log(`${String(m.rank).padStart(2)} [${m.rankLow}-${m.rankHigh}] ${m.score.toFixed(1)} (${m.scoreLow.toFixed(1)}–${m.scoreHigh.toFixed(1)}) cov ${(m.coverage * 100).toFixed(0)}%  ${m.aaRank == null ? 'AA 快照未收录' : `AA#${m.aaRank}`}  ${m.name}`)
   }
 }
 

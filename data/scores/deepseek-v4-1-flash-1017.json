@@ -1,0 +1,162 @@
+{
+ "model": "deepseek-v4-1-flash-1017",
+ "records": [
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 42.3,
+   "setting": "Terminal-Bench 4.0 任务成功率；DeepSeek 自报，Claude Code harness；新版资料未披露推理档位、试验次数或预算",
+   "sourceType": "official",
+   "sourceName": "DeepSeek V4.1 Flash 1017 官方模型卡",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "verified": true,
+   "quote": "Terminal-Bench 4.0 | 42.3",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-18 已按新版官方模型卡与官方更新日志交叉核对；原文快照的 SHA256 见 data/sources/deepseek/deepseek-v4-1-flash-1017-20261018.json。"
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 77.0,
+   "setting": "DeepSWE v1.1 Pass@1；DeepSeek 自报，Mini-SWE-V2 harness；新版资料未披露推理档位、试验次数或预算",
+   "sourceType": "official",
+   "sourceName": "DeepSeek V4.1 Flash 1017 官方模型卡",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "verified": true,
+   "quote": "DeepSWE v1.1 | 77.0",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-18 已按新版官方模型卡与官方更新日志交叉核对；原文快照的 SHA256 见 data/sources/deepseek/deepseek-v4-1-flash-1017-20261018.json。"
+  },
+  {
+   "benchmark": "hle-no-tools",
+   "score": 42.6,
+   "setting": "HLE 不用工具准确率，完整题集（非 † 标记的纯文本子集）；DeepSeek 自报；新版资料未披露推理档位或采样预算",
+   "sourceType": "official",
+   "sourceName": "DeepSeek V4.1 Flash 1017 官方模型卡",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "verified": true,
+   "quote": "HLE w/o tools | 42.6",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-18 已按新版官方模型卡与官方更新日志交叉核对；原文快照的 SHA256 见 data/sources/deepseek/deepseek-v4-1-flash-1017-20261018.json。同一行另报的 44.0† 仅为纯文本子集，保留为参考值。"
+  },
+  {
+   "benchmark": "hle-no-tools",
+   "score": 44.0,
+   "setting": "HLE 不用工具准确率，纯文本子集（†）；DeepSeek 自报；与完整题集分开记录",
+   "sourceType": "official",
+   "sourceName": "DeepSeek V4.1 Flash 1017 官方模型卡",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "verified": true,
+   "quote": "44.0†",
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-18 已按新版官方模型卡与官方更新日志交叉核对；原文快照的 SHA256 见 data/sources/deepseek/deepseek-v4-1-flash-1017-20261018.json。† 的含义由官方脚注明确；完整题集 42.6 优先参与计算。"
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 60.5,
+   "setting": "Automation-Bench v1.0.6；DeepSeek 自报；新版资料未明确题集是公开版还是 Zapier 私有留出集，也未明确是否为本列通过率",
+   "sourceType": "official",
+   "sourceName": "DeepSeek V4.1 Flash 1017 官方模型卡",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "verified": true,
+   "quote": "Automation-Bench v1.0.6 | 60.5",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-18 已按新版官方模型卡与官方更新日志交叉核对；原文快照的 SHA256 见 data/sources/deepseek/deepseek-v4-1-flash-1017-20261018.json。未能确认与本列“Zapier 私有留出集通过率”相同，暂只作参考，不能按评测名称相近直接计分。"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 35.4,
+   "setting": "Agents’ Last Exam；DeepSeek 自报；新版资料未明确 Pass rate / Score 指标与任务子集",
+   "sourceType": "official",
+   "sourceName": "DeepSeek V4.1 Flash 1017 官方模型卡",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "verified": true,
+   "quote": "Agents’ Last Exam | 35.4",
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-18 已按新版官方模型卡与官方更新日志交叉核对；原文快照的 SHA256 见 data/sources/deepseek/deepseek-v4-1-flash-1017-20261018.json。本列采用部分得分 Score。同表 Kimi K3=27.6、GLM-5.3=28.5 与已有 ALE-CLI 通过率记录一致，提示可能为通过率；这是口径推断，新版原文未确认，所以只作参考。"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "title": "DeepSeek V4.1 Flash 1017 官方模型卡（2026-10-17）",
+   "kind": "official"
+  },
+  {
+   "url": "https://api-docs.deepseek.com/updates/",
+   "title": "DeepSeek 官方更新日志（2026-10-17 分数与配置）",
+   "kind": "official"
+  },
+  {
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "title": "DeepSeek V4.1 Flash 1017 官方发布公告（2026-10-17）",
+   "kind": "official"
+  }
+ ],
+ "notFound": [
+  {
+   "benchmark": "frontiercode",
+   "reason": "未找到明确归属于 1017 版本、且与本列题集及指标可比的公开分数；保留缺失，不继承旧版结果。"
+  },
+  {
+   "benchmark": "frontierswe",
+   "reason": "未找到明确归属于 1017 版本、且与本列题集及指标可比的公开分数；保留缺失，不继承旧版结果。"
+  },
+  {
+   "benchmark": "osworld-2",
+   "reason": "未找到明确归属于 1017 版本、且与本列题集及指标可比的公开分数；保留缺失，不继承旧版结果。"
+  },
+  {
+   "benchmark": "automationbench",
+   "reason": "未找到明确归属于 1017 版本、且与本列题集及指标可比的公开分数；保留缺失，不继承旧版结果。"
+  },
+  {
+   "benchmark": "toolathlon-verified",
+   "reason": "未找到明确归属于 1017 版本、且与本列题集及指标可比的公开分数；保留缺失，不继承旧版结果。"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "reason": "未找到明确归属于 1017 版本、且与本列题集及指标可比的公开分数；保留缺失，不继承旧版结果。"
+  },
+  {
+   "benchmark": "hle-tools",
+   "reason": "未找到明确归属于 1017 版本、且与本列题集及指标可比的公开分数；保留缺失，不继承旧版结果。"
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "reason": "未找到明确归属于 1017 版本、且与本列题集及指标可比的公开分数；保留缺失，不继承旧版结果。"
+  },
+  {
+   "benchmark": "scicode",
+   "reason": "未找到明确归属于 1017 版本、且与本列题集及指标可比的公开分数；保留缺失，不继承旧版结果。"
+  },
+  {
+   "benchmark": "critpt",
+   "reason": "未找到明确归属于 1017 版本、且与本列题集及指标可比的公开分数；保留缺失，不继承旧版结果。"
+  },
+  {
+   "benchmark": "gdpval-aa",
+   "reason": "未找到明确归属于 1017 版本、且与本列题集及指标可比的公开分数；保留缺失，不继承旧版结果。"
+  },
+  {
+   "benchmark": "gdp-pdf",
+   "reason": "未找到明确归属于 1017 版本、且与本列题集及指标可比的公开分数；保留缺失，不继承旧版结果。"
+  },
+  {
+   "benchmark": "aa-lcr",
+   "reason": "未找到明确归属于 1017 版本、且与本列题集及指标可比的公开分数；保留缺失，不继承旧版结果。"
+  }
+ ],
+ "collectorNotes": "按 1017 版本收集。完整榜单为 AA 历史前 20 加一个补充模型；本版本的 AA 名次和指数未知。其余未入选评测的官方结果保存在本次来源摘录与 Markdown 核验记录中。",
+ "verifierSummary": "2026-10-18 交叉核对官方 Hugging Face 模型卡与官方更新日志；3 个可比主分数、1 个 HLE 子集参考值、2 个口径未确认的参考值。未复跑评测。"
+}

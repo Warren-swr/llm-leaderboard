@@ -23,7 +23,7 @@ const STEPS = [
         <List.Item>每个模型、每个评测集只取一个主分数参与计算。来源优先级：厂商官方自报 → 评测集作者榜单 → 独立第三方机构 → 其他厂商对比表里的数字。</List.Item>
         <List.Item>只在“可比”的记录里选：同一评测、同一指标。小版本或子集差异（如 HLE 纯文本子集、OSWorld 离线子集）算可比但不是首选；指标定义不同（如 Pass 与 Score、dominance 与 mean@5、all-pass 与 mean pass）的只作参考。</List.Item>
         <List.Item>同一来源有多个配置（推理档位、harness、试验次数）时，先选与首选版本 / 子集一致的，再选厂商作为头条展示的配置（通常是最高推理档、单次作答、不加并行采样）。不按分数高低挑选。</List.Item>
-        <List.Item>厂商与评测作者的每条记录都由另一个 agent 回源核验；口径有问题的记录经人工复核写入覆盖文件（data/overrides.json），理由显示在对应格子的备注里。</List.Item>
+        <List.Item>厂商与评测作者的记录均回源核验；初版由收集与核验两个 agent 分别处理，后续更新按官方模型卡与更新日志交叉核对。口径修正及其理由保留在记录备注或覆盖文件（data/overrides.json）中。</List.Item>
         <List.Item>其他配置或来源的分数保留为参考值，在模型详情里可以看到，但不参与计算。</List.Item>
       </List>
     ),
@@ -78,8 +78,9 @@ export function MethodView({ models }: { models: RankedModel[] }) {
     const xs = models.map(m => m.live.observedOnlyScore)
     return Object.fromEntries(models.map((m, i) => [m.id, 1 + xs.filter(y => y > xs[i]).length]))
   })()
-  const rho = spearman(models.map(m => m.live.score), models.map(m => m.aaIndex))
-  const scatter = [{ color: 'brand.5', name: '模型', data: models.map((m, i) => ({ AA: Number(fmt(m.aaIndex)), 本榜: Number(fmt(m.live.score)), idx: i })) }]
+  const aaModels = models.filter((m): m is RankedModel & { aaIndex: number } => m.aaIndex != null)
+  const rho = spearman(aaModels.map(m => m.live.score), aaModels.map(m => m.aaIndex))
+  const scatter = [{ color: 'brand.5', name: '模型', data: aaModels.map((m, i) => ({ AA: Number(fmt(m.aaIndex)), 本榜: Number(fmt(m.live.score)), idx: i })) }]
 
   return (
     <Stack gap="lg">
@@ -100,7 +101,7 @@ export function MethodView({ models }: { models: RankedModel[] }) {
             <Text fw={600}>本榜总分 vs AA 智能指数</Text>
             <Badge variant="light" tt="none">Spearman ρ = {fmt(rho, 2)}</Badge>
           </Group>
-          <Text size="xs" className="lb-muted" mb="md">两者评测集与权重不同，ρ 越接近 1 说明名次越一致。</Text>
+          <Text size="xs" className="lb-muted" mb="md">只比较有 AA 指数的 {aaModels.length} 个模型。两者评测集与权重不同，ρ 越接近 1 说明名次越一致。</Text>
           <ScatterChart
             h={300}
             data={scatter}
@@ -113,7 +114,7 @@ export function MethodView({ models }: { models: RankedModel[] }) {
               content: ({ payload }) => {
                 const p = payload?.[0]?.payload as { idx: number; AA: number; 本榜: number } | undefined
                 return p ? (
-                  <Paper p="xs" shadow="md" withBorder><Text size="xs" fw={600}>{models[p.idx]?.name}</Text><Text size="xs">AA {p.AA} · 本榜 {p.本榜}</Text></Paper>
+                  <Paper p="xs" shadow="md" withBorder><Text size="xs" fw={600}>{aaModels[p.idx]?.name}</Text><Text size="xs">AA {p.AA} · 本榜 {p.本榜}</Text></Paper>
                 ) : null
               },
             }}
@@ -159,7 +160,7 @@ export function MethodView({ models }: { models: RankedModel[] }) {
                   <Table.Td ta="right" className="lb-num">{m.live.rankLow}–{m.live.rankHigh}</Table.Td>
                   <Table.Td ta="right" className="lb-num">#{obsRank[m.id]}（{fmt(m.live.observedOnlyScore)}）</Table.Td>
                   <Table.Td ta="right" className="lb-num">#{m.live.pessimisticRank}</Table.Td>
-                  <Table.Td ta="right" className="lb-num">#{m.aaRank}（{fmt(m.aaIndex)}）</Table.Td>
+                  <Table.Td ta="right" className="lb-num">{m.aaRank == null || m.aaIndex == null ? '—' : `#${m.aaRank}（${fmt(m.aaIndex)}）`}</Table.Td>
                 </Table.Tr>
               ))}
             </Table.Tbody>

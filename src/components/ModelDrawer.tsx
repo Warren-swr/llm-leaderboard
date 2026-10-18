@@ -65,14 +65,15 @@ export function ModelDrawer({ modelId, focusBench, models, onClose }: Props) {
             </Paper>
             <Paper className="lb-panel" p="sm">
               <Text size="xs" className="lb-muted">AA 智能指数</Text>
-              <Text fz={24} fw={650}>#{m.aaRank}</Text>
-              <Text size="xs" className="lb-faint">{fmt(m.aaIndex)} 分 · {m.aaVariant}</Text>
+              <Text fz={24} fw={650}>{m.aaRank == null ? '—' : `#${m.aaRank}`}</Text>
+              <Text size="xs" className="lb-faint">{m.aaIndex == null ? `不在 ${board.meta.aaRetrieved} 快照中` : `${fmt(m.aaIndex)} 分 · ${m.aaVariant}`}</Text>
             </Paper>
           </SimpleGrid>
           <Text size="sm" className="lb-muted">
             {m.vendor} · 发布于 {m.releaseDate} · {m.openWeights ? '开放权重' : '闭源'} · {Math.round(m.coverage * board.benchmarks.length)}/{board.benchmarks.length} 个评测集有公开分数
             {m.live.pessimisticRank !== m.live.rank && `；补全值整体下调一个误差后名次变为 #${m.live.pessimisticRank}`}
           </Text>
+          {m.coverage < 0.5 && <Text size="sm" c="orange">公开分数覆盖不足一半，其余为补全估计，总分与名次仅供参考。</Text>}
 
           <Stack gap={6}>
             <Text fw={600} size="sm">各类别得分</Text>
