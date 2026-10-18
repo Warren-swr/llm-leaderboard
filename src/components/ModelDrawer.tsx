@@ -70,7 +70,7 @@ export function ModelDrawer({ modelId, focusBench, models, onClose }: Props) {
             </Paper>
           </SimpleGrid>
           <Text size="sm" className="lb-muted">
-            {m.vendor} · 发布于 {m.releaseDate} · {m.openWeights ? '开放权重' : '闭源'} · {Math.round(m.coverage * board.benchmarks.length)}/{board.benchmarks.length} 项指标有公开分数，覆盖当前总权重的 {fmt(m.live.observedWeight * 100)}%
+            {m.vendor} · 发布于 {m.releaseDate} · {m.openWeights ? '开源' : '闭源'} · {Math.round(m.coverage * board.benchmarks.length)}/{board.benchmarks.length} 项指标有公开分数，覆盖当前总权重的 {fmt(m.live.observedWeight * 100)}%
             {m.live.pessimisticRank !== m.live.rank && `；补全值整体下调一个误差后名次变为 #${m.live.pessimisticRank}`}
           </Text>
           {m.live.observedWeight < 0.5 && <Text size="sm" c="orange">公开实分覆盖的总权重不足一半，其余为补全估计，总分与名次仅供参考。</Text>}

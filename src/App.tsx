@@ -38,11 +38,11 @@ export default function App() {
             </Title>
             <Text className="lb-muted" size="md" lh={1.65}>
               只用公开信息：厂商发布页与 model card 的自报分数优先，评测集作者和第三方机构的分数次之；
-              缺失的格子用低秩矩阵补全估计，并标出误差范围。模型名单取自{' '}
+              缺失的格子用低秩矩阵补全估计，并标出误差范围。模型名单参考{' '}
               <Anchor href={board.meta.aaSource} target="_blank" rel="noreferrer">
                 Artificial Analysis Intelligence Index
               </Anchor>{' '}
-              前 20 名（{board.meta.aaRetrieved} 抓取），另按版本补充收录新模型；原有模型分数仍为各自记录的历史快照。
+              前 20 名（{board.meta.aaRetrieved} 抓取）；各模型分数保留各自来源与记录日期。
             </Text>
           </Stack>
           <Group gap={8} wrap="nowrap">
