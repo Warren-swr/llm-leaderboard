@@ -3,6 +3,7 @@
 用各家公开报告的评测分数，给 Artificial Analysis 智能指数前 20 的模型及按版本补充收录的新模型排名。厂商官方自报优先，评测集作者榜单次之，独立第三方再次之；缺失的格子用低秩矩阵补全估计，并给出误差区间。所有分数都附原始出处链接。
 
 - 在线页面：<https://warren-swr.github.io/llm-leaderboard/>（推送到 main 后由 GitHub Actions 自动构建发布）。
+- 妙搭页面：<https://bytedance.feishu.link/app/app_17gbzdsmaqd>（所有人可访问、无需登录，隐藏 GitHub 链接）。
 - 当前状态：2026-10-19 收录 MiniMax M3.1 Flash 正式版；现有 22 个模型、22 项排名指标、6 个能力类别。MiniMax 有 9/22 项实分，原有 21 个模型的 304 个主分数及来源保持不变，AA 名单仍为 2026-10-12 快照。
 - 页面入口：`npm run build` 生成 `dist/`，再用任意静态服务器打开，例如 `python3 -m http.server 18731 -d dist` 后访问 <http://127.0.0.1:18731/>。产物用相对路径构建，可以放到任意子目录；浏览器不允许从 `file://` 加载 ES module，所以不能双击打开。开发时用 `npm run dev`。
 - 技术栈：TypeScript + Vite 7 + React 19 + Mantine 9（组件与图表）。
@@ -10,6 +11,8 @@
 ## 妙搭同步
 
 妙搭应用为 `app_17gbzdsmaqd`，本地检出位于工作区 `exports/miaoda/llm-leaderboard/`。复用本仓库的榜单组件、生成数据和计分代码，保留妙搭的启动入口、路由和发布配置；榜单图表作为独立 workspace 安装锁定版本的依赖。
+
+2026-10-19 发布 `7698354662982339847` 已完成，对应妙搭提交 `abb59e47af4f39b7d0a185b29a79d8bdbdcc7f80`。权限回读为 `scope=All`、`require_login=false`；未登录的新浏览器已核对 22 个模型、22 项指标、五个标签页、权重重算、模型来源、深浅配色及 390px 手机页面，页面异常为 0。榜单数据与计分代码的 SHA-256 和原站一致。
 
 ```bash
 python pipeline/sync_miaoda.py ../../exports/miaoda/llm-leaderboard
