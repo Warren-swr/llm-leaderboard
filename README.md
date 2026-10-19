@@ -7,6 +7,22 @@
 - 页面入口：`npm run build` 生成 `dist/`，再用任意静态服务器打开，例如 `python3 -m http.server 18731 -d dist` 后访问 <http://127.0.0.1:18731/>。产物用相对路径构建，可以放到任意子目录；浏览器不允许从 `file://` 加载 ES module，所以不能双击打开。开发时用 `npm run dev`。
 - 技术栈：TypeScript + Vite 7 + React 19 + Mantine 9（组件与图表）。
 
+## 妙搭同步
+
+妙搭应用为 `app_17gbzdsmaqd`，本地检出位于工作区 `exports/miaoda/llm-leaderboard/`。复用本仓库的榜单组件、生成数据和计分代码，保留妙搭的启动入口、路由和发布配置；榜单图表作为独立 workspace 安装锁定版本的依赖。
+
+```bash
+python pipeline/sync_miaoda.py ../../exports/miaoda/llm-leaderboard
+cd ../../exports/miaoda/llm-leaderboard
+npm install
+npm run lint
+npm run build
+```
+
+同步脚本只更新榜单页面、数据、首页接入和构建配置，不复制凭据或本地环境变量。`shared/leaderboard-source.json` 保留同步文件的 SHA-256。妙搭发布使用 `miaoda` 构建模式，隐藏仓库入口和指向 GitHub 的来源链接；来源名称、分数与口径说明仍保留。原站默认构建保留链接，也可用 `npm run build:miaoda` 预览隐藏链接的版本。
+
+完成本地检查后，在妙搭检出中提交本次文件并推送 `sprint/default`，再使用 `lark-cli apps +release-create --app-id app_17gbzdsmaqd --branch sprint/default --as user` 发布，查询同次 release 到 `finished` 后检查线上页面及访问范围。以上是手动同步入口，没有创建定时任务。
+
 ## 结果概要（默认权重）
 
 | 名次 | 模型 | 总分 | 90% 名次区间 | AA 名次 |

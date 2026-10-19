@@ -9,6 +9,7 @@
     "check:data": "tsx pipeline/check.ts",
     "dev": "vite",
     "build": "tsc -b && vite build --base ./",
+    "build:miaoda": "tsc -b && vite build --base ./ --mode miaoda",
     "preview": "vite preview --base ./"
   },
   "dependencies": {

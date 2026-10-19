@@ -1,6 +1,7 @@
-import { Anchor, Badge, Group, Paper, Progress, SimpleGrid, Stack, Text, Tooltip } from '@mantine/core'
+import { Badge, Group, Paper, Progress, SimpleGrid, Stack, Text, Tooltip } from '@mantine/core'
 import { IconExternalLink } from '@tabler/icons-react'
 import { board, fmt, hostOf } from '../data'
+import { SourceLink } from './SourceLink'
 
 export function BenchmarksView({ weights }: { weights: number[] }) {
   return (
@@ -51,9 +52,9 @@ export function BenchmarksView({ weights }: { weights: number[] }) {
                       </Group>
                       <Progress value={b.coverage * 100} size="sm" radius="xl" />
                     </Stack>
-                    <Anchor href={b.url} target="_blank" rel="noreferrer" size="xs" className="lb-link">
+                    <SourceLink url={b.url}>
                       <Group gap={4} wrap="nowrap"><IconExternalLink size={12} />{hostOf(b.url)}</Group>
-                    </Anchor>
+                    </SourceLink>
                   </Stack>
                 </Paper>
               ))}

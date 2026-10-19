@@ -10,6 +10,7 @@ import { BenchmarksView } from './components/BenchmarksView'
 import { MethodView } from './components/MethodView'
 import { ReferencesView } from './components/ReferencesView'
 import { ModelDrawer } from './components/ModelDrawer'
+import { hideGithubLinks } from './links'
 
 export default function App() {
   const [weights, setWeights] = useState(defaultWeights)
@@ -46,11 +47,11 @@ export default function App() {
             </Text>
           </Stack>
           <Group gap={8} wrap="nowrap">
-            <Tooltip label="GitHub 仓库：数据、管线与全部出处">
+            {!hideGithubLinks && <Tooltip label="GitHub 仓库：数据、管线与全部出处">
               <ActionIcon component="a" href="https://github.com/Warren-swr/llm-leaderboard" target="_blank" rel="noreferrer" variant="default" size="lg" radius="md" aria-label="GitHub 仓库">
                 <IconBrandGithub size={18} />
               </ActionIcon>
-            </Tooltip>
+            </Tooltip>}
             <Tooltip label={dark ? '切换到浅色' : '切换到深色'}>
               <ActionIcon variant="default" size="lg" radius="md" aria-label="切换配色" onClick={() => setColorScheme(dark ? 'light' : 'dark')}>
                 {dark ? <IconSun size={18} /> : <IconMoon size={18} />}

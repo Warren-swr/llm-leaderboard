@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react'
-import { Anchor, Badge, Group, Paper, Stack, Table, Text, TextInput } from '@mantine/core'
+import { Badge, Group, Paper, Stack, Table, Text, TextInput } from '@mantine/core'
 import { IconSearch } from '@tabler/icons-react'
 import { board, hostOf } from '../data'
+import { SourceLink } from './SourceLink'
 
 const KIND_LABEL: Record<string, string> = {
   launch_page: '发布页',
@@ -45,7 +46,7 @@ export function ReferencesView() {
                 <Table.Td><Badge size="xs" variant="light" color="gray">{KIND_LABEL[r.kind] ?? r.kind}</Badge></Table.Td>
                 <Table.Td><Text size="sm">{r.title}</Text></Table.Td>
                 <Table.Td>
-                  <Anchor href={r.url} target="_blank" rel="noreferrer" size="xs" className="lb-link">{hostOf(r.url)}{new URL(r.url).pathname.length > 1 ? new URL(r.url).pathname.slice(0, 60) : ''}</Anchor>
+                  <SourceLink url={r.url} fallback={<Text size="xs" className="lb-muted">—</Text>}>{hostOf(r.url)}{new URL(r.url).pathname.length > 1 ? new URL(r.url).pathname.slice(0, 60) : ''}</SourceLink>
                 </Table.Td>
               </Table.Tr>
             ))}

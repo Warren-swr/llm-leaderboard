@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react'
-import { Accordion, Anchor, Badge, Divider, Drawer, Group, Paper, SimpleGrid, Stack, Text } from '@mantine/core'
+import { Accordion, Badge, Divider, Drawer, Group, Paper, SimpleGrid, Stack, Text } from '@mantine/core'
 import { BarChart } from '@mantine/charts'
 import { IconExternalLink } from '@tabler/icons-react'
 import { board, categoryById, fmt, hostOf, SOURCE_LABEL, type RankedModel } from '../data'
 import type { ScoreRecord } from '../types'
+import { SourceLink } from './SourceLink'
 
 interface Props {
   modelId: string | null
@@ -30,9 +31,9 @@ function ScoreEntry({ r, primary }: { r: ScoreRecord; primary?: boolean }) {
       <Text size="xs" className="lb-muted">配置：{r.setting}</Text>
       {r.quote && <Text className="lb-quote">“{r.quote}”</Text>}
       {r.note && <Text size="xs" className="lb-faint">{r.note}</Text>}
-      <Anchor href={r.url} target="_blank" rel="noreferrer" size="xs" className="lb-link">
+      <SourceLink url={r.url}>
         <Group gap={4} wrap="nowrap"><IconExternalLink size={12} />{hostOf(r.url)}</Group>
-      </Anchor>
+      </SourceLink>
     </Stack>
   )
 }
