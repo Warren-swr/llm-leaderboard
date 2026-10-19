@@ -231,6 +231,17 @@
    "aaIndex": null,
    "aaVariant": null,
    "aaSlug": null
+  },
+  {
+   "id": "minimax-m3-1-flash",
+   "name": "MiniMax M3.1 Flash",
+   "vendor": "MiniMax",
+   "releaseDate": "2026-10-19",
+   "openWeights": false,
+   "aaRank": null,
+   "aaIndex": null,
+   "aaVariant": null,
+   "aaSlug": null
   }
  ],
  "supplementSource": "data/sources/deepseek/deepseek-v4-1-flash-1017-20261018.json"

@@ -1,11 +1,11 @@
 {
  "meta": {
   "title": "公开评测 LLM 榜单",
-  "dataCutoff": "2026-10-18",
+  "dataCutoff": "2026-10-19",
   "aaSource": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
   "aaRetrieved": "2026-10-12",
   "notes": [
-   "模型名单以 2026-10-12 的 AA 智能指数 v4.3.2 前 20 名为基础，另补充 2026-10-17 发布的 DeepSeek-V4.1-Flash-1017；该版本不在这份 AA 快照中，AA 名次与指数留空。",
+   "模型名单以 2026-10-12 的 AA 智能指数 v4.3.2 前 20 名为基础，另收录 DeepSeek-V4.1-Flash-1017 和 2026-10-19 正式发布的 MiniMax M3.1 Flash；二者不在这份 AA 快照中，AA 名次与指数留空。",
    "补全值之间的误差按相互独立处理；同一模型的多个补全值实际可能同向偏差，所以区间可能偏窄。",
    "厂商往往不报自己表现差的评测，补全值可能系统性偏高；“补全值下调一个误差”一栏给出这种情况下的名次。",
    "不同厂商使用的 harness、推理档位和试验次数不同，同一列里的分数只做到“同一评测、同一指标”可比，具体配置见每个格子的出处。",
@@ -14,7 +14,8 @@
    "新增视觉工具推理类别占 10%，原 5 类默认权重按原比例缩放至合计 90%；公开/私有 AutomationBench 和 Pass/Score ALE 各共享原家族权重。ProgramBench Almost 与低覆盖 ZeroBench 使用较低类别内权重。",
    "DeepSeek 1017 从 3/16 增至 9/22 项公开实分。科研和知识工作仍未有新版实分，补全不是实测；页面同时显示实分覆盖的总权重，不能只按项目数量判断可靠性。",
    "Apex Bench v1.1 的具体定义与已知 Apex 评测的对应关系未确认，不纳入综合排名；BabyVision 带工具的头部已普遍超过 90%，保留来源结果但不加入默认排名。",
-   "新增来源为 2026-10-18 回源摘录，以及按指标重新分类的 2026-10-12 已核验记录。原模型名单和原有来源日期不改写，不移用旧版 DeepSeek 或名称不同的模型分数。"
+   "新增来源为 2026-10-18 回源摘录，以及按指标重新分类的 2026-10-12 已核验记录。原模型名单和原有来源日期不改写，不移用旧版 DeepSeek 或名称不同的模型分数。",
+   "2026-10-19 收录 MiniMax M3.1 Flash 正式版的 8 项官方发布成绩及 ALE 作者榜 Score，共 9/22 项实分。AutomationBench 用公开 600 题列，ALE 完全通过率与部分得分分开；HLE 为 2158 题纯文本子集。GDP.pdf 按 AA headline 及对照值判为 all-pass，当前未独立读取 MiniMax 的 AA 模型页。未移用 M3、Preview 或 Space Bunny 分数；权重与评测列不变。"
   ],
   "expansion": {
    "date": "2026-10-18",
@@ -29,15 +30,15 @@
     "zerobench-tools"
    ]
   },
-  "generatedAt": "2026-10-18",
+  "generatedAt": "2026-10-19",
   "imputation": {
    "method": "在扣除随机基线后的 logit 尺度上按列标准化，用带岭正则的交替最小二乘做低秩矩阵补全；秩与正则强度由 5 折 × 4 次重复的交叉验证选出；补全误差 = bootstrap（200 次）方差 + 该评测集交叉验证误差。",
    "rank": 1,
    "lambda": 0.3,
-   "cvRmse": 7.09,
-   "cvMae": 5,
-   "imputedCells": 158,
-   "totalCells": 462
+   "cvRmse": 6.87,
+   "cvMae": 4.93,
+   "imputedCells": 171,
+   "totalCells": 484
   }
  },
  "categories": [
@@ -93,7 +94,7 @@
    "selectionReason": "Anthropic 与 OpenAI 共 5 个发布的头条表都用；Artificial Analysis 对 20 个模型都有独立复测；头部 60–71 分，未饱和。",
    "homepage": "https://www.tbench.ai/news/terminal-bench-4-0",
    "coverage": 1,
-   "cvRmse": 11.87,
+   "cvRmse": 11.5,
    "topScore": 70.6
   },
   {
@@ -109,8 +110,8 @@
    "description": "113 道长程软件工程任务，单题需要大量代码修改，由 Datacurve 维护。",
    "selectionReason": "7 个 OpenAI / Anthropic 发布使用、14 个其他模型自报，是 2026 年覆盖最广的编程评测；头部 78 分。",
    "homepage": "https://deepswe.datacurve.ai/",
-   "coverage": 0.9047619047619048,
-   "cvRmse": 4.82,
+   "coverage": 0.9090909090909091,
+   "cvRmse": 4.72,
    "topScore": 77.9
   },
   {
@@ -126,8 +127,8 @@
    "description": "考察代码是否达到可合并质量：功能正确之外还按评审 rubric 打分。Main 为 100 道最难题。",
    "selectionReason": "6 个 OpenAI / Anthropic 发布使用，其中 5 个列入头条表；头部 54–55 分，区分度高。",
    "homepage": "https://cognition.com/blog/frontier-code",
-   "coverage": 0.3333333333333333,
-   "cvRmse": 4.6,
+   "coverage": 0.3181818181818182,
+   "cvRmse": 4.32,
    "topScore": 54.4
   },
   {
@@ -143,8 +144,8 @@
    "description": "34 道超长程系统开发任务，每题预算约 20 小时，由 Proximal 运行并判分。",
    "selectionReason": "4 个 OpenAI / Anthropic 发布在 system card 中使用，Gemini、Grok 也引用官方榜；头部 65 分。部分厂商报的 dominance score 口径不同，不计入。",
    "homepage": "https://www.proximal.ai/blog/frontierswev2/",
-   "coverage": 0.6666666666666666,
-   "cvRmse": 10.51,
+   "coverage": 0.6363636363636364,
+   "cvRmse": 8.62,
    "topScore": 65.5
   },
   {
@@ -160,8 +161,8 @@
    "description": "在真实桌面虚拟机里完成跨应用的办公与系统任务，按检查点给部分分。",
    "selectionReason": "8 个 OpenAI / Anthropic 发布全部列入头条表，是电脑操作能力的公共考卷。2.0 与 2.1、完整集与离线子集视为可比但非首选；老版 OSWorld-Verified 已饱和，不计入。",
    "homepage": "https://osworld-v2.xlang.ai/",
-   "coverage": 0.6190476190476191,
-   "cvRmse": 5.58,
+   "coverage": 0.6363636363636364,
+   "cvRmse": 6.1,
    "topScore": 81.8
   },
   {
@@ -177,8 +178,8 @@
    "description": "Zapier 出题的业务流程自动化任务，在 CRM、表格、邮件等多个 SaaS 之间完成真实工作流。",
    "selectionReason": "7 个 OpenAI / Anthropic 发布使用，其中 6 个列入头条表；头部 40–60 分。Artificial Analysis 的部分得分版（AutomationBench-AA）口径不同，只作参考。",
    "homepage": "https://zapier.com/benchmarks",
-   "coverage": 0.3333333333333333,
-   "cvRmse": 11.14,
+   "coverage": 0.3181818181818182,
+   "cvRmse": 10.88,
    "topScore": 51.3
   },
   {
@@ -194,8 +195,8 @@
    "description": "跨 30 多个真实应用与 MCP 工具的长链路任务，考察多工具编排。",
    "selectionReason": "Anthropic 4 个发布在 system card 中使用，7 个其他模型自报；头部 74–81 分，仍有区分度。",
    "homepage": "https://toolathlon.xyz/docs/blog/toolathlon-verified",
-   "coverage": 0.5238095238095238,
-   "cvRmse": 2.12,
+   "coverage": 0.5,
+   "cvRmse": 2.19,
    "topScore": 78.4
   },
   {
@@ -211,8 +212,8 @@
    "description": "Berkeley RDI 出题的长程专业工作流任务，结果可核验；官方榜由 Snorkel 运营。",
    "selectionReason": "OpenAI 3 个发布列入头条表，8 个其他模型自报。官方榜主指标是 Pass rate（全对比例），与 Score 不可比，只作参考。",
    "homepage": "https://agents-last-exam.org/",
-   "coverage": 0.3333333333333333,
-   "cvRmse": 2.81,
+   "coverage": 0.36363636363636365,
+   "cvRmse": 2.64,
    "topScore": 63.2
   },
   {
@@ -229,7 +230,7 @@
    "selectionReason": "Anthropic 4 个发布的 system card 使用，Artificial Analysis 对 20 个模型都有独立复测（纯文本子集）；头部 64 分。",
    "homepage": "https://lastexam.ai/",
    "coverage": 1,
-   "cvRmse": 4.45,
+   "cvRmse": 4.53,
    "topScore": 64.4
   },
   {
@@ -245,8 +246,8 @@
    "description": "同一套 HLE 题目，允许模型联网搜索、抓取网页和执行代码。",
    "selectionReason": "Anthropic 与 OpenAI 共 5 个发布列入头条表；头部 68 分。",
    "homepage": "https://lastexam.ai/",
-   "coverage": 0.47619047619047616,
-   "cvRmse": 4.26,
+   "coverage": 0.45454545454545453,
+   "cvRmse": 3.24,
    "topScore": 67.7
   },
   {
@@ -262,8 +263,8 @@
    "description": "70 道科研终端任务，覆盖 5 个学科领域，在容器里完成数据分析与科学计算并由测试判分。",
    "selectionReason": "6 个 OpenAI / Anthropic 发布使用，其中 4 个列入头条表；Artificial Analysis 对 13 个模型有独立复测；头部 65 分。",
    "homepage": "https://www.tbench.ai/news/terminal-bench-science-0-1",
-   "coverage": 0.8571428571428571,
-   "cvRmse": 12.43,
+   "coverage": 0.8181818181818182,
+   "cvRmse": 11.29,
    "topScore": 64.6
   },
   {
@@ -279,8 +280,8 @@
    "description": "把物理、化学、生物等领域的科研计算拆成子问题，要求写出能通过测试的代码。",
    "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部 67 分，未饱和。",
    "homepage": "https://scicode-bench.github.io/",
-   "coverage": 0.9523809523809523,
-   "cvRmse": 3.24,
+   "coverage": 0.9090909090909091,
+   "cvRmse": 3.28,
    "topScore": 66.9
   },
   {
@@ -296,8 +297,8 @@
    "description": "研究级物理问题，答案由官方服务器自动判分，测的是能否完成真正的前沿物理推导。",
    "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部只有 32 分，区分度很高。Anthropic 内部修正版（CritPT-Corrected）口径不同，只作参考。",
    "homepage": "https://critpt.com/",
-   "coverage": 0.9523809523809523,
-   "cvRmse": 4.49,
+   "coverage": 0.9090909090909091,
+   "cvRmse": 4.95,
    "topScore": 31.71
   },
   {
@@ -313,8 +314,8 @@
    "description": "220 道真实职业交付物任务（报告、表格、方案等），由评审模型两两盲评，拟合成 Elo。",
    "selectionReason": "Anthropic 与 OpenAI 共 5 个发布列入头条表；Elo 按 Artificial Analysis 公布的公式换算成百分制。",
    "homepage": "https://artificialanalysis.ai/evaluations/gdpval-aa",
-   "coverage": 0.9523809523809523,
-   "cvRmse": 4.62,
+   "coverage": 0.9090909090909091,
+   "cvRmse": 4.69,
    "topScore": 67.3
   },
   {
@@ -330,8 +331,8 @@
    "description": "基于多页专业 PDF 的问答，每题有多条评分标准，全部满足才算通过。",
    "selectionReason": "Artificial Analysis 智能指数的组成项，对 20 个模型都有独立复测；头部只有 31 分。Anthropic system card 的自评口径不同，只作参考。",
    "homepage": "https://surgehq.ai/benchmarks/gdp-pdf",
-   "coverage": 0.9523809523809523,
-   "cvRmse": 6.7,
+   "coverage": 0.9545454545454546,
+   "cvRmse": 6.47,
    "topScore": 35
   },
   {
@@ -347,8 +348,8 @@
    "description": "长文档推理：在约 10 万 token 的多份文档里查找、比对并推出答案。",
    "selectionReason": "长上下文方向唯一未饱和、且 20 个模型都有分数的评测（MRCR 已到 96–100）；头部 89 分，接近饱和线，后续需要复查。",
    "homepage": "https://artificialanalysis.ai/evaluations/artificial-analysis-long-context-reasoning",
-   "coverage": 0.9523809523809523,
-   "cvRmse": 3.4,
+   "coverage": 0.9090909090909091,
+   "cvRmse": 3.32,
    "topScore": 88.67
   },
   {
@@ -365,8 +366,8 @@
    "tier": 2,
    "addedAt": "2026-10-18",
    "homepage": "https://programbench.com/",
-   "coverage": 0.8571428571428571,
-   "cvRmse": 8.58,
+   "coverage": 0.8181818181818182,
+   "cvRmse": 8.78,
    "topScore": 65
   },
   {
@@ -383,8 +384,8 @@
    "tier": 2,
    "addedAt": "2026-10-18",
    "homepage": "https://github.com/multimodal-art-projection/NL2RepoBench",
-   "coverage": 0.2857142857142857,
-   "cvRmse": 6.42,
+   "coverage": 0.3181818181818182,
+   "cvRmse": 5.15,
    "topScore": 68.2
   },
   {
@@ -401,9 +402,9 @@
    "tier": 2,
    "addedAt": "2026-10-18",
    "homepage": "https://github.com/zapier/AutomationBench",
-   "coverage": 0.47619047619047616,
-   "cvRmse": 10.56,
-   "topScore": 60.5
+   "coverage": 0.5,
+   "cvRmse": 11.79,
+   "topScore": 62.2
   },
   {
    "id": "ale-pass",
@@ -419,8 +420,8 @@
    "tier": 2,
    "addedAt": "2026-10-18",
    "homepage": "https://agents-last-exam.org/leaderboard",
-   "coverage": 0.6190476190476191,
-   "cvRmse": 2.33,
+   "coverage": 0.6363636363636364,
+   "cvRmse": 2.11,
    "topScore": 39.5
   },
   {
@@ -437,8 +438,8 @@
    "tier": 2,
    "addedAt": "2026-10-18",
    "homepage": "https://surgehq.ai/benchmarks/chartography",
-   "coverage": 0.2857142857142857,
-   "cvRmse": 7.75,
+   "coverage": 0.2727272727272727,
+   "cvRmse": 8.07,
    "topScore": 90.2
   },
   {
@@ -455,8 +456,8 @@
    "tier": 2,
    "addedAt": "2026-10-18",
    "homepage": "https://zerobench.github.io/",
-   "coverage": 0.14285714285714285,
-   "cvRmse": 7.35,
+   "coverage": 0.13636363636363635,
+   "cvRmse": 7.21,
    "topScore": 51
   }
  ],
@@ -472,9 +473,9 @@
    "aaVariant": "Claude Opus 5.5 (Max, Default Fallback)",
    "aaSlug": "claude-opus-5-5",
    "rank": 1,
-   "score": 63.571291522069224,
-   "scoreLow": 62.468203172928625,
-   "scoreHigh": 64.72923063427446,
+   "score": 63.73321321026218,
+   "scoreLow": 62.72873745569986,
+   "scoreHigh": 64.78948329377565,
    "rankLow": 1,
    "rankHigh": 1,
    "observedOnlyScore": 63.97704402363118,
@@ -482,12 +483,12 @@
    "pessimisticRank": 1,
    "coverage": 0.8636363636363636,
    "categoryScores": {
-    "coding": 64.8569839939238,
-    "agents": 65.16883359389622,
+    "coding": 64.99980559654351,
+    "agents": 65.74013007839069,
     "reasoning": 66.05000000000001,
     "science": 52.43666666666667,
     "knowledge": 59.39000000000001,
-    "vision": 76.295825648097
+    "vision": 76.30827683401964
    },
    "cells": {
     "terminal-bench-4": {
@@ -1105,15 +1106,15 @@
      ]
     },
     "nl2repo-bench": {
-     "value": 66.91,
+     "value": 67.7,
      "imputed": true,
-     "sd": 9.86,
+     "sd": 7.4,
      "alternates": []
     },
     "automationbench-public": {
-     "value": 60.79,
+     "value": 65.36,
      "imputed": true,
-     "sd": 16.57,
+     "sd": 16.43,
      "alternates": []
     },
     "ale-pass": {
@@ -1163,9 +1164,9 @@
      ]
     },
     "zerobench-tools": {
-     "value": 50.89,
+     "value": 50.92,
      "imputed": true,
-     "sd": 8.92,
+     "sd": 8.6,
      "alternates": []
     }
    }
@@ -1181,9 +1182,9 @@
    "aaVariant": "Claude Sonnet 5.5 (Max, Default Fallback)",
    "aaSlug": "claude-sonnet-5-5",
    "rank": 2,
-   "score": 61.55071736796705,
-   "scoreLow": 60.58438668323094,
-   "scoreHigh": 62.58358497150667,
+   "score": 61.685003014024346,
+   "scoreLow": 60.74604682695391,
+   "scoreHigh": 62.68355758631101,
    "rankLow": 2,
    "rankHigh": 3,
    "observedOnlyScore": 62.95524456949914,
@@ -1191,12 +1192,12 @@
    "pessimisticRank": 2,
    "coverage": 0.7727272727272727,
    "categoryScores": {
-    "coding": 61.653636976370215,
-    "agents": 64.08103089744489,
+    "coding": 61.774633202643756,
+    "agents": 64.55257457103998,
     "reasoning": 60.7,
     "science": 50.77666666666667,
     "knowledge": 58.55666666666667,
-    "vision": 76.70867096358639
+    "vision": 76.71831264945493
    },
    "cells": {
     "terminal-bench-4": {
@@ -1512,9 +1513,9 @@
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 59.28,
+     "value": 59.33,
      "imputed": true,
-     "sd": 4.02,
+     "sd": 3.88,
      "alternates": []
     },
     "hle-no-tools": {
@@ -1805,21 +1806,21 @@
      ]
     },
     "nl2repo-bench": {
-     "value": 64.65,
+     "value": 65.31,
      "imputed": true,
-     "sd": 8.82,
+     "sd": 7.1,
      "alternates": []
     },
     "automationbench-public": {
-     "value": 56.58,
+     "value": 60.37,
      "imputed": true,
-     "sd": 13.85,
+     "sd": 14.88,
      "alternates": []
     },
     "ale-pass": {
-     "value": 36.29,
+     "value": 36.22,
      "imputed": true,
-     "sd": 3.74,
+     "sd": 3.28,
      "alternates": []
     },
     "chartography-tools": {
@@ -1846,9 +1847,9 @@
      ]
     },
     "zerobench-tools": {
-     "value": 49.73,
+     "value": 49.75,
      "imputed": true,
-     "sd": 8.37,
+     "sd": 8.2,
      "alternates": []
     }
    }
@@ -1864,9 +1865,9 @@
    "aaVariant": "Claude Fable 5.1 (Max, Default Fallback)",
    "aaSlug": "claude-fable-5-1",
    "rank": 3,
-   "score": 60.128036664184776,
-   "scoreLow": 59.168452320090616,
-   "scoreHigh": 61.12399153436012,
+   "score": 60.25455580842484,
+   "scoreLow": 59.24563207106577,
+   "scoreHigh": 61.25541928571496,
    "rankLow": 3,
    "rankHigh": 5,
    "observedOnlyScore": 61.35723759144625,
@@ -1874,12 +1875,12 @@
    "pessimisticRank": 3,
    "coverage": 0.7727272727272727,
    "categoryScores": {
-    "coding": 58.31164233563134,
-    "agents": 62.344481462259466,
+    "coding": 58.42613651188954,
+    "agents": 62.788925443153985,
     "reasoning": 62.95,
     "science": 48.46333333333334,
     "knowledge": 57.76,
-    "vision": 75.42808809659338
+    "vision": 75.43566868540027
    },
    "cells": {
     "terminal-bench-4": {
@@ -2200,9 +2201,9 @@
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 58.89,
+     "value": 58.94,
      "imputed": true,
-     "sd": 3.96,
+     "sd": 3.7,
      "alternates": []
     },
     "hle-no-tools": {
@@ -2485,21 +2486,21 @@
      ]
     },
     "nl2repo-bench": {
-     "value": 64.16,
+     "value": 64.79,
      "imputed": true,
-     "sd": 8.21,
+     "sd": 6.73,
      "alternates": []
     },
     "automationbench-public": {
-     "value": 55.69,
+     "value": 59.28,
      "imputed": true,
-     "sd": 13.52,
+     "sd": 14.5,
      "alternates": []
     },
     "ale-pass": {
-     "value": 35.77,
+     "value": 35.7,
      "imputed": true,
-     "sd": 3.38,
+     "sd": 2.98,
      "alternates": []
     },
     "chartography-tools": {
@@ -2534,9 +2535,9 @@
      ]
     },
     "zerobench-tools": {
-     "value": 49.48,
+     "value": 49.51,
      "imputed": true,
-     "sd": 8.33,
+     "sd": 8.1,
      "alternates": []
     }
    }
@@ -2552,9 +2553,9 @@
    "aaVariant": "GPT-6 Astra (Max)",
    "aaSlug": "gpt-6-astra",
    "rank": 4,
-   "score": 59.441139332526376,
-   "scoreLow": 58.07104518113207,
-   "scoreHigh": 60.669900914446735,
+   "score": 59.56078865562628,
+   "scoreLow": 58.21578366002789,
+   "scoreHigh": 60.756375316247095,
    "rankLow": 3,
    "rankHigh": 6,
    "observedOnlyScore": 56.173604510451035,
@@ -2562,12 +2563,12 @@
    "pessimisticRank": 4,
    "coverage": 0.7727272727272727,
    "categoryScores": {
-    "coding": 61.614976981130205,
-    "agents": 60.91491660575469,
+    "coding": 61.7239941689407,
+    "agents": 61.32360284623974,
     "reasoning": 56,
     "science": 50.93,
     "knowledge": 55.123333333333335,
-    "vision": 75.14163275477266
+    "vision": 75.17329327210679
    },
    "cells": {
     "terminal-bench-4": {
@@ -2988,9 +2989,9 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 76.76,
+     "value": 76.78,
      "imputed": true,
-     "sd": 2.26,
+     "sd": 2.35,
      "alternates": []
     },
     "agents-last-exam": {
@@ -3390,15 +3391,15 @@
      "alternates": []
     },
     "nl2repo-bench": {
-     "value": 63.08,
+     "value": 63.68,
      "imputed": true,
-     "sd": 8,
+     "sd": 6.53,
      "alternates": []
     },
     "automationbench-public": {
-     "value": 53.69,
+     "value": 56.92,
      "imputed": true,
-     "sd": 13.11,
+     "sd": 13.9,
      "alternates": []
     },
     "ale-pass": {
@@ -3441,15 +3442,15 @@
      ]
     },
     "chartography-tools": {
-     "value": 88.24,
+     "value": 88.27,
      "imputed": true,
-     "sd": 8.53,
+     "sd": 8.66,
      "alternates": []
     },
     "zerobench-tools": {
-     "value": 48.95,
+     "value": 48.98,
      "imputed": true,
-     "sd": 8.13,
+     "sd": 7.96,
      "alternates": []
     }
    }
@@ -3465,9 +3466,9 @@
    "aaVariant": "Gemini 4 Argon (High)",
    "aaSlug": "gemini-4-argon",
    "rank": 5,
-   "score": 59.04846843168468,
-   "scoreLow": 57.51389897153821,
-   "scoreHigh": 60.476815753168744,
+   "score": 59.18029216110345,
+   "scoreLow": 57.79773421134714,
+   "scoreHigh": 60.50892234094208,
    "rankLow": 3,
    "rankHigh": 6,
    "observedOnlyScore": 54.8085363247863,
@@ -3475,12 +3476,12 @@
    "pessimisticRank": 5,
    "coverage": 0.6363636363636364,
    "categoryScores": {
-    "coding": 59.20913878052101,
-    "agents": 62.069584873757,
-    "reasoning": 60.38066078138256,
+    "coding": 59.32743575697353,
+    "agents": 62.51839959629125,
+    "reasoning": 60.38892338506519,
     "science": 48.85,
     "knowledge": 52.553333333333335,
-    "vision": 75.55016403985479
+    "vision": 75.58124549635066
    },
    "cells": {
     "terminal-bench-4": {
@@ -3531,9 +3532,9 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 51.1,
+     "value": 51.12,
      "imputed": true,
-     "sd": 5.02,
+     "sd": 4.69,
      "alternates": []
     },
     "frontierswe": {
@@ -3615,15 +3616,15 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 76.94,
+     "value": 76.96,
      "imputed": true,
-     "sd": 2.32,
+     "sd": 2.36,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 58.56,
+     "value": 58.63,
      "imputed": true,
-     "sd": 3.87,
+     "sd": 3.61,
      "alternates": [
       {
        "score": 39.5,
@@ -3651,9 +3652,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 63.67,
+     "value": 63.69,
      "imputed": true,
-     "sd": 4.92,
+     "sd": 3.75,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -3767,15 +3768,15 @@
      "alternates": []
     },
     "nl2repo-bench": {
-     "value": 63.75,
+     "value": 64.38,
      "imputed": true,
-     "sd": 8.07,
+     "sd": 6.64,
      "alternates": []
     },
     "automationbench-public": {
-     "value": 54.92,
+     "value": 58.41,
      "imputed": true,
-     "sd": 13.12,
+     "sd": 14.32,
      "alternates": []
     },
     "ale-pass": {
@@ -3793,15 +3794,15 @@
      "alternates": []
     },
     "chartography-tools": {
-     "value": 88.69,
+     "value": 88.72,
      "imputed": true,
-     "sd": 8.86,
+     "sd": 8.67,
      "alternates": []
     },
     "zerobench-tools": {
-     "value": 49.28,
+     "value": 49.31,
      "imputed": true,
-     "sd": 8.17,
+     "sd": 8,
      "alternates": []
     }
    }
@@ -3817,22 +3818,22 @@
    "aaVariant": "GPT-6.1 Sol (Max)",
    "aaSlug": "gpt-6-1-sol",
    "rank": 6,
-   "score": 58.311791905637264,
-   "scoreLow": 56.60543178336749,
-   "scoreHigh": 60.00115345960998,
+   "score": 58.43372378357712,
+   "scoreLow": 56.81952404498466,
+   "scoreHigh": 59.91587434742508,
    "rankLow": 4,
-   "rankHigh": 7,
+   "rankHigh": 6,
    "observedOnlyScore": 55.427834681042214,
    "observedWeight": 0.5691477272727276,
    "pessimisticRank": 6,
    "coverage": 0.5454545454545454,
    "categoryScores": {
-    "coding": 58.20518428147594,
-    "agents": 59.51249933867354,
-    "reasoning": 57.817367334459604,
+    "coding": 58.34604742985607,
+    "agents": 59.89243417567965,
+    "reasoning": 57.82860408617623,
     "science": 47.626666666666665,
     "knowledge": 56.199999999999996,
-    "vision": 74.74368500951573
+    "vision": 74.77603870697779
    },
    "cells": {
     "terminal-bench-4": {
@@ -3930,15 +3931,15 @@
      ]
     },
     "frontiercode": {
-     "value": 50.29,
+     "value": 50.31,
      "imputed": true,
-     "sd": 5.03,
+     "sd": 4.67,
      "alternates": []
     },
     "frontierswe": {
-     "value": 51.01,
+     "value": 51.2,
      "imputed": true,
-     "sd": 13.26,
+     "sd": 11.58,
      "alternates": []
     },
     "osworld-2": {
@@ -4071,15 +4072,15 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 76.59,
+     "value": 76.6,
      "imputed": true,
-     "sd": 2.26,
+     "sd": 2.34,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 57.52,
+     "value": 57.59,
      "imputed": true,
-     "sd": 3.75,
+     "sd": 3.55,
      "alternates": []
     },
     "hle-no-tools": {
@@ -4097,9 +4098,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 62.71,
+     "value": 62.74,
      "imputed": true,
-     "sd": 4.74,
+     "sd": 3.7,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -4312,33 +4313,33 @@
      "alternates": []
     },
     "nl2repo-bench": {
-     "value": 62.44,
+     "value": 63.01,
      "imputed": true,
-     "sd": 7.82,
+     "sd": 6.4,
      "alternates": []
     },
     "automationbench-public": {
-     "value": 52.52,
+     "value": 55.5,
      "imputed": true,
-     "sd": 12.74,
+     "sd": 13.85,
      "alternates": []
     },
     "ale-pass": {
-     "value": 33.98,
+     "value": 33.94,
      "imputed": true,
-     "sd": 3.17,
+     "sd": 2.86,
      "alternates": []
     },
     "chartography-tools": {
-     "value": 87.8,
+     "value": 87.83,
      "imputed": true,
-     "sd": 8.5,
+     "sd": 8.71,
      "alternates": []
     },
     "zerobench-tools": {
-     "value": 48.63,
+     "value": 48.66,
      "imputed": true,
-     "sd": 8.07,
+     "sd": 7.93,
      "alternates": []
     }
    }
@@ -4353,23 +4354,23 @@
    "aaIndex": 48.09,
    "aaVariant": "Muse Spark 1.3 (Max)",
    "aaSlug": "muse-spark-1-3",
-   "rank": 10,
-   "score": 51.62908859853889,
-   "scoreLow": 50.163517648328025,
-   "scoreHigh": 53.0062742018203,
+   "rank": 11,
+   "score": 51.63516575651511,
+   "scoreLow": 50.213278354538325,
+   "scoreHigh": 52.909718559392104,
    "rankLow": 8,
-   "rankHigh": 12,
+   "rankHigh": 13,
    "observedOnlyScore": 45.97291238168329,
    "observedWeight": 0.6663068181818184,
    "pessimisticRank": 9,
    "coverage": 0.6818181818181818,
    "categoryScores": {
-    "coding": 42.778207870054764,
-    "agents": 57.17939277475251,
-    "reasoning": 54.41179165073875,
+    "coding": 42.82557784687,
+    "agents": 57.1747363996467,
+    "reasoning": 54.40108800565383,
     "science": 31.22,
     "knowledge": 57.43333333333334,
-    "vision": 72.40336580607509
+    "vision": 72.38248170285567
    },
    "cells": {
     "terminal-bench-4": {
@@ -4430,9 +4431,9 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 48.14,
+     "value": 48.12,
      "imputed": true,
-     "sd": 4.98,
+     "sd": 4.65,
      "alternates": []
     },
     "frontierswe": {
@@ -4475,9 +4476,9 @@
      ]
     },
     "automationbench": {
-     "value": 37.87,
+     "value": 37.85,
      "imputed": true,
-     "sd": 11.71,
+     "sd": 11.51,
      "alternates": [
       {
        "score": 49.6,
@@ -4499,9 +4500,9 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 75.64,
+     "value": 75.63,
      "imputed": true,
-     "sd": 2.23,
+     "sd": 2.3,
      "alternates": []
     },
     "agents-last-exam": {
@@ -4562,9 +4563,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 60.12,
+     "value": 60.1,
      "imputed": true,
-     "sd": 4.58,
+     "sd": 3.56,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -4705,9 +4706,9 @@
      ]
     },
     "nl2repo-bench": {
-     "value": 58.89,
+     "value": 59.17,
      "imputed": true,
-     "sd": 7.19,
+     "sd": 5.94,
      "alternates": []
     },
     "automationbench-public": {
@@ -4764,15 +4765,15 @@
      ]
     },
     "chartography-tools": {
-     "value": 85.15,
+     "value": 85.12,
      "imputed": true,
-     "sd": 8.69,
+     "sd": 9,
      "alternates": []
     },
     "zerobench-tools": {
-     "value": 46.92,
+     "value": 46.9,
      "imputed": true,
-     "sd": 7.89,
+     "sd": 7.76,
      "alternates": []
     }
    }
@@ -4787,23 +4788,23 @@
    "aaIndex": 46.45,
    "aaVariant": "Grok 4.7 (Xhigh)",
    "aaSlug": "grok-4-7",
-   "rank": 12,
-   "score": 49.95313807758049,
-   "scoreLow": 48.2865850652273,
-   "scoreHigh": 51.62325168213275,
-   "rankLow": 10,
-   "rankHigh": 16,
+   "rank": 13,
+   "score": 49.96272102015593,
+   "scoreLow": 48.30013493848136,
+   "scoreHigh": 51.52859381217423,
+   "rankLow": 11,
+   "rankHigh": 17,
    "observedOnlyScore": 42.46707581227436,
    "observedWeight": 0.5665909090909094,
-   "pessimisticRank": 13,
+   "pessimisticRank": 14,
    "coverage": 0.5454545454545454,
    "categoryScores": {
-    "coding": 45.67735709483464,
-    "agents": 55.29718598720024,
-    "reasoning": 51.047230663677794,
+    "coding": 45.71930994412572,
+    "agents": 55.28780505122502,
+    "reasoning": 51.05614124321471,
     "science": 28.373333333333335,
     "knowledge": 52.14000000000001,
-    "vision": 71.26889744526142
+    "vision": 71.27941078368015
    },
    "cells": {
     "terminal-bench-4": {
@@ -4940,15 +4941,15 @@
      ]
     },
     "osworld-2": {
-     "value": 64.7,
+     "value": 64.26,
      "imputed": true,
-     "sd": 6.98,
+     "sd": 7.04,
      "alternates": []
     },
     "automationbench": {
-     "value": 36.75,
+     "value": 36.77,
      "imputed": true,
-     "sd": 11.93,
+     "sd": 11.74,
      "alternates": [
       {
        "score": 65.56,
@@ -4963,13 +4964,13 @@
     "toolathlon-verified": {
      "value": 75.21,
      "imputed": true,
-     "sd": 2.24,
+     "sd": 2.31,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 53.48,
+     "value": 53.51,
      "imputed": true,
-     "sd": 3.3,
+     "sd": 3.03,
      "alternates": []
     },
     "hle-no-tools": {
@@ -4987,9 +4988,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 58.95,
+     "value": 58.97,
      "imputed": true,
-     "sd": 4.54,
+     "sd": 3.55,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -5103,33 +5104,33 @@
      "alternates": []
     },
     "nl2repo-bench": {
-     "value": 57.29,
+     "value": 57.52,
      "imputed": true,
-     "sd": 7.25,
+     "sd": 5.96,
      "alternates": []
     },
     "automationbench-public": {
-     "value": 43.29,
+     "value": 44.08,
      "imputed": true,
-     "sd": 11.58,
+     "sd": 12.56,
      "alternates": []
     },
     "ale-pass": {
-     "value": 29.05,
+     "value": 29,
      "imputed": true,
-     "sd": 2.97,
+     "sd": 2.52,
      "alternates": []
     },
     "chartography-tools": {
-     "value": 83.82,
+     "value": 83.84,
      "imputed": true,
-     "sd": 8.89,
+     "sd": 9.32,
      "alternates": []
     },
     "zerobench-tools": {
-     "value": 46.16,
+     "value": 46.17,
      "imputed": true,
-     "sd": 7.95,
+     "sd": 7.82,
      "alternates": []
     }
    }
@@ -5144,10 +5145,10 @@
    "aaIndex": 46.32,
    "aaVariant": "MiMo-V2.6-Pro",
    "aaSlug": "mimo-v2-6-pro",
-   "rank": 8,
-   "score": 52.269720405955574,
-   "scoreLow": 50.42271267177418,
-   "scoreHigh": 54.05495045522273,
+   "rank": 10,
+   "score": 52.24233780918075,
+   "scoreLow": 50.67498622888366,
+   "scoreHigh": 53.97640391660762,
    "rankLow": 8,
    "rankHigh": 12,
    "observedOnlyScore": 47.84825913242009,
@@ -5155,12 +5156,12 @@
    "pessimisticRank": 10,
    "coverage": 0.5909090909090909,
    "categoryScores": {
-    "coding": 46.748342921411954,
-    "agents": 58.549732169999686,
-    "reasoning": 54.838937825935645,
+    "coding": 46.77293527802335,
+    "agents": 58.42072753962239,
+    "reasoning": 54.82673515081345,
     "science": 30.103333333333335,
     "knowledge": 54.72666666666667,
-    "vision": 72.59646903886637
+    "vision": 72.57404429850638
    },
    "cells": {
     "terminal-bench-4": {
@@ -5212,27 +5213,27 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 48.3,
+     "value": 48.28,
      "imputed": true,
-     "sd": 4.97,
+     "sd": 4.7,
      "alternates": []
     },
     "frontierswe": {
-     "value": 36.59,
+     "value": 36.45,
      "imputed": true,
-     "sd": 13.06,
+     "sd": 11.05,
      "alternates": []
     },
     "osworld-2": {
-     "value": 68.44,
+     "value": 67.94,
      "imputed": true,
-     "sd": 6.93,
+     "sd": 7.09,
      "alternates": []
     },
     "automationbench": {
-     "value": 38.07,
+     "value": 38.05,
      "imputed": true,
-     "sd": 11.76,
+     "sd": 11.5,
      "alternates": [
       {
        "score": 53.1,
@@ -5269,9 +5270,9 @@
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 54.95,
+     "value": 54.94,
      "imputed": true,
-     "sd": 3.47,
+     "sd": 3.2,
      "alternates": [
       {
        "score": 31.6,
@@ -5299,9 +5300,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 60.33,
+     "value": 60.3,
      "imputed": true,
-     "sd": 4.62,
+     "sd": 3.61,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -5433,9 +5434,9 @@
      ]
     },
     "nl2repo-bench": {
-     "value": 59.17,
+     "value": 59.47,
      "imputed": true,
-     "sd": 7.24,
+     "sd": 6.02,
      "alternates": []
     },
     "automationbench-public": {
@@ -5467,15 +5468,15 @@
      "alternates": []
     },
     "chartography-tools": {
-     "value": 85.37,
+     "value": 85.34,
      "imputed": true,
-     "sd": 8.75,
+     "sd": 8.95,
      "alternates": []
     },
     "zerobench-tools": {
-     "value": 47.05,
+     "value": 47.04,
      "imputed": true,
-     "sd": 7.91,
+     "sd": 7.76,
      "alternates": []
     }
    }
@@ -5490,23 +5491,23 @@
    "aaIndex": 45.42,
    "aaVariant": "Qwen3.8 Max (0902)",
    "aaSlug": "qwen3-8-max",
-   "rank": 13,
-   "score": 49.64501582849057,
-   "scoreLow": 48.05631934542261,
-   "scoreHigh": 51.12379312172039,
+   "rank": 14,
+   "score": 49.64738354612607,
+   "scoreLow": 48.12066237171969,
+   "scoreHigh": 51.16413513311291,
    "rankLow": 11,
-   "rankHigh": 17,
+   "rankHigh": 18,
    "observedOnlyScore": 45.65646504320503,
    "observedWeight": 0.6509659090909092,
-   "pessimisticRank": 12,
+   "pessimisticRank": 13,
    "coverage": 0.6363636363636364,
    "categoryScores": {
-    "coding": 43.629091992323495,
-    "agents": 55.497772879134814,
-    "reasoning": 50.90893664815589,
+    "coding": 43.63966679073071,
+    "agents": 55.447396206439606,
+    "reasoning": 50.945214489711816,
     "science": 27.23,
     "knowledge": 53.830000000000005,
-    "vision": 71.03314784911404
+    "vision": 71.09740415651657
    },
    "cells": {
     "terminal-bench-4": {
@@ -5549,9 +5550,9 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 46.99,
+     "value": 47.05,
      "imputed": true,
-     "sd": 5.11,
+     "sd": 4.83,
      "alternates": []
     },
     "frontierswe": {
@@ -5570,15 +5571,15 @@
      "alternates": []
     },
     "osworld-2": {
-     "value": 64.03,
+     "value": 63.75,
      "imputed": true,
-     "sd": 7.06,
+     "sd": 7.24,
      "alternates": []
     },
     "automationbench": {
-     "value": 36.52,
+     "value": 36.59,
      "imputed": true,
-     "sd": 11.98,
+     "sd": 11.78,
      "alternates": [
       {
        "score": 50.8,
@@ -5615,9 +5616,9 @@
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 53.23,
+     "value": 53.31,
      "imputed": true,
-     "sd": 3.32,
+     "sd": 3.08,
      "alternates": []
     },
     "hle-no-tools": {
@@ -5635,9 +5636,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 58.72,
+     "value": 58.79,
      "imputed": true,
-     "sd": 4.58,
+     "sd": 3.59,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -5777,9 +5778,9 @@
      "alternates": []
     },
     "ale-pass": {
-     "value": 28.76,
+     "value": 28.78,
      "imputed": true,
-     "sd": 2.96,
+     "sd": 2.6,
      "alternates": [
       {
        "score": 26.9737,
@@ -5800,15 +5801,15 @@
      ]
     },
     "chartography-tools": {
-     "value": 83.54,
+     "value": 83.62,
      "imputed": true,
-     "sd": 9.04,
+     "sd": 9.5,
      "alternates": []
     },
     "zerobench-tools": {
-     "value": 46.01,
+     "value": 46.05,
      "imputed": true,
-     "sd": 7.99,
+     "sd": 7.83,
      "alternates": []
     }
    }
@@ -5823,23 +5824,23 @@
    "aaIndex": 44.78,
    "aaVariant": "GLM-5.3 (Max)",
    "aaSlug": "glm-5-3",
-   "rank": 11,
-   "score": 50.024521824918885,
-   "scoreLow": 48.58503044009064,
-   "scoreHigh": 51.45597432782478,
-   "rankLow": 10,
-   "rankHigh": 16,
+   "rank": 12,
+   "score": 49.99196760876384,
+   "scoreLow": 48.59470973641236,
+   "scoreHigh": 51.43239297670956,
+   "rankLow": 11,
+   "rankHigh": 17,
    "observedOnlyScore": 46.62927397260274,
    "observedWeight": 0.7465909090909093,
-   "pessimisticRank": 11,
+   "pessimisticRank": 12,
    "coverage": 0.7272727272727273,
    "categoryScores": {
-    "coding": 46.09990306018905,
-    "agents": 55.228756068812,
+    "coding": 46.09781446514874,
+    "agents": 55.095527666653105,
     "reasoning": 52.379999999999995,
     "science": 27.959999999999997,
     "knowledge": 51.44,
-    "vision": 71.20473520893638
+    "vision": 71.18365629108409
    },
    "cells": {
     "terminal-bench-4": {
@@ -5900,9 +5901,9 @@
      ]
     },
     "frontiercode": {
-     "value": 47.13,
+     "value": 47.12,
      "imputed": true,
-     "sd": 5.06,
+     "sd": 4.78,
      "alternates": []
     },
     "frontierswe": {
@@ -5931,15 +5932,15 @@
      ]
     },
     "osworld-2": {
-     "value": 64.52,
+     "value": 63.99,
      "imputed": true,
-     "sd": 6.9,
+     "sd": 7.19,
      "alternates": []
     },
     "automationbench": {
-     "value": 36.69,
+     "value": 36.67,
      "imputed": true,
-     "sd": 11.95,
+     "sd": 11.7,
      "alternates": [
       {
        "score": 48.2,
@@ -5976,9 +5977,9 @@
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 53.41,
+     "value": 53.4,
      "imputed": true,
-     "sd": 3.38,
+     "sd": 3.12,
      "alternates": [
       {
        "score": 28.5,
@@ -6191,15 +6192,15 @@
      "alternates": []
     },
     "chartography-tools": {
-     "value": 83.75,
+     "value": 83.72,
      "imputed": true,
-     "sd": 9.1,
+     "sd": 9.47,
      "alternates": []
     },
     "zerobench-tools": {
-     "value": 46.12,
+     "value": 46.1,
      "imputed": true,
-     "sd": 7.98,
+     "sd": 7.84,
      "alternates": []
     }
    }
@@ -6214,23 +6215,23 @@
    "aaIndex": 43.73,
    "aaVariant": "Step 5 Preview",
    "aaSlug": "step-5",
-   "rank": 14,
-   "score": 49.643302432054476,
-   "scoreLow": 47.85908606432055,
-   "scoreHigh": 51.42057228195771,
-   "rankLow": 10,
-   "rankHigh": 17,
+   "rank": 15,
+   "score": 49.61497495686444,
+   "scoreLow": 47.86696080213446,
+   "scoreHigh": 51.29546018540376,
+   "rankLow": 11,
+   "rankHigh": 18,
    "observedOnlyScore": 47.52167724867725,
    "observedWeight": 0.6443181818181819,
-   "pessimisticRank": 14,
+   "pessimisticRank": 15,
    "coverage": 0.5909090909090909,
    "categoryScores": {
-    "coding": 44.134707139094026,
-    "agents": 54.928654510422206,
+    "coding": 44.146668891587794,
+    "agents": 54.798457994216356,
     "reasoning": 52.95,
     "science": 27.55333333333333,
     "knowledge": 52.133333333333326,
-    "vision": 71.02096060913317
+    "vision": 71.00371407558492
    },
    "cells": {
     "terminal-bench-4": {
@@ -6281,27 +6282,27 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 46.98,
+     "value": 46.97,
      "imputed": true,
-     "sd": 5.1,
+     "sd": 4.86,
      "alternates": []
     },
     "frontierswe": {
-     "value": 28.01,
+     "value": 27.94,
      "imputed": true,
-     "sd": 12.93,
+     "sd": 11.38,
      "alternates": []
     },
     "osworld-2": {
-     "value": 64,
+     "value": 63.49,
      "imputed": true,
-     "sd": 7.05,
+     "sd": 7.46,
      "alternates": []
     },
     "automationbench": {
-     "value": 36.51,
+     "value": 36.5,
      "imputed": true,
-     "sd": 11.99,
+     "sd": 11.83,
      "alternates": [
       {
        "score": 44,
@@ -6338,9 +6339,9 @@
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 53.22,
+     "value": 53.21,
      "imputed": true,
-     "sd": 3.45,
+     "sd": 3.11,
      "alternates": [
       {
        "score": 29.5,
@@ -6542,15 +6543,15 @@
      ]
     },
     "programbench-almost": {
-     "value": 19.62,
+     "value": 19.56,
      "imputed": true,
-     "sd": 10.66,
+     "sd": 10.52,
      "alternates": []
     },
     "nl2repo-bench": {
-     "value": 56.94,
+     "value": 57.11,
      "imputed": true,
-     "sd": 7.23,
+     "sd": 6.03,
      "alternates": []
     },
     "automationbench-public": {
@@ -6582,15 +6583,15 @@
      "alternates": []
     },
     "chartography-tools": {
-     "value": 83.53,
+     "value": 83.51,
      "imputed": true,
-     "sd": 9.09,
+     "sd": 9.57,
      "alternates": []
     },
     "zerobench-tools": {
-     "value": 46,
+     "value": 45.99,
      "imputed": true,
-     "sd": 8.03,
+     "sd": 7.82,
      "alternates": []
     }
    }
@@ -6605,19 +6606,19 @@
    "aaIndex": 43.59,
    "aaVariant": "Kimi K3 (Max)",
    "aaSlug": "kimi-k3",
-   "rank": 18,
-   "score": 47.40955663232333,
-   "scoreLow": 46.74181275780996,
-   "scoreHigh": 48.08668628511249,
-   "rankLow": 16,
-   "rankHigh": 20,
+   "rank": 19,
+   "score": 47.4102338393337,
+   "scoreLow": 46.74650227731772,
+   "scoreHigh": 48.09726521591786,
+   "rankLow": 17,
+   "rankHigh": 21,
    "observedOnlyScore": 47.83133435052385,
    "observedWeight": 0.9309659090909094,
-   "pessimisticRank": 15,
+   "pessimisticRank": 16,
    "coverage": 0.9090909090909091,
    "categoryScores": {
-    "coding": 40.61252290951257,
-    "agents": 51.96343249340587,
+    "coding": 40.61408683792248,
+    "agents": 51.96487837393095,
     "reasoning": 49.75,
     "science": 27.843333333333334,
     "knowledge": 56.656666666666666,
@@ -6689,9 +6690,9 @@
      ]
     },
     "frontiercode": {
-     "value": 46.05,
+     "value": 46.06,
      "imputed": true,
-     "sd": 5.22,
+     "sd": 4.92,
      "alternates": []
     },
     "frontierswe": {
@@ -6734,9 +6735,9 @@
      "alternates": []
     },
     "automationbench": {
-     "value": 35.43,
+     "value": 35.44,
      "imputed": true,
-     "sd": 12.24,
+     "sd": 12.07,
      "alternates": [
       {
        "score": 30.8,
@@ -7182,22 +7183,22 @@
    "aaVariant": "Claude Haiku 5.5 (Max)",
    "aaSlug": "claude-haiku-5-5",
    "rank": 9,
-   "score": 52.26912755188815,
-   "scoreLow": 51.193653055867514,
-   "scoreHigh": 53.33853835908292,
+   "score": 52.33340714184885,
+   "scoreLow": 51.31151832515062,
+   "scoreHigh": 53.43923676174077,
    "rankLow": 8,
-   "rankHigh": 10,
+   "rankHigh": 11,
    "observedOnlyScore": 50.980364982808766,
    "observedWeight": 0.7160984848484852,
    "pessimisticRank": 8,
    "coverage": 0.6363636363636364,
    "categoryScores": {
-    "coding": 49.52084665927073,
-    "agents": 57.920265958456476,
+    "coding": 49.62303600700823,
+    "agents": 58.10052769175067,
     "reasoning": 51.65,
     "science": 31.48,
     "knowledge": 53.156666666666666,
-    "vision": 73.0412721289953
+    "vision": 73.04855309628094
    },
    "cells": {
     "terminal-bench-4": {
@@ -7266,9 +7267,9 @@
      ]
     },
     "deepswe": {
-     "value": 69.73,
+     "value": 69.96,
      "imputed": true,
-     "sd": 5.07,
+     "sd": 4.98,
      "alternates": []
     },
     "frontiercode": {
@@ -7425,9 +7426,9 @@
      ]
     },
     "automationbench": {
-     "value": 37.58,
+     "value": 37.62,
      "imputed": true,
-     "sd": 11.72,
+     "sd": 11.55,
      "alternates": [
       {
        "score": 35.41,
@@ -7440,15 +7441,15 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 75.53,
+     "value": 75.54,
      "imputed": true,
-     "sd": 2.23,
+     "sd": 2.31,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 54.41,
+     "value": 54.46,
      "imputed": true,
-     "sd": 3.37,
+     "sd": 3.12,
      "alternates": []
     },
     "hle-no-tools": {
@@ -7706,21 +7707,21 @@
      ]
     },
     "nl2repo-bench": {
-     "value": 58.48,
+     "value": 58.82,
      "imputed": true,
-     "sd": 7.19,
+     "sd": 5.95,
      "alternates": []
     },
     "automationbench-public": {
-     "value": 45.38,
+     "value": 46.73,
      "imputed": true,
-     "sd": 11.24,
+     "sd": 12.53,
      "alternates": []
     },
     "ale-pass": {
-     "value": 30.14,
+     "value": 30.11,
      "imputed": true,
-     "sd": 2.8,
+     "sd": 2.5,
      "alternates": []
     },
     "chartography-tools": {
@@ -7747,9 +7748,9 @@
      ]
     },
     "zerobench-tools": {
-     "value": 46.72,
+     "value": 46.75,
      "imputed": true,
-     "sd": 7.88,
+     "sd": 7.77,
      "alternates": []
     }
    }
@@ -7764,23 +7765,23 @@
    "aaIndex": 42.08,
    "aaVariant": "GPT-5.6 Terra (Max)",
    "aaSlug": "gpt-5-6-terra",
-   "rank": 17,
-   "score": 47.81020996796103,
-   "scoreLow": 46.1619846056013,
-   "scoreHigh": 49.476988957195665,
-   "rankLow": 14,
-   "rankHigh": 20,
+   "rank": 18,
+   "score": 47.81807612656369,
+   "scoreLow": 46.196927172059574,
+   "scoreHigh": 49.414947628457064,
+   "rankLow": 15,
+   "rankHigh": 21,
    "observedOnlyScore": 42.513510488616014,
    "observedWeight": 0.6663068181818184,
-   "pessimisticRank": 18,
+   "pessimisticRank": 19,
    "coverage": 0.6818181818181818,
    "categoryScores": {
-    "coding": 39.838983449732105,
-    "agents": 49.03854994450708,
-    "reasoning": 50.325479620154624,
+    "coding": 39.86167745518264,
+    "agents": 49.048987620713056,
+    "reasoning": 50.331006957241144,
     "science": 31.659999999999997,
     "knowledge": 54.11666666666667,
-    "vision": 70.0372520553634
+    "vision": 70.03390545259593
    },
    "cells": {
     "terminal-bench-4": {
@@ -7971,9 +7972,9 @@
      ]
     },
     "frontierswe": {
-     "value": 23.57,
+     "value": 23.58,
      "imputed": true,
-     "sd": 13.23,
+     "sd": 10.97,
      "alternates": []
     },
     "osworld-2": {
@@ -8136,7 +8137,7 @@
     "toolathlon-verified": {
      "value": 74.76,
      "imputed": true,
-     "sd": 2.29,
+     "sd": 2.38,
      "alternates": [
       {
        "score": 53.1,
@@ -8260,9 +8261,9 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 57.74,
+     "value": 57.75,
      "imputed": true,
-     "sd": 4.64,
+     "sd": 3.63,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -8431,15 +8432,15 @@
      "alternates": []
     },
     "nl2repo-bench": {
-     "value": 55.61,
+     "value": 55.72,
      "imputed": true,
-     "sd": 7.16,
+     "sd": 6.17,
      "alternates": []
     },
     "automationbench-public": {
-     "value": 40.44,
+     "value": 40.53,
      "imputed": true,
-     "sd": 12.54,
+     "sd": 13.5,
      "alternates": []
     },
     "ale-pass": {
@@ -8484,13 +8485,13 @@
     "chartography-tools": {
      "value": 82.36,
      "imputed": true,
-     "sd": 9.46,
+     "sd": 9.83,
      "alternates": []
     },
     "zerobench-tools": {
      "value": 45.38,
      "imputed": true,
-     "sd": 8.12,
+     "sd": 7.93,
      "alternates": []
     }
    }
@@ -8505,23 +8506,23 @@
    "aaIndex": 41.81,
    "aaVariant": "GLM-5.3-Flash",
    "aaSlug": "glm-5-3-flash",
-   "rank": 19,
-   "score": 47.342866544366835,
-   "scoreLow": 45.86808027651258,
-   "scoreHigh": 48.71988004945385,
-   "rankLow": 15,
-   "rankHigh": 20,
+   "rank": 20,
+   "score": 47.359185315671404,
+   "scoreLow": 45.904909014512526,
+   "scoreHigh": 48.71902628227377,
+   "rankLow": 16,
+   "rankHigh": 21,
    "observedOnlyScore": 44.48996420581654,
    "observedWeight": 0.7619318181818184,
-   "pessimisticRank": 17,
+   "pessimisticRank": 18,
    "coverage": 0.7272727272727273,
    "categoryScores": {
-    "coding": 40.161984314042684,
-    "agents": 54.54509272218151,
+    "coding": 40.19442279683605,
+    "agents": 54.56102233290714,
     "reasoning": 47.575,
     "science": 23.30333333333333,
     "knowledge": 53.01666666666667,
-    "vision": 69.22199211216393
+    "vision": 69.2763516147918
    },
    "cells": {
     "terminal-bench-4": {
@@ -8573,9 +8574,9 @@
      ]
     },
     "frontiercode": {
-     "value": 45.58,
+     "value": 45.64,
      "imputed": true,
-     "sd": 5.28,
+     "sd": 5.06,
      "alternates": []
     },
     "frontierswe": {
@@ -8609,9 +8610,9 @@
      "alternates": []
     },
     "automationbench": {
-     "value": 34.89,
+     "value": 34.95,
      "imputed": true,
-     "sd": 12.44,
+     "sd": 12.27,
      "alternates": [
       {
        "score": 48.8,
@@ -8656,9 +8657,9 @@
      ]
     },
     "agents-last-exam": {
-     "value": 51.37,
+     "value": 51.44,
      "imputed": true,
-     "sd": 3.31,
+     "sd": 3.12,
      "alternates": [
       {
        "score": 26.3,
@@ -8819,9 +8820,9 @@
      "alternates": []
     },
     "nl2repo-bench": {
-     "value": 54.55,
+     "value": 54.67,
      "imputed": true,
-     "sd": 7.24,
+     "sd": 6.32,
      "alternates": []
     },
     "automationbench-public": {
@@ -8853,15 +8854,15 @@
      "alternates": []
     },
     "chartography-tools": {
-     "value": 81.39,
+     "value": 81.46,
      "imputed": true,
-     "sd": 9.8,
+     "sd": 10.37,
      "alternates": []
     },
     "zerobench-tools": {
-     "value": 44.89,
+     "value": 44.92,
      "imputed": true,
-     "sd": 8.22,
+     "sd": 8.05,
      "alternates": []
     }
    }
@@ -8876,23 +8877,23 @@
    "aaIndex": 41.09,
    "aaVariant": "Ling 3.1 Flash",
    "aaSlug": "ling-3-1-flash",
-   "rank": 16,
-   "score": 48.596482781794386,
-   "scoreLow": 46.545349326129944,
-   "scoreHigh": 50.95796925986842,
-   "rankLow": 11,
+   "rank": 17,
+   "score": 48.627557671747255,
+   "scoreLow": 46.726993879201764,
+   "scoreHigh": 50.85061586720074,
+   "rankLow": 12,
    "rankHigh": 20,
    "observedOnlyScore": 44.601584905660374,
    "observedWeight": 0.406534090909091,
-   "pessimisticRank": 20,
+   "pessimisticRank": 21,
    "coverage": 0.36363636363636365,
    "categoryScores": {
-    "coding": 44.16895717766701,
-    "agents": 55.24771182096354,
-    "reasoning": 48.69193965664043,
-    "science": 26.145030982963096,
+    "coding": 44.31470046858481,
+    "agents": 55.17768139516681,
+    "reasoning": 48.720865729294395,
+    "science": 26.18574820090804,
     "knowledge": 50.550000000000004,
-    "vision": 70.25741220756028
+    "vision": 70.3037887182579
    },
    "cells": {
     "terminal-bench-4": {
@@ -8920,21 +8921,21 @@
      ]
     },
     "deepswe": {
-     "value": 67.42,
+     "value": 67.67,
      "imputed": true,
-     "sd": 5.68,
+     "sd": 5.3,
      "alternates": []
     },
     "frontiercode": {
-     "value": 46.37,
+     "value": 46.42,
      "imputed": true,
-     "sd": 5.27,
+     "sd": 5,
      "alternates": []
     },
     "frontierswe": {
-     "value": 24.5,
+     "value": 24.73,
      "imputed": true,
-     "sd": 14.22,
+     "sd": 12.89,
      "alternates": [
       {
        "score": 75.16,
@@ -8948,15 +8949,15 @@
      ]
     },
     "osworld-2": {
-     "value": 61.87,
+     "value": 61.52,
      "imputed": true,
-     "sd": 8.45,
+     "sd": 8.3,
      "alternates": []
     },
     "automationbench": {
-     "value": 35.8,
+     "value": 35.86,
      "imputed": true,
-     "sd": 12.18,
+     "sd": 12.05,
      "alternates": [
       {
        "score": 52.5,
@@ -8978,15 +8979,15 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 74.84,
+     "value": 74.85,
      "imputed": true,
-     "sd": 2.33,
+     "sd": 2.4,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 52.42,
+     "value": 52.48,
      "imputed": true,
-     "sd": 3.52,
+     "sd": 3.62,
      "alternates": []
     },
     "hle-no-tools": {
@@ -9004,15 +9005,15 @@
      "alternates": []
     },
     "hle-tools": {
-     "value": 57.95,
+     "value": 58.01,
      "imputed": true,
-     "sd": 4.74,
+     "sd": 4.01,
      "alternates": []
     },
     "terminal-bench-science": {
-     "value": 6.39,
+     "value": 6.51,
      "imputed": true,
-     "sd": 15.7,
+     "sd": 14.28,
      "alternates": []
     },
     "scicode": {
@@ -9097,15 +9098,15 @@
      "alternates": []
     },
     "programbench-almost": {
-     "value": 16.64,
+     "value": 16.82,
      "imputed": true,
-     "sd": 12.06,
+     "sd": 12.27,
      "alternates": []
     },
     "nl2repo-bench": {
-     "value": 55.91,
+     "value": 56.11,
      "imputed": true,
-     "sd": 7.64,
+     "sd": 6.31,
      "alternates": []
     },
     "automationbench-public": {
@@ -9123,21 +9124,21 @@
      "alternates": []
     },
     "ale-pass": {
-     "value": 27.84,
+     "value": 27.83,
      "imputed": true,
-     "sd": 3.3,
+     "sd": 2.89,
      "alternates": []
     },
     "chartography-tools": {
-     "value": 82.63,
+     "value": 82.68,
      "imputed": true,
-     "sd": 9.91,
+     "sd": 10.09,
      "alternates": []
     },
     "zerobench-tools": {
-     "value": 45.52,
+     "value": 45.54,
      "imputed": true,
-     "sd": 8.19,
+     "sd": 7.95,
      "alternates": []
     }
    }
@@ -9152,23 +9153,23 @@
    "aaIndex": 40.93,
    "aaVariant": "Gemini 3.8 Flash (High)",
    "aaSlug": "gemini-3-8-flash",
-   "rank": 15,
-   "score": 49.069054031543686,
-   "scoreLow": 47.551871937467226,
-   "scoreHigh": 50.671284020741545,
-   "rankLow": 11,
-   "rankHigh": 18,
+   "rank": 16,
+   "score": 49.10286892707642,
+   "scoreLow": 47.541361021572996,
+   "scoreHigh": 50.6266817660355,
+   "rankLow": 12,
+   "rankHigh": 19,
    "observedOnlyScore": 43.20011716461627,
    "observedWeight": 0.5819318181818184,
-   "pessimisticRank": 16,
+   "pessimisticRank": 17,
    "coverage": 0.5454545454545454,
    "categoryScores": {
-    "coding": 40.47749231339717,
-    "agents": 53.4126706931508,
-    "reasoning": 51.88655324616174,
+    "coding": 40.522662714652945,
+    "agents": 53.49035806859097,
+    "reasoning": 51.907968017944214,
     "science": 27.820000000000004,
     "knowledge": 56.19333333333333,
-    "vision": 70.6858266683854
+    "vision": 70.71863568424065
    },
    "cells": {
     "terminal-bench-4": {
@@ -9238,9 +9239,9 @@
      ]
     },
     "frontiercode": {
-     "value": 46.71,
+     "value": 46.74,
      "imputed": true,
-     "sd": 5.14,
+     "sd": 4.93,
      "alternates": []
     },
     "frontierswe": {
@@ -9274,9 +9275,9 @@
      "alternates": []
     },
     "automationbench": {
-     "value": 36.2,
+     "value": 36.24,
      "imputed": true,
-     "sd": 12.14,
+     "sd": 11.92,
      "alternates": [
       {
        "score": 59.93,
@@ -9289,15 +9290,15 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 74.99,
+     "value": 75,
      "imputed": true,
-     "sd": 2.31,
+     "sd": 2.35,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 52.86,
+     "value": 52.91,
      "imputed": true,
-     "sd": 3.44,
+     "sd": 3.12,
      "alternates": []
     },
     "hle-no-tools": {
@@ -9351,9 +9352,9 @@
      ]
     },
     "hle-tools": {
-     "value": 58.37,
+     "value": 58.42,
      "imputed": true,
-     "sd": 4.73,
+     "sd": 3.6,
      "alternates": []
     },
     "terminal-bench-science": {
@@ -9495,33 +9496,33 @@
      "alternates": []
     },
     "nl2repo-bench": {
-     "value": 56.49,
+     "value": 56.7,
      "imputed": true,
-     "sd": 7.28,
+     "sd": 6.11,
      "alternates": []
     },
     "automationbench-public": {
-     "value": 41.91,
+     "value": 42.45,
      "imputed": true,
-     "sd": 12.22,
+     "sd": 13.12,
      "alternates": []
     },
     "ale-pass": {
-     "value": 28.34,
+     "value": 28.32,
      "imputed": true,
-     "sd": 2.99,
+     "sd": 2.61,
      "alternates": []
     },
     "chartography-tools": {
-     "value": 83.13,
+     "value": 83.18,
      "imputed": true,
-     "sd": 9.31,
+     "sd": 9.76,
      "alternates": []
     },
     "zerobench-tools": {
-     "value": 45.79,
+     "value": 45.8,
      "imputed": true,
-     "sd": 8.04,
+     "sd": 7.88,
      "alternates": []
     }
    }
@@ -9536,23 +9537,23 @@
    "aaIndex": 39.89,
    "aaVariant": "Qwen3.8 2.4T A95B",
    "aaSlug": "qwen3-8-2-4t-a95b",
-   "rank": 20,
-   "score": 46.799771716811925,
-   "scoreLow": 45.3344549514709,
-   "scoreHigh": 48.19434434680979,
-   "rankLow": 16,
-   "rankHigh": 20,
+   "rank": 21,
+   "score": 46.77547618450148,
+   "scoreLow": 45.282817697017606,
+   "scoreHigh": 48.26675934143393,
+   "rankLow": 17,
+   "rankHigh": 21,
    "observedOnlyScore": 43.65658830423062,
    "observedWeight": 0.8080492424242427,
-   "pessimisticRank": 19,
+   "pessimisticRank": 20,
    "coverage": 0.8181818181818182,
    "categoryScores": {
-    "coding": 38.78076429275937,
-    "agents": 50.391891026146375,
+    "coding": 38.784313501913715,
+    "agents": 50.27639209061778,
     "reasoning": 49.900000000000006,
     "science": 28.97,
     "knowledge": 50.27,
-    "vision": 70.39874270058134
+    "vision": 70.40767426181897
    },
    "cells": {
     "terminal-bench-4": {
@@ -9614,9 +9615,9 @@
      ]
     },
     "frontiercode": {
-     "value": 45.4,
+     "value": 45.42,
      "imputed": true,
-     "sd": 5.35,
+     "sd": 5.03,
      "alternates": []
     },
     "frontierswe": {
@@ -9645,15 +9646,15 @@
      ]
     },
     "osworld-2": {
-     "value": 58.38,
+     "value": 57.9,
      "imputed": true,
-     "sd": 8.09,
+     "sd": 7.87,
      "alternates": []
     },
     "automationbench": {
-     "value": 34.68,
+     "value": 34.71,
      "imputed": true,
-     "sd": 12.54,
+     "sd": 12.3,
      "alternates": [
       {
        "score": 27.3,
@@ -9941,9 +9942,9 @@
      "alternates": []
     },
     "chartography-tools": {
-     "value": 81.1,
+     "value": 81.11,
      "imputed": true,
-     "sd": 10.05,
+     "sd": 10.65,
      "alternates": []
     },
     "zerobench-tools": {
@@ -9972,23 +9973,23 @@
    "aaIndex": 39.82,
    "aaVariant": "Qwen3.8-Flash-Next",
    "aaSlug": "qwen3-8-flash-next",
-   "rank": 21,
-   "score": 43.56096820862851,
-   "scoreLow": 41.88429619296576,
-   "scoreHigh": 46.176495335735815,
-   "rankLow": 20,
-   "rankHigh": 21,
+   "rank": 22,
+   "score": 43.545652984467765,
+   "scoreLow": 41.755303110630116,
+   "scoreHigh": 46.08263521765102,
+   "rankLow": 22,
+   "rankHigh": 22,
    "observedOnlyScore": 45.95839024390244,
    "observedWeight": 0.6289772727272728,
-   "pessimisticRank": 21,
+   "pessimisticRank": 22,
    "coverage": 0.5909090909090909,
    "categoryScores": {
-    "coding": 34.826304794621315,
-    "agents": 49.09935388967681,
-    "reasoning": 45.16056145515121,
-    "science": 21.030550323584187,
+    "coding": 34.871752360234815,
+    "agents": 48.93520193088025,
+    "reasoning": 45.19870954455192,
+    "science": 21.03896873851333,
     "knowledge": 50.580000000000005,
-    "vision": 66.37494914532134
+    "vision": 66.4260170075306
    },
    "cells": {
     "terminal-bench-4": {
@@ -10021,15 +10022,15 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 43.57,
+     "value": 43.63,
      "imputed": true,
-     "sd": 5.88,
+     "sd": 6.03,
      "alternates": []
     },
     "frontierswe": {
-     "value": 12.28,
+     "value": 12.43,
      "imputed": true,
-     "sd": 13.74,
+     "sd": 14.56,
      "alternates": []
     },
     "osworld-2": {
@@ -10058,9 +10059,9 @@
      ]
     },
     "automationbench": {
-     "value": 32.6,
+     "value": 32.67,
      "imputed": true,
-     "sd": 13.53,
+     "sd": 13.1,
      "alternates": [
       {
        "score": 55.91,
@@ -10137,15 +10138,15 @@
      ]
     },
     "hle-tools": {
-     "value": 54.42,
+     "value": 54.5,
      "imputed": true,
-     "sd": 5.13,
+     "sd": 4.76,
      "alternates": []
     },
     "terminal-bench-science": {
-     "value": 1.37,
+     "value": 1.4,
      "imputed": true,
-     "sd": 17.5,
+     "sd": 16.53,
      "alternates": []
     },
     "scicode": {
@@ -10220,9 +10221,9 @@
      "alternates": []
     },
     "programbench-almost": {
-     "value": 7.28,
+     "value": 7.37,
      "imputed": true,
-     "sd": 13.01,
+     "sd": 13.53,
      "alternates": []
     },
     "nl2repo-bench": {
@@ -10240,9 +10241,9 @@
      "alternates": []
     },
     "automationbench-public": {
-     "value": 33.09,
+     "value": 31.71,
      "imputed": true,
-     "sd": 15.32,
+     "sd": 17.07,
      "alternates": []
     },
     "ale-pass": {
@@ -10260,15 +10261,15 @@
      "alternates": []
     },
     "chartography-tools": {
-     "value": 77.91,
+     "value": 77.99,
      "imputed": true,
-     "sd": 11.73,
+     "sd": 12.42,
      "alternates": []
     },
     "zerobench-tools": {
-     "value": 43.3,
+     "value": 43.31,
      "imputed": true,
-     "sd": 8.89,
+     "sd": 8.58,
      "alternates": []
     }
    }
@@ -10284,9 +10285,9 @@
    "aaVariant": null,
    "aaSlug": null,
    "rank": 7,
-   "score": 55.87570679626148,
-   "scoreLow": 53.61759738160031,
-   "scoreHigh": 58.13097758910902,
+   "score": 55.818542866093274,
+   "scoreLow": 53.73240526205023,
+   "scoreHigh": 57.891624956114924,
    "rankLow": 6,
    "rankHigh": 7,
    "observedOnlyScore": 57.426752348508316,
@@ -10294,11 +10295,11 @@
    "pessimisticRank": 7,
    "coverage": 0.4090909090909091,
    "categoryScores": {
-    "coding": 54.65933290972225,
-    "agents": 61.634230031200964,
-    "reasoning": 52.464918207135185,
-    "science": 40.021034867038026,
-    "knowledge": 55.50398964559463,
+    "coding": 54.620567998453865,
+    "agents": 61.51496588644052,
+    "reasoning": 52.44693304118379,
+    "science": 39.90758884038927,
+    "knowledge": 55.48252197025737,
     "vision": 72.33333333333333
    },
    "cells": {
@@ -10333,27 +10334,27 @@
      "alternates": []
     },
     "frontiercode": {
-     "value": 49.97,
+     "value": 49.94,
      "imputed": true,
-     "sd": 5.08,
+     "sd": 4.73,
      "alternates": []
     },
     "frontierswe": {
-     "value": 48.61,
+     "value": 48.42,
      "imputed": true,
-     "sd": 14.67,
+     "sd": 12.22,
      "alternates": []
     },
     "osworld-2": {
-     "value": 73.55,
+     "value": 73.1,
      "imputed": true,
-     "sd": 7.5,
+     "sd": 7.41,
      "alternates": []
     },
     "automationbench": {
-     "value": 40.07,
+     "value": 40.03,
      "imputed": true,
-     "sd": 11.59,
+     "sd": 11.4,
      "alternates": [
       {
        "score": 60.5,
@@ -10367,15 +10368,15 @@
      ]
     },
     "toolathlon-verified": {
-     "value": 76.45,
+     "value": 76.44,
      "imputed": true,
-     "sd": 2.32,
+     "sd": 2.34,
      "alternates": []
     },
     "agents-last-exam": {
-     "value": 57.11,
+     "value": 57.1,
      "imputed": true,
-     "sd": 3.81,
+     "sd": 3.5,
      "alternates": [
       {
        "score": 35.4,
@@ -10414,45 +10415,45 @@
      ]
     },
     "hle-tools": {
-     "value": 62.33,
+     "value": 62.29,
      "imputed": true,
-     "sd": 4.86,
+     "sd": 3.76,
      "alternates": []
     },
     "terminal-bench-science": {
-     "value": 34.03,
+     "value": 33.78,
      "imputed": true,
-     "sd": 18.54,
+     "sd": 17.31,
      "alternates": []
     },
     "scicode": {
-     "value": 59.52,
+     "value": 59.48,
      "imputed": true,
-     "sd": 3.85,
+     "sd": 3.76,
      "alternates": []
     },
     "critpt": {
-     "value": 26.51,
+     "value": 26.45,
      "imputed": true,
-     "sd": 5.54,
+     "sd": 5.71,
      "alternates": []
     },
     "gdpval-aa": {
-     "value": 59.89,
+     "value": 59.87,
      "imputed": true,
-     "sd": 5,
+     "sd": 4.95,
      "alternates": []
     },
     "gdp-pdf": {
-     "value": 23.65,
+     "value": 23.61,
      "imputed": true,
-     "sd": 7.27,
+     "sd": 6.88,
      "alternates": []
     },
     "aa-lcr": {
-     "value": 82.98,
+     "value": 82.97,
      "imputed": true,
-     "sd": 3.51,
+     "sd": 3.42,
      "alternates": []
     },
     "programbench-almost": {
@@ -10537,6 +10538,299 @@
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
       "note": "2026-10-18 核对 1017 模型卡；指标上下文参照同页链接的系列技术报告第 32–33 页。1017 未重述完整预算、试验次数与子集范围，不移用旧版分数或未明示的运行参数。"
      },
+     "alternates": []
+    }
+   }
+  },
+  {
+   "id": "minimax-m3-1-flash",
+   "name": "MiniMax M3.1 Flash",
+   "vendor": "MiniMax",
+   "releaseDate": "2026-10-19",
+   "openWeights": false,
+   "aaRank": null,
+   "aaIndex": null,
+   "aaVariant": null,
+   "aaSlug": null,
+   "rank": 8,
+   "score": 52.64282184076116,
+   "scoreLow": 50.685304042167346,
+   "scoreHigh": 54.63368243728084,
+   "rankLow": 8,
+   "rankHigh": 12,
+   "observedOnlyScore": 48.23505494984736,
+   "observedWeight": 0.3908522727272728,
+   "pessimisticRank": 11,
+   "coverage": 0.4090909090909091,
+   "categoryScores": {
+    "coding": 49.75363632976084,
+    "agents": 57.503155067728684,
+    "reasoning": 51.97263420377749,
+    "science": 33.086646524321225,
+    "knowledge": 54.14900389438867,
+    "vision": 72.80220177042717
+   },
+   "cells": {
+    "terminal-bench-4": {
+     "value": 38.1,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 38.1,
+      "setting": "Terminal-Bench 4.0 成功率；厂商自测，Codex 0.149.1 harness；未披露推理档位与试验次数",
+      "sourceType": "official",
+      "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。"
+     },
+     "alternates": []
+    },
+    "deepswe": {
+     "value": 73.7,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 73.7,
+      "setting": "DeepSWE v1.1 解决率；厂商自测，mini-SWE-agent 2.4.5，最大上下文 512K；未另报推理档位与采样次数",
+      "sourceType": "official",
+      "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。"
+     },
+     "alternates": []
+    },
+    "frontiercode": {
+     "value": 48.48,
+     "imputed": true,
+     "sd": 4.69,
+     "alternates": []
+    },
+    "frontierswe": {
+     "value": 37.84,
+     "imputed": true,
+     "sd": 11.48,
+     "alternates": []
+    },
+    "osworld-2": {
+     "value": 61.7,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 61.7,
+      "setting": "OSWorld 2.0，官方推荐 0808 Full 版本；厂商自测；未另报具体采样预算",
+      "sourceType": "official",
+      "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。 原表明确 Full，不是 OSWorld-Verified；不把 2.0 完整集改称其他 GUI 评测。"
+     },
+     "alternates": []
+    },
+    "automationbench": {
+     "value": 38.29,
+     "imputed": true,
+     "sd": 11.43,
+     "alternates": []
+    },
+    "toolathlon-verified": {
+     "value": 75.79,
+     "imputed": true,
+     "sd": 2.32,
+     "alternates": []
+    },
+    "agents-last-exam": {
+     "value": 54.95,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 54.9514,
+      "setting": "avgScore × 100；split=full，149/152 题；harness=claude_code，档位=reasoning-max",
+      "sourceType": "benchmark_author",
+      "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+      "url": "https://agents-last-exam.org/api/demo/leaderboard",
+      "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+     },
+     "alternates": [
+      {
+       "score": 52.9279,
+       "setting": "avgScore × 100；split=full，147/152 题；harness=codex，档位=reasoning-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+      },
+      {
+       "score": 53.9151,
+       "setting": "avgScore × 100；split=linux_only，104/105 题；harness=claude_code，档位=reasoning-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+      },
+      {
+       "score": 53.0245,
+       "setting": "avgScore × 100；split=linux_only，102/105 题；harness=codex，档位=reasoning-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+      }
+     ]
+    },
+    "hle-no-tools": {
+     "value": 43.4,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 43.4,
+      "setting": "HLE 不用工具，纯文本 2158 题子集；厂商自测；未另报推理档位与采样预算",
+      "sourceType": "official",
+      "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。 纯文本子集视为可比但非首选，不改称完整 2500 题。"
+     },
+     "alternates": []
+    },
+    "hle-tools": {
+     "value": 60.55,
+     "imputed": true,
+     "sd": 3.6,
+     "alternates": []
+    },
+    "terminal-bench-science": {
+     "value": 18.31,
+     "imputed": true,
+     "sd": 14.48,
+     "alternates": []
+    },
+    "scicode": {
+     "value": 57.71,
+     "imputed": true,
+     "sd": 3.55,
+     "alternates": []
+    },
+    "critpt": {
+     "value": 23.24,
+     "imputed": true,
+     "sd": 5.34,
+     "alternates": []
+    },
+    "gdpval-aa": {
+     "value": 58.93,
+     "imputed": true,
+     "sd": 4.83,
+     "alternates": []
+    },
+    "gdp-pdf": {
+     "value": 20.8,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 20.8,
+      "setting": "GDP.pdf AA；厂商直接引用 Artificial Analysis 结果；按 AA headline all-pass 收录，原表未另列档位与采样日期",
+      "sourceType": "official",
+      "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。 原表脚注明确来自 AA。AA 作者页以 all-pass 为 headline；同表 Kimi=22.0、GLM-5.3=11.2 与本榜 AA all-pass 记录一致，故按该指标归类。MiniMax 当前模型页未能读取，未独立核到其 AA 单项原记录；来源仍标厂商发布，不虚构 AA 指数或名次。"
+     },
+     "alternates": []
+    },
+    "aa-lcr": {
+     "value": 82.72,
+     "imputed": true,
+     "sd": 3.41,
+     "alternates": []
+    },
+    "programbench-almost": {
+     "value": 28.65,
+     "imputed": true,
+     "sd": 10.87,
+     "alternates": []
+    },
+    "nl2repo-bench": {
+     "value": 61.2,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 61.2,
+      "setting": "NL2Repo-Bench Score；Claude Code 2.1.233，最大上下文 512K；2 题规范 / 测试不一致处修正后评估；reward hacking case 按厂商协议赋零分",
+      "sourceType": "official",
+      "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。 保留厂商对两题的修正和 reward hacking 处理；并非未经修改的原始配置，记录为非首选，不称整仓完全通过率。"
+     },
+     "alternates": []
+    },
+    "automationbench-public": {
+     "value": 62.2,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 62.2,
+      "setting": "AutomationBench v1.0.6；公开 600 题，按公开集完全通过率收录；未披露完整 harness 与推理档位",
+      "sourceType": "official",
+      "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。 正文一处称 AutomationBench-AA，但图表行名和脚注明确 v1.0.6 公开 600 题；因此使用公开集列，不填 Zapier 私有集。完全通过率口径按官方实现和同表 DeepSeek 1017=60.5 等对照值判断；发布表未另写 Pass@1，不将此判断伪称原文明示。"
+     },
+     "alternates": []
+    },
+    "ale-pass": {
+     "value": 29.6,
+     "imputed": false,
+     "sd": 0,
+     "primary": {
+      "score": 29.6,
+      "setting": "Agents’ Last Exam Overall 完整 152 题的 Pass rate；官方发布表引用 ALE 作者榜，Claude Code / max 对应值；并非 CLI 或 avgScore",
+      "sourceType": "official",
+      "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。 作者 API 的 minimax-m3-1-flash / full / claude_code / reasoning-max：passRate=45/152=29.6053%，与发布表 29.6 一致；avgScore=54.9514%。作者记录为 149/152 题，不把缺少的运行解释为模型零分。"
+     },
+     "alternates": [
+      {
+       "score": 29.6053,
+       "setting": "passRate × 100；split=full，149/152 题；harness=claude_code，档位=reasoning-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+      },
+      {
+       "score": 26.9737,
+       "setting": "passRate × 100；split=full，147/152 题；harness=codex，档位=reasoning-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+      },
+      {
+       "score": 26.6667,
+       "setting": "passRate × 100；split=linux_only，104/105 题；harness=claude_code，档位=reasoning-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+      },
+      {
+       "score": 25.7143,
+       "setting": "passRate × 100；split=linux_only，102/105 题；harness=codex，档位=reasoning-max",
+       "sourceType": "benchmark_author",
+       "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+       "url": "https://agents-last-exam.org/api/demo/leaderboard",
+       "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+      }
+     ]
+    },
+    "chartography-tools": {
+     "value": 85.6,
+     "imputed": true,
+     "sd": 8.99,
+     "alternates": []
+    },
+    "zerobench-tools": {
+     "value": 47.2,
+     "imputed": true,
+     "sd": 7.75,
      "alternates": []
     }
    }
@@ -10649,8 +10943,18 @@
    "kind": "docs"
   },
   {
+   "url": "https://github.com/Warren-swr/llm-leaderboard/blob/main/data/research/minimax-m3-1-flash-20261019.md",
+   "title": "2026-10-19 MiniMax M3.1 Flash 正式版核验：指标、来源与排名",
+   "kind": "docs"
+  },
+  {
    "url": "https://www.alibabacloud.com/en/notice/model_studio_update_notice_for_qwen38max_models_863",
    "title": "Alibaba Cloud Model Studio 更新公告：qwen3.8-max-0902",
+   "kind": "docs"
+  },
+  {
+   "url": "https://artificialanalysis.ai/evaluations/gdp-pdf",
+   "title": "Artificial Analysis GDP.pdf 方法与 all-pass 主指标",
    "kind": "docs"
   },
   {
@@ -10771,6 +11075,21 @@
   {
    "url": "https://pbs.twimg.com/media/HTelU-lbgAQs5K-.jpg?name=orig",
    "title": "Ling-3.1-flash launch benchmark chart",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://www.minimax.cn/blog/minimax-m31f",
+   "title": "MiniMax M3.1 Flash 官方中文发布页（2026-10-19）",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://www.minimax.io/blog/minimax-m31f",
+   "title": "MiniMax M3.1 Flash 官方英文发布页与完整评测图（2026-10-19）",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://x.com/MiniMax_AI/status/2112150867868541221",
+   "title": "MiniMax 官方 X 补发公告：M3.1 Flash（2026-10-19）",
    "kind": "launch_page"
   },
   {
@@ -10966,6 +11285,11 @@
   {
    "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
    "title": "MiMo-V2.6-Pro-RL Hugging Face model card",
+   "kind": "model_card"
+  },
+  {
+   "url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121.png",
+   "title": "MiniMax M3.1 Flash 官方完整评测表及方法脚注",
    "kind": "model_card"
   },
   {

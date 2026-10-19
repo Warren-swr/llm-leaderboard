@@ -1,0 +1,302 @@
+{
+ "model": "minimax-m3-1-flash",
+ "records": [
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 38.1,
+   "setting": "Terminal-Bench 4.0 成功率；厂商自测，Codex 0.149.1 harness；未披露推理档位与试验次数",
+   "sourceType": "official",
+   "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+   "url": "https://www.minimax.io/blog/minimax-m31f",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。"
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 73.7,
+   "setting": "DeepSWE v1.1 解决率；厂商自测，mini-SWE-agent 2.4.5，最大上下文 512K；未另报推理档位与采样次数",
+   "sourceType": "official",
+   "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+   "url": "https://www.minimax.io/blog/minimax-m31f",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。"
+  },
+  {
+   "benchmark": "osworld-2",
+   "score": 61.7,
+   "setting": "OSWorld 2.0，官方推荐 0808 Full 版本；厂商自测；未另报具体采样预算",
+   "sourceType": "official",
+   "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+   "url": "https://www.minimax.io/blog/minimax-m31f",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。 原表明确 Full，不是 OSWorld-Verified；不把 2.0 完整集改称其他 GUI 评测。"
+  },
+  {
+   "benchmark": "automationbench-public",
+   "score": 62.2,
+   "setting": "AutomationBench v1.0.6；公开 600 题，按公开集完全通过率收录；未披露完整 harness 与推理档位",
+   "sourceType": "official",
+   "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+   "url": "https://www.minimax.io/blog/minimax-m31f",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。 正文一处称 AutomationBench-AA，但图表行名和脚注明确 v1.0.6 公开 600 题；因此使用公开集列，不填 Zapier 私有集。完全通过率口径按官方实现和同表 DeepSeek 1017=60.5 等对照值判断；发布表未另写 Pass@1，不将此判断伪称原文明示。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 29.6,
+   "setting": "Agents’ Last Exam Overall 完整 152 题的 Pass rate；官方发布表引用 ALE 作者榜，Claude Code / max 对应值；并非 CLI 或 avgScore",
+   "sourceType": "official",
+   "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+   "url": "https://www.minimax.io/blog/minimax-m31f",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。 作者 API 的 minimax-m3-1-flash / full / claude_code / reasoning-max：passRate=45/152=29.6053%，与发布表 29.6 一致；avgScore=54.9514%。作者记录为 149/152 题，不把缺少的运行解释为模型零分。"
+  },
+  {
+   "benchmark": "hle-no-tools",
+   "score": 43.4,
+   "setting": "HLE 不用工具，纯文本 2158 题子集；厂商自测；未另报推理档位与采样预算",
+   "sourceType": "official",
+   "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+   "url": "https://www.minimax.io/blog/minimax-m31f",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。 纯文本子集视为可比但非首选，不改称完整 2500 题。"
+  },
+  {
+   "benchmark": "nl2repo-bench",
+   "score": 61.2,
+   "setting": "NL2Repo-Bench Score；Claude Code 2.1.233，最大上下文 512K；2 题规范 / 测试不一致处修正后评估；reward hacking case 按厂商协议赋零分",
+   "sourceType": "official",
+   "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+   "url": "https://www.minimax.io/blog/minimax-m31f",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。 保留厂商对两题的修正和 reward hacking 处理；并非未经修改的原始配置，记录为非首选，不称整仓完全通过率。"
+  },
+  {
+   "benchmark": "gdp-pdf",
+   "score": 20.8,
+   "setting": "GDP.pdf AA；厂商直接引用 Artificial Analysis 结果；按 AA headline all-pass 收录，原表未另列档位与采样日期",
+   "sourceType": "official",
+   "sourceName": "MiniMax M3.1 Flash 官方发布表及脚注",
+   "url": "https://www.minimax.io/blog/minimax-m31f",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-19 已核对官方中英文发布表、完整脚注及补发的 X 原图；未复跑模型。原始页面与图表 SHA256 见 data/sources/minimax/minimax-m3-1-flash-20261019.json。 原表脚注明确来自 AA。AA 作者页以 all-pass 为 headline；同表 Kimi=22.0、GLM-5.3=11.2 与本榜 AA all-pass 记录一致，故按该指标归类。MiniMax 当前模型页未能读取，未独立核到其 AA 单项原记录；来源仍标厂商发布，不虚构 AA 指数或名次。"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 54.9514,
+   "setting": "avgScore × 100；split=full，149/152 题；harness=claude_code，档位=reasoning-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 52.9279,
+   "setting": "avgScore × 100；split=full，147/152 题；harness=codex，档位=reasoning-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 53.9151,
+   "setting": "avgScore × 100；split=linux_only，104/105 题；harness=claude_code，档位=reasoning-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "score": 53.0245,
+   "setting": "avgScore × 100；split=linux_only，102/105 题；harness=codex，档位=reasoning-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 29.6053,
+   "setting": "passRate × 100；split=full，149/152 题；harness=claude_code，档位=reasoning-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": true,
+   "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 26.9737,
+   "setting": "passRate × 100；split=full，147/152 题；harness=codex，档位=reasoning-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": true,
+   "primaryHint": false,
+   "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 26.6667,
+   "setting": "passRate × 100；split=linux_only，104/105 题；harness=claude_code，档位=reasoning-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 25.7143,
+   "setting": "passRate × 100；split=linux_only，102/105 题；harness=codex，档位=reasoning-max",
+   "sourceType": "benchmark_author",
+   "sourceName": "Agents’ Last Exam 作者榜（MiniMax M3.1 Flash）",
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-19 直接读取作者 API 的同名正式模型。Score 使用 avgScore，完全通过率使用 passRate；均保留作者分母，不重算缺少运行的得分。主配置采用与厂商 headline 29.6 匹配的 full / claude_code / max；没有按分数高低挑配置。CLI 105 题仅作非首选参考。"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://www.minimax.io/blog/minimax-m31f",
+   "title": "MiniMax M3.1 Flash 官方英文发布页与完整评测图（2026-10-19）",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://www.minimax.cn/blog/minimax-m31f",
+   "title": "MiniMax M3.1 Flash 官方中文发布页（2026-10-19）",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://x.com/MiniMax_AI/status/2112150867868541221",
+   "title": "MiniMax 官方 X 补发公告：M3.1 Flash（2026-10-19）",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121.png",
+   "title": "MiniMax M3.1 Flash 官方完整评测表及方法脚注",
+   "kind": "model_card"
+  },
+  {
+   "url": "https://agents-last-exam.org/api/demo/leaderboard",
+   "title": "Agents’ Last Exam 作者 API：MiniMax M3.1 Flash 的 Pass / Score",
+   "kind": "leaderboard"
+  },
+  {
+   "url": "https://artificialanalysis.ai/evaluations/gdp-pdf",
+   "title": "Artificial Analysis GDP.pdf 方法与 all-pass 主指标",
+   "kind": "docs"
+  }
+ ],
+ "notFound": [
+  {
+   "benchmark": "aa-lcr",
+   "reason": "未找到明确归属于 2026-10-19 正式版且与本列指标可比的分数；不移用 MiniMax M3、Space Bunny 或 Preview。"
+  },
+  {
+   "benchmark": "automationbench",
+   "reason": "未找到明确归属于 2026-10-19 正式版且与本列指标可比的分数；不移用 MiniMax M3、Space Bunny 或 Preview。"
+  },
+  {
+   "benchmark": "chartography-tools",
+   "reason": "未找到明确归属于 2026-10-19 正式版且与本列指标可比的分数；不移用 MiniMax M3、Space Bunny 或 Preview。"
+  },
+  {
+   "benchmark": "critpt",
+   "reason": "未找到明确归属于 2026-10-19 正式版且与本列指标可比的分数；不移用 MiniMax M3、Space Bunny 或 Preview。"
+  },
+  {
+   "benchmark": "frontiercode",
+   "reason": "未找到明确归属于 2026-10-19 正式版且与本列指标可比的分数；不移用 MiniMax M3、Space Bunny 或 Preview。"
+  },
+  {
+   "benchmark": "frontierswe",
+   "reason": "未找到明确归属于 2026-10-19 正式版且与本列指标可比的分数；不移用 MiniMax M3、Space Bunny 或 Preview。"
+  },
+  {
+   "benchmark": "gdpval-aa",
+   "reason": "未找到明确归属于 2026-10-19 正式版且与本列指标可比的分数；不移用 MiniMax M3、Space Bunny 或 Preview。"
+  },
+  {
+   "benchmark": "hle-tools",
+   "reason": "未找到明确归属于 2026-10-19 正式版且与本列指标可比的分数；不移用 MiniMax M3、Space Bunny 或 Preview。"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "reason": "未找到明确归属于 2026-10-19 正式版且与本列指标可比的分数；不移用 MiniMax M3、Space Bunny 或 Preview。"
+  },
+  {
+   "benchmark": "scicode",
+   "reason": "未找到明确归属于 2026-10-19 正式版且与本列指标可比的分数；不移用 MiniMax M3、Space Bunny 或 Preview。"
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "reason": "未找到明确归属于 2026-10-19 正式版且与本列指标可比的分数；不移用 MiniMax M3、Space Bunny 或 Preview。"
+  },
+  {
+   "benchmark": "toolathlon-verified",
+   "reason": "未找到明确归属于 2026-10-19 正式版且与本列指标可比的分数；不移用 MiniMax M3、Space Bunny 或 Preview。"
+  },
+  {
+   "benchmark": "zerobench-tools",
+   "reason": "未找到明确归属于 2026-10-19 正式版且与本列指标可比的分数；不移用 MiniMax M3、Space Bunny 或 Preview。"
+  }
+ ],
+ "collectionDate": "2026-10-19",
+ "collectorNotes": "正式版 2026-10-19 发布。计划 10 月 23 日开放权重，截至检索日尚未公开，页面仅标闭源。原始已删除帖不作为分数来源，采用用户提供的补发帖和官网完整表。",
+ "verifierSummary": "8 个官方发布指标，另从 ALE 作者 API 收录独立的部分得分 Score；共 9 个排名单元，16 条原始记录。保留预算缺失、GDP.pdf 指标归类判断及 NL2Repo 两题修正；未执行评测。"
+}

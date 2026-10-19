@@ -1,0 +1,202 @@
+{
+  "retrievedDate": "2026-10-19",
+  "publishedDate": "2026-10-19",
+  "model": "minimax-m3-1-flash",
+  "baselineCommit": "6862f4299ec5385c0534c3547deba7e7666733a1",
+  "evidenceRun": "runs/llm-leaderboard/minimax-m31-flash-20261019-115715",
+  "announcement": "https://x.com/MiniMax_AI/status/2112150867868541221",
+  "deletedAnnouncement": "https://x.com/MiniMax_AI/status/2112149942332494093",
+  "openWeightsAsOfRetrieval": false,
+  "announcedWeightsDate": "2026-10-23",
+  "officialRankedScores": {
+    "terminal-bench-4": 38.1,
+    "deepswe": 73.7,
+    "osworld-2": 61.7,
+    "automationbench-public": 62.2,
+    "ale-pass": 29.6,
+    "hle-no-tools": 43.4,
+    "nl2repo-bench": 61.2,
+    "gdp-pdf": 20.8
+  },
+  "aleAuthorRows": [
+    {
+      "split": "full",
+      "harness": "claude_code",
+      "model": "minimax-m3-1-flash",
+      "harnessVariant": "reasoning-max",
+      "runs": 149,
+      "tasks": 149,
+      "splitTasks": 152,
+      "passes": 45,
+      "passRate": 0.29605263157894735,
+      "avgScore": 0.5495140832888198,
+      "totalDurationS": 623102,
+      "totalInputTokens": 4905843184,
+      "totalOutputTokens": 21847808,
+      "totalCostUsd": 91.44,
+      "costSource": "db"
+    },
+    {
+      "split": "full",
+      "harness": "codex",
+      "model": "minimax-m3-1-flash",
+      "harnessVariant": "reasoning-max",
+      "runs": 147,
+      "tasks": 147,
+      "splitTasks": 152,
+      "passes": 41,
+      "passRate": 0.26973684210526316,
+      "avgScore": 0.5292794458532317,
+      "totalDurationS": 532092,
+      "totalInputTokens": 3595039239,
+      "totalOutputTokens": 19891259,
+      "totalCostUsd": 67.72,
+      "costSource": "db"
+    },
+    {
+      "split": "linux_only",
+      "harness": "claude_code",
+      "model": "minimax-m3-1-flash",
+      "harnessVariant": "reasoning-max",
+      "runs": 104,
+      "tasks": 104,
+      "splitTasks": 105,
+      "passes": 28,
+      "passRate": 0.26666666666666666,
+      "avgScore": 0.5391510889246521,
+      "totalDurationS": 408732,
+      "totalInputTokens": 2175766173,
+      "totalOutputTokens": 14319477,
+      "totalCostUsd": 43.93,
+      "costSource": "db"
+    },
+    {
+      "split": "linux_only",
+      "harness": "codex",
+      "model": "minimax-m3-1-flash",
+      "harnessVariant": "reasoning-max",
+      "runs": 102,
+      "tasks": 102,
+      "splitTasks": 105,
+      "passes": 27,
+      "passRate": 0.2571428571428571,
+      "avgScore": 0.530244505351067,
+      "totalDurationS": 319978,
+      "totalInputTokens": 1572572082,
+      "totalOutputTokens": 11609538,
+      "totalCostUsd": 31.48,
+      "costSource": "db"
+    }
+  ],
+  "records": 16,
+  "rankedMetrics": 9,
+  "outsideRanking": [
+    {
+      "benchmark": "BankerToolBench",
+      "score": 76.2,
+      "reason": "不在现有 22 项指标内"
+    },
+    {
+      "benchmark": "LOCA-Bench 256K",
+      "score": 60.3,
+      "reason": "不在现有指标内，不与 AA-LCR 互填"
+    },
+    {
+      "benchmark": "PostTrain Bench v1.1",
+      "score": 39.3,
+      "reason": "不在现有指标内，不与其他编程基准互填"
+    },
+    {
+      "benchmark": "SWE Refactor Bench",
+      "score": 23.0,
+      "reason": "不在现有指标内，不与 FrontierSWE 互填"
+    },
+    {
+      "benchmark": "CyberGym",
+      "score": 82.2,
+      "reason": "现有榜单尚未覆盖网络安全类别"
+    },
+    {
+      "benchmark": "BabyVision 带工具",
+      "score": 91.0,
+      "reason": "沿用头部饱和筛选，不加入默认排名"
+    },
+    {
+      "benchmark": "CharXiv RQ",
+      "score": 82.5,
+      "reason": "不与 Chartography 或 ZeroBench 互填"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://cdn.syndication.twimg.com/tweet-result?id=2112149942332494093&lang=en&token=0",
+      "status": 200,
+      "file": "snapshots/f93882e035ec74f9.txt",
+      "sha256": "e2e68bae39e2d977180980f7105f337fb1fd4d6e403e4818e1b515d231081d2d",
+      "bytes": 292
+    },
+    {
+      "url": "https://agents-last-exam.org/api/demo/leaderboard",
+      "status": 200,
+      "file": "snapshots/35a1b5570f69834d.txt",
+      "sha256": "8c0ffd96b1e2786c99fd7f25d43f5785ed2db05bfb0b00cf3fcfb84af2de343d",
+      "bytes": 355251
+    },
+    {
+      "url": "https://api.fxtwitter.com/MiniMax_AI/status/2112150867868541221",
+      "status": 200,
+      "file": "snapshots/b844d68994d933c9.txt",
+      "sha256": "3ae0c84f108352338a2d65d125fe99ef249e284d075f9a8f481f8fc13f62978f",
+      "bytes": 4409
+    },
+    {
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "status": 200,
+      "file": "snapshots/b984a5c544e63137.txt",
+      "sha256": "12ad5ee0799771aa0cfb364df61d7c59b5be41c2cd80a47bea1654c671ea354c",
+      "bytes": 81059
+    },
+    {
+      "url": "https://www.minimax.cn/blog/minimax-m31f",
+      "status": 200,
+      "file": "snapshots/52a6db02c82060ba.txt",
+      "sha256": "a1c1f16b8521d6add7820612f845bdb3ba9156ec80af8da71ae21589461c7ebf",
+      "bytes": 77622
+    },
+    {
+      "url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121.png",
+      "status": 200,
+      "file": "snapshots/4d18a6a79b5b2388.png",
+      "sha256": "fa50caf822ca985a330f03bb612291b10249aa30ec4c5baceea2ae129e02956f",
+      "bytes": 1205370
+    },
+    {
+      "url": "https://filecdn.minimax.chat/public/m31-flash-zh-2-1792403273121.jpg",
+      "status": 200,
+      "file": "snapshots/360c8b8895267566.jpg",
+      "sha256": "781b95e26298d0d3ccd5fd24c5a904b07976f334be1dcdafb3b5aa1a675682f9",
+      "bytes": 1704847
+    },
+    {
+      "url": "https://pbs.twimg.com/media/HU_d5nbXEAAict2.jpg?name=orig",
+      "status": 200,
+      "file": "snapshots/143fdd87edf476bd.jpg",
+      "sha256": "7e98721059c19d942c18f63411e09bd999b98279d2560f12581d7aac0d34e5c8",
+      "bytes": 163935
+    },
+    {
+      "url": "https://artificialanalysis.ai/evaluations/gdp-pdf",
+      "status": 200,
+      "file": "snapshots/762b457920fe9374.txt",
+      "sha256": "317401ff58610ac686d01bcd48b9b671c74306b33227ed48ab6634bb926f1a39",
+      "bytes": 1052085
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zapier/AutomationBench/main/README.md",
+      "status": 200,
+      "file": "snapshots/abc9df3cbaebf51a.txt",
+      "sha256": "4c5452dec0abe00ad4dd9e1543709817c563486c1f53088c0adc9fafb609093a",
+      "bytes": 9260
+    }
+  ]
+}
