@@ -238,6 +238,10 @@
    "vendor": "MiniMax",
    "releaseDate": "2026-10-19",
    "openWeights": false,
+   "openWeightsPlan": {
+    "releaseDate": "2026-10-23",
+    "url": "https://x.com/MiniMax_AI/status/2112150867868541221"
+   },
    "aaRank": null,
    "aaIndex": null,
    "aaVariant": null,

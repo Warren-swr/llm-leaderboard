@@ -14,7 +14,7 @@ const readJson = <T>(p: string): T => JSON.parse(readFileSync(join(ROOT, p), 'ut
 
 interface BenchmarkDef extends Omit<Benchmark, 'coverage' | 'cvRmse' | 'topScore'> {}
 interface BenchFile { categories: Category[]; benchmarks: BenchmarkDef[] }
-interface ModelDef { id: string; name: string; vendor: string; releaseDate: string; openWeights: boolean; aaRank: number | null; aaIndex: number | null; aaVariant: string | null }
+type ModelDef = Pick<Model, 'id' | 'name' | 'vendor' | 'releaseDate' | 'openWeights' | 'openWeightsPlan' | 'aaRank' | 'aaIndex' | 'aaVariant'>
 interface RawRecord extends ScoreRecord {
   benchmark: string
   /** 与评测集首选配置一致 */

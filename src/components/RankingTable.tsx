@@ -1,6 +1,6 @@
 import { Badge, Group, Paper, RingProgress, Stack, Table, Text, Tooltip } from '@mantine/core'
 import { IconArrowDownRight, IconArrowUpRight, IconMinus } from '@tabler/icons-react'
-import { board, fmt, type RankedModel } from '../data'
+import { board, fmt, isOpenModel, type RankedModel } from '../data'
 
 interface Props {
   models: RankedModel[]
@@ -93,7 +93,7 @@ export function RankingTable({ models, onOpen, custom }: Props) {
                         <Group gap={6}>
                           <Text size="xs" className="lb-muted">{m.vendor}</Text>
                           <Text size="xs" className="lb-faint">{m.releaseDate}</Text>
-                          <Badge size="xs" variant="outline" color="gray">{m.openWeights ? '开源' : '闭源'}</Badge>
+                          <Badge size="xs" variant="outline" color="gray">{isOpenModel(m) ? '开源' : '闭源'}</Badge>
                         </Group>
                       </Stack>
                     </Group>

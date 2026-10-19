@@ -1,10 +1,10 @@
 import { Paper, SimpleGrid, Text } from '@mantine/core'
-import { board, fmt } from '../data'
+import { board, fmt, isOpenModel } from '../data'
 
 export function StatTiles() {
   const imp = board.meta.imputation
   const realPct = (1 - imp.imputedCells / imp.totalCells) * 100
-  const openModels = board.models.filter(m => m.openWeights).length
+  const openModels = board.models.filter(isOpenModel).length
   const tiles = [
     { label: '模型', value: String(board.models.length), hint: `开源 ${openModels} 个 · 闭源 ${board.models.length - openModels} 个` },
     { label: '评测指标', value: String(board.benchmarks.length), hint: `${board.categories.length} 个能力类别，同一家族的不同口径分列` },

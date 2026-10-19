@@ -4,6 +4,8 @@ import { computeScores, type ScoringInput, type ScoringResult } from './scoring'
 
 export const board = raw as unknown as Leaderboard
 
+export const isOpenModel = (m: Pick<Model, 'openWeights' | 'openWeightsPlan'>) => m.openWeights || m.openWeightsPlan != null
+
 export const defaultWeights: Record<string, number> = Object.fromEntries(board.categories.map(c => [c.id, c.weight]))
 
 export const benchById = Object.fromEntries(board.benchmarks.map(b => [b.id, b]))

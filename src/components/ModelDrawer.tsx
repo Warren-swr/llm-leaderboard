@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Accordion, Badge, Divider, Drawer, Group, Paper, SimpleGrid, Stack, Text } from '@mantine/core'
 import { BarChart } from '@mantine/charts'
 import { IconExternalLink } from '@tabler/icons-react'
-import { board, categoryById, fmt, hostOf, SOURCE_LABEL, type RankedModel } from '../data'
+import { board, categoryById, fmt, hostOf, isOpenModel, SOURCE_LABEL, type RankedModel } from '../data'
 import type { ScoreRecord } from '../types'
 import { SourceLink } from './SourceLink'
 
@@ -71,9 +71,10 @@ export function ModelDrawer({ modelId, focusBench, models, onClose }: Props) {
             </Paper>
           </SimpleGrid>
           <Text size="sm" className="lb-muted">
-            {m.vendor} · 发布于 {m.releaseDate} · {m.openWeights ? '开源' : '闭源'} · {Math.round(m.coverage * board.benchmarks.length)}/{board.benchmarks.length} 项指标有公开分数，覆盖当前总权重的 {fmt(m.live.observedWeight * 100)}%
+            {m.vendor} · 发布于 {m.releaseDate} · {isOpenModel(m) ? '开源' : '闭源'} · {Math.round(m.coverage * board.benchmarks.length)}/{board.benchmarks.length} 项指标有公开分数，覆盖当前总权重的 {fmt(m.live.observedWeight * 100)}%
             {m.live.pessimisticRank !== m.live.rank && `；补全值整体下调一个误差后名次变为 #${m.live.pessimisticRank}`}
           </Text>
+          {!m.openWeights && m.openWeightsPlan && <Text size="sm" className="lb-muted">权重{m.openWeightsPlan.releaseDate ? `计划于 ${m.openWeightsPlan.releaseDate} 发布` : '已宣布后续开放'}。 <SourceLink url={m.openWeightsPlan.url}>官方公告</SourceLink></Text>}
           {m.live.observedWeight < 0.5 && <Text size="sm" c="orange">公开实分覆盖的总权重不足一半，其余为补全估计，总分与名次仅供参考。</Text>}
 
           <Stack gap={6}>

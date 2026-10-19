@@ -53,7 +53,12 @@ export interface Model {
   name: string
   vendor: string
   releaseDate: string
+  /** 是否已公开权重；开源分类也包含已公告的开放计划 */
   openWeights: boolean
+  openWeightsPlan?: {
+    releaseDate?: string
+    url: string
+  }
   /** 补充收录且不在 AA 快照中的版本为 null */
   aaRank: number | null
   aaIndex: number | null
