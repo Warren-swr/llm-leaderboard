@@ -1,5 +1,5 @@
 import { Badge, Button, Group, Paper, SimpleGrid, Slider, Stack, Text, Tooltip } from '@mantine/core'
-import { IconAdjustments, IconRestore } from '@tabler/icons-react'
+import { IconRestore } from '@tabler/icons-react'
 import { board, fmt } from '../data'
 
 interface Props {
@@ -12,12 +12,11 @@ interface Props {
 export function WeightPanel({ weights, onChange, onReset, custom }: Props) {
   const total = Object.values(weights).reduce((s, x) => s + x, 0) || 1
   return (
-    <Paper className="lb-panel" p="lg">
+    <Paper className="lb-panel lb-weights" p="lg">
       <Group justify="space-between" mb="md">
         <Group gap={8}>
-          <IconAdjustments size={18} />
-          <Text fw={600}>类别权重</Text>
-          {custom ? <Badge variant="light" color="orange">自定义</Badge> : <Badge variant="light">默认</Badge>}
+          <Text fw={600} size="sm">类别权重</Text>
+          <Badge size="xs" variant="light" color={custom ? 'brand' : 'gray'}>{custom ? '自定义' : '默认'}</Badge>
         </Group>
         <Button size="xs" variant="subtle" leftSection={<IconRestore size={14} />} onClick={onReset} disabled={!custom}>
           恢复默认
@@ -49,7 +48,7 @@ export function WeightPanel({ weights, onChange, onReset, custom }: Props) {
         })}
       </SimpleGrid>
       <Text size="xs" className="lb-faint" mt="md">
-        拖动滑块会实时重算总分、区间与名次；权重按比例归一，合计始终为 100%。
+        拖动滑块实时重算排名，权重自动归一为 100%。
       </Text>
     </Paper>
   )

@@ -46,7 +46,7 @@ const STEPS = [
     body: (
       <List size="sm" spacing={6}>
         <List.Item>总分 = 各评测集分数（百分制）的加权平均。权重先分到能力类别，再按各评测的类别内权重分配；同一家族的公开 / 私有、Pass / Score 两列共享原家族权重。</List.Item>
-        <List.Item>默认权重见“总榜”页的滑块；拖动滑块会在浏览器里实时重算。</List.Item>
+        <List.Item>在“总榜”点击“调整权重”展开滑块；拖动后会在浏览器里实时重算，收起面板后保留当前权重。</List.Item>
       </List>
     ),
   },
@@ -55,7 +55,7 @@ const STEPS = [
     desc: '区间与敏感性',
     body: (
       <List size="sm" spacing={6}>
-        <List.Item>把补全值按误差随机抽样 1200 次，统计总分和名次的 90% 区间。</List.Item>
+        <List.Item>把补全值按误差随机抽样 2000 次，统计总分和名次的 90% 区间。</List.Item>
         <List.Item>厂商往往不报自己不擅长的评测，补全值因此可能偏高。悲观情形把所有补全值下调一个交叉验证误差，看名次是否变化。</List.Item>
         <List.Item>同时给出“只用真实分数”的总分和 AA 智能指数作为对照。</List.Item>
       </List>
