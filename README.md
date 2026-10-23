@@ -6,7 +6,7 @@
 
 - 在线页面：<https://warren-swr.github.io/llm-leaderboard/>（推送到 main 后由 GitHub Actions 自动构建发布）。
 - 妙搭页面：<https://bytedance.feishu.link/app/app_17gbzdsmaqd>（所有人可访问、无需登录，隐藏 GitHub 链接）。
-- 当前状态：2026-10-19 收录 MiniMax M3.1 Flash 正式版；现有 22 个模型、22 项排名指标、6 个能力类别。MiniMax 有 9/22 项实分，原有 21 个模型的 304 个主分数及来源保持不变，AA 名单仍为 2026-10-12 快照。
+- 当前状态：2026-10-24 收录 Kimi K3.1 Pro；现有 23 个模型、22 项排名指标、6 个能力类别。新版 Kimi 有 11/22 项实分，默认总分 61.0、第 3，90% 名次区间 2–5；原有 22 个模型的 313 个主分数及来源保持不变，旧 K3 和 AA 的 2026-10-12 名单快照保留。
 - 页面入口：`npm run build` 生成 `dist/`，再用任意静态服务器打开，例如 `python3 -m http.server 18731 -d dist` 后访问 <http://127.0.0.1:18731/>。产物用相对路径构建，可以放到任意子目录；浏览器不允许从 `file://` 加载 ES module，所以不能双击打开。开发时用 `npm run dev`。
 - 技术栈：TypeScript + Vite 7 + React 19 + Mantine 9（组件与图表）。
 
@@ -32,16 +32,37 @@ npm run build
 
 | 名次 | 模型 | 总分 | 90% 名次区间 | AA 名次 |
 |---|---|---|---|---|
-| 1 | Claude Opus 5.5 | 63.7 | 1–1 | 1 |
+| 1 | Claude Opus 5.5 | 63.8 | 1–1 | 1 |
 | 2 | Claude Sonnet 5.5 | 61.7 | 2–3 | 2 |
-| 3 | Claude Fable 5.1 | 60.3 | 3–5 | 3 |
-| 4 | GPT-6 Astra | 59.6 | 3–6 | 4 |
-| 5 | Gemini 4 Argon | 59.2 | 3–6 | 5 |
-| 6 | GPT-6.1 Sol | 58.4 | 4–6 | 6 |
-| 7 | DeepSeek V4.1 Flash 1017 | 55.8 | 6–7 | — |
-| 8 | MiniMax M3.1 Flash | 52.6 | 8–12 | — |
+| 3 | Kimi K3.1 Pro | 61.0 | 2–5 | — |
+| 4 | Claude Fable 5.1 | 60.3 | 3–6 | 3 |
+| 5 | GPT-6 Astra | 59.7 | 3–7 | 4 |
+| 6 | Gemini 4 Argon | 59.3 | 4–7 | 5 |
+| 7 | GPT-6.1 Sol | 58.5 | 5–7 | 6 |
+| 8 | DeepSeek V4.1 Flash 1017 | 55.3 | 8–9 | — |
+| 9 | MiniMax M3.1 Flash | 52.7 | 8–13 | — |
 
-MiniMax M3.1 Flash 有 9/22 项公开实分，覆盖默认总权重的 39.1%；默认 52.6 分、第 8 名，90% 名次区间 8–12。科研与视觉工具推理均为补全估计，整体排序仅供参考。
+Kimi K3.1 Pro 有 11/22 项公开实分，覆盖默认总权重的 55.9%；其余为补全估计，不能把第 3 名理解为全部指标的实测排序。新增模型后重新拟合补全值，其他模型的估计分数也会变化，已有实分不变。
+
+## 2026-10-24 Kimi K3.1 Pro
+
+采用官方发布页的结构化评测表、概览图和完整脚注，两个官方域名的 47 行表格一致。保留旧 Kimi K3，新版单独收录；AA 名次与指数留空。官方已宣布最迟 2026-11-04 发布完整权重，按本榜规则标为“开源”，详情注明尚待发布。完整依据见 [Kimi 核验记录](data/research/kimi-k3-1-pro-20261024.md)。
+
+| 参与排名的指标 | 分数 | 关键配置 |
+|---|---:|---|
+| Terminal-Bench 4.0 | 65.7 | Claude Code，max |
+| DeepSWE v1.1 | 75.5 | Claude Code，max |
+| Terminal-Bench Science 0.1 | 38.1 | Claude Code，max |
+| ProgramBench Almost@1 | 31.5 | 隐藏测试通过率达到 95% 的任务比例 |
+| HLE（不用工具） | 51.1 | 完整 2500 题 |
+| HLE（用工具） | 70.0 | 完整 2500 题 |
+| OSWorld 2 | 79.6 | v2.1，Kimi Agent |
+| GDPval-AA v2.1 | 67.3 | 官方引用 AA；Elo 1846 归一化 |
+| GDP.pdf | 34.6 | 完整判分响应上的 strict all-pass，不用 Python |
+| Chartography · 带工具 | 90.2 | Python，5 次平均 |
+| ZeroBench-main · 带工具 | 63.0 | Python，Pass@5 |
+
+AutomationBench-AA 73.3 是部分得分；ALE v1.1 的 43.2 / 44.2 来自 122 / 86 题，且发布表未另写 Pass / Score；GDP.pdf Python 版 85.7 是 rubric 宏平均，均只保留参考。当前 ALE 作者 API 没有新版记录，AA 同名模型页返回 404，因此 GDPval 仍标厂商引用来源，不声称已独立读取 AA 新版结果。没有采用发布表中其他模型的对照分数。
 
 ## 2026-10-19 MiniMax M3.1 Flash
 
@@ -67,12 +88,12 @@ AutomationBench 为公开 600 题集；ALE Pass 与 Score 分列，家族总权�
 
 | 新增指标 | DeepSeek 1017 实分 | 全榜有实分模型（当前） |
 |---|---:|---:|
-| ProgramBench Almost@1（95% 测试阈值） | 29.1 | 18/22 |
-| NL2Repo-Bench Score | 68.2 | 7/22 |
-| AutomationBench 公开集 Pass@1 | 60.5 | 11/22 |
-| Agents' Last Exam Pass@1 | 35.4 | 14/22 |
-| Chartography 带工具 | 83.0 | 6/22 |
-| ZeroBench-main 带工具 Pass@5 | 51.0 | 3/22 |
+| ProgramBench Almost@1（95% 测试阈值） | 29.1 | 19/23 |
+| NL2Repo-Bench Score | 68.2 | 7/23 |
+| AutomationBench 公开集 Pass@1 | 60.5 | 11/23 |
+| Agents' Last Exam Pass@1 | 35.4 | 14/23 |
+| Chartography 带工具 | 83.0 | 7/23 |
+| ZeroBench-main 带工具 Pass@5 | 51.0 | 4/23 |
 
 新增视觉工具推理类别占 10%，原 5 类按原比例缩放到合计 90%。AutomationBench 公开 / 私有、ALE Pass / Score 共享原家族权重；ProgramBench Almost 是辅助指标，ZeroBench 带工具覆盖低，两者类别内权重均为 0.5。页面同步显示实分覆盖的总权重，完全没有实分的类别标为估计；调权重后没有任何可用实分时显示“—”，不填零分。
 
@@ -96,24 +117,24 @@ AutomationBench 为公开 600 题集；ALE Pass 与 Score 分列，家族总权�
 npm install
 python3 pipeline/aa_records.py                                    # 由 AA 快照生成 data/scores-aa/
 python3 pipeline/merge_collection.py data/research/collection-20261012.json   # 合并收集与核验结果
-LB_GENERATED_AT=2026-10-19 npm run data                           # 选主分数、补全、计分
+LB_GENERATED_AT=2026-10-24 npm run data                           # 选主分数、补全、计分
 npm run check:data                                                # 发布前检查（缺网址、越界、未核验等）
 npm run build                                                     # 类型检查 + 构建 dist/
 ```
 
 ## 验证范围
 
-- 数据门禁：0 错误、5 条预期提示（Chartography 90.2 接近饱和；ZeroBench 带工具仅 3/22；Ling 36%、DeepSeek 与 MiniMax 各 41% 的项目覆盖率低）。类型检查和生产构建通过。
-- 自动对照：本次保留原 21 个模型的 304 个主分数、主来源和参考记录；22 列与权重保持不变，公开 / 私有、Pass / Score 家族没有翻倍加权。
-- 计分检查：MiniMax 实分权重 39.1% 的手算对照通过；仅给科研或视觉类别权重时，其实分对照得分为缺失值；仅给知识工作类别权重时，实分对照为 GDP.pdf 的 20.8。
-- 本地生产构建已实测五个标签页、抽屉、来源、权重重算、缺失值、配色和 390px 手机宽度，页面错误为 0；检查范围见本次 MiniMax 核验记录。线上发布后用同一套交互再次核对，回执保留在工作区运行目录。
+- 数据门禁：0 错误、5 条预期提示（Chartography 90.2 接近饱和；ZeroBench 带工具仅 4/23；Ling 36%、DeepSeek 与 MiniMax 各 41% 的项目覆盖率低）。类型检查和生产构建通过。
+- 自动对照：本次保留原 22 个模型的 313 个主分数、主来源和全部参考记录；22 列与权重保持不变，公开 / 私有、Pass / Score 家族没有翻倍加权。
+- 计分检查：Kimi 的实分总权重为 55.9%；推理类别全部为实分，单独加权得分为 (51.1 + 70.0) / 2 = 60.55；没有实分的类别和缺失项继续使用现有标注规则。
+- 浏览器验证范围与本次发布记录见 [Kimi 核验记录](data/research/kimi-k3-1-pro-20261024.md)，回执保留在工作区运行目录。
 - 未做：没有复跑评测；没有重新逐条核查原 16 列所有模型的全部出处。补全模块初版做过合成低秩矩阵验证，本次没有据此宣称真实数据的泛化改善。
 
 ## 已知局限
 
 - **自报偏高** ：厂商用自家 harness 自测的分数普遍高于独立复测（TB-Science 上 Anthropic 自报比 Vals AI 高 9–14 分，HLE 上比 Scale 官方榜高 14–16 分）。官方优先的规则对自报多、harness 调得好的厂商更有利。
-- **覆盖不均** ：ZeroBench 带工具只有 3/22 个真实分数；NL2Repo 为 7/22，Chartography 带工具为 6/22。DeepSeek 和 MiniMax 都有 9/22 项，分别覆盖默认权重 36.7% 与 39.1%；Ling 只有 8/22 项。
-- **补全误差** ：整体交叉验证 MAE 4.9 分、RMSE 6.9 分；TB-Science（RMSE 11.3）和 Terminal-Bench 4.0（RMSE 11.5）误差较大，包含 harness、预算和版本差异。新增模型后重新拟合补全矩阵，其他模型的补全值也会变化，已收录实测分数不变。
+- **覆盖不均** ：ZeroBench 带工具只有 4/23 个真实分数；NL2Repo 为 7/23，Chartography 带工具为 7/23。Kimi K3.1 Pro 有 11/22 项、覆盖权重 55.9%；DeepSeek 和 MiniMax 都有 9/22 项，分别覆盖默认权重 36.7% 与 39.1%；Ling 只有 8/22 项。
+- **补全误差** ：整体交叉验证 MAE 5.2 分、RMSE 7.4 分，包含 harness、预算和版本差异。新增模型后重新拟合补全矩阵，其他模型的补全值也会变化，已收录实测分数不变。
 - **缺失非随机** ：厂商往往不报自己差的评测，补全值可能偏高。页面给出“补全值下调一个误差”后的名次作对照。
 - **AA 依赖** ：模型名单、长上下文、知识工作和部分科研分数来自 Artificial Analysis。
 - 补全值之间按独立误差抽样，区间可能偏窄。

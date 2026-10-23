@@ -1,10 +1,10 @@
 {
   "title": "公开评测 LLM 榜单",
-  "dataCutoff": "2026-10-19",
+  "dataCutoff": "2026-10-24",
   "aaSource": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
   "aaRetrieved": "2026-10-12",
   "notes": [
-    "模型名单以 2026-10-12 的 AA 智能指数 v4.3.2 前 20 名为基础，另收录 DeepSeek-V4.1-Flash-1017 和 2026-10-19 正式发布的 MiniMax M3.1 Flash；二者不在这份 AA 快照中，AA 名次与指数留空。",
+    "模型名单以 2026-10-12 的 AA 智能指数 v4.3.2 前 20 名为基础，另收录 DeepSeek-V4.1-Flash-1017、MiniMax M3.1 Flash 与 Kimi K3.1 Pro；三个补充版本不在这份 AA 快照中，AA 名次与指数留空。",
     "补全值之间的误差按相互独立处理；同一模型的多个补全值实际可能同向偏差，所以区间可能偏窄。",
     "厂商往往不报自己表现差的评测，补全值可能系统性偏高；“补全值下调一个误差”一栏给出这种情况下的名次。",
     "不同厂商使用的 harness、推理档位和试验次数不同，同一列里的分数只做到“同一评测、同一指标”可比，具体配置见每个格子的出处。",
@@ -14,7 +14,8 @@
     "DeepSeek 1017 从 3/16 增至 9/22 项公开实分。科研和知识工作仍未有新版实分，补全不是实测；页面同时显示实分覆盖的总权重，不能只按项目数量判断可靠性。",
     "Apex Bench v1.1 的具体定义与已知 Apex 评测的对应关系未确认，不纳入综合排名；BabyVision 带工具的头部已普遍超过 90%，保留来源结果但不加入默认排名。",
     "新增来源为 2026-10-18 回源摘录，以及按指标重新分类的 2026-10-12 已核验记录。原模型名单和原有来源日期不改写，不移用旧版 DeepSeek 或名称不同的模型分数。",
-    "2026-10-19 收录 MiniMax M3.1 Flash 正式版的 8 项官方发布成绩及 ALE 作者榜 Score，共 9/22 项实分。AutomationBench 用公开 600 题列，ALE 完全通过率与部分得分分开；HLE 为 2158 题纯文本子集。GDP.pdf 按 AA headline 及对照值判为 all-pass，当前未独立读取 MiniMax 的 AA 模型页。未移用 M3、Preview 或 Space Bunny 分数；权重与评测列不变。"
+    "2026-10-19 收录 MiniMax M3.1 Flash 正式版的 8 项官方发布成绩及 ALE 作者榜 Score，共 9/22 项实分。AutomationBench 用公开 600 题列，ALE 完全通过率与部分得分分开；HLE 为 2158 题纯文本子集。GDP.pdf 按 AA headline 及对照值判为 all-pass，当前未独立读取 MiniMax 的 AA 模型页。未移用 M3、Preview 或 Space Bunny 分数；权重与评测列不变。",
+    "2026-10-24 收录 Kimi K3.1 Pro 的 11/22 项可比官方发布成绩；保留旧 K3。AutomationBench-AA 部分得分、122/86 题的 ALE v1.1、GDP.pdf Python 版 rubric 均仅参考。GDP.pdf 34.6 是完整判分响应上的 strict all-pass；GDPval-AA 的 Elo 1846 归一为 67.3，来源为官方引用 AA，未独立读取该模型 AA 页。已宣布最迟 2026-11-04 开放权重，按本榜规则标开源并保留待发布说明；列与权重、AA 冻结名单均不变。"
   ],
   "expansion": {
     "date": "2026-10-18",

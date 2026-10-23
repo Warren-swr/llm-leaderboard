@@ -1,0 +1,271 @@
+{
+ "model": "kimi-k3-1-pro",
+ "records": [
+  {
+   "benchmark": "terminal-bench-4",
+   "score": 65.7,
+   "setting": "Terminal-Bench 4.0 成功率；Claude Code harness；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。"
+  },
+  {
+   "benchmark": "deepswe",
+   "score": 75.5,
+   "setting": "DeepSWE v1.1 解决率；Claude Code harness；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 官方自测使用 Claude Code，与统一 mini-SWE-agent 榜单存在 harness 差异。"
+  },
+  {
+   "benchmark": "terminal-bench-science",
+   "score": 38.1,
+   "setting": "Terminal-Bench Science 0.1 任务成功率；Claude Code harness；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 仅收录 K3.1 Pro 的 38.1；同表 DeepSeek 的 15.7 明确借用旧版 Flash，不据此改写现有 1017 成绩。"
+  },
+  {
+   "benchmark": "programbench-almost",
+   "score": 31.5,
+   "setting": "ProgramBench binary score：每题隐藏测试通过率 ≥95% 记 1，否则记 0；Claude Code harness；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 该二值比例对应本榜 Almost@1，不是平均测试通过率，也不是整题 100% 通过率。"
+  },
+  {
+   "benchmark": "hle-no-tools",
+   "score": 51.1,
+   "setting": "HLE-Full 不用工具，完整 2500 题准确率；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 K3.1 Pro 未标星号，使用完整集；不移用旧 K3 或纯文本子集成绩。"
+  },
+  {
+   "benchmark": "hle-tools",
+   "score": 70.0,
+   "setting": "HLE-Full 带工具，完整 2500 题准确率；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。"
+  },
+  {
+   "benchmark": "osworld-2",
+   "score": 79.6,
+   "setting": "OSWorld V2.1 部分得分；官方 OSWorld v2 仓库的 Kimi Agent harness；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 官方脚注明确 v2.1 与 Kimi Agent；未另披露分辨率、步数或重复次数，不推定采用本榜全部首选配置。"
+  },
+  {
+   "benchmark": "gdpval-aa",
+   "score": 67.3,
+   "setting": "GDPval-AA v2.1；官方发布表引用 Artificial Analysis；Elo 1846 → (1846−500)/2000×100 = 67.3",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 来源标厂商发布表引用；当前 AA 模型页返回 404，未独立读取该模型的 AA 逐项记录。冻结 AA 名单、指数与名次不变。"
+  },
+  {
+   "benchmark": "gdp-pdf",
+   "score": 34.6,
+   "setting": "GDP.pdf 不用 Python 工具；PDF 页图最长边 1152 像素与 Docling 文本；Gemini-3.5-Flash Medium 判分；5 次平均；strict pass rate among fully scored responses；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 逐条 rubric 全部通过的 strict pass rate，按 all-pass 收录但非首选；分母仅含完整判分响应，官方未披露完整判分响应数。与 AA 处理 PDF 的方式及裁判存在差异。"
+  },
+  {
+   "benchmark": "chartography-tools",
+   "score": 90.2,
+   "setting": "ChartoGraphy 带 Python 工具准确率；5 次运行平均；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 允许 Python 工具，与不用工具结果分开；该项未单独披露裁判配置，不推定与 AA 裁判完全一致。"
+  },
+  {
+   "benchmark": "zerobench-tools",
+   "score": 63.0,
+   "setting": "ZeroBench-main 带 Python 工具 Pass@5；5 次运行；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": true,
+   "matchesPreferred": false,
+   "primaryHint": true,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 五次中至少一次通过，不是单次通过率或 pass^5。"
+  },
+  {
+   "benchmark": "gdp-pdf",
+   "score": 85.7,
+   "setting": "GDP.pdf 带 Python；IPython 处理原始 PDF；Gemini-3.5-Flash Medium 与官方 prompt；任务内 rubric 通过比例先跨 5 次平均，再对任务等权平均",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 85.7 为 task-macro mean rubric pass rate，且使用 Python；与 all-pass 指标不同，只保留参考，不参与排名。"
+  },
+  {
+   "benchmark": "automationbench",
+   "score": 73.3,
+   "setting": "AutomationBench-AA；官方发布表引用 Artificial Analysis 的部分得分结果；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 73.3 是 AutomationBench-AA 部分得分，不是 Zapier 私有留出集完全通过率，也不是公开 600 题 Pass@1；两个通过率列均不采用。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 43.2,
+   "setting": "Agents’ Last Exam v1.1，122 题完整集；Kimi Code；绕过题目要求的运行按厂商协议赋零；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 官方表的 headline 值；脚注为 v1.1 的 122/86 题，与本榜 V1 的 152/105 题任务集不同，且未另写 passRate / avgScore，故仅参考。当前 ALE 作者 API 未找到 K3.1 Pro；不把该值填入 Pass@1 或 Score 主分数。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "score": 44.2,
+   "setting": "Agents’ Last Exam v1.1，86 题 CLI 子集；Kimi Code；绕过题目要求的运行按厂商协议赋零；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 官方表的 headline 值；脚注为 v1.1 的 122/86 题，与本榜 V1 的 152/105 题任务集不同，且未另写 passRate / avgScore，故仅参考。当前 ALE 作者 API 未找到 K3.1 Pro；不把该值填入 Pass@1 或 Score 主分数。"
+  },
+  {
+   "benchmark": "zerobench-tools",
+   "score": 39.0,
+   "setting": "ZeroBench-main 不用工具，avg@5=29.8，Pass@5=39.0；5 次运行；effort=max，temperature=1.0，top-p=0.95",
+   "sourceType": "official",
+   "sourceName": "Kimi K3.1 Pro 官方发布表及评测脚注",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "verified": true,
+   "comparable": false,
+   "matchesPreferred": false,
+   "primaryHint": false,
+   "note": "2026-10-24 直接核对官方发布页的结构化评测表与完整脚注，两个官方域名的表格一致；未复跑模型。来源 SHA-256 见 data/sources/kimi/kimi-k3-1-pro-20261024.json。 39.0 为不用工具的 Pass@5，29.8 为 avg@5，均不能替代带工具列。"
+  }
+ ],
+ "references": [
+  {
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "title": "Kimi K3.1 Pro 官方发布页、评测表与完整脚注",
+   "kind": "launch_page"
+  },
+  {
+   "url": "https://www.kimi.com/blog/kimi-k3-1-pro",
+   "title": "Kimi K3.1 Pro 官方发布页镜像",
+   "kind": "launch_page"
+  }
+ ],
+ "notFound": [
+  {
+   "benchmark": "aa-lcr",
+   "reason": "未取得 K3.1 Pro 在本列同一指标与可比任务集上的可核验结果；不沿用旧 K3、不混入部分得分、不同 ALE 版本或无工具成绩。"
+  },
+  {
+   "benchmark": "agents-last-exam",
+   "reason": "未取得 K3.1 Pro 在本列同一指标与可比任务集上的可核验结果；不沿用旧 K3、不混入部分得分、不同 ALE 版本或无工具成绩。"
+  },
+  {
+   "benchmark": "ale-pass",
+   "reason": "未取得 K3.1 Pro 在本列同一指标与可比任务集上的可核验结果；不沿用旧 K3、不混入部分得分、不同 ALE 版本或无工具成绩。"
+  },
+  {
+   "benchmark": "automationbench",
+   "reason": "未取得 K3.1 Pro 在本列同一指标与可比任务集上的可核验结果；不沿用旧 K3、不混入部分得分、不同 ALE 版本或无工具成绩。"
+  },
+  {
+   "benchmark": "automationbench-public",
+   "reason": "未取得 K3.1 Pro 在本列同一指标与可比任务集上的可核验结果；不沿用旧 K3、不混入部分得分、不同 ALE 版本或无工具成绩。"
+  },
+  {
+   "benchmark": "critpt",
+   "reason": "未取得 K3.1 Pro 在本列同一指标与可比任务集上的可核验结果；不沿用旧 K3、不混入部分得分、不同 ALE 版本或无工具成绩。"
+  },
+  {
+   "benchmark": "frontiercode",
+   "reason": "未取得 K3.1 Pro 在本列同一指标与可比任务集上的可核验结果；不沿用旧 K3、不混入部分得分、不同 ALE 版本或无工具成绩。"
+  },
+  {
+   "benchmark": "frontierswe",
+   "reason": "未取得 K3.1 Pro 在本列同一指标与可比任务集上的可核验结果；不沿用旧 K3、不混入部分得分、不同 ALE 版本或无工具成绩。"
+  },
+  {
+   "benchmark": "nl2repo-bench",
+   "reason": "未取得 K3.1 Pro 在本列同一指标与可比任务集上的可核验结果；不沿用旧 K3、不混入部分得分、不同 ALE 版本或无工具成绩。"
+  },
+  {
+   "benchmark": "scicode",
+   "reason": "未取得 K3.1 Pro 在本列同一指标与可比任务集上的可核验结果；不沿用旧 K3、不混入部分得分、不同 ALE 版本或无工具成绩。"
+  },
+  {
+   "benchmark": "toolathlon-verified",
+   "reason": "未取得 K3.1 Pro 在本列同一指标与可比任务集上的可核验结果；不沿用旧 K3、不混入部分得分、不同 ALE 版本或无工具成绩。"
+  }
+ ]
+}

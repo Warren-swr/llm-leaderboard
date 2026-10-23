@@ -35,7 +35,7 @@ export interface RankedModel extends Model {
 }
 
 export function rankWith(weights: Record<string, number>): { models: RankedModel[]; result: ScoringResult } {
-  const result = computeScores(scoringInput, weights, 1200)
+  const result = computeScores(scoringInput, weights)
   const models = board.models
     .map((m, i) => ({
       ...m,

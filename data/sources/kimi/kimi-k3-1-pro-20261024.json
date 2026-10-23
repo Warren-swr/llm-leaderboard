@@ -1,0 +1,272 @@
+{
+  "model": "kimi-k3-1-pro",
+  "retrievedOn": "2026-10-24",
+  "releaseDate": "2026-10-23",
+  "baselineCommit": "c6c941148f362a43d3bfb9efae7ac10d6475727b",
+  "method": "直接解析官方 Next.js Flight 中完整的结构化评测表；与另一官方域名逐行比对；另检查概览图及页面方法脚注。",
+  "sources": [
+    {
+      "file": "kimi-ai-release.html",
+      "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+      "bytes": 388740,
+      "sha256": "8e9066a1a1dffb79ab2ce542d1b578114679bf1849b2edff14e46ddde57e3cc5"
+    },
+    {
+      "file": "kimi-com-release.html",
+      "url": "https://www.kimi.com/blog/kimi-k3-1-pro",
+      "bytes": 331368,
+      "sha256": "3b3113cd16f51b3445d429b0cace37f94e91de02da3f7e827292308e8adfd10e"
+    },
+    {
+      "file": "benchmark-overview-v6.webp",
+      "url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "bytes": 222632,
+      "sha256": "48c52c615b98e722bdf1058e200db4cafde9078c122bc12fd8b3f380dafb64c0"
+    },
+    {
+      "file": "ale-leaderboard.json",
+      "url": "https://agents-last-exam.org/api/demo/leaderboard",
+      "bytes": 355275,
+      "sha256": "a80c8a0816163d75519db03f44bc6c0b78bf08975c15d813202416b87c7248f9"
+    },
+    {
+      "file": "aa-gdpval.html",
+      "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
+      "bytes": 1655645,
+      "sha256": "4a88b21dde5c624451d2c1b20fee13e8cd8a36e82bf822db4ee4a89b443a8e45"
+    }
+  ],
+  "officialTable": [
+    {
+      "benchmark": "Terminal-Bench 4.0",
+      "value": "65.7"
+    },
+    {
+      "benchmark": "Terminal-Bench Science 0.1",
+      "value": "38.1"
+    },
+    {
+      "benchmark": "SWE Marathon v1.1",
+      "value": "51.7"
+    },
+    {
+      "benchmark": "BenchCAD w/o tools",
+      "value": "72.8"
+    },
+    {
+      "benchmark": "BenchCAD w/ tools",
+      "value": "92.7"
+    },
+    {
+      "benchmark": "Program Bench",
+      "value": "31.5"
+    },
+    {
+      "benchmark": "DeepSWE v1.1",
+      "value": "75.5"
+    },
+    {
+      "benchmark": "PostTrain Bench v1.2",
+      "value": "36.5"
+    },
+    {
+      "benchmark": "Kimi Code Bench 2.0 (Internal)",
+      "value": "77.1"
+    },
+    {
+      "benchmark": "Kimi Code Bench 3.0 Long-horizon (Internal)",
+      "value": "61.2"
+    },
+    {
+      "benchmark": "HLE-Full w/ tools",
+      "value": "70.0"
+    },
+    {
+      "benchmark": "BrowseComp",
+      "value": "92.1"
+    },
+    {
+      "benchmark": "BioMysteryBench",
+      "value": "80.6"
+    },
+    {
+      "benchmark": "CharXiv (RQ) w/ python",
+      "value": "93.4"
+    },
+    {
+      "benchmark": "MMMU-Pro w/ python",
+      "value": "90.0"
+    },
+    {
+      "benchmark": "GDP.pdf w/ python",
+      "value": "85.7"
+    },
+    {
+      "benchmark": "ChartoGraphy w/ python",
+      "value": "90.2"
+    },
+    {
+      "benchmark": "BabyVision w/ python",
+      "value": "95.4"
+    },
+    {
+      "benchmark": "ZeroBench_main w/ python (pass@5)",
+      "value": "63.0"
+    },
+    {
+      "benchmark": "Agents' Last Exam (ALL)",
+      "value": "43.2"
+    },
+    {
+      "benchmark": "Agents' Last Exam (CLI)",
+      "value": "44.2"
+    },
+    {
+      "benchmark": "Automation Bench-AA",
+      "value": "73.3"
+    },
+    {
+      "benchmark": "GDPval-AA v2.1 (Elo-score)",
+      "value": "1846"
+    },
+    {
+      "benchmark": "AA-Briefcase v1.1 (Elo-score)",
+      "value": "1678"
+    },
+    {
+      "benchmark": "APEX-Agents",
+      "value": "67.2"
+    },
+    {
+      "benchmark": "OfficeQA Pro v2",
+      "value": "64.4"
+    },
+    {
+      "benchmark": "OfficeQA Pro",
+      "value": "67.4"
+    },
+    {
+      "benchmark": "Frontier Finance",
+      "value": "58.6"
+    },
+    {
+      "benchmark": "Harvey Legal Agent",
+      "value": "23.7"
+    },
+    {
+      "benchmark": "HANDBOOK.md",
+      "value": "44.6"
+    },
+    {
+      "benchmark": "OSWorld V2.1",
+      "value": "79.6"
+    },
+    {
+      "benchmark": "Business Operation (Internal)",
+      "value": "37.8"
+    },
+    {
+      "benchmark": "DECK-Arena (Internal, Elo-score)",
+      "value": "1456"
+    },
+    {
+      "benchmark": "Design Bench (Internal, Elo-score)",
+      "value": "957"
+    },
+    {
+      "benchmark": "Kimi Hallu Bench Hard w/ tools (Internal, lower is better)",
+      "value": "8.3"
+    },
+    {
+      "benchmark": "GDP.pdf",
+      "value": "34.6"
+    },
+    {
+      "benchmark": "HLE-Full",
+      "value": "51.1"
+    },
+    {
+      "benchmark": "HLE-Diamond",
+      "value": "39.4"
+    },
+    {
+      "benchmark": "GPQA-Diamond",
+      "value": "94.2"
+    },
+    {
+      "benchmark": "CharXiv (RQ)",
+      "value": "89.0"
+    },
+    {
+      "benchmark": "MMMU-Pro",
+      "value": "84.1"
+    },
+    {
+      "benchmark": "ZeroBench_main (avg@5 / pass@5)",
+      "value": "29.8 / 39.0"
+    },
+    {
+      "benchmark": "PerceptionBench",
+      "value": "68.3"
+    },
+    {
+      "benchmark": "Kimi Hallu Bench w/o tools (Internal, lower is better)",
+      "value": "5.4"
+    },
+    {
+      "benchmark": "ExploitBench",
+      "value": "74.7"
+    },
+    {
+      "benchmark": "ExploitGym",
+      "value": "20.7"
+    },
+    {
+      "benchmark": "xdev-bench-hard (Internal)",
+      "value": "81.0"
+    }
+  ],
+  "primaryBenchmarkIds": [
+    "terminal-bench-4",
+    "deepswe",
+    "terminal-bench-science",
+    "programbench-almost",
+    "hle-no-tools",
+    "hle-tools",
+    "osworld-2",
+    "gdpval-aa",
+    "gdp-pdf",
+    "chartography-tools",
+    "zerobench-tools"
+  ],
+  "observedCount": 11,
+  "benchmarkCount": 22,
+  "openWeights": false,
+  "openWeightsPlan": {
+    "releaseDate": "2026-11-04",
+    "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+    "note": "官方承诺最迟此日发布完整权重；本榜按已有规则分类为开源，不代表目前可下载。"
+  },
+  "aaSnapshot": {
+    "date": "2026-10-12",
+    "changed": false,
+    "rank": null,
+    "index": null,
+    "slug": null
+  },
+  "checks": {
+    "officialMirrorsAgree": true,
+    "officialTableRowCount": 47,
+    "aleAuthorModelFound": false,
+    "aaModelPage": "https://artificialanalysis.ai/models/kimi-k3-1-pro 返回 404；GDPval Elo 使用厂商引用，不宣称已独立读取 AA 模型结果。",
+    "hfModelCard": "同名模型卡返回 401，未将其视为已公开权重的证据。"
+  },
+  "caveats": [
+    "AutomationBench-AA 73.3 为部分得分，仅参考。",
+    "ALE v1.1 的 122/86 题与原 V1 的 152/105 题不同，43.2/44.2 仅参考。",
+    "GDP.pdf 的 34.6 为完整判分响应上的 strict all-pass；Python 版 85.7 为任务宏平均 rubric 通过率，仅参考。",
+    "ZeroBench 带工具 Pass@5=63.0；不用工具 avg@5/Pass@5=29.8/39.0，分开保存。",
+    "只新增同名正式模型，不修改旧模型的主分数或采用该发布表中的其他模型对照值。",
+    "SWE Marathon、BenchCAD、OfficeQA、金融及其他未入选指标保存在来源摘录中，不新增列或更改权重。"
+  ]
+}
